@@ -1,0 +1,7 @@
+# This is an argument file for testing
+--option=value
+--option
+--user=${user.name}
+value
+# Comments are allowed
+argument

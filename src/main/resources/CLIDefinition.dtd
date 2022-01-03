@@ -1,0 +1,99 @@
+<?xml version="1.0"
+      encoding="UTF-8"?>
+
+<!--
+============================================================================
+Copyright © 2002-2021 by Thomas Thrien.
+All Rights Reserved.
+============================================================================
+Licensed to the public under the agreements of the GNU Lesser General Public
+License, version 3.0 (the "License"). You may obtain a copy of the License at
+
+      http://www.gnu.org/licenses/lgpl.html
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+-->
+<!-- $Id: CLIDefinition.dtd 907 2021-05-05 23:09:17Z tquadrat $ -->
+
+<!-- The definition of a boolean entity -->
+<!ENTITY % boolean "(true|false)">
+
+<!-- The document definition -->
+<!ELEMENT cliDefinition (option*,argument*)>
+
+<!-- The definition for a CLI Option.
+
+    propertyName     The name of the property; this is used to reference the
+                     option value inside from the code.
+    type             The data type for the option.
+    name             The name of the option.
+    handler          The fully qualified class name of the value handler for
+                     this option; if not provided, it will be inferred from the
+                     string converter or the data type itself.
+    isRequired       Indicates that the option is required; the default is
+                     false.
+    isMultiValue     Indicates whether the option may appear multiple times.
+    metaVar          A symbolic identifier for the option value that is shown
+                     in the help.
+    stringConversion The fully qualified class name of the string converter for
+                     this option; if not provided, it will be inferred from the
+                     data type. -->
+<!ELEMENT option (alias*,format?,usage?)>
+    <!ATTLIST option
+        propertyName CDATA #REQUIRED
+        type CDATA #REQUIRED
+        name CDATA #REQUIRED
+        handler CDATA #IMPLIED
+        isRequired  %boolean; "false"
+        isMultiValue %boolean; "false"
+        metaVar CDATA #IMPLIED
+        stringConversion CDATA #IMPLIED>
+    <!ELEMENT alias EMPTY>
+        <!ATTLIST alias
+            name CDATA #REQUIRED>
+
+<!-- The definition for a CLI Argument.
+
+    propertyName     The name of the property; this is used to reference the
+                     argument value inside from the code.
+    type             The data type for the argument.
+    index            The zero based index for the argument on the command line.
+    handler          The fully qualified class name of the value handler for
+                     this argument; if not provided, it will be inferred from
+                     the string converter or the data type itself.
+    isRequired       Indicates that the argument is mandatory; the default is
+                     true.
+    isMultiValue     Indicates that all remaining values on the command line do
+                     belong to this argument.
+    metaVar          A symbolic identifier for the argument that is shown in
+                     the help.
+    stringConversion The fully qualified class name of the string converter for
+                     this option; if not provided, it will be inferred from the
+                     data type. -->
+<!ELEMENT argument (format?,usage?)>
+    <!ATTLIST argument
+        propertyName CDATA #REQUIRED
+        type CDATA #REQUIRED
+        index CDATA #REQUIRED
+        handler CDATA #IMPLIED
+        isRequired  %boolean; "true"
+        isMultiValue %boolean; "false"
+        metaVar CDATA #IMPLIED
+        stringConversion CDATA #IMPLIED>
+
+<!-- The optional format for the argument or option -->
+<!ELEMENT format (#PCDATA)>
+
+<!-- The optional usage message; can be empty.
+
+    key The resource bundle key for the usage message. -->
+<!ELEMENT usage (#PCDATA)>
+    <!ATTLIST usage
+        key CDATA #IMPLIED >
+
+<!--
+End of file
+-->

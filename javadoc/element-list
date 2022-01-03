@@ -1,0 +1,6 @@
+module:org.tquadrat.foundation.config
+org.tquadrat.foundation.config
+org.tquadrat.foundation.config.cli
+org.tquadrat.foundation.config.internal
+org.tquadrat.foundation.config.spi
+org.tquadrat.foundation.config.spi.prefs

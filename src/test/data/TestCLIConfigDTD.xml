@@ -1,0 +1,17 @@
+<?xml version="1.0" 
+      encoding="UTF-8"?>
+<!DOCTYPE cliDefinition SYSTEM "CLIDefinition.dtd" >
+<cliDefinition>
+    <option handler="org.tquadrat.foundation.ui.cli.StringValueHandler" 
+            propertyName="option"
+            name="--option" 
+            type="java.lang.String">
+        <alias name="-o"/>
+        <alias name="-1"/>
+        <format/>
+        <usage key=""/>
+    </option>
+    <argument index="0"
+              propertyName="argument"
+              type="java.lang.String"/>
+</cliDefinition>

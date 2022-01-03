@@ -1,0 +1,7 @@
+# This is an argument file for testing
+--option=value
+--option
+value
+# Comments are allowed
+argument
+Also sentences with blanks are allowed

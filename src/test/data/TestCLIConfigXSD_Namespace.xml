@@ -1,0 +1,24 @@
+<?xml version="1.0"
+      encoding="UTF-8"?>
+<cli:cliDefinition xmlns:cli="http://dtd.tquadrat.org/CLIDefinition"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://dtd.tquadrat.org/CLIDefinition CLIDefinition.xsd ">
+    <cli:option cli:name="--option"
+                cli:handler="org.tquadrat.foundation.ui.cli.StringValueHandler" 
+                cli:isMultiValue="false" 
+                cli:isRequired="true"
+                cli:propertyName="option"
+                cli:type="java.lang.String">
+        <cli:alias cli:name="-o"/>
+        <cli:alias cli:name="-1"/>
+        <cli:usage cli:key="key">option usage</cli:usage>
+    </cli:option>
+    <cli:argument cli:index="0"
+                  cli:isMultiValue="false"
+                  cli:isRequired="false"
+                  cli:propertyName="argument"
+                  cli:type="java.lang.String">
+        <cli:format>format</cli:format>
+        <cli:usage cli:key="key">argument usage</cli:usage>
+    </cli:argument>
+</cli:cliDefinition>

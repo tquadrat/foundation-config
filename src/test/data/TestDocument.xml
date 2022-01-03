@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<document name="Test">
+  <title>Test Document</title>
+  <chapter id="chapter_1">
+    <title>Title Chapter 1</title>
+      <paragraph>Text</paragraph>
+      <paragraph><link url="#chapter_2">Chapter 2</link></paragraph>
+  </chapter>
+  <chapter id="chapter_2">
+    <title>Title Chapter 2</title>
+      <paragraph>Text</paragraph>
+  </chapter>
+</document>

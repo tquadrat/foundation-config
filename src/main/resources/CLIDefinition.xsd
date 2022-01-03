@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://dtd.tquadrat.org/CLIDefinition"
+            targetNamespace="http://dtd.tquadrat.org/CLIDefinition"
+            elementFormDefault="qualified">
+
+<!--
+============================================================================
+Copyright © 2002-2021 by Thomas Thrien.
+All Rights Reserved.
+============================================================================
+Licensed to the public under the agreements of the GNU Lesser General Public
+License, version 3.0 (the "License"). You may obtain a copy of the License at
+
+      http://www.gnu.org/licenses/lgpl.html
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+-->
+<!-- $Id: CLIDefinition.xsd 907 2021-05-05 23:09:17Z tquadrat $ -->
+
+    <!-- The root element -->
+    <xsd:element name="cliDefinition"
+                 type="cliDefinitionType" >
+      <xsd:annotation>
+        <xsd:documentation>This is the root element for a CLI Definition</xsd:documentation>
+      </xsd:annotation></xsd:element>
+
+    <!-- The type definitions -->
+    <xsd:complexType name="aliasType">
+        <xsd:annotation>
+            <xsd:documentation>An optional alias for an option</xsd:documentation>
+        </xsd:annotation>
+        <xsd:attribute ref="name" />
+    </xsd:complexType>
+
+    <xsd:complexType name="argumentType">
+        <xsd:annotation>
+            <xsd:documentation>The definition for a CLI Argument</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="format"
+                         type="formatType"
+                         maxOccurs="1"
+                         minOccurs="0" />
+            <xsd:element name="usage"
+                         type="usageType"
+                         maxOccurs="1"
+                         minOccurs="0" />
+        </xsd:sequence>
+        <xsd:attribute ref="propertyName" />
+        <xsd:attribute ref="type" />
+        <xsd:attribute ref="index" />
+        <xsd:attribute ref="handler" />
+        <xsd:attribute ref="isRequired" />
+        <xsd:attribute ref="isMultiValue" />
+        <xsd:attribute ref="metaVar" />
+        <xsd:attribute ref="stringConversion" />
+    </xsd:complexType>
+
+    <xsd:complexType name="cliDefinitionType">
+        <xsd:annotation>
+            <xsd:documentation>The document definition</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="option"
+                         type="optionType"
+                         maxOccurs="unbounded"
+                         minOccurs="0" />
+            <xsd:element name="argument"
+                         type="argumentType"
+                         maxOccurs="unbounded"
+                         minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="formatType">
+        <xsd:annotation>
+            <xsd:documentation>The optional format for the argument or option</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+
+    <xsd:complexType name="optionType">
+        <xsd:annotation>
+            <xsd:documentation>The definition for a CLI Option</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="alias"
+                         type="aliasType"
+                         maxOccurs="unbounded"
+                         minOccurs="0" />
+            <xsd:element name="format"
+                         type="formatType"
+                         maxOccurs="1"
+                         minOccurs="0" />
+            <xsd:element name="usage"
+                         type="usageType"
+                         maxOccurs="1"
+                         minOccurs="0" />
+        </xsd:sequence>
+        <xsd:attribute ref="propertyName" />
+        <xsd:attribute ref="type" />
+        <xsd:attribute ref="name" />
+        <xsd:attribute ref="handler" />
+        <xsd:attribute ref="isRequired" />
+        <xsd:attribute ref="isMultiValue" />
+        <xsd:attribute ref="metaVar" />
+        <xsd:attribute ref="stringConversion" />
+    </xsd:complexType>
+
+    <xsd:complexType name="usageType">
+        <xsd:annotation>
+            <xsd:documentation>The optional usage message; can be empty</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute ref="key"
+                               use="optional" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <!-- The attribute definitions -->
+    <xsd:attribute name="handler">
+        <xsd:annotation>
+            <xsd:documentation>The fully qualified name of the Java class for the value handler</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:whiteSpace value="collapse"/>
+                <xsd:minLength value="1" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:attribute>
+
+    <xsd:attribute name="index">
+        <xsd:annotation>
+            <xsd:documentation>The zero based index for arguments on the command line</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:int">
+                <xsd:minInclusive value="0" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:attribute>
+
+    <xsd:attribute name="isMultiValue"
+                   type="xsd:boolean" >
+        <xsd:annotation>
+            <xsd:documentation>true if the command line value is multi-valued; usually used for List types</xsd:documentation>
+        </xsd:annotation>
+    </xsd:attribute>
+
+    <xsd:attribute name="isRequired"
+                   type="xsd:boolean" >
+        <xsd:annotation>
+            <xsd:documentation>true for a mandatory option or argument.
+The default is true for arguments and false for options.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:attribute>
+
+    <xsd:attribute name="key"
+                   type="xsd:string">
+        <xsd:annotation>
+            <xsd:documentation>The resource bundle key for the usage message</xsd:documentation>
+        </xsd:annotation>
+    </xsd:attribute>
+
+    <xsd:attribute name="metaVar">
+        <xsd:annotation>
+            <xsd:documentation>The meta variable for the value</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:whiteSpace value="collapse" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:attribute>
+
+    <xsd:attribute name="name">
+        <xsd:annotation>
+            <xsd:documentation>The name for an option</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:whiteSpace value="collapse" />
+                <xsd:minLength value="1" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:attribute>
+
+    <xsd:attribute name="propertyName">
+        <xsd:annotation>
+            <xsd:documentation>The name of the property; this is how the value is referenced by the program</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:minLength value="1" />
+                <xsd:whiteSpace value="collapse" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:attribute>
+
+    <xsd:attribute name="stringConversion">
+        <xsd:annotation>
+            <xsd:documentation>The fully qualified name of the Java class for the string converter</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:whiteSpace value="collapse"/>
+                <xsd:minLength value="1" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:attribute>
+
+    <xsd:attribute name="type">
+        <xsd:annotation>
+            <xsd:documentation>The property's data type as a fully qualified Java class name</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:minLength value="1" />
+                <xsd:whiteSpace value="collapse" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:attribute>
+</xsd:schema>
+
+<!--
+End of file
+-->

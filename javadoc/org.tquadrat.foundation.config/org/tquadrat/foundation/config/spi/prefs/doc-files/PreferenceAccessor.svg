@@ -1,0 +1,1239 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version='1.1'
+     baseProfile='full'
+     width='23488.000'
+     height='805.000'>
+    <defs>
+        <style><![CDATA[
+            line
+            {
+              stroke: black;
+            }
+            line.separator
+            {
+              stroke:       black;
+              stroke-width: 1;
+            }
+            marker
+            {
+              fill: white;
+            }
+            path
+            {
+              fill:   white;
+              stroke: black;
+            }
+            path.implementation
+            {
+              fill:             none;
+              stroke-dasharray: 5,5;
+              stroke-width:     3;
+            }
+            path.inheritance
+            {
+              fill:         none;
+              stroke-width: 3;
+            }
+            rect
+            {
+              fill:         none;
+              stroke:       black;
+              stroke-width: 2;
+            }
+            rect.externalClass
+            {
+              fill:         #D0D0D0;
+              fill-opacity: 0.8;
+            }
+            rect.focusClass
+            {
+              fill:         #FFFFF9;
+              fill-opacity: 0.8;
+            }
+            rect.otherClass
+            {
+              fill:         #F0E68C;
+              fill-opacity: 0.8;
+            }
+            rect.template
+            {
+              fill:             #FFFFFF;
+              fill-opacity:     1.0;
+              stroke-dasharray: 3,3;
+            }
+            text
+            {
+              font-family: monospace;
+              font-size:   10px;
+              font-weight: bold;
+            }
+            text.abstract
+            {
+              font-style: italic;
+            }
+            text.final
+            {
+              text-decoration: underline;
+            }
+            text.static
+            {
+              font-weight: normal;
+            }
+            text.stereotype
+            {
+              font-size:   8px;
+              font-weight: normal;
+            }
+            ]]></style>
+        <marker id='inheritance'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <marker id='implementation'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <clipPath id='ID000001'>
+            <rect class='focusClass'
+                  height='150.000'
+                  width='916.000'
+                  x='0.000'
+                  y='8.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.PreferenceAccessor'>
+            <g>
+                <g class='focusClass'
+                   clip-path='url(#ID000001)'>
+                    <rect x='0.000'
+                          y='8.000'
+                          width='916.000'
+                          height='150.000'
+                          class='focusClass'/>
+                    <line x1='0.000'
+                          y1='36.000'
+                          x2='916.000'
+                          y2='36.000'
+                          class='separator'/>
+                    <text x='443.600'
+                          y='21.000'
+                          class='stereotype'>&#xAB;Type&#xBB;</text>
+                    <text x='404.000'
+                          y='32.000'
+                          class='abstract'>PreferenceAccessor</text>
+                    <line x1='0.000'
+                          y1='75.000'
+                          x2='916.000'
+                          y2='75.000'
+                          class='separator'/>
+                    <text y='49.000'
+                          class='final'>- m_Getter:org.tquadrat.foundation.function.Getter&lt;T&gt;</text>
+                    <text y='60.000'
+                          class='final'>- m_PropertyName:java.lang.String</text>
+                    <text y='71.000'
+                          class='final'>- m_Setter:org.tquadrat.foundation.function.Setter&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='88.000'># PreferenceAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;T&gt;,setter:org.tquadrat.foundation.function.Setter&lt;T&gt;)</text>
+                    <text x='5.000'
+                          y='99.000'>+ getPropertyName():java.lang.String</text>
+                    <text x='5.000'
+                          y='110.000'># getter():org.tquadrat.foundation.function.Getter&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='121.000'># hasKey(node:java.util.prefs.Preferences):boolean</text>
+                    <text x='5.000'
+                          y='132.000'
+                          class='abstract'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='143.000'># setter():org.tquadrat.foundation.function.Setter&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='154.000'
+                          class='abstract'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+                <g transform='translate(891.000 0.000)'>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='template'/>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='focusClass'
+                          stroke='none'
+                          stroke-opacity='0.0'/>
+                    <text x='5.000'
+                          y='14.000'>T</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000002'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1144.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.PrimitiveBooleanAccessor'>
+            <g>
+                <g clip-path='url(#ID000002)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1144.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1144.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='500.000'
+                          y='13.000'>PrimitiveBooleanAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1144.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ PrimitiveBooleanAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Boolean&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Boolean&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000003'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1054.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.FloatAccessor'>
+            <g>
+                <g clip-path='url(#ID000003)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1054.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1054.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='488.000'
+                          y='13.000'>FloatAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1054.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ FloatAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Float&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Float&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000004'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1054.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.ShortAccessor'>
+            <g>
+                <g clip-path='url(#ID000004)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1054.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1054.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='488.000'
+                          y='13.000'>ShortAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1054.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ ShortAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Short&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Short&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000005'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1072.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.StringAccessor'>
+            <g>
+                <g clip-path='url(#ID000005)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1072.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1072.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='494.000'
+                          y='13.000'>StringAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1072.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ StringAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.String&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.String&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000006'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1090.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.BooleanAccessor'>
+            <g>
+                <g clip-path='url(#ID000006)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1090.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1090.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='500.000'
+                          y='13.000'>BooleanAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1090.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ BooleanAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Boolean&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Boolean&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000007'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1090.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.PrimitiveByteAccessor'>
+            <g>
+                <g clip-path='url(#ID000007)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1090.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1090.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='482.000'
+                          y='13.000'>PrimitiveByteAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1090.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ PrimitiveByteAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Byte&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Byte&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000008'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1072.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.DoubleAccessor'>
+            <g>
+                <g clip-path='url(#ID000008)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1072.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1072.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='494.000'
+                          y='13.000'>DoubleAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1072.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ DoubleAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Double&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Double&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000009'>
+            <rect class='otherClass'
+                  height='117.000'
+                  width='1300.000'
+                  x='0.000'
+                  y='8.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.CollectionAccessor'>
+            <g>
+                <g clip-path='url(#ID000009)'>
+                    <rect x='0.000'
+                          y='8.000'
+                          width='1300.000'
+                          height='117.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='36.000'
+                          x2='1300.000'
+                          y2='36.000'
+                          class='separator'/>
+                    <text x='635.600'
+                          y='21.000'
+                          class='stereotype'>&#xAB;Type&#xBB;</text>
+                    <text x='596.000'
+                          y='32.000'
+                          class='abstract'>CollectionAccessor</text>
+                    <line x1='0.000'
+                          y1='53.000'
+                          x2='1300.000'
+                          y2='53.000'
+                          class='separator'/>
+                    <text y='49.000'
+                          class='final'>- m_StringConverter:org.tquadrat.foundation.lang.StringConverter&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='66.000'># CollectionAccessor(propertyName:java.lang.String,stringConverter:org.tquadrat.foundation.lang.StringConverter&lt;T&gt;,getter:org.tquadrat.foundation.function.Getter&lt;C&gt;,setter:org.tquadrat.foundation.function.Setter&lt;C&gt;)</text>
+                    <text x='5.000'
+                          y='77.000'># fromString(node:java.util.prefs.Preferences,index:int,s:java.lang.String):T</text>
+                    <text x='5.000'
+                          y='88.000'
+                          class='abstract'># createCollection(size:int):C</text>
+                    <text x='5.000'
+                          y='99.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='110.000'># toString(t:T):java.lang.String</text>
+                    <text x='5.000'
+                          y='121.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+                <g transform='translate(1275.000 0.000)'>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='template'/>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='otherClass'
+                          stroke='none'
+                          stroke-opacity='0.0'/>
+                    <text x='5.000'
+                          y='14.000'>T,C</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000010'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1126.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.PrimitiveDoubleAccessor'>
+            <g>
+                <g clip-path='url(#ID000010)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1126.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1126.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='494.000'
+                          y='13.000'>PrimitiveDoubleAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1126.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ PrimitiveDoubleAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Double&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Double&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000011'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1090.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.PrimitiveLongAccessor'>
+            <g>
+                <g clip-path='url(#ID000011)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1090.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1090.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='482.000'
+                          y='13.000'>PrimitiveLongAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1090.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ PrimitiveLongAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Long&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Long&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000012'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1108.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.PrimitiveFloatAccessor'>
+            <g>
+                <g clip-path='url(#ID000012)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1108.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1108.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='488.000'
+                          y='13.000'>PrimitiveFloatAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1108.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ PrimitiveFloatAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Float&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Float&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000013'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1036.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.ByteAccessor'>
+            <g>
+                <g clip-path='url(#ID000013)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1036.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1036.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='482.000'
+                          y='13.000'>ByteAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1036.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ ByteAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Byte&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Byte&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000014'>
+            <rect class='otherClass'
+                  height='106.000'
+                  width='1894.000'
+                  x='0.000'
+                  y='8.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.MapAccessor'>
+            <g>
+                <g clip-path='url(#ID000014)'>
+                    <rect x='0.000'
+                          y='8.000'
+                          width='1894.000'
+                          height='106.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='25.000'
+                          x2='1894.000'
+                          y2='25.000'
+                          class='separator'/>
+                    <text x='914.000'
+                          y='21.000'>MapAccessor</text>
+                    <line x1='0.000'
+                          y1='53.000'
+                          x2='1894.000'
+                          y2='53.000'
+                          class='separator'/>
+                    <text y='38.000'
+                          class='final'>- m_KeyStringConverter:org.tquadrat.foundation.lang.StringConverter&lt;K&gt;</text>
+                    <text y='49.000'
+                          class='final'>- m_ValueStringConverter:org.tquadrat.foundation.lang.StringConverter&lt;V&gt;</text>
+                    <text x='5.000'
+                          y='66.000'>+ MapAccessor(propertyName:java.lang.String,keyStringConverter:org.tquadrat.foundation.lang.StringConverter&lt;K&gt;,valueStringConverter:org.tquadrat.foundation.lang.StringConverter&lt;V&gt;,getter:org.tquadrat.foundation.function.Getter&lt;java.util.Map&lt;K,V&gt;&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.util.Map&lt;K,V&gt;&gt;)</text>
+                    <text x='5.000'
+                          y='77.000'>- fromStringMap(node:java.util.prefs.Preferences,map:java.util.Map&lt;java.lang.String,java.lang.String&gt;):java.util.Map&lt;K,V&gt;</text>
+                    <text x='5.000'
+                          y='88.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='99.000'>- toStringMap(map:java.util.Map&lt;? extends K,? extends V&gt;):java.util.Map&lt;java.lang.String,java.lang.String&gt;</text>
+                    <text x='5.000'
+                          y='110.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+                <g transform='translate(1869.000 0.000)'>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='template'/>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='otherClass'
+                          stroke='none'
+                          stroke-opacity='0.0'/>
+                    <text x='5.000'
+                          y='14.000'>K,V</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000015'>
+            <rect class='otherClass'
+                  height='106.000'
+                  width='928.000'
+                  x='0.000'
+                  y='8.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.BulkDataAccessorBase'>
+            <g>
+                <g clip-path='url(#ID000015)'>
+                    <rect x='0.000'
+                          y='8.000'
+                          width='928.000'
+                          height='106.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='36.000'
+                          x2='928.000'
+                          y2='36.000'
+                          class='separator'/>
+                    <text x='449.600'
+                          y='21.000'
+                          class='stereotype'>&#xAB;Type&#xBB;</text>
+                    <text x='404.000'
+                          y='32.000'
+                          class='abstract'>BulkDataAccessorBase</text>
+                    <line x1='0.000'
+                          y1='53.000'
+                          x2='928.000'
+                          y2='53.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='49.000'/>
+                    <text x='5.000'
+                          y='66.000'># BulkDataAccessorBase(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;T&gt;,setter:org.tquadrat.foundation.function.Setter&lt;T&gt;)</text>
+                    <text x='5.000'
+                          y='77.000'
+                          class='abstract'># fromByteArray(node:java.util.prefs.Preferences,source:byte[]):T</text>
+                    <text x='5.000'
+                          y='88.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='99.000'
+                          class='abstract'># toByteArray(node:java.util.prefs.Preferences,source:T):byte[]</text>
+                    <text x='5.000'
+                          y='110.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+                <g transform='translate(903.000 0.000)'>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='template'/>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='otherClass'
+                          stroke='none'
+                          stroke-opacity='0.0'/>
+                    <text x='5.000'
+                          y='14.000'>T</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000016'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1036.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.LongAccessor'>
+            <g>
+                <g clip-path='url(#ID000016)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1036.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1036.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='482.000'
+                          y='13.000'>LongAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1036.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ LongAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Long&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Long&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000017'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1120.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.PrimitiveIntAccessor'>
+            <g>
+                <g clip-path='url(#ID000017)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1120.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1120.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='500.000'
+                          y='13.000'>PrimitiveIntAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1120.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ PrimitiveIntAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Integer&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Integer&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000018'>
+            <rect class='otherClass'
+                  height='106.000'
+                  width='940.000'
+                  x='0.000'
+                  y='8.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.PreferenceAccessorBase'>
+            <g>
+                <g clip-path='url(#ID000018)'>
+                    <rect x='0.000'
+                          y='8.000'
+                          width='940.000'
+                          height='106.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='36.000'
+                          x2='940.000'
+                          y2='36.000'
+                          class='separator'/>
+                    <text x='455.600'
+                          y='21.000'
+                          class='stereotype'>&#xAB;Type&#xBB;</text>
+                    <text x='404.000'
+                          y='32.000'
+                          class='abstract'>PreferenceAccessorBase</text>
+                    <line x1='0.000'
+                          y1='53.000'
+                          x2='940.000'
+                          y2='53.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='49.000'/>
+                    <text x='5.000'
+                          y='66.000'># PreferenceAccessorBase(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;T&gt;,setter:org.tquadrat.foundation.function.Setter&lt;T&gt;)</text>
+                    <text x='5.000'
+                          y='77.000'
+                          class='abstract'># fromString(node:java.util.prefs.Preferences,s:java.lang.String):T</text>
+                    <text x='5.000'
+                          y='88.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='99.000'
+                          class='abstract'># toString(t:T):java.lang.String</text>
+                    <text x='5.000'
+                          y='110.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+                <g transform='translate(915.000 0.000)'>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='template'/>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='otherClass'
+                          stroke='none'
+                          stroke-opacity='0.0'/>
+                    <text x='5.000'
+                          y='14.000'>T</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000019'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1036.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.DateAccessor'>
+            <g>
+                <g clip-path='url(#ID000019)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1036.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1036.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='482.000'
+                          y='13.000'>DateAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1036.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ DateAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.util.Date&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.util.Date&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000020'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1090.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.IntegerAccessor'>
+            <g>
+                <g clip-path='url(#ID000020)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1090.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1090.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='500.000'
+                          y='13.000'>IntegerAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1090.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ IntegerAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Integer&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Integer&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000021'>
+            <rect class='otherClass'
+                  height='73.000'
+                  width='1108.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.spi.prefs.PrimitiveShortAccessor'>
+            <g>
+                <g clip-path='url(#ID000021)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1108.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1108.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='488.000'
+                          y='13.000'>PrimitiveShortAccessor</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1108.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ PrimitiveShortAccessor(propertyName:java.lang.String,getter:org.tquadrat.foundation.function.Getter&lt;java.lang.Short&gt;,setter:org.tquadrat.foundation.function.Setter&lt;java.lang.Short&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ readPreference(node:java.util.prefs.Preferences):void</text>
+                    <text x='5.000'
+                          y='69.000'>+ writePreference(node:java.util.prefs.Preferences):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000022'>
+            <rect class='externalClass'
+                  height='172.000'
+                  width='244.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.Object'>
+            <g>
+                <g clip-path='url(#ID000022)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='244.000'
+                          height='172.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='244.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='104.000'
+                          y='13.000'>Object</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='244.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ Object()</text>
+                    <text x='5.000'
+                          y='58.000'>+ getClass():java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='69.000'>+ hashCode():int</text>
+                    <text x='5.000'
+                          y='80.000'>+ equals(arg0:java.lang.Object):boolean</text>
+                    <text x='5.000'
+                          y='91.000'># clone():java.lang.Object</text>
+                    <text x='5.000'
+                          y='102.000'>+ toString():java.lang.String</text>
+                    <text x='5.000'
+                          y='113.000'>+ notify():void</text>
+                    <text x='5.000'
+                          y='124.000'>+ notifyAll():void</text>
+                    <text x='5.000'
+                          y='135.000'>+ wait():void</text>
+                    <text x='5.000'
+                          y='146.000'>+ wait(arg0:long):void</text>
+                    <text x='5.000'
+                          y='157.000'>+ wait(arg0:long,arg1:int):void</text>
+                    <text x='5.000'
+                          y='168.000'># finalize():void</text>
+                </g>
+            </g>
+        </symbol>
+    </defs>
+    <path class='inheritance'
+          d='M597.000,555.000 c0.000,-85.000,10849.500,0.000,10849.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M1746.000,555.000 c0.000,-85.000,9730.500,0.000,9730.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M2850.000,555.000 c0.000,-85.000,8656.500,0.000,8656.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M3963.000,555.000 c0.000,-85.000,7573.500,0.000,7573.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M5094.000,555.000 c0.000,-85.000,6472.500,0.000,6472.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M6234.000,555.000 c0.000,-85.000,5362.500,0.000,5362.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M7365.000,555.000 c0.000,-85.000,4261.500,0.000,4261.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M8601.000,563.000 c0.000,-93.000,3055.500,0.000,3055.500,-93.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M9889.000,555.000 c0.000,-85.000,1797.500,0.000,1797.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M11047.000,555.000 c0.000,-85.000,669.500,0.000,669.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M12196.000,555.000 c0.000,-85.000,-449.500,0.000,-449.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M13318.000,555.000 c0.000,-85.000,-1541.500,0.000,-1541.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M14833.000,563.000 c0.000,-93.000,-3026.500,0.000,-3026.500,-93.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M16319.000,563.000 c0.000,-93.000,-4482.500,0.000,-4482.500,-93.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M17376.000,555.000 c0.000,-85.000,-5509.500,0.000,-5509.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M18504.000,555.000 c0.000,-85.000,-6607.500,0.000,-6607.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M19584.000,563.000 c0.000,-93.000,-7657.500,0.000,-7657.500,-93.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M20647.000,555.000 c0.000,-85.000,-8690.500,0.000,-8690.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M21760.000,555.000 c0.000,-85.000,-9773.500,0.000,-9773.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M22909.000,555.000 c0.000,-85.000,-10892.500,0.000,-10892.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M11731.500,305.000 c0.000,-93.000,12.500,0.000,12.500,-93.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <use x='11622.000'
+         y='25.000'
+         xlink:href='#java.lang.Object'/>
+    <use x='11273.500'
+         y='297.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.PreferenceAccessor'/>
+    <use x='25.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.PrimitiveBooleanAccessor'/>
+    <use x='1219.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.FloatAccessor'/>
+    <use x='2323.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.ShortAccessor'/>
+    <use x='3427.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.StringAccessor'/>
+    <use x='4549.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.BooleanAccessor'/>
+    <use x='5689.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.PrimitiveByteAccessor'/>
+    <use x='6829.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.DoubleAccessor'/>
+    <use x='7951.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.CollectionAccessor'/>
+    <use x='9326.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.PrimitiveDoubleAccessor'/>
+    <use x='10502.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.PrimitiveLongAccessor'/>
+    <use x='11642.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.PrimitiveFloatAccessor'/>
+    <use x='12800.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.ByteAccessor'/>
+    <use x='13886.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.MapAccessor'/>
+    <use x='15855.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.BulkDataAccessorBase'/>
+    <use x='16858.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.LongAccessor'/>
+    <use x='17944.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.PrimitiveIntAccessor'/>
+    <use x='19114.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.PreferenceAccessorBase'/>
+    <use x='20129.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.DateAccessor'/>
+    <use x='21215.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.IntegerAccessor'/>
+    <use x='22355.000'
+         y='555.000'
+         xlink:href='#org.tquadrat.foundation.config.spi.prefs.PrimitiveShortAccessor'/>
+</svg>

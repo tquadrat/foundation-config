@@ -1,0 +1,608 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version='1.1'
+     baseProfile='full'
+     width='1158.000'
+     height='1998.000'>
+    <defs>
+        <style><![CDATA[
+            line
+            {
+              stroke: black;
+            }
+            line.separator
+            {
+              stroke:       black;
+              stroke-width: 1;
+            }
+            marker
+            {
+              fill: white;
+            }
+            path
+            {
+              fill:   white;
+              stroke: black;
+            }
+            path.implementation
+            {
+              fill:             none;
+              stroke-dasharray: 5,5;
+              stroke-width:     3;
+            }
+            path.inheritance
+            {
+              fill:         none;
+              stroke-width: 3;
+            }
+            rect
+            {
+              fill:         none;
+              stroke:       black;
+              stroke-width: 2;
+            }
+            rect.externalClass
+            {
+              fill:         #D0D0D0;
+              fill-opacity: 0.8;
+            }
+            rect.focusClass
+            {
+              fill:         #FFFFF9;
+              fill-opacity: 0.8;
+            }
+            rect.otherClass
+            {
+              fill:         #F0E68C;
+              fill-opacity: 0.8;
+            }
+            rect.template
+            {
+              fill:             #FFFFFF;
+              fill-opacity:     1.0;
+              stroke-dasharray: 3,3;
+            }
+            text
+            {
+              font-family: monospace;
+              font-size:   10px;
+              font-weight: bold;
+            }
+            text.abstract
+            {
+              font-style: italic;
+            }
+            text.final
+            {
+              text-decoration: underline;
+            }
+            text.static
+            {
+              font-weight: normal;
+            }
+            text.stereotype
+            {
+              font-size:   8px;
+              font-weight: normal;
+            }
+            ]]></style>
+        <marker id='inheritance'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <marker id='implementation'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <clipPath id='ID000001'>
+            <rect class='focusClass'
+                  height='447.000'
+                  width='1108.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.CmdLineException'>
+            <g>
+                <g class='focusClass'
+                   clip-path='url(#ID000001)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1108.000'
+                          height='447.000'
+                          class='focusClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='1108.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='527.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Exception&#xBB;</text>
+                    <text x='506.000'
+                          y='24.000'>CmdLineException</text>
+                    <line x1='0.000'
+                          y1='320.000'
+                          x2='1108.000'
+                          y2='320.000'
+                          class='separator'/>
+                    <text y='41.000'
+                          class='static final'>+ MSG_Aborted:java.lang.String</text>
+                    <text y='52.000'
+                          class='static final'>+ MSG_ArgumentMissing:java.lang.String</text>
+                    <text y='63.000'
+                          class='static final'>+ MSG_IllegalOperand:java.lang.String</text>
+                    <text y='74.000'
+                          class='static final'>+ MSG_InvalidFileName:java.lang.String</text>
+                    <text y='85.000'
+                          class='static final'>+ MSG_InvalidFormat:java.lang.String</text>
+                    <text y='96.000'
+                          class='static final'>+ MSG_MissingOperand:java.lang.String</text>
+                    <text y='107.000'
+                          class='static final'>+ MSG_NoArgumentAllowed:java.lang.String</text>
+                    <text y='118.000'
+                          class='static final'>+ MSG_OptionInvalid:java.lang.String</text>
+                    <text y='129.000'
+                          class='static final'>+ MSG_OptionMissing:java.lang.String</text>
+                    <text y='140.000'
+                          class='static final'>+ MSG_ParseFailed:java.lang.String</text>
+                    <text y='151.000'
+                          class='static final'>+ MSG_TooManyArguments:java.lang.String</text>
+                    <text y='162.000'
+                          class='static final'>+ MSGKEY_Aborted:int</text>
+                    <text y='173.000'
+                          class='static final'>+ MSGKEY_ArgumentMissing:int</text>
+                    <text y='184.000'
+                          class='static final'>+ MSGKEY_IllegalOperand:int</text>
+                    <text y='195.000'
+                          class='static final'>+ MSGKEY_InvalidFileName:int</text>
+                    <text y='206.000'
+                          class='static final'>+ MSGKEY_InvalidFormat:int</text>
+                    <text y='217.000'
+                          class='static final'>+ MSGKEY_MissingOperand:int</text>
+                    <text y='228.000'
+                          class='static final'>+ MSGKEY_NoArgumentAllowed:int</text>
+                    <text y='239.000'
+                          class='static final'>+ MSGKEY_OptionInvalid:int</text>
+                    <text y='250.000'
+                          class='static final'>+ MSGKEY_OptionMissing:int</text>
+                    <text y='261.000'
+                          class='static final'>+ MSGKEY_ParseFailed:int</text>
+                    <text y='272.000'
+                          class='static final'>+ MSGKEY_TooManyArguments:int</text>
+                    <text y='283.000'
+                          class='final'>- m_CLIDefinition:java.util.Optional&lt;org.tquadrat.foundation.config.spi.CLIDefinition&gt;</text>
+                    <text y='294.000'
+                          class='final'>- m_MessageArguments:java.lang.Object[]</text>
+                    <text y='305.000'
+                          class='final'>- m_MessageKey:int</text>
+                    <text y='316.000'
+                          class='static final'>- serialVersionUID:long</text>
+                    <text x='5.000'
+                          y='333.000'>+ CmdLineException(message:java.lang.String,messageKey:int,messageArguments:java.lang.Object&#x2026;)</text>
+                    <text x='5.000'
+                          y='344.000'>+ CmdLineException(cliDefinition:org.tquadrat.foundation.config.spi.CLIDefinition,message:java.lang.String,messageKey:int,messageArguments:java.lang.Object&#x2026;)</text>
+                    <text x='5.000'
+                          y='355.000'>+ CmdLineException(message:java.lang.String,cause:java.lang.Throwable,messageKey:int,messageArguments:java.lang.Object&#x2026;)</text>
+                    <text x='5.000'
+                          y='366.000'>+ CmdLineException(cliDefinition:org.tquadrat.foundation.config.spi.CLIDefinition,message:java.lang.String,cause:java.lang.Throwable,messageKey:int,messageArguments:java.lang.Object&#x2026;)</text>
+                    <text x='5.000'
+                          y='377.000'>+ CmdLineException(cause:java.lang.Throwable)</text>
+                    <text x='5.000'
+                          y='388.000'>+ CmdLineException(cliDefinition:org.tquadrat.foundation.config.spi.CLIDefinition,cause:java.lang.Throwable)</text>
+                    <text x='5.000'
+                          y='399.000'>+ fillInStackTrace():java.lang.Throwable</text>
+                    <text x='5.000'
+                          y='410.000'>+ getCLIDefinition():java.util.Optional&lt;org.tquadrat.foundation.config.spi.CLIDefinition&gt;</text>
+                    <text x='5.000'
+                          y='421.000'>+ getLocalizedMessage():java.lang.String</text>
+                    <text x='5.000'
+                          y='432.000'>+ getMessageArguments():java.lang.Object[]</text>
+                    <text x='5.000'
+                          y='443.000'>+ getMessageKey():int</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000002'>
+            <rect class='externalClass'
+                  height='95.000'
+                  width='424.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.exception.ValidationException'>
+            <g>
+                <g clip-path='url(#ID000002)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='424.000'
+                          height='95.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='424.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='185.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Exception&#xBB;</text>
+                    <text x='155.000'
+                          y='24.000'>ValidationException</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='424.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text y='41.000'
+                          class='static final'>+ MSG_ValidationFailed:java.lang.String</text>
+                    <text x='5.000'
+                          y='58.000'>+ ValidationException()</text>
+                    <text x='5.000'
+                          y='69.000'>+ ValidationException(arg0:java.lang.String)</text>
+                    <text x='5.000'
+                          y='80.000'>+ ValidationException(arg0:java.lang.String,arg1:java.lang.Throwable)</text>
+                    <text x='5.000'
+                          y='91.000'>+ ValidationException(arg0:java.lang.Throwable)</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000003'>
+            <rect class='externalClass'
+                  height='95.000'
+                  width='454.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.IllegalArgumentException'>
+            <g>
+                <g clip-path='url(#ID000003)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='454.000'
+                          height='95.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='454.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='200.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Exception&#xBB;</text>
+                    <text x='155.000'
+                          y='24.000'>IllegalArgumentException</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='454.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'>&#x2026;</text>
+                    <text x='5.000'
+                          y='58.000'>+ IllegalArgumentException()</text>
+                    <text x='5.000'
+                          y='69.000'>+ IllegalArgumentException(arg0:java.lang.String)</text>
+                    <text x='5.000'
+                          y='80.000'>+ IllegalArgumentException(arg0:java.lang.String,arg1:java.lang.Throwable)</text>
+                    <text x='5.000'
+                          y='91.000'>+ IllegalArgumentException(arg0:java.lang.Throwable)</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000004'>
+            <rect class='externalClass'
+                  height='106.000'
+                  width='562.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.RuntimeException'>
+            <g>
+                <g clip-path='url(#ID000004)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='562.000'
+                          height='106.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='562.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='254.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Exception&#xBB;</text>
+                    <text x='233.000'
+                          y='24.000'>RuntimeException</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='562.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'>&#x2026;</text>
+                    <text x='5.000'
+                          y='58.000'>+ RuntimeException()</text>
+                    <text x='5.000'
+                          y='69.000'>+ RuntimeException(arg0:java.lang.String)</text>
+                    <text x='5.000'
+                          y='80.000'>+ RuntimeException(arg0:java.lang.String,arg1:java.lang.Throwable)</text>
+                    <text x='5.000'
+                          y='91.000'>+ RuntimeException(arg0:java.lang.Throwable)</text>
+                    <text x='5.000'
+                          y='102.000'># RuntimeException(arg0:java.lang.String,arg1:java.lang.Throwable,arg2:boolean,arg3:boolean)</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000005'>
+            <rect class='externalClass'
+                  height='95.000'
+                  width='520.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.Exception'>
+            <g>
+                <g clip-path='url(#ID000005)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='520.000'
+                          height='95.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='520.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='233.000'
+                          y='13.000'>Exception</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='520.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'>&#x2026;</text>
+                    <text x='5.000'
+                          y='47.000'>+ Exception()</text>
+                    <text x='5.000'
+                          y='58.000'>+ Exception(arg0:java.lang.String)</text>
+                    <text x='5.000'
+                          y='69.000'>+ Exception(arg0:java.lang.String,arg1:java.lang.Throwable)</text>
+                    <text x='5.000'
+                          y='80.000'>+ Exception(arg0:java.lang.Throwable)</text>
+                    <text x='5.000'
+                          y='91.000'># Exception(arg0:java.lang.String,arg1:java.lang.Throwable,arg2:boolean,arg3:boolean)</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000006'>
+            <rect class='externalClass'
+                  height='238.000'
+                  width='520.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.Throwable'>
+            <g>
+                <g clip-path='url(#ID000006)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='520.000'
+                          height='238.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='520.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='233.000'
+                          y='13.000'>Throwable</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='520.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'>&#x2026;</text>
+                    <text x='5.000'
+                          y='47.000'>+ Throwable()</text>
+                    <text x='5.000'
+                          y='58.000'>+ Throwable(arg0:java.lang.String)</text>
+                    <text x='5.000'
+                          y='69.000'>+ Throwable(arg0:java.lang.String,arg1:java.lang.Throwable)</text>
+                    <text x='5.000'
+                          y='80.000'>+ Throwable(arg0:java.lang.Throwable)</text>
+                    <text x='5.000'
+                          y='91.000'># Throwable(arg0:java.lang.String,arg1:java.lang.Throwable,arg2:boolean,arg3:boolean)</text>
+                    <text x='5.000'
+                          y='102.000'>+ getMessage():java.lang.String</text>
+                    <text x='5.000'
+                          y='113.000'>+ getLocalizedMessage():java.lang.String</text>
+                    <text x='5.000'
+                          y='124.000'>+ getCause():java.lang.Throwable</text>
+                    <text x='5.000'
+                          y='135.000'>+ initCause(arg0:java.lang.Throwable):java.lang.Throwable</text>
+                    <text x='5.000'
+                          y='146.000'>+ toString():java.lang.String</text>
+                    <text x='5.000'
+                          y='157.000'>+ printStackTrace():void</text>
+                    <text x='5.000'
+                          y='168.000'>+ printStackTrace(arg0:java.io.PrintStream):void</text>
+                    <text x='5.000'
+                          y='179.000'>+ printStackTrace(arg0:java.io.PrintWriter):void</text>
+                    <text x='5.000'
+                          y='190.000'>+ fillInStackTrace():java.lang.Throwable</text>
+                    <text x='5.000'
+                          y='201.000'>+ getStackTrace():java.lang.StackTraceElement[]</text>
+                    <text x='5.000'
+                          y='212.000'>+ setStackTrace(arg0:java.lang.StackTraceElement[]):void</text>
+                    <text x='5.000'
+                          y='223.000'>+ addSuppressed(arg0:java.lang.Throwable):void</text>
+                    <text x='5.000'
+                          y='234.000'>+ getSuppressed():java.lang.Throwable[]</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000007'>
+            <rect class='externalClass'
+                  height='172.000'
+                  width='244.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.Object'>
+            <g>
+                <g clip-path='url(#ID000007)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='244.000'
+                          height='172.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='244.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='104.000'
+                          y='13.000'>Object</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='244.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ Object()</text>
+                    <text x='5.000'
+                          y='58.000'>+ getClass():java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='69.000'>+ hashCode():int</text>
+                    <text x='5.000'
+                          y='80.000'>+ equals(arg0:java.lang.Object):boolean</text>
+                    <text x='5.000'
+                          y='91.000'># clone():java.lang.Object</text>
+                    <text x='5.000'
+                          y='102.000'>+ toString():java.lang.String</text>
+                    <text x='5.000'
+                          y='113.000'>+ notify():void</text>
+                    <text x='5.000'
+                          y='124.000'>+ notifyAll():void</text>
+                    <text x='5.000'
+                          y='135.000'>+ wait():void</text>
+                    <text x='5.000'
+                          y='146.000'>+ wait(arg0:long):void</text>
+                    <text x='5.000'
+                          y='157.000'>+ wait(arg0:long,arg1:int):void</text>
+                    <text x='5.000'
+                          y='168.000'># finalize():void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000008'>
+            <rect class='externalClass'
+                  height='62.000'
+                  width='82.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.io.Serializable'>
+            <g>
+                <g clip-path='url(#ID000008)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='82.000'
+                          height='62.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='82.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='14.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='5.000'
+                          y='24.000'
+                          class='abstract'>Serializable</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='82.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'/>
+                </g>
+            </g>
+        </symbol>
+    </defs>
+    <path class='inheritance'
+          d='M579.000,1426.000 L579.000,1326.000'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M579.000,1231.000 L579.000,1131.000'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M579.000,1036.000 L579.000,936.000'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M579.000,830.000 L579.000,730.000'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M579.000,635.000 L579.000,535.000'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M554.000,297.000 c0.000,-85.000,-264.500,0.000,-264.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='implementation'
+          d='M604.000,297.000 c0.000,-195.000,264.500,0.000,264.500,-195.000 v-15'
+          marker-end='url(#implementation)'/>
+    <use x='167.500'
+         y='25.000'
+         xlink:href='#java.lang.Object'/>
+    <use x='827.500'
+         y='25.000'
+         xlink:href='#java.io.Serializable'/>
+    <use x='319.000'
+         y='297.000'
+         xlink:href='#java.lang.Throwable'/>
+    <use x='319.000'
+         y='635.000'
+         xlink:href='#java.lang.Exception'/>
+    <use x='298.000'
+         y='830.000'
+         xlink:href='#java.lang.RuntimeException'/>
+    <use x='352.000'
+         y='1036.000'
+         xlink:href='#java.lang.IllegalArgumentException'/>
+    <use x='367.000'
+         y='1231.000'
+         xlink:href='#org.tquadrat.foundation.exception.ValidationException'/>
+    <use x='25.000'
+         y='1426.000'
+         xlink:href='#org.tquadrat.foundation.config.CmdLineException'/>
+</svg>
