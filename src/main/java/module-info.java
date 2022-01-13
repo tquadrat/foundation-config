@@ -31,9 +31,9 @@ module org.tquadrat.foundation.config
 
     //---* The foundation modules *--------------------------------------------
     requires org.tquadrat.foundation.base;
-    requires org.tquadrat.foundation.util;
-    requires org.tquadrat.foundation.i18n;
-    requires org.tquadrat.foundation.inifile;
+    requires transitive org.tquadrat.foundation.util;
+    requires transitive org.tquadrat.foundation.i18n;
+    requires transitive org.tquadrat.foundation.inifile;
 
     //---* The exports *-------------------------------------------------------
     exports org.tquadrat.foundation.config;
