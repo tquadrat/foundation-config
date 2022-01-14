@@ -30,8 +30,6 @@ module org.tquadrat.foundation.config
     requires java.scripting;
 
     //---* The foundation modules *--------------------------------------------
-    requires org.tquadrat.foundation.base;
-    requires transitive org.tquadrat.foundation.util;
     requires transitive org.tquadrat.foundation.i18n;
     requires transitive org.tquadrat.foundation.inifile;
 
