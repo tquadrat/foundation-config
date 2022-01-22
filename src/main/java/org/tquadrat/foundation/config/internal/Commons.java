@@ -60,7 +60,7 @@ public final class Commons
      *  module: {@value}.
      */
     @SuppressWarnings( "DefaultAnnotationParam" )
-    @BaseBundleName( defaultLanguage = "en", createResourceBundleProvider = false )
+    @BaseBundleName( defaultLanguage = "en" )
     public static final String BASE_BUNDLE_NAME = "org.tquadrat.foundation.config.MessagesAndTexts";
 
     /**
