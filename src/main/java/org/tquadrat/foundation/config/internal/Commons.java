@@ -42,12 +42,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  The internal tools for the configuration module.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Commons.java 892 2021-04-03 18:07:28Z tquadrat $
+ *  @version $Id: Commons.java 995 2022-01-23 01:09:35Z tquadrat $
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: Commons.java 892 2021-04-03 18:07:28Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Commons.java 995 2022-01-23 01:09:35Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @UseAdditionalTexts
 public final class Commons
