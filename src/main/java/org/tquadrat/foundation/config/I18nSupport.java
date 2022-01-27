@@ -56,13 +56,12 @@ import org.tquadrat.foundation.i18n.TextUse;
  *      the resource bundle property if it extends this interface!
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: I18nSupport.java 933 2021-07-03 13:32:17Z tquadrat $
+ *  @version $Id: I18nSupport.java 999 2022-01-27 23:23:26Z tquadrat $
  *  @since 0.0.2
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "InterfaceNeverImplemented" )
-@ClassVersion( sourceVersion = "$Id: I18nSupport.java 933 2021-07-03 13:32:17Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: I18nSupport.java 999 2022-01-27 23:23:26Z tquadrat $" )
 @API( status = STABLE, since = "0.0.2" )
 public interface I18nSupport extends ConfigBeanSpec
 {
@@ -128,7 +127,7 @@ public interface I18nSupport extends ConfigBeanSpec
     }   //  getString()
 
     /**
-     *  Returns the text for the key that will be composed from the given
+     *  Returns the text for the key that will be composed of the given
      *  components.
      *
      *  @param  sourceClass The class that defines the text.

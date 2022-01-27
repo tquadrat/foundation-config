@@ -39,12 +39,13 @@
  *      <li>The values can be read from the
  *      {@link java.util.prefs.Preferences Preferences}, and, in case of User
  *      Preferences, they can also stored there.</li>
+ *      <li>The values can be read from a Windows INI file, and they can be
+ *      persisted there, too.</li>
  *      <li>The values can be read from a
  *      {@linkplain java.util.Properties Java Properties}
  *      file.</li>
  *  </ul>
- *  <p>Other origins, like Windows INI files (read and write), XML, JSON and
- *  JavaScript are planned.</p>
+ *  <p>Other origins, like XML, JSON and JavaScript are planned.</p>
  *  <p>Unless otherwise stated, {@code null} argument values will cause
  *  methods and constructors of all classes in this package to throw an
  *  {@link java.lang.Exception Exception},
@@ -229,14 +230,17 @@
  *  values have to be String representations that can be translated to the type
  *  of the property by the respective
  *  {@link org.tquadrat.foundation.lang.StringConverter StringConverter}.</p>
- *  <p>An additional (or alternative) approach would be to provide a default or
- *  static method with the signature</p>
+ *  <p>An additional (or alternative) approach would be to provide a
+ *  {@code default} or {@code static} method with the signature</p>
  *
  *  <div class="source-container"><pre>Map&lt;String,Object&gt; initData() throws Exception</pre></div>
  *
  *  <p>with the configuration bean specification. This method returns the
  *  initialisation data for the configuration bean properties in a
  *  {@code Map}.</p>
+ *  <p>It is also possible to provide an implementation of the method in the
+ *  base class, then the declaration in the configuration bean specification
+ *  interface may be abstract (neither {@code static} nor {@code default}).</p>
  *  <p>The property name is the key for the {@code Map}, and the associated
  *  value is the value for the property, <i>as the proper type</i>, not as its
  *  String representation! Neither the key nor the value may be {@code null},

@@ -94,12 +94,13 @@ loadScripts(document, 'script');</script>
       <li>The values can be read from the
       <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.prefs/java/util/prefs/Preferences.html" title="class or interface in java.util.prefs" class="external-link"><code>Preferences</code></a>, and, in case of User
       Preferences, they can also stored there.</li>
+      <li>The values can be read from a Windows INI file, and they can be
+      persisted there, too.</li>
       <li>The values can be read from a
       <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Java Properties</a>
       file.</li>
   </ul>
-  <p>Other origins, like Windows INI files (read and write), XML, JSON and
-  JavaScript are planned.</p>
+  <p>Other origins, like XML, JSON and JavaScript are planned.</p>
   <p>Unless otherwise stated, <code>null</code> argument values will cause
   methods and constructors of all classes in this package to throw an
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link"><code>Exception</code></a>,
@@ -284,14 +285,17 @@ loadScripts(document, 'script');</script>
   values have to be String representations that can be translated to the type
   of the property by the respective
   <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/StringConverter.html" title="class or interface in org.tquadrat.foundation.lang" class="external-link"><code>StringConverter</code></a>.</p>
-  <p>An additional (or alternative) approach would be to provide a default or
-  static method with the signature</p>
+  <p>An additional (or alternative) approach would be to provide a
+  <code>default</code> or <code>static</code> method with the signature</p>
 
   <div class="source-container"><pre>Map&lt;String,Object&gt; initData() throws Exception</pre></div>
 
   <p>with the configuration bean specification. This method returns the
   initialisation data for the configuration bean properties in a
   <code>Map</code>.</p>
+  <p>It is also possible to provide an implementation of the method in the
+  base class, then the declaration in the configuration bean specification
+  interface may be abstract (neither <code>static</code> nor <code>default</code>).</p>
   <p>The property name is the key for the <code>Map</code>, and the associated
   value is the value for the property, <i>as the proper type</i>, not as its
   String representation! Neither the key nor the value may be <code>null</code>,
