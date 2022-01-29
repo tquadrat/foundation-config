@@ -241,7 +241,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="addListener(org.tquadrat.foundation.config.ConfigurationChangeListener)">
 <h3>addListener</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-76">addListener</a></span><wbr><span class="parameters">(<a href="ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config">ConfigurationChangeListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-75">addListener</a></span><wbr><span class="parameters">(<a href="ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config">ConfigurationChangeListener</a>&nbsp;listener)</span></div>
 <div class="block">Adds a new
   <a href="ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config"><code>ConfigurationChangeListener</code></a>
   to this configuration bean.</div>
@@ -254,7 +254,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="removeListener(org.tquadrat.foundation.config.ConfigurationChangeListener)">
 <h3>removeListener</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-85">removeListener</a></span><wbr><span class="parameters">(<a href="ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config">ConfigurationChangeListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-84">removeListener</a></span><wbr><span class="parameters">(<a href="ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config">ConfigurationChangeListener</a>&nbsp;listener)</span></div>
 <div class="block">Removes the given
   <a href="ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config"><code>ConfigurationChangeListener</code></a>
   from this configuration bean.</div>
@@ -269,7 +269,7 @@ loadScripts(document, 'script');</script>
 <h3>getCharset</h3>
 <div class="member-signature"><span class="annotations"><a href="SpecialProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SpecialProperty</a>(<a href="SpecialPropertyType.html#CONFIG_PROPERTY_CHARSET">CONFIG_PROPERTY_CHARSET</a>)
 <a href="ExemptFromToString.html" title="annotation interface in org.tquadrat.foundation.config">@ExemptFromToString</a>
-</span><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/Charset.html" title="class or interface in java.nio.charset" class="external-link">Charset</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-105">getCharset</a></span>()</div>
+</span><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/Charset.html" title="class or interface in java.nio.charset" class="external-link">Charset</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-104">getCharset</a></span>()</div>
 <div class="block">Returns the
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/Charset.html" title="class or interface in java.nio.charset" class="external-link"><code>Charset</code></a>
   that is used throughout the program run. If it was not modified by a
@@ -278,7 +278,7 @@ loadScripts(document, 'script');</script>
   this method will return the default <code>Charset</code> or a
   <code>Charset</code> that was previously stored as a preference value, if
   configured.<br>
-  <br>The <code>Charset</code> cannot by set via a self-defined command line
+  <br>The <code>Charset</code> cannot be set via a self-defined command line
   option, but through JVM options:
   <pre><code>java -Dfile.encoding=&lt;<i>charset</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre></div>
 <dl class="notes">
@@ -298,13 +298,13 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getLocale()">
 <h3>getLocale</h3>
 <div class="member-signature"><span class="annotations"><a href="SpecialProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SpecialProperty</a>(<a href="SpecialPropertyType.html#CONFIG_PROPERTY_LOCALE">CONFIG_PROPERTY_LOCALE</a>)
-</span><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-125">getLocale</a></span>()</div>
+</span><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-124">getLocale</a></span>()</div>
 <div class="block">Returns the locale that is used throughout the program run. If it was
   not modified by a call to
   <a href="#setLocale(java.util.Locale)"><code>setLocale(Locale)</code></a>
   this method will return the default locale or a locale that was
   previously stored as a preference value, if configured.<br>
-  <br>The locale cannot by set via a self-defined command line option,
+  <br>The locale cannot be set via a self-defined command line option,
   but through JVM options:
   <pre><code>java -Duser.country=&lt;<i>country_code</i>&gt; -Duser.language=&lt;<i>language_code</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre></div>
 <dl class="notes">
@@ -326,7 +326,7 @@ loadScripts(document, 'script');</script>
 <h3>getResourceBundle</h3>
 <div class="member-signature"><span class="annotations"><a href="SpecialProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SpecialProperty</a>(<a href="SpecialPropertyType.html#CONFIG_PROPERTY_RESOURCEBUNDLE">CONFIG_PROPERTY_RESOURCEBUNDLE</a>)
 <a href="ExemptFromToString.html" title="annotation interface in org.tquadrat.foundation.config">@ExemptFromToString</a>
-</span><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ResourceBundle.html" title="class or interface in java.util" class="external-link">ResourceBundle</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-161">getResourceBundle</a></span>()</div>
+</span><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ResourceBundle.html" title="class or interface in java.util" class="external-link">ResourceBundle</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-160">getResourceBundle</a></span>()</div>
 <div class="block"><p>Returns the
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ResourceBundle.html" title="class or interface in java.util" class="external-link"><code>ResourceBundle</code></a>
   that should be used to retrieve texts and messages for the
@@ -366,13 +366,13 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getTimezone()">
 <h3>getTimezone</h3>
 <div class="member-signature"><span class="annotations"><a href="SpecialProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SpecialProperty</a>(<a href="SpecialPropertyType.html#CONFIG_PROPERTY_TIMEZONE">CONFIG_PROPERTY_TIMEZONE</a>)
-</span><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/ZoneId.html" title="class or interface in java.time" class="external-link">ZoneId</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-180">getTimezone</a></span>()</div>
+</span><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/ZoneId.html" title="class or interface in java.time" class="external-link">ZoneId</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-179">getTimezone</a></span>()</div>
 <div class="block">Returns the time zone that is used throughout the program run. If it
   was not modified by a call to
   <a href="#setTimezone(java.time.ZoneId)"><code>setTimezone(ZoneId)</code></a>
   this method will return the default time zone or a time zone that was
   previously stored as a preference value, if configured.<br>
-  <br>The time zone cannot by set via a self-defined command line option,
+  <br>The time zone cannot be set via a self-defined command line option,
   but through JVM options:
   <pre><code>java -Duser.timezone=&lt;<i>zone_id</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre></div>
 <dl class="notes">
@@ -393,7 +393,7 @@ loadScripts(document, 'script');</script>
 <h3>isDebug</h3>
 <div class="member-signature"><span class="annotations"><a href="SystemProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SystemProperty</a>("isDebug")
 <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/PropertyName.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@PropertyName</a>("isDebug")
-</span><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-192">isDebug</a></span>()</div>
+</span><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-191">isDebug</a></span>()</div>
 <div class="block">Returns a flag that indicates whether the application should produce
   debug output of some kind.</div>
 <dl class="notes">
@@ -414,7 +414,7 @@ loadScripts(document, 'script');</script>
 <h3>isTest</h3>
 <div class="member-signature"><span class="annotations"><a href="SystemProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SystemProperty</a>("isTest")
 <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/PropertyName.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@PropertyName</a>("isTest")
-</span><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-205">isTest</a></span>()</div>
+</span><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-204">isTest</a></span>()</div>
 <div class="block">Returns a flag that indicates whether the application should produce
   test output of some kind.</div>
 <dl class="notes">
@@ -434,7 +434,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setCharset(java.nio.charset.Charset)">
 <h3>setCharset</h3>
 <div class="member-signature"><span class="annotations"><a href="SpecialProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SpecialProperty</a>(<a href="SpecialPropertyType.html#CONFIG_PROPERTY_CHARSET">CONFIG_PROPERTY_CHARSET</a>)
-</span><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-221">setCharset</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/Charset.html" title="class or interface in java.nio.charset" class="external-link">Charset</a>&nbsp;charset)</span></div>
+</span><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-220">setCharset</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/Charset.html" title="class or interface in java.nio.charset" class="external-link">Charset</a>&nbsp;charset)</span></div>
 <div class="block">Sets the
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/Charset.html" title="class or interface in java.nio.charset" class="external-link"><code>Charset</code></a>
   that should be used throughout the program run.<br>
@@ -457,7 +457,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setLocale(java.util.Locale)">
 <h3>setLocale</h3>
 <div class="member-signature"><span class="annotations"><a href="SpecialProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SpecialProperty</a>(<a href="SpecialPropertyType.html#CONFIG_PROPERTY_LOCALE">CONFIG_PROPERTY_LOCALE</a>)
-</span><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-234">setLocale</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale)</span></div>
+</span><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-233">setLocale</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale)</span></div>
 <div class="block">Sets the locale that should be used throughout the program run.<br>
   <br>Setting a new locale with this method will not change the system
   default locale.</div>
@@ -478,7 +478,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setTimezone(java.time.ZoneId)">
 <h3>setTimezone</h3>
 <div class="member-signature"><span class="annotations"><a href="SpecialProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SpecialProperty</a>(<a href="SpecialPropertyType.html#CONFIG_PROPERTY_TIMEZONE">CONFIG_PROPERTY_TIMEZONE</a>)
-</span><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-245">setTimezone</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/ZoneId.html" title="class or interface in java.time" class="external-link">ZoneId</a>&nbsp;timezone)</span></div>
+</span><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-244">setTimezone</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/ZoneId.html" title="class or interface in java.time" class="external-link">ZoneId</a>&nbsp;timezone)</span></div>
 <div class="block">Sets the time zone that should be used throughout the program run.<br>
   <br>Setting a new time zone with this method will not change the system
   default time zone.</div>

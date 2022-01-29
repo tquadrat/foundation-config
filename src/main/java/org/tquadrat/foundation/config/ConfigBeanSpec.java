@@ -58,7 +58,6 @@ import org.tquadrat.foundation.annotation.PropertyName;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "InterfaceNeverImplemented" )
 @ClassVersion( sourceVersion = "$Id: ConfigBeanSpec.java 925 2021-05-24 19:53:39Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface ConfigBeanSpec
@@ -93,7 +92,7 @@ public interface ConfigBeanSpec
      *  this method will return the default {@code Charset} or a
      *  {@code Charset} that was previously stored as a preference value, if
      *  configured.<br>
-     *  <br>The {@code Charset} cannot by set via a self-defined command line
+     *  <br>The {@code Charset} cannot be set via a self-defined command line
      *  option, but through JVM options:
      *  <pre><code>java -Dfile.encoding=&lt;<i>charset</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre>
      *
@@ -112,7 +111,7 @@ public interface ConfigBeanSpec
      *  {@link #setLocale(Locale)}
      *  this method will return the default locale or a locale that was
      *  previously stored as a preference value, if configured.<br>
-     *  <br>The locale cannot by set via a self-defined command line option,
+     *  <br>The locale cannot be set via a self-defined command line option,
      *  but through JVM options:
      *  <pre><code>java -Duser.country=&lt;<i>country_code</i>&gt; -Duser.language=&lt;<i>language_code</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre>
      *
@@ -168,7 +167,7 @@ public interface ConfigBeanSpec
      *  {@link #setTimezone(ZoneId)}
      *  this method will return the default time zone or a time zone that was
      *  previously stored as a preference value, if configured.<br>
-     *  <br>The time zone cannot by set via a self-defined command line option,
+     *  <br>The time zone cannot be set via a self-defined command line option,
      *  but through JVM options:
      *  <pre><code>java -Duser.timezone=&lt;<i>zone_id</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre>
      *

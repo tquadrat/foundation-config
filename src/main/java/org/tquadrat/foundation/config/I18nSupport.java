@@ -18,7 +18,7 @@
 package org.tquadrat.foundation.config;
 
 import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.i18n.I18nUtil.DEFAULT_MESSAGE_PREFIX;
+import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_MESSAGEPREFIX;
 import static org.tquadrat.foundation.i18n.I18nUtil.composeMessageKey;
 import static org.tquadrat.foundation.i18n.I18nUtil.composeTextKey;
 import static org.tquadrat.foundation.i18n.I18nUtil.createFallback;
@@ -107,7 +107,8 @@ public interface I18nSupport extends ConfigBeanSpec
      *
      *  @see org.tquadrat.foundation.i18n.MessagePrefix
      */
-    public default String getMessagePrefix() { return DEFAULT_MESSAGE_PREFIX; }
+    @SpecialProperty( CONFIG_PROPERTY_MESSAGEPREFIX )
+    public String getMessagePrefix();
 
     /**
      *  Returns the String representation for the given {@code enum}.

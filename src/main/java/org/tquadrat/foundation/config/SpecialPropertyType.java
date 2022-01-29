@@ -96,6 +96,16 @@ public enum SpecialPropertyType
     CONFIG_PROPERTY_LOCALE( "locale" ),
 
     /**
+     *  <p>{@summary The message prefix.}</p>
+     *  <p>A getter for this special property is added to a configuration bean
+     *  specification with the
+     *  {@link I18nSupport};
+     *  a setter for it is not allowed.</p>
+     */
+    @API( status = STABLE, since = "0.1.0" )
+    CONFIG_PROPERTY_MESSAGEPREFIX( "messagePrefix" ),
+
+    /**
      *  <p>{@summary The process id.}</p>
      *  <p>A getter for this special property can be added to a configuration
      *  bean specification; a setter for it is not allowed.</p>
