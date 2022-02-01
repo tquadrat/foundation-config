@@ -32,14 +32,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  The types of the special properties for a configuration bean.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SpecialPropertyType.java 920 2021-05-23 14:27:24Z tquadrat $
+ *  @version $Id: SpecialPropertyType.java 1001 2022-01-29 16:42:15Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  *
  *  @see SpecialProperty
  */
-@ClassVersion( sourceVersion = "$Id: SpecialPropertyType.java 920 2021-05-23 14:27:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SpecialPropertyType.java 1001 2022-01-29 16:42:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public enum SpecialPropertyType
 {

@@ -34,8 +34,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  {@link StringConverter}
  *  that is used to convert the value of annotated property into a String, or
  *  a String into the value.}</p>
- *  <p>If not applied, the respective implementation is derived from the type
- *  of the property; if this fails, no String conversion is used.</p>
+ *  <p>If not applied, an attempt is made to derive the respective
+ *  implementation from the type of the property; if this fails, no String
+ *  conversion is used.</p>
+ *  <p>If the relevant {@code StringConverter} is implemented in the current
+ *  project, it always has to be specified with this annotation, even when it
+ *  is published as a service.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: StringConversion.java 907 2021-05-05 23:09:17Z tquadrat $

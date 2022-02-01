@@ -53,12 +53,12 @@ import org.tquadrat.foundation.annotation.PropertyName;
  *  extend both.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigBeanSpec.java 925 2021-05-24 19:53:39Z tquadrat $
+ *  @version $Id: ConfigBeanSpec.java 1001 2022-01-29 16:42:15Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ConfigBeanSpec.java 925 2021-05-24 19:53:39Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigBeanSpec.java 1001 2022-01-29 16:42:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface ConfigBeanSpec
 {
