@@ -42,11 +42,11 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  is published as a service.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StringConversion.java 907 2021-05-05 23:09:17Z tquadrat $
+ *  @version $Id: StringConversion.java 1002 2022-02-01 21:33:00Z tquadrat $
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: StringConversion.java 907 2021-05-05 23:09:17Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StringConversion.java 1002 2022-02-01 21:33:00Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )
