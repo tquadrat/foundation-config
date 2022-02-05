@@ -53,12 +53,12 @@ import org.tquadrat.foundation.annotation.PropertyName;
  *  extend both.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigBeanSpec.java 1001 2022-01-29 16:42:15Z tquadrat $
+ *  @version $Id: ConfigBeanSpec.java 1010 2022-02-05 19:28:36Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ConfigBeanSpec.java 1001 2022-01-29 16:42:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigBeanSpec.java 1010 2022-02-05 19:28:36Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface ConfigBeanSpec
 {
@@ -188,7 +188,7 @@ public interface ConfigBeanSpec
      *
      *  @see org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_DEBUG
      */
-    @SystemProperty( PROPERTY_IS_DEBUG )
+    @SystemProperty( value = PROPERTY_IS_DEBUG, defaultValue = "false" )
     @PropertyName( "isDebug" )
     public boolean isDebug();
 
@@ -201,8 +201,8 @@ public interface ConfigBeanSpec
      *
      *  @see org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_TEST
      */
-    @SystemProperty( PROPERTY_IS_TEST )
-    @PropertyName( "isTest" )
+    @SystemProperty( value = PROPERTY_IS_TEST, defaultValue = "false"  )
+    @PropertyName( "isTest")
     public boolean isTest();
 
     /**

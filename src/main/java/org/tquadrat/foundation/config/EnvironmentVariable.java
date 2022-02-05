@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2022 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -46,12 +46,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  annotation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: EnvironmentVariable.java 907 2021-05-05 23:09:17Z tquadrat $
+ *  @version $Id: EnvironmentVariable.java 1010 2022-02-05 19:28:36Z tquadrat $
  *  @since 0.0.1
  *
  *  @see System#getenv(String)
  */
-@ClassVersion( sourceVersion = "$Id: EnvironmentVariable.java 907 2021-05-05 23:09:17Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnvironmentVariable.java 1010 2022-02-05 19:28:36Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )
@@ -61,6 +61,19 @@ public @interface EnvironmentVariable
         /*------------*\
     ====** Attributes **=======================================================
         \*------------*/
+    /**
+     *  <p>{@summary The default value for the environment variable.} It will
+     *  be used for the initialisation of the property if the environment
+     *  variable is not set.</p>
+     *  <p>It is mandatory to provide a default value for primitive type
+     *  properties.</p>
+     *  <p>The default setting is a String containing only a {@code NUL}; it
+     *  will be treated as _null</p>
+     *
+     *  @return The default value.
+     */
+    public String defaultValue() default "\0";
+
     /**
      *  The name for the environment variable to read.
      *

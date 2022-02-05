@@ -46,12 +46,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  annotation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SystemProperty.java 942 2021-12-20 02:04:04Z tquadrat $
+ *  @version $Id: SystemProperty.java 1010 2022-02-05 19:28:36Z tquadrat $
  *  @since 0.0.1
  *
  *  @see System#getProperty(String)
  */
-@ClassVersion( sourceVersion = "$Id: SystemProperty.java 942 2021-12-20 02:04:04Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SystemProperty.java 1010 2022-02-05 19:28:36Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )
@@ -61,6 +61,19 @@ public @interface SystemProperty
         /*------------*\
     ====** Attributes **=======================================================
         \*------------*/
+    /**
+     *  <p>{@summary The default value for the system property.} It will
+     *  be used for the initialisation of the property if the system property
+     *  is not set.</p>
+     *  <p>It is mandatory to provide a default value for primitive type
+     *  properties.</p>
+     *  <p>The default setting is a String containing only a {@code NUL}; it
+     *  will be treated as _null</p>
+     *
+     *  @return The default value.
+     */
+    public String defaultValue() default "\0";
+
     /**
      *  The name for the system property to read.
      *

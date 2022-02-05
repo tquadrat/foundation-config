@@ -92,7 +92,7 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="CLIBean.html" title="interface in org.tquadrat.foundation.config">CLIBean</a></code>, <code><a href="CLIBeanSpec.html" title="interface in org.tquadrat.foundation.config">CLIBeanSpec</a></code>, <code><a href="ConfigBeanBase.html" title="interface in org.tquadrat.foundation.config">ConfigBeanBase</a></code>, <code><a href="I18nSupport.html" title="interface in org.tquadrat.foundation.config">I18nSupport</a></code>, <code><a href="INIBeanSpec.html" title="interface in org.tquadrat.foundation.config">INIBeanSpec</a></code>, <code><a href="PreferencesBean.html" title="interface in org.tquadrat.foundation.config">PreferencesBean</a></code>, <code><a href="PreferencesBeanSpec.html" title="interface in org.tquadrat.foundation.config">PreferencesBeanSpec</a></code>, <code><a href="SessionBean.html" title="interface in org.tquadrat.foundation.config">SessionBean</a></code>, <code><a href="SessionBeanSpec.html" title="interface in org.tquadrat.foundation.config">SessionBeanSpec</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: ConfigBeanSpec.java 1001 2022-01-29 16:42:15Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: ConfigBeanSpec.java 1010 2022-02-05 19:28:36Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
 </span><span class="modifiers">public interface </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-61">ConfigBeanSpec</a></span></div>
@@ -114,7 +114,7 @@ loadScripts(document, 'script');</script>
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: ConfigBeanSpec.java 1001 2022-01-29 16:42:15Z tquadrat $</dd>
+<dd>$Id: ConfigBeanSpec.java 1010 2022-02-05 19:28:36Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.1.0</dd>
 
@@ -391,7 +391,8 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="isDebug()">
 <h3>isDebug</h3>
-<div class="member-signature"><span class="annotations"><a href="SystemProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SystemProperty</a>("isDebug")
+<div class="member-signature"><span class="annotations"><a href="SystemProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SystemProperty</a>(<a href="SystemProperty.html#value()">value</a>="isDebug",
+                <a href="SystemProperty.html#defaultValue()">defaultValue</a>="false")
 <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/PropertyName.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@PropertyName</a>("isDebug")
 </span><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-191">isDebug</a></span>()</div>
 <div class="block">Returns a flag that indicates whether the application should produce
@@ -412,7 +413,8 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="isTest()">
 <h3>isTest</h3>
-<div class="member-signature"><span class="annotations"><a href="SystemProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SystemProperty</a>("isTest")
+<div class="member-signature"><span class="annotations"><a href="SystemProperty.html" title="annotation interface in org.tquadrat.foundation.config">@SystemProperty</a>(<a href="SystemProperty.html#value()">value</a>="isTest",
+                <a href="SystemProperty.html#defaultValue()">defaultValue</a>="false")
 <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/PropertyName.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@PropertyName</a>("isTest")
 </span><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/ConfigBeanSpec.html#line-204">isTest</a></span>()</div>
 <div class="block">Returns a flag that indicates whether the application should produce
