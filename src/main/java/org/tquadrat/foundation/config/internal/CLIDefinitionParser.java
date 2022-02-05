@@ -90,13 +90,13 @@ import org.xml.sax.SAXParseException;
  *  Parses an XML CLI definition file.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CLIDefinitionParser.java 941 2021-12-18 22:34:37Z tquadrat $
+ *  @version $Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"OverlyComplexClass", "ClassWithTooManyMethods"} )
-@ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 941 2021-12-18 22:34:37Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public final class CLIDefinitionParser
 {
@@ -110,12 +110,12 @@ public final class CLIDefinitionParser
      *  {@link SAXParseException}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: CLIDefinitionParser.java 941 2021-12-18 22:34:37Z tquadrat $
+     *  @version $Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 941 2021-12-18 22:34:37Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     public static final class ExceptionLocation implements Location
     {
@@ -180,12 +180,12 @@ public final class CLIDefinitionParser
      *  for this parser.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: CLIDefinitionParser.java 941 2021-12-18 22:34:37Z tquadrat $
+     *  @version $Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 941 2021-12-18 22:34:37Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     private static class CLIDefinitionResolver implements XMLResolver
     {
@@ -1482,7 +1482,7 @@ public final class CLIDefinitionParser
     {
         final Optional<Class<? extends CmdLineValueHandler<?>>> retValue = requireNonNullArgument( propertyClass, "propertyClass" ).isEnum()
             ? Optional.empty()
-            : Optional.ofNullable( m_HandlerClasses.get( propertyClass.getName() ) );
+            : Optional.ofNullable( m_HandlerClasses.get( propertyClass ) );
 
         //---* Done *----------------------------------------------------------
         return retValue;

@@ -77,14 +77,14 @@ import org.w3c.dom.Document;
  *  additional settings.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ClassRegistry.java 914 2021-05-07 21:22:12Z tquadrat $
+ *  @version $Id: ClassRegistry.java 1005 2022-02-03 12:40:52Z tquadrat $
  *
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @SuppressWarnings( {"UseOfObsoleteDateTimeApi", "OverlyCoupledClass"} )
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: ClassRegistry.java 914 2021-05-07 21:22:12Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ClassRegistry.java 1005 2022-02-03 12:40:52Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class ClassRegistry
 {
@@ -95,51 +95,51 @@ public final class ClassRegistry
      *  The handler classes.
      */
     @API( status = INTERNAL, since = "0.1.0" )
-    public static final Map<String,Class<? extends CmdLineValueHandler<?>>> m_HandlerClasses;
+    public static final Map<Class<?>,Class<? extends CmdLineValueHandler<?>>> m_HandlerClasses;
 
     /**
      *  The preferences accessor classes.
      */
     @API( status = INTERNAL, since = "0.1.0" )
-    public static final Map<String,Class<? extends PreferenceAccessor<?>>> m_PrefsAccessorClasses;
+    public static final Map<Class<?>,Class<? extends PreferenceAccessor<?>>> m_PrefsAccessorClasses;
 
     static
     {
         m_HandlerClasses = Map.ofEntries
         (
-            entry( boolean.class.getName(), BooleanValueHandler.class ),
-            entry( Boolean.class.getName(), BooleanValueHandler.class ),
-            entry( BufferedImage.class.getName(), ImageValueHandler.class ),
-            entry( Date.class.getName(), DateValueHandler.class ),
-            entry( Document.class.getName(), DocumentValueHandler.class ),
-            entry( Instant.class.getName(), InstantValueHandler.class ),
-            entry( LocalDate.class.getName(), LocalDateValueHandler.class ),
-            entry( LocalDateTime.class.getName(), LocalDateTimeValueHandler.class ),
-            entry( LocalTime.class.getName(), LocalDateTimeValueHandler.class ),
-            entry( String.class.getName(), StringValueHandler.class ),
-            entry( YearMonth.class.getName(), YearMonthValueHandler.class ),
-            entry( Year.class.getName(), YearValueHandler.class ),
-            entry( ZonedDateTime.class.getName(), ZonedDateTimeValueHandler.class )
+            entry( boolean.class, BooleanValueHandler.class ),
+            entry( Boolean.class, BooleanValueHandler.class ),
+            entry( BufferedImage.class, ImageValueHandler.class ),
+            entry( Date.class, DateValueHandler.class ),
+            entry( Document.class, DocumentValueHandler.class ),
+            entry( Instant.class, InstantValueHandler.class ),
+            entry( LocalDate.class, LocalDateValueHandler.class ),
+            entry( LocalDateTime.class, LocalDateTimeValueHandler.class ),
+            entry( LocalTime.class, LocalDateTimeValueHandler.class ),
+            entry( String.class, StringValueHandler.class ),
+            entry( YearMonth.class, YearMonthValueHandler.class ),
+            entry( Year.class, YearValueHandler.class ),
+            entry( ZonedDateTime.class, ZonedDateTimeValueHandler.class )
         );
 
         m_PrefsAccessorClasses = Map.ofEntries
         (
-            entry( boolean.class.getName(), PrimitiveBooleanAccessor.class ),
-            entry( Boolean.class.getName(), BooleanAccessor.class ),
-            entry( BufferedImage.class.getName(), ImageAccessor.class ),
-            entry( byte.class.getName(), PrimitiveByteAccessor.class ),
-            entry( Byte.class.getName(), ByteAccessor.class ),
-            entry( Date.class.getName(), DateAccessor.class ),
-            entry( double.class.getName(), PrimitiveDoubleAccessor.class ),
-            entry( Double.class.getName(), DoubleAccessor.class ),
-            entry( Float.class.getName(), FloatAccessor.class ),
-            entry( int.class.getName(), PrimitiveIntAccessor.class ),
-            entry( Integer.class.getName(), IntegerAccessor.class ),
-            entry( long.class.getName(), PrimitiveLongAccessor.class ),
-            entry( Long.class.getName(), LongAccessor.class ),
-            entry( short.class.getName(), PrimitiveShortAccessor.class ),
-            entry( Short.class.getName(), ShortAccessor.class ),
-            entry( String.class.getName(), StringAccessor.class )
+            entry( boolean.class, PrimitiveBooleanAccessor.class ),
+            entry( Boolean.class, BooleanAccessor.class ),
+            entry( BufferedImage.class, ImageAccessor.class ),
+            entry( byte.class, PrimitiveByteAccessor.class ),
+            entry( Byte.class, ByteAccessor.class ),
+            entry( Date.class, DateAccessor.class ),
+            entry( double.class, PrimitiveDoubleAccessor.class ),
+            entry( Double.class, DoubleAccessor.class ),
+            entry( Float.class, FloatAccessor.class ),
+            entry( int.class, PrimitiveIntAccessor.class ),
+            entry( Integer.class, IntegerAccessor.class ),
+            entry( long.class, PrimitiveLongAccessor.class ),
+            entry( Long.class, LongAccessor.class ),
+            entry( short.class, PrimitiveShortAccessor.class ),
+            entry( Short.class, ShortAccessor.class ),
+            entry( String.class, StringAccessor.class )
         );
     }
 

@@ -6,7 +6,7 @@
      xmlns:xlink="http://www.w3.org/1999/xlink"
      version='1.1'
      baseProfile='full'
-     width='936.000'
+     width='948.000'
      height='484.000'>
     <defs>
         <style><![CDATA[
@@ -119,7 +119,7 @@
         <clipPath id='ID000001'>
             <rect class='focusClass'
                   height='62.000'
-                  width='886.000'
+                  width='898.000'
                   x='0.000'
                   y='0.000'/>
         </clipPath>
@@ -129,25 +129,25 @@
                    clip-path='url(#ID000001)'>
                     <rect x='0.000'
                           y='0.000'
-                          width='886.000'
+                          width='898.000'
                           height='62.000'
                           class='focusClass'/>
                     <line x1='0.000'
                           y1='17.000'
-                          x2='886.000'
+                          x2='898.000'
                           y2='17.000'
                           class='separator'/>
-                    <text x='404.000'
+                    <text x='410.000'
                           y='13.000'>ClassRegistry</text>
                     <line x1='0.000'
                           y1='45.000'
-                          x2='886.000'
+                          x2='898.000'
                           y2='45.000'
                           class='separator'/>
                     <text y='30.000'
-                          class='static final'>+ m_HandlerClasses:java.util.Map&lt;java.lang.String,java.lang.Class&lt;? extends org.tquadrat.foundation.config.cli.CmdLineValueHandler&lt;?&gt;&gt;&gt;</text>
+                          class='static final'>+ m_HandlerClasses:java.util.Map&lt;java.lang.Class&lt;?&gt;,java.lang.Class&lt;? extends org.tquadrat.foundation.config.cli.CmdLineValueHandler&lt;?&gt;&gt;&gt;</text>
                     <text y='41.000'
-                          class='static final'>+ m_PrefsAccessorClasses:java.util.Map&lt;java.lang.String,java.lang.Class&lt;? extends org.tquadrat.foundation.config.spi.prefs.PreferenceAccessor&lt;?&gt;&gt;&gt;</text>
+                          class='static final'>+ m_PrefsAccessorClasses:java.util.Map&lt;java.lang.Class&lt;?&gt;,java.lang.Class&lt;? extends org.tquadrat.foundation.config.spi.prefs.PreferenceAccessor&lt;?&gt;&gt;&gt;</text>
                     <text x='5.000'
                           y='58.000'>- ClassRegistry()</text>
                 </g>
@@ -211,9 +211,9 @@
         </symbol>
     </defs>
     <path class='inheritance'
-          d='M468.000,297.000 L468.000,197.000'
+          d='M474.000,297.000 L474.000,197.000'
           marker-end='url(#inheritance)'/>
-    <use x='346.000'
+    <use x='352.000'
          y='25.000'
          xlink:href='#java.lang.Object'/>
     <use x='25.000'
