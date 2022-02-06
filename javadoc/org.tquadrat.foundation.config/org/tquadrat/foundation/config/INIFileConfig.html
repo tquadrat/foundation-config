@@ -148,8 +148,23 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="path()">
 <h3>path</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/INIFileConfig.html#line-79">path</a></span></div>
-<div class="block">The filename of the <code>INI</code> file.</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/INIFileConfig.html#line-94">path</a></span></div>
+<div class="block"><p>The filename of the <code>INI</code> file.</p>
+  <p>If the filename starts …</p>
+  <ul>
+      <li>… with <code>'/'</code> (on UNIX) or <code>'C:\'</code> (or another drive
+      letter on MS&nbsp;Windows) it represents an absolute path and will
+      be used as is.</li>
+      <li>… with the prefix <code>$USER/</code>, it will be resolved against the
+      home folder of the current user.</li>
+      <li>… with the prefix <code>${&lt;property&gt;}/</code>, it will be resolved
+      against the path that is represented by the property with the name
+      <code>&lt;property&gt;</code>. Obviously, the property has to be of type
+      <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link"><code>Path</code></a>,
+      otherwise the generated configuration bean will not compile.</li>
+  </ul>
+  <p>In any other case, the filename represents a relative path that is
+  resolved against the current working directory.</p></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The filename.</dd>

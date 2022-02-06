@@ -85,17 +85,32 @@
 <span class="source-line-no">072</span><span id="line-72">    public boolean mustExist() default false;</span>
 <span class="source-line-no">073</span><span id="line-73"></span>
 <span class="source-line-no">074</span><span id="line-74">    /**</span>
-<span class="source-line-no">075</span><span id="line-75">     *  The filename of the {@code INI} file.</span>
-<span class="source-line-no">076</span><span id="line-76">     *</span>
-<span class="source-line-no">077</span><span id="line-77">     *  @return The filename.</span>
-<span class="source-line-no">078</span><span id="line-78">     */</span>
-<span class="source-line-no">079</span><span id="line-79">    public String path();</span>
-<span class="source-line-no">080</span><span id="line-80">}</span>
-<span class="source-line-no">081</span><span id="line-81">//  @interface INIFileConfig</span>
-<span class="source-line-no">082</span><span id="line-82"></span>
-<span class="source-line-no">083</span><span id="line-83">/*</span>
-<span class="source-line-no">084</span><span id="line-84"> *  End of File</span>
-<span class="source-line-no">085</span><span id="line-85"> */</span>
+<span class="source-line-no">075</span><span id="line-75">     *  &lt;p&gt;{@summary The filename of the {@code INI} file.}&lt;/p&gt;</span>
+<span class="source-line-no">076</span><span id="line-76">     *  &lt;p&gt;If the filename starts …&lt;/p&gt;</span>
+<span class="source-line-no">077</span><span id="line-77">     *  &lt;ul&gt;</span>
+<span class="source-line-no">078</span><span id="line-78">     *      &lt;li&gt;… with {@code '/'} (on UNIX) or {@code 'C:\'} (or another drive</span>
+<span class="source-line-no">079</span><span id="line-79">     *      letter on MS&amp;nbsp;Windows) it represents an absolute path and will</span>
+<span class="source-line-no">080</span><span id="line-80">     *      be used as is.&lt;/li&gt;</span>
+<span class="source-line-no">081</span><span id="line-81">     *      &lt;li&gt;… with the prefix {@code $USER/}, it will be resolved against the</span>
+<span class="source-line-no">082</span><span id="line-82">     *      home folder of the current user.&lt;/li&gt;</span>
+<span class="source-line-no">083</span><span id="line-83">     *      &lt;li&gt;… with the prefix {@code ${&lt;property&gt;}/}, it will be resolved</span>
+<span class="source-line-no">084</span><span id="line-84">     *      against the path that is represented by the property with the name</span>
+<span class="source-line-no">085</span><span id="line-85">     *      {@code &lt;property&gt;}. Obviously, the property has to be of type</span>
+<span class="source-line-no">086</span><span id="line-86">     *      {@link java.nio.file.Path},</span>
+<span class="source-line-no">087</span><span id="line-87">     *      otherwise the generated configuration bean will not compile.&lt;/li&gt;</span>
+<span class="source-line-no">088</span><span id="line-88">     *  &lt;/ul&gt;</span>
+<span class="source-line-no">089</span><span id="line-89">     *  &lt;p&gt;In any other case, the filename represents a relative path that is</span>
+<span class="source-line-no">090</span><span id="line-90">     *  resolved against the current working directory.&lt;/p&gt;</span>
+<span class="source-line-no">091</span><span id="line-91">     *</span>
+<span class="source-line-no">092</span><span id="line-92">     *  @return The filename.</span>
+<span class="source-line-no">093</span><span id="line-93">     */</span>
+<span class="source-line-no">094</span><span id="line-94">    public String path();</span>
+<span class="source-line-no">095</span><span id="line-95">}</span>
+<span class="source-line-no">096</span><span id="line-96">//  @interface INIFileConfig</span>
+<span class="source-line-no">097</span><span id="line-97"></span>
+<span class="source-line-no">098</span><span id="line-98">/*</span>
+<span class="source-line-no">099</span><span id="line-99"> *  End of File</span>
+<span class="source-line-no">100</span><span id="line-100"> */</span>
 
 
 

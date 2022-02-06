@@ -72,7 +72,22 @@ public @interface INIFileConfig
     public boolean mustExist() default false;
 
     /**
-     *  The filename of the {@code INI} file.
+     *  <p>{@summary The filename of the {@code INI} file.}</p>
+     *  <p>If the filename starts …</p>
+     *  <ul>
+     *      <li>… with {@code '/'} (on UNIX) or {@code 'C:\'} (or another drive
+     *      letter on MS&nbsp;Windows) it represents an absolute path and will
+     *      be used as is.</li>
+     *      <li>… with the prefix {@code $USER/}, it will be resolved against the
+     *      home folder of the current user.</li>
+     *      <li>… with the prefix {@code ${<property>}/}, it will be resolved
+     *      against the path that is represented by the property with the name
+     *      {@code <property>}. Obviously, the property has to be of type
+     *      {@link java.nio.file.Path},
+     *      otherwise the generated configuration bean will not compile.</li>
+     *  </ul>
+     *  <p>In any other case, the filename represents a relative path that is
+     *  resolved against the current working directory.</p>
      *
      *  @return The filename.
      */
