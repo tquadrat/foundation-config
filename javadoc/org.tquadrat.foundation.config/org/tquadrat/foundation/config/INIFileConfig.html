@@ -74,7 +74,7 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: INIFileConfig.java 946 2021-12-23 14:48:19Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: INIFileConfig.java 1015 2022-02-09 08:25:36Z tquadrat $")
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#CLASS" title="class or interface in java.lang.annotation" class="external-link">CLASS</a>)
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE" title="class or interface in java.lang.annotation" class="external-link">TYPE</a>)
@@ -88,7 +88,7 @@ loadScripts(document, 'script');</script>
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: INIFileConfig.java 946 2021-12-23 14:48:19Z tquadrat $</dd>
+<dd>$Id: INIFileConfig.java 1015 2022-02-09 08:25:36Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.1.0</dd>
 </dl>
@@ -148,23 +148,33 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="path()">
 <h3>path</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/INIFileConfig.html#line-94">path</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/INIFileConfig.html#line-104">path</a></span></div>
 <div class="block"><p>The filename of the <code>INI</code> file.</p>
   <p>If the filename starts …</p>
   <ul>
       <li>… with <code>'/'</code> (on UNIX) or <code>'C:\'</code> (or another drive
       letter on MS&nbsp;Windows) it represents an absolute path and will
-      be used as is.</li>
+      be used as is.<br>
+      Sample: <code>/etc/configs/app.ini</code></li>
       <li>… with the prefix <code>$USER/</code>, it will be resolved against the
-      home folder of the current user.</li>
-      <li>… with the prefix <code>${&lt;property&gt;}/</code>, it will be resolved
+      home folder of the current user.<br>
+      Sample: <code>$USER/.config/app.ini</code><br>
+      On Ubuntu, and for the user otto, this resolves to
+      <code>/home/otto/.config/app.ini</code>.</li>
+      <li>… with the prefix <code>${&lt;property&gt;}</code>, it will be resolved
       against the path that is represented by the property with the name
       <code>&lt;property&gt;</code>. Obviously, the property has to be of type
       <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link"><code>Path</code></a>,
-      otherwise the generated configuration bean will not compile.</li>
+      otherwise the generated configuration bean will not compile.<br>
+      Sample: <code>${configPath}app.ini</code><br>
+      If <code>getConfigPath()</code> return <code>/opt/data/configs</code>, this
+      resolves to <code>/opt/data/configs/app.ini</code>.</li>
   </ul>
   <p>In any other case, the filename represents a relative path that is
-  resolved against the current working directory.</p></div>
+  resolved against the current working directory. So if the value is
+  <code>data/config/app.ini</code>, and the current working directory is
+  <code>/home/otto</code>, it resolves to
+  <code>/home/otto/config/app.ini</code>.</p></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The filename.</dd>

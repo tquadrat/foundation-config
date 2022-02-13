@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2022 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -90,13 +90,13 @@ import org.xml.sax.SAXParseException;
  *  Parses an XML CLI definition file.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $
+ *  @version $Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"OverlyComplexClass", "ClassWithTooManyMethods"} )
-@ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public final class CLIDefinitionParser
 {
@@ -110,12 +110,12 @@ public final class CLIDefinitionParser
      *  {@link SAXParseException}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $
+     *  @version $Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     public static final class ExceptionLocation implements Location
     {
@@ -180,12 +180,12 @@ public final class CLIDefinitionParser
      *  for this parser.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $
+     *  @version $Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1005 2022-02-03 12:40:52Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     private static class CLIDefinitionResolver implements XMLResolver
     {
@@ -399,7 +399,6 @@ public final class CLIDefinitionParser
      *      instance for the given input stream.
      *  @throws IOException Cannot read the given input stream.
      */
-    @SuppressWarnings( "resource" )
     private CLIDefinitionParser( final InputStream inputStream, final Map<String,Object> propertyMap ) throws XMLStreamException, IOException
     {
         m_PropertyMap = requireNonNullArgument( propertyMap, "propertyMap" );
@@ -442,7 +441,7 @@ public final class CLIDefinitionParser
      *  @throws IllegalArgumentException    A command line value handler
      *      instance cannot be created.
      */
-    @SuppressWarnings( {"unchecked", "rawtypes", "CastToConcreteClass"} )
+    @SuppressWarnings( {"unchecked", "rawtypes"} )
     private final <T> CmdLineValueHandler<T> createHandler( final Class<? extends T> type, final Class<?> processClass, final StringConverter<? extends T> stringConverter ) throws IllegalArgumentException
     {
         final var propertyTypeIsEnum = requireNonNullArgument( type, "type" ).isEnum();
@@ -747,7 +746,7 @@ public final class CLIDefinitionParser
      *  @throws XMLStreamException  A problem occurred while parsing the
      *      element.
      */
-    @SuppressWarnings( {"unchecked", "rawtypes", "SwitchStatementWithTooManyBranches", "NestedSwitchStatement"} )
+    @SuppressWarnings( {"SwitchStatementWithTooManyBranches", "NestedSwitchStatement"} )
     private CLIDefinition handleArgument( final StartElement element ) throws XMLStreamException
     {
         String format = null;
@@ -1029,7 +1028,7 @@ public final class CLIDefinitionParser
      *  @throws XMLStreamException  A problem occurred while parsing the
      *      element.
      */
-    @SuppressWarnings( {"unchecked", "rawtypes", "SwitchStatementWithTooManyBranches", "NestedSwitchStatement"} )
+    @SuppressWarnings( {"SwitchStatementWithTooManyBranches", "NestedSwitchStatement"} )
     private final CLIDefinition handleOption( final StartElement element ) throws XMLStreamException
     {
         String format = null;

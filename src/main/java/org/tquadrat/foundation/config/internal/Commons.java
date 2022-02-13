@@ -20,10 +20,10 @@ package org.tquadrat.foundation.config.internal;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.config.internal.MessageRegistry.MSG_REGISTRY_FALLBACK;
 import static org.tquadrat.foundation.config.internal.MessageRegistry.m_MessageRegistry;
-import static org.tquadrat.foundation.i18n.I18nUtil.loadResourceBundle;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.util.StringUtils.format;
 
+import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 import org.apiguardian.api.API;
@@ -42,12 +42,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  The internal tools for the configuration module.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Commons.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: Commons.java 1016 2022-02-09 16:51:08Z tquadrat $
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: Commons.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Commons.java 1016 2022-02-09 16:51:08Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @UseAdditionalTexts
 public final class Commons
@@ -83,7 +83,24 @@ public final class Commons
 
     static
     {
-        m_ResourceBundle = loadResourceBundle( BASE_BUNDLE_NAME ).orElseThrow( () -> new ExceptionInInitializerError( format( "Cannot load ResourceBundle '%s'", BASE_BUNDLE_NAME ) ) );
+        final var module = Commons.class.getModule();
+        try
+        {
+            if( module.isNamed() )
+            {
+                m_ResourceBundle = ResourceBundle.getBundle( BASE_BUNDLE_NAME, module );
+            }
+            else
+            {
+                m_ResourceBundle = ResourceBundle.getBundle( BASE_BUNDLE_NAME );
+            }
+        }
+        catch( final MissingResourceException e )
+        {
+            final var error = new ExceptionInInitializerError( format( "Cannot load ResourceBundle '%s'", BASE_BUNDLE_NAME ) );
+            error.initCause( e );
+            throw error;
+        }
     }
 
         /*--------------*\
@@ -110,7 +127,7 @@ public final class Commons
      *  @return The instance of
      *      {@link CmdLineException}.
      */
-    @SuppressWarnings( "rawtypes" )
+    @SuppressWarnings( {"rawtypes", "UseOfConcreteClass"} )
     public static final CmdLineException createException( final Class<? extends StringConverter> stringConverterClass, final Throwable cause, final String value )
     {
         final var entry = m_MessageRegistry.getOrDefault( requireNonNullArgument( stringConverterClass, "stringConverterClass" ), MSG_REGISTRY_FALLBACK );
