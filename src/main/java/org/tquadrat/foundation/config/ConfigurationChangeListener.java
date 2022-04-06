@@ -27,7 +27,8 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  <p>{@summary The definition of a listener for
- *  {@linkplain ConfigurationChangeEvent configuration change events}.} The
+ *  {@linkplain ConfigurationChangeEvent configuration change events}.}
+ *  The
  *  {@linkplain #propertyChange(ConfigurationChangeEvent) listener method}
  *  is called by
  *  {@link org.tquadrat.foundation.config.spi.ConfigChangeListenerSupport#fireEvent(String, Object, Object)}
@@ -37,13 +38,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      thread.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigurationChangeListener.java 930 2021-06-20 18:08:47Z tquadrat $
+ *  @version $Id: ConfigurationChangeListener.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "InterfaceNeverImplemented" )
-@ClassVersion( sourceVersion = "$Id: ConfigurationChangeListener.java 930 2021-06-20 18:08:47Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigurationChangeListener.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 @FunctionalInterface
 public interface ConfigurationChangeListener extends EventListener
@@ -62,6 +62,7 @@ public interface ConfigurationChangeListener extends EventListener
      *      {@link ConfigurationChangeEvent} object describing the event source
      *      and the property that has changed.
      */
+    @SuppressWarnings( "UseOfConcreteClass" )
     public void propertyChange( ConfigurationChangeEvent event );
 }
 //  interface ConfigurationChangeListener

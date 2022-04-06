@@ -19,7 +19,6 @@
 package org.tquadrat.foundation.config.spi;
 
 import static java.util.concurrent.Executors.newCachedThreadPool;
-import static java.util.stream.Collectors.toList;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
@@ -42,17 +41,17 @@ import org.tquadrat.foundation.config.ConfigurationChangeListener;
 import org.tquadrat.foundation.lang.AutoLock;
 
 /**
- *  Provides support the event handling to the configuration beans.
+ *  Provides support for the event handling to the configuration beans.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigChangeListenerSupport.java 930 2021-06-20 18:08:47Z tquadrat $
+ *  @version $Id: ConfigChangeListenerSupport.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ConfigChangeListenerSupport.java 930 2021-06-20 18:08:47Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigChangeListenerSupport.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
-public class ConfigChangeListenerSupport
+public final class ConfigChangeListenerSupport
 {
         /*------------*\
     ====** Attributes **=======================================================
@@ -68,7 +67,7 @@ public class ConfigChangeListenerSupport
     private final Collection<WeakReference<ConfigurationChangeListener>> m_Listeners = new ArrayList<>();
 
     /**
-     *  The read lock for the listener's registry.
+     *  The &quot;read&quot; lock for the listener's registry.
      */
     private final AutoLock m_ReadLock;
 
@@ -78,7 +77,7 @@ public class ConfigChangeListenerSupport
     private final ExecutorService m_ThreadPool;
 
     /**
-     *  The write lock for the listener's registry.
+     *  The &quot;write&quot; lock for the listener's registry.
      */
     private final AutoLock m_WriteLock;
 
@@ -102,7 +101,7 @@ public class ConfigChangeListenerSupport
 
         //---* Create the thread pool *----------------------------------------
         final var threadGroup = new ThreadGroup( format( "%s:Notifiers", getClass().getName()) );
-        final ThreadFactory threadFactory = r -> new Thread( threadGroup, r, format( "%s:Notifier", getClass().getName() ) );
+        final var threadFactory = (ThreadFactory) r -> new Thread( threadGroup, r, format( "%s:Notifier", getClass().getName() ) );
         m_ThreadPool = newCachedThreadPool( threadFactory );
     }   //  ConfigChangeListenerSupport()
 
@@ -117,12 +116,12 @@ public class ConfigChangeListenerSupport
     public final void addListener( final ConfigurationChangeListener listener )
     {
         requireNonNullArgument( listener, "listener" );
-        try( @SuppressWarnings( "unused" ) final var l = m_WriteLock.lock() )
+        try( final var ignored = m_WriteLock.lock() )
         {
             //---* Copy the current registry *---------------------------------
             final var copy = m_Listeners.stream()
                 .filter( r -> nonNull( r.get() ) )
-                .collect( toList() );
+                .toList();
 
             //---* Clear the current registry *--------------------------------
             m_Listeners.clear();
@@ -150,7 +149,7 @@ public class ConfigChangeListenerSupport
     {
         requireNotEmptyArgument( propertyName, "propertyName" );
 
-        try( @SuppressWarnings( "unused" ) final var l = m_ReadLock.lock() )
+        try( final var ignored = m_ReadLock.lock() )
         {
             if( !m_Listeners.isEmpty() )
             {
@@ -173,13 +172,13 @@ public class ConfigChangeListenerSupport
     {
         if( nonNull( listener ) )
         {
-            try( @SuppressWarnings( "unused" ) final var l = m_WriteLock.lock() )
+            try( final var ignored = m_WriteLock.lock() )
             {
                 //---* Copy the current registry *-----------------------------
                 final var copy = m_Listeners.stream()
                     .filter( r -> nonNull( r.get() ) )
                     .filter( r -> r.get() != listener )
-                    .collect( toList() );
+                    .toList();
 
                 //---* Clear the current registry *----------------------------
                 m_Listeners.clear();

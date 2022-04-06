@@ -33,14 +33,14 @@ import org.tquadrat.foundation.lang.Objects;
  *  bean is changed.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigurationChangeEvent.java 884 2021-03-22 18:02:51Z tquadrat $
+ *  @version $Id: ConfigurationChangeEvent.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ConfigurationChangeEvent.java 884 2021-03-22 18:02:51Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigurationChangeEvent.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
-public class ConfigurationChangeEvent extends EventObject
+public final class ConfigurationChangeEvent extends EventObject
 {
         /*------------*\
     ====** Attributes **=======================================================

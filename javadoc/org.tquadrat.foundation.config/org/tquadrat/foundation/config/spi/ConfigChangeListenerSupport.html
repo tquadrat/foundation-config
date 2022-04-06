@@ -88,17 +88,17 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: ConfigChangeListenerSupport.java 930 2021-06-20 18:08:47Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: ConfigChangeListenerSupport.java 1030 2022-04-06 13:42:02Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.1")
-</span><span class="modifiers">public class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-53">ConfigChangeListenerSupport</a></span>
+</span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-52">ConfigChangeListenerSupport</a></span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Provides support the event handling to the configuration beans.</div>
+<div class="block">Provides support for the event handling to the configuration beans.</div>
 <dl class="notes">
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: ConfigChangeListenerSupport.java 930 2021-06-20 18:08:47Z tquadrat $</dd>
+<dd>$Id: ConfigChangeListenerSupport.java 1030 2022-04-06 13:42:02Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.0.1</dd>
 
@@ -145,7 +145,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>private final <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html" title="class or interface in org.tquadrat.foundation.lang" class="external-link">AutoLock</a></code></div>
 <div class="col-second even-row-color"><code><a href="#m_ReadLock" class="member-name-link">m_ReadLock</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">The read lock for the listener's registry.</div>
+<div class="block">The &quot;read&quot; lock for the listener's registry.</div>
 </div>
 <div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ExecutorService</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#m_ThreadPool" class="member-name-link">m_ThreadPool</a></code></div>
@@ -155,7 +155,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>private final <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html" title="class or interface in org.tquadrat.foundation.lang" class="external-link">AutoLock</a></code></div>
 <div class="col-second even-row-color"><code><a href="#m_WriteLock" class="member-name-link">m_WriteLock</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">The write lock for the listener's registry.</div>
+<div class="block">The &quot;write&quot; lock for the listener's registry.</div>
 </div>
 </div>
 </section>
@@ -223,36 +223,36 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="m_Owner">
 <h3>m_Owner</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../ConfigBeanSpec.html" title="interface in org.tquadrat.foundation.config">ConfigBeanSpec</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-63">m_Owner</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../ConfigBeanSpec.html" title="interface in org.tquadrat.foundation.config">ConfigBeanSpec</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-62">m_Owner</a></span></div>
 <div class="block">The owner of this support component.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_Listeners">
 <h3>m_Listeners</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ref/WeakReference.html" title="class or interface in java.lang.ref" class="external-link">WeakReference</a>&lt;<a href="../ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config">ConfigurationChangeListener</a>&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-68">m_Listeners</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ref/WeakReference.html" title="class or interface in java.lang.ref" class="external-link">WeakReference</a>&lt;<a href="../ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config">ConfigurationChangeListener</a>&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-67">m_Listeners</a></span></div>
 <div class="block">The registry for the listeners.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_ReadLock">
 <h3>m_ReadLock</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html" title="class or interface in org.tquadrat.foundation.lang" class="external-link">AutoLock</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-73">m_ReadLock</a></span></div>
-<div class="block">The read lock for the listener's registry.</div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html" title="class or interface in org.tquadrat.foundation.lang" class="external-link">AutoLock</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-72">m_ReadLock</a></span></div>
+<div class="block">The &quot;read&quot; lock for the listener's registry.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_ThreadPool">
 <h3>m_ThreadPool</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ExecutorService</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-78">m_ThreadPool</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ExecutorService</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-77">m_ThreadPool</a></span></div>
 <div class="block">The thread pool for the notifier threads.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_WriteLock">
 <h3>m_WriteLock</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html" title="class or interface in org.tquadrat.foundation.lang" class="external-link">AutoLock</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-83">m_WriteLock</a></span></div>
-<div class="block">The write lock for the listener's registry.</div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html" title="class or interface in org.tquadrat.foundation.lang" class="external-link">AutoLock</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-82">m_WriteLock</a></span></div>
+<div class="block">The &quot;write&quot; lock for the listener's registry.</div>
 </section>
 </li>
 </ul>
@@ -266,7 +266,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;(org.tquadrat.foundation.config.ConfigBeanSpec)">
 <h3>ConfigChangeListenerSupport</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-94">ConfigChangeListenerSupport</a></span><wbr><span class="parameters">(<a href="../ConfigBeanSpec.html" title="interface in org.tquadrat.foundation.config">ConfigBeanSpec</a>&nbsp;owner)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-93">ConfigChangeListenerSupport</a></span><wbr><span class="parameters">(<a href="../ConfigBeanSpec.html" title="interface in org.tquadrat.foundation.config">ConfigBeanSpec</a>&nbsp;owner)</span></div>
 <div class="block">Creates a new <code>ConfigChangeListenerSupport</code> instance.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -286,7 +286,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="addListener(org.tquadrat.foundation.config.ConfigurationChangeListener)">
 <h3>addListener</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-117">addListener</a></span><wbr><span class="parameters">(<a href="../ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config">ConfigurationChangeListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-116">addListener</a></span><wbr><span class="parameters">(<a href="../ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config">ConfigurationChangeListener</a>&nbsp;listener)</span></div>
 <div class="block">Adds a new listener.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -297,7 +297,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="fireEvent(java.lang.String,java.lang.Object,java.lang.Object)">
 <h3>fireEvent</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-149">fireEvent</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName,
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-148">fireEvent</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;oldValue,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;newValue)</span></div>
 <div class="block">Fires the event to all registered listeners. Each listener will be
@@ -313,7 +313,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="removeListener(org.tquadrat.foundation.config.ConfigurationChangeListener)">
 <h3>removeListener</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-172">removeListener</a></span><wbr><span class="parameters">(<a href="../ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config">ConfigurationChangeListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/ConfigChangeListenerSupport.html#line-171">removeListener</a></span><wbr><span class="parameters">(<a href="../ConfigurationChangeListener.html" title="interface in org.tquadrat.foundation.config">ConfigurationChangeListener</a>&nbsp;listener)</span></div>
 <div class="block">Removes the given listener.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
