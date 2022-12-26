@@ -101,7 +101,7 @@ public final class MessageRegistry
      */
     @Message
     (
-        description = "The error message about about an illegal charset name on the command line.",
+        description = "The error message about an illegal charset name on the command line.",
         translations =
         {
             @Translation( language = "en", text = CharsetStringConverter.MSG_IllegalCharsetName ),
@@ -118,7 +118,7 @@ public final class MessageRegistry
      */
     @Message
     (
-        description = "The error message about about an invalid IP address or an unknown host name on the command line.",
+        description = "The error message about an invalid IP address or an unknown host name on the command line.",
         translations =
         {
             @Translation( language = "en", text = InetAddressStringConverter.MSG_InvalidAddress ),
@@ -135,7 +135,7 @@ public final class MessageRegistry
      */
     @Message
     (
-        description = "The error message about about an invalid character on the command line.",
+        description = "The error message about an invalid character on the command line.",
         translations =
         {
             @Translation( language = "en", text = CharacterStringConverter.MSG_InvalidCharacter ),
@@ -152,11 +152,11 @@ public final class MessageRegistry
      */
     @Message
     (
-        description = "The error message about about an invalid duration String on the command line.",
+        description = "The error message about an invalid duration String on the command line.",
         translations =
         {
             @Translation( language = "en", text = DurationStringConverter.MSG_InvalidDuration ),
-            @Translation( language = "de", text = "Keine gültige Zeitdauer: %1%s" )
+            @Translation( language = "de", text = "Keine gültige Zeitdauer: %1$s" )
         }
     )
     public static final int MSGKEY_InvalidDuration = 17;
@@ -186,7 +186,7 @@ public final class MessageRegistry
      */
     @Message
     (
-        description = "The error message about about an invalid number format on the command line.",
+        description = "The error message about an invalid number format on the command line.",
         translations =
         {
             @Translation( language = "en", text = NumberStringConverter.MSG_InvalidNumberFormat ),
@@ -203,11 +203,11 @@ public final class MessageRegistry
      */
     @Message
     (
-        description = "The error message about about an invalid period on the command line.",
+        description = "The error message about an invalid period on the command line.",
         translations =
         {
             @Translation( language = "en", text = PeriodStringConverter.MSG_InvalidPeriod ),
-            @Translation( language = "de", text = "Kein gültiger Zeitraum: %1%s" )
+            @Translation( language = "de", text = "Kein gültiger Zeitraum: %1$s" )
         }
     )
     public static final int MSGKEY_InvalidPeriod = 20;
@@ -220,11 +220,11 @@ public final class MessageRegistry
      */
     @Message
     (
-        description = "The error message about about an invalid URI on the command line.",
+        description = "The error message about an invalid URI on the command line.",
         translations =
         {
             @Translation( language = "en", text = URIStringConverter.MSG_InvalidURI ),
-            @Translation( language = "de", text = "Ungültige URI: %1%s" )
+            @Translation( language = "de", text = "Ungültige URI: %1$s" )
         }
     )
     public static final int MSGKEY_InvalidURI = 21;
@@ -237,11 +237,11 @@ public final class MessageRegistry
      */
     @Message
     (
-        description = "The error message about about an invalid URL on the command line.",
+        description = "The error message about an invalid URL on the command line.",
         translations =
         {
             @Translation( language = "en", text = URLStringConverter.MSG_InvalidURL ),
-            @Translation( language = "de", text = "Ungültige URL: %1%s" )
+            @Translation( language = "de", text = "Ungültige URL: %1$s" )
         }
     )
     public static final int MSGKEY_InvalidURL = 22;
@@ -254,11 +254,11 @@ public final class MessageRegistry
      */
     @Message
         (
-            description = "The error message about about an invalid UUID on the command line.",
+            description = "The error message about an invalid UUID on the command line.",
             translations =
                 {
                     @Translation( language = "en", text = UUIDStringConverter.MSG_InvalidUUIDFormat ),
-                    @Translation( language = "de", text = "Keine gültige UUID: %1%s" )
+                    @Translation( language = "de", text = "Keine gültige UUID: %1$s" )
                 }
         )
     public static final int MSGKEY_InvalidUUIDFormat = 23;
@@ -271,11 +271,11 @@ public final class MessageRegistry
      */
     @Message
     (
-        description = "The error message about about an invalid zone id on the command line.",
+        description = "The error message about an invalid zone id on the command line.",
         translations =
         {
             @Translation( language = "en", text = ZoneIdStringConverter.MSG_InvalidZoneId ),
-            @Translation( language = "de", text = "Keine gültige Id für eine Zeitzone: %1%s" )
+            @Translation( language = "de", text = "Keine gültige Id für eine Zeitzone: %1$s" )
         }
     )
     public static final int MSGKEY_InvalidZoneId = 24;
@@ -288,7 +288,7 @@ public final class MessageRegistry
      */
     @Message
     (
-        description = "The error message about about an unknown class name on the command line.",
+        description = "The error message about an unknown class name on the command line.",
         translations =
         {
             @Translation( language = "en", text = ClassStringConverter.MSG_UnknownClass ),
@@ -305,7 +305,7 @@ public final class MessageRegistry
      */
     @Message
         (
-            description = "The error message about about an unknown timezone name on the command line.",
+            description = "The error message about an unknown timezone name on the command line.",
             translations =
                 {
                     @Translation( language = "en", text = TimeZoneStringConverter.MSG_UnknownTimeZone ),
@@ -326,7 +326,7 @@ public final class MessageRegistry
     /**
      *  The message registry.
      */
-    @SuppressWarnings( "rawtypes" )
+    @SuppressWarnings( {"rawtypes", "StaticCollection"} )
     @API( status = INTERNAL, since = "0.1.0" )
     public static final Map<Class<? extends StringConverter>,MessageRegistryEntry> m_MessageRegistry;
 

@@ -114,7 +114,7 @@
 <span class="source-line-no">101</span><span id="line-101">     */</span>
 <span class="source-line-no">102</span><span id="line-102">    @Message</span>
 <span class="source-line-no">103</span><span id="line-103">    (</span>
-<span class="source-line-no">104</span><span id="line-104">        description = "The error message about about an illegal charset name on the command line.",</span>
+<span class="source-line-no">104</span><span id="line-104">        description = "The error message about an illegal charset name on the command line.",</span>
 <span class="source-line-no">105</span><span id="line-105">        translations =</span>
 <span class="source-line-no">106</span><span id="line-106">        {</span>
 <span class="source-line-no">107</span><span id="line-107">            @Translation( language = "en", text = CharsetStringConverter.MSG_IllegalCharsetName ),</span>
@@ -131,7 +131,7 @@
 <span class="source-line-no">118</span><span id="line-118">     */</span>
 <span class="source-line-no">119</span><span id="line-119">    @Message</span>
 <span class="source-line-no">120</span><span id="line-120">    (</span>
-<span class="source-line-no">121</span><span id="line-121">        description = "The error message about about an invalid IP address or an unknown host name on the command line.",</span>
+<span class="source-line-no">121</span><span id="line-121">        description = "The error message about an invalid IP address or an unknown host name on the command line.",</span>
 <span class="source-line-no">122</span><span id="line-122">        translations =</span>
 <span class="source-line-no">123</span><span id="line-123">        {</span>
 <span class="source-line-no">124</span><span id="line-124">            @Translation( language = "en", text = InetAddressStringConverter.MSG_InvalidAddress ),</span>
@@ -148,7 +148,7 @@
 <span class="source-line-no">135</span><span id="line-135">     */</span>
 <span class="source-line-no">136</span><span id="line-136">    @Message</span>
 <span class="source-line-no">137</span><span id="line-137">    (</span>
-<span class="source-line-no">138</span><span id="line-138">        description = "The error message about about an invalid character on the command line.",</span>
+<span class="source-line-no">138</span><span id="line-138">        description = "The error message about an invalid character on the command line.",</span>
 <span class="source-line-no">139</span><span id="line-139">        translations =</span>
 <span class="source-line-no">140</span><span id="line-140">        {</span>
 <span class="source-line-no">141</span><span id="line-141">            @Translation( language = "en", text = CharacterStringConverter.MSG_InvalidCharacter ),</span>
@@ -165,11 +165,11 @@
 <span class="source-line-no">152</span><span id="line-152">     */</span>
 <span class="source-line-no">153</span><span id="line-153">    @Message</span>
 <span class="source-line-no">154</span><span id="line-154">    (</span>
-<span class="source-line-no">155</span><span id="line-155">        description = "The error message about about an invalid duration String on the command line.",</span>
+<span class="source-line-no">155</span><span id="line-155">        description = "The error message about an invalid duration String on the command line.",</span>
 <span class="source-line-no">156</span><span id="line-156">        translations =</span>
 <span class="source-line-no">157</span><span id="line-157">        {</span>
 <span class="source-line-no">158</span><span id="line-158">            @Translation( language = "en", text = DurationStringConverter.MSG_InvalidDuration ),</span>
-<span class="source-line-no">159</span><span id="line-159">            @Translation( language = "de", text = "Keine gültige Zeitdauer: %1%s" )</span>
+<span class="source-line-no">159</span><span id="line-159">            @Translation( language = "de", text = "Keine gültige Zeitdauer: %1$s" )</span>
 <span class="source-line-no">160</span><span id="line-160">        }</span>
 <span class="source-line-no">161</span><span id="line-161">    )</span>
 <span class="source-line-no">162</span><span id="line-162">    public static final int MSGKEY_InvalidDuration = 17;</span>
@@ -199,7 +199,7 @@
 <span class="source-line-no">186</span><span id="line-186">     */</span>
 <span class="source-line-no">187</span><span id="line-187">    @Message</span>
 <span class="source-line-no">188</span><span id="line-188">    (</span>
-<span class="source-line-no">189</span><span id="line-189">        description = "The error message about about an invalid number format on the command line.",</span>
+<span class="source-line-no">189</span><span id="line-189">        description = "The error message about an invalid number format on the command line.",</span>
 <span class="source-line-no">190</span><span id="line-190">        translations =</span>
 <span class="source-line-no">191</span><span id="line-191">        {</span>
 <span class="source-line-no">192</span><span id="line-192">            @Translation( language = "en", text = NumberStringConverter.MSG_InvalidNumberFormat ),</span>
@@ -216,11 +216,11 @@
 <span class="source-line-no">203</span><span id="line-203">     */</span>
 <span class="source-line-no">204</span><span id="line-204">    @Message</span>
 <span class="source-line-no">205</span><span id="line-205">    (</span>
-<span class="source-line-no">206</span><span id="line-206">        description = "The error message about about an invalid period on the command line.",</span>
+<span class="source-line-no">206</span><span id="line-206">        description = "The error message about an invalid period on the command line.",</span>
 <span class="source-line-no">207</span><span id="line-207">        translations =</span>
 <span class="source-line-no">208</span><span id="line-208">        {</span>
 <span class="source-line-no">209</span><span id="line-209">            @Translation( language = "en", text = PeriodStringConverter.MSG_InvalidPeriod ),</span>
-<span class="source-line-no">210</span><span id="line-210">            @Translation( language = "de", text = "Kein gültiger Zeitraum: %1%s" )</span>
+<span class="source-line-no">210</span><span id="line-210">            @Translation( language = "de", text = "Kein gültiger Zeitraum: %1$s" )</span>
 <span class="source-line-no">211</span><span id="line-211">        }</span>
 <span class="source-line-no">212</span><span id="line-212">    )</span>
 <span class="source-line-no">213</span><span id="line-213">    public static final int MSGKEY_InvalidPeriod = 20;</span>
@@ -233,11 +233,11 @@
 <span class="source-line-no">220</span><span id="line-220">     */</span>
 <span class="source-line-no">221</span><span id="line-221">    @Message</span>
 <span class="source-line-no">222</span><span id="line-222">    (</span>
-<span class="source-line-no">223</span><span id="line-223">        description = "The error message about about an invalid URI on the command line.",</span>
+<span class="source-line-no">223</span><span id="line-223">        description = "The error message about an invalid URI on the command line.",</span>
 <span class="source-line-no">224</span><span id="line-224">        translations =</span>
 <span class="source-line-no">225</span><span id="line-225">        {</span>
 <span class="source-line-no">226</span><span id="line-226">            @Translation( language = "en", text = URIStringConverter.MSG_InvalidURI ),</span>
-<span class="source-line-no">227</span><span id="line-227">            @Translation( language = "de", text = "Ungültige URI: %1%s" )</span>
+<span class="source-line-no">227</span><span id="line-227">            @Translation( language = "de", text = "Ungültige URI: %1$s" )</span>
 <span class="source-line-no">228</span><span id="line-228">        }</span>
 <span class="source-line-no">229</span><span id="line-229">    )</span>
 <span class="source-line-no">230</span><span id="line-230">    public static final int MSGKEY_InvalidURI = 21;</span>
@@ -250,11 +250,11 @@
 <span class="source-line-no">237</span><span id="line-237">     */</span>
 <span class="source-line-no">238</span><span id="line-238">    @Message</span>
 <span class="source-line-no">239</span><span id="line-239">    (</span>
-<span class="source-line-no">240</span><span id="line-240">        description = "The error message about about an invalid URL on the command line.",</span>
+<span class="source-line-no">240</span><span id="line-240">        description = "The error message about an invalid URL on the command line.",</span>
 <span class="source-line-no">241</span><span id="line-241">        translations =</span>
 <span class="source-line-no">242</span><span id="line-242">        {</span>
 <span class="source-line-no">243</span><span id="line-243">            @Translation( language = "en", text = URLStringConverter.MSG_InvalidURL ),</span>
-<span class="source-line-no">244</span><span id="line-244">            @Translation( language = "de", text = "Ungültige URL: %1%s" )</span>
+<span class="source-line-no">244</span><span id="line-244">            @Translation( language = "de", text = "Ungültige URL: %1$s" )</span>
 <span class="source-line-no">245</span><span id="line-245">        }</span>
 <span class="source-line-no">246</span><span id="line-246">    )</span>
 <span class="source-line-no">247</span><span id="line-247">    public static final int MSGKEY_InvalidURL = 22;</span>
@@ -267,11 +267,11 @@
 <span class="source-line-no">254</span><span id="line-254">     */</span>
 <span class="source-line-no">255</span><span id="line-255">    @Message</span>
 <span class="source-line-no">256</span><span id="line-256">        (</span>
-<span class="source-line-no">257</span><span id="line-257">            description = "The error message about about an invalid UUID on the command line.",</span>
+<span class="source-line-no">257</span><span id="line-257">            description = "The error message about an invalid UUID on the command line.",</span>
 <span class="source-line-no">258</span><span id="line-258">            translations =</span>
 <span class="source-line-no">259</span><span id="line-259">                {</span>
 <span class="source-line-no">260</span><span id="line-260">                    @Translation( language = "en", text = UUIDStringConverter.MSG_InvalidUUIDFormat ),</span>
-<span class="source-line-no">261</span><span id="line-261">                    @Translation( language = "de", text = "Keine gültige UUID: %1%s" )</span>
+<span class="source-line-no">261</span><span id="line-261">                    @Translation( language = "de", text = "Keine gültige UUID: %1$s" )</span>
 <span class="source-line-no">262</span><span id="line-262">                }</span>
 <span class="source-line-no">263</span><span id="line-263">        )</span>
 <span class="source-line-no">264</span><span id="line-264">    public static final int MSGKEY_InvalidUUIDFormat = 23;</span>
@@ -284,11 +284,11 @@
 <span class="source-line-no">271</span><span id="line-271">     */</span>
 <span class="source-line-no">272</span><span id="line-272">    @Message</span>
 <span class="source-line-no">273</span><span id="line-273">    (</span>
-<span class="source-line-no">274</span><span id="line-274">        description = "The error message about about an invalid zone id on the command line.",</span>
+<span class="source-line-no">274</span><span id="line-274">        description = "The error message about an invalid zone id on the command line.",</span>
 <span class="source-line-no">275</span><span id="line-275">        translations =</span>
 <span class="source-line-no">276</span><span id="line-276">        {</span>
 <span class="source-line-no">277</span><span id="line-277">            @Translation( language = "en", text = ZoneIdStringConverter.MSG_InvalidZoneId ),</span>
-<span class="source-line-no">278</span><span id="line-278">            @Translation( language = "de", text = "Keine gültige Id für eine Zeitzone: %1%s" )</span>
+<span class="source-line-no">278</span><span id="line-278">            @Translation( language = "de", text = "Keine gültige Id für eine Zeitzone: %1$s" )</span>
 <span class="source-line-no">279</span><span id="line-279">        }</span>
 <span class="source-line-no">280</span><span id="line-280">    )</span>
 <span class="source-line-no">281</span><span id="line-281">    public static final int MSGKEY_InvalidZoneId = 24;</span>
@@ -301,7 +301,7 @@
 <span class="source-line-no">288</span><span id="line-288">     */</span>
 <span class="source-line-no">289</span><span id="line-289">    @Message</span>
 <span class="source-line-no">290</span><span id="line-290">    (</span>
-<span class="source-line-no">291</span><span id="line-291">        description = "The error message about about an unknown class name on the command line.",</span>
+<span class="source-line-no">291</span><span id="line-291">        description = "The error message about an unknown class name on the command line.",</span>
 <span class="source-line-no">292</span><span id="line-292">        translations =</span>
 <span class="source-line-no">293</span><span id="line-293">        {</span>
 <span class="source-line-no">294</span><span id="line-294">            @Translation( language = "en", text = ClassStringConverter.MSG_UnknownClass ),</span>
@@ -318,7 +318,7 @@
 <span class="source-line-no">305</span><span id="line-305">     */</span>
 <span class="source-line-no">306</span><span id="line-306">    @Message</span>
 <span class="source-line-no">307</span><span id="line-307">        (</span>
-<span class="source-line-no">308</span><span id="line-308">            description = "The error message about about an unknown timezone name on the command line.",</span>
+<span class="source-line-no">308</span><span id="line-308">            description = "The error message about an unknown timezone name on the command line.",</span>
 <span class="source-line-no">309</span><span id="line-309">            translations =</span>
 <span class="source-line-no">310</span><span id="line-310">                {</span>
 <span class="source-line-no">311</span><span id="line-311">                    @Translation( language = "en", text = TimeZoneStringConverter.MSG_UnknownTimeZone ),</span>
@@ -339,7 +339,7 @@
 <span class="source-line-no">326</span><span id="line-326">    /**</span>
 <span class="source-line-no">327</span><span id="line-327">     *  The message registry.</span>
 <span class="source-line-no">328</span><span id="line-328">     */</span>
-<span class="source-line-no">329</span><span id="line-329">    @SuppressWarnings( "rawtypes" )</span>
+<span class="source-line-no">329</span><span id="line-329">    @SuppressWarnings( {"rawtypes", "StaticCollection"} )</span>
 <span class="source-line-no">330</span><span id="line-330">    @API( status = INTERNAL, since = "0.1.0" )</span>
 <span class="source-line-no">331</span><span id="line-331">    public static final Map&lt;Class&lt;? extends StringConverter&gt;,MessageRegistryEntry&gt; m_MessageRegistry;</span>
 <span class="source-line-no">332</span><span id="line-332"></span>
