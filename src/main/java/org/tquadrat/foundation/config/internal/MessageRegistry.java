@@ -61,14 +61,14 @@ import org.tquadrat.foundation.util.stringconverter.ZoneIdStringConverter;
  *  failed conversion of command line entries.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MessageRegistry.java 941 2021-12-18 22:34:37Z tquadrat $
+ *  @version $Id: MessageRegistry.java 1042 2022-12-26 14:05:06Z tquadrat $
  *
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @SuppressWarnings( "OverlyCoupledClass" )
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: MessageRegistry.java 941 2021-12-18 22:34:37Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MessageRegistry.java 1042 2022-12-26 14:05:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class MessageRegistry
 {
@@ -82,7 +82,7 @@ public final class MessageRegistry
      *  @param  key The key for the alternative/localised message.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: MessageRegistry.java 941 2021-12-18 22:34:37Z tquadrat $
+     *  @version $Id: MessageRegistry.java 1042 2022-12-26 14:05:06Z tquadrat $
      *
      *  @UMLGraph.link
      *  @since 0.1.0
