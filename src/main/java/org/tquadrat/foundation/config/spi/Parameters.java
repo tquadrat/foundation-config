@@ -37,7 +37,6 @@ import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"InterfaceNeverImplemented", "InterfaceMayBeAnnotatedFunctional"} )
 @ClassVersion( sourceVersion = "$Id: Parameters.java 884 2021-03-22 18:02:51Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface Parameters
@@ -64,7 +63,27 @@ public interface Parameters
      *      index, or the index is for a non-parameter entry on the command
      *      line.
      */
-    public String getParameter( int index ) throws CmdLineException;
+    public String getParameter( final int index ) throws CmdLineException;
+
+    /**
+     *  <p>{@summary Tests whether the given index is for an additional
+     *  parameter to a related option.} The first additional parameter has the
+     *  index 0, a second one will have 1 and so on.</p>
+     *  <p>Assume the command line looks like this:</p>
+     *  <pre><code>-o abc def -d x</code></pre>
+     *  <p>Then {@code isParameter(0)} and {@code isParameter(1)} would return
+     *  {@code true}, but {@code isParameter(3)} returns {@code false}:
+     *  {@code x} is an additional parameter, but for the option {@code -d} in
+     *  this case.</p>
+     *
+     *  @param  index   The index for the requested parameter; must be 0 or
+     *      greater.
+     *  @return {@code true} if the argument at the given location is an
+     *      additional parameter for the current option, {@code false} if not.
+     *  @since 0.1.2
+     */
+    @API( status = STABLE, since = "0.1.2" )
+    public boolean isParameter( final int index );
 }
 //  interface Parameters
 

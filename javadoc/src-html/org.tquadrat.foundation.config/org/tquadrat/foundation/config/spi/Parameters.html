@@ -50,40 +50,59 @@
 <span class="source-line-no">037</span><span id="line-37"> *</span>
 <span class="source-line-no">038</span><span id="line-38"> *  @UMLGraph.link</span>
 <span class="source-line-no">039</span><span id="line-39"> */</span>
-<span class="source-line-no">040</span><span id="line-40">@SuppressWarnings( {"InterfaceNeverImplemented", "InterfaceMayBeAnnotatedFunctional"} )</span>
-<span class="source-line-no">041</span><span id="line-41">@ClassVersion( sourceVersion = "$Id: Parameters.java 884 2021-03-22 18:02:51Z tquadrat $" )</span>
-<span class="source-line-no">042</span><span id="line-42">@API( status = STABLE, since = "0.1.0" )</span>
-<span class="source-line-no">043</span><span id="line-43">public interface Parameters</span>
-<span class="source-line-no">044</span><span id="line-44">{</span>
-<span class="source-line-no">045</span><span id="line-45">        /*---------*\</span>
-<span class="source-line-no">046</span><span id="line-46">    ====** Methods **==========================================================</span>
-<span class="source-line-no">047</span><span id="line-47">        \*---------*/</span>
-<span class="source-line-no">048</span><span id="line-48">    /**</span>
-<span class="source-line-no">049</span><span id="line-49">     *  &lt;p&gt;{@summary Returns the additional parameter to a related option.}&lt;/p&gt;</span>
-<span class="source-line-no">050</span><span id="line-50">     *  &lt;p&gt;Specifying 0 for {@code index} will retrieve the token next to the</span>
-<span class="source-line-no">051</span><span id="line-51">     *  option. For example, if the command line looks like&lt;/p&gt;</span>
-<span class="source-line-no">052</span><span id="line-52">     *  &lt;pre&gt;&lt;code&gt;-o abc -d x&lt;/code&gt;&lt;/pre&gt;</span>
-<span class="source-line-no">053</span><span id="line-53">     *  &lt;p&gt;then {@code getParameter(0)} for the option &amp;quot;{@code -o}&amp;quot;</span>
-<span class="source-line-no">054</span><span id="line-54">     *  returns &amp;quot;&lt;code&gt;&lt;i&gt;abc&lt;/i&gt;&lt;/code&gt;&amp;quot;; {@code getParameter(1)}</span>
-<span class="source-line-no">055</span><span id="line-55">     *  would return &amp;quot;&lt;code&gt;&lt;i&gt;-d&lt;/i&gt;&lt;/code&gt;&amp;quot;, but as this is an</span>
-<span class="source-line-no">056</span><span id="line-56">     *  option, a</span>
-<span class="source-line-no">057</span><span id="line-57">     *  {@link CmdLineException}</span>
-<span class="source-line-no">058</span><span id="line-58">     *  will be thrown instead.&lt;/p&gt;</span>
-<span class="source-line-no">059</span><span id="line-59">     *</span>
-<span class="source-line-no">060</span><span id="line-60">     *  @param  index   The index for the requested parameter; must be 0 or</span>
-<span class="source-line-no">061</span><span id="line-61">     *      greater.</span>
-<span class="source-line-no">062</span><span id="line-62">     *  @return The requested parameter.</span>
-<span class="source-line-no">063</span><span id="line-63">     *  @throws CmdLineException    An attempt is made to access a non-existent</span>
-<span class="source-line-no">064</span><span id="line-64">     *      index, or the index is for a non-parameter entry on the command</span>
-<span class="source-line-no">065</span><span id="line-65">     *      line.</span>
-<span class="source-line-no">066</span><span id="line-66">     */</span>
-<span class="source-line-no">067</span><span id="line-67">    public String getParameter( int index ) throws CmdLineException;</span>
-<span class="source-line-no">068</span><span id="line-68">}</span>
-<span class="source-line-no">069</span><span id="line-69">//  interface Parameters</span>
-<span class="source-line-no">070</span><span id="line-70"></span>
-<span class="source-line-no">071</span><span id="line-71">/*</span>
-<span class="source-line-no">072</span><span id="line-72"> *  End of File</span>
-<span class="source-line-no">073</span><span id="line-73"> */</span>
+<span class="source-line-no">040</span><span id="line-40">@ClassVersion( sourceVersion = "$Id: Parameters.java 884 2021-03-22 18:02:51Z tquadrat $" )</span>
+<span class="source-line-no">041</span><span id="line-41">@API( status = STABLE, since = "0.1.0" )</span>
+<span class="source-line-no">042</span><span id="line-42">public interface Parameters</span>
+<span class="source-line-no">043</span><span id="line-43">{</span>
+<span class="source-line-no">044</span><span id="line-44">        /*---------*\</span>
+<span class="source-line-no">045</span><span id="line-45">    ====** Methods **==========================================================</span>
+<span class="source-line-no">046</span><span id="line-46">        \*---------*/</span>
+<span class="source-line-no">047</span><span id="line-47">    /**</span>
+<span class="source-line-no">048</span><span id="line-48">     *  &lt;p&gt;{@summary Returns the additional parameter to a related option.}&lt;/p&gt;</span>
+<span class="source-line-no">049</span><span id="line-49">     *  &lt;p&gt;Specifying 0 for {@code index} will retrieve the token next to the</span>
+<span class="source-line-no">050</span><span id="line-50">     *  option. For example, if the command line looks like&lt;/p&gt;</span>
+<span class="source-line-no">051</span><span id="line-51">     *  &lt;pre&gt;&lt;code&gt;-o abc -d x&lt;/code&gt;&lt;/pre&gt;</span>
+<span class="source-line-no">052</span><span id="line-52">     *  &lt;p&gt;then {@code getParameter(0)} for the option &amp;quot;{@code -o}&amp;quot;</span>
+<span class="source-line-no">053</span><span id="line-53">     *  returns &amp;quot;&lt;code&gt;&lt;i&gt;abc&lt;/i&gt;&lt;/code&gt;&amp;quot;; {@code getParameter(1)}</span>
+<span class="source-line-no">054</span><span id="line-54">     *  would return &amp;quot;&lt;code&gt;&lt;i&gt;-d&lt;/i&gt;&lt;/code&gt;&amp;quot;, but as this is an</span>
+<span class="source-line-no">055</span><span id="line-55">     *  option, a</span>
+<span class="source-line-no">056</span><span id="line-56">     *  {@link CmdLineException}</span>
+<span class="source-line-no">057</span><span id="line-57">     *  will be thrown instead.&lt;/p&gt;</span>
+<span class="source-line-no">058</span><span id="line-58">     *</span>
+<span class="source-line-no">059</span><span id="line-59">     *  @param  index   The index for the requested parameter; must be 0 or</span>
+<span class="source-line-no">060</span><span id="line-60">     *      greater.</span>
+<span class="source-line-no">061</span><span id="line-61">     *  @return The requested parameter.</span>
+<span class="source-line-no">062</span><span id="line-62">     *  @throws CmdLineException    An attempt is made to access a non-existent</span>
+<span class="source-line-no">063</span><span id="line-63">     *      index, or the index is for a non-parameter entry on the command</span>
+<span class="source-line-no">064</span><span id="line-64">     *      line.</span>
+<span class="source-line-no">065</span><span id="line-65">     */</span>
+<span class="source-line-no">066</span><span id="line-66">    public String getParameter( final int index ) throws CmdLineException;</span>
+<span class="source-line-no">067</span><span id="line-67"></span>
+<span class="source-line-no">068</span><span id="line-68">    /**</span>
+<span class="source-line-no">069</span><span id="line-69">     *  &lt;p&gt;{@summary Tests whether the given index is for an additional</span>
+<span class="source-line-no">070</span><span id="line-70">     *  parameter to a related option.} The first additional parameter has the</span>
+<span class="source-line-no">071</span><span id="line-71">     *  index 0, a second one will have 1 and so on.&lt;/p&gt;</span>
+<span class="source-line-no">072</span><span id="line-72">     *  &lt;p&gt;Assume the command line looks like this:&lt;/p&gt;</span>
+<span class="source-line-no">073</span><span id="line-73">     *  &lt;pre&gt;&lt;code&gt;-o abc def -d x&lt;/code&gt;&lt;/pre&gt;</span>
+<span class="source-line-no">074</span><span id="line-74">     *  &lt;p&gt;Then {@code isParameter(0)} and {@code isParameter(1)} would return</span>
+<span class="source-line-no">075</span><span id="line-75">     *  {@code true}, but {@code isParameter(3)} returns {@code false}:</span>
+<span class="source-line-no">076</span><span id="line-76">     *  {@code x} is an additional parameter, but for the option {@code -d} in</span>
+<span class="source-line-no">077</span><span id="line-77">     *  this case.&lt;/p&gt;</span>
+<span class="source-line-no">078</span><span id="line-78">     *</span>
+<span class="source-line-no">079</span><span id="line-79">     *  @param  index   The index for the requested parameter; must be 0 or</span>
+<span class="source-line-no">080</span><span id="line-80">     *      greater.</span>
+<span class="source-line-no">081</span><span id="line-81">     *  @return {@code true} if the argument at the given location is an</span>
+<span class="source-line-no">082</span><span id="line-82">     *      additional parameter for the current option, {@code false} if not.</span>
+<span class="source-line-no">083</span><span id="line-83">     *  @since 0.1.2</span>
+<span class="source-line-no">084</span><span id="line-84">     */</span>
+<span class="source-line-no">085</span><span id="line-85">    @API( status = STABLE, since = "0.1.2" )</span>
+<span class="source-line-no">086</span><span id="line-86">    public boolean isParameter( final int index );</span>
+<span class="source-line-no">087</span><span id="line-87">}</span>
+<span class="source-line-no">088</span><span id="line-88">//  interface Parameters</span>
+<span class="source-line-no">089</span><span id="line-89"></span>
+<span class="source-line-no">090</span><span id="line-90">/*</span>
+<span class="source-line-no">091</span><span id="line-91"> *  End of File</span>
+<span class="source-line-no">092</span><span id="line-92"> */</span>
 
 
 

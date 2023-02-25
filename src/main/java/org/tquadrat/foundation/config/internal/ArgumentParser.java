@@ -128,7 +128,7 @@ public class ArgumentParser
          *
          *  @param  args    The arguments list.
          */
-        @SuppressWarnings( "IfStatementWithTooManyBranches" )
+        @SuppressWarnings( {"IfStatementWithTooManyBranches", "OverlyComplexMethod"} )
         public CmdLineImpl( final String... args )
         {
             assert nonNull( args ) : "args is null";
@@ -162,13 +162,15 @@ public class ArgumentParser
             {
                 if( parsingOptions )
                 {
+                    //noinspection ConstantExpression
                     if( arg.equals( LEAD_IN + LEAD_IN ) )
                     {
                         //---* The 'Stop Options Processing' token *-----------
                         m_ArgumentList.add( arg );
                         parsingOptions = false;
                     }
-                    else if( arg.startsWith( LEAD_IN + LEAD_IN ) )
+                    else //noinspection ConstantExpression
+                        if( arg.startsWith( LEAD_IN + LEAD_IN ) )
                     /*
                      * Sequence is crucial! We need to check for the '--'
                      * prefix before we check for the '-' prefix, otherwise
@@ -263,6 +265,28 @@ public class ArgumentParser
         public final boolean hasNext() { return m_CurrentPos < m_ArgumentList.size(); }
 
         /**
+         *  {@inheritDoc}
+         */
+        @Override
+        public final boolean isParameter( final int index ) throws CmdLineException
+        {
+            assert index >= 0 : "index is less than 0";
+
+            var retValue = m_CurrentPos + index < m_ArgumentList.size();
+            if( retValue && ArgumentParser.this.parsingOptions() )
+            {
+                var pos = m_CurrentPos + index;
+                while( retValue && (pos < m_ArgumentList.size()) )
+                {
+                    retValue = !(m_ArgumentList.get( pos++ ).startsWith( LEAD_IN ) );
+                }
+            }
+
+            //---* Done *------------------------------------------------------
+            return retValue;
+        }   //  getParameter()
+
+        /**
          *  <p>{@summary Loads an argument file as specified by the given
          *  argument and returns the contents of that file as additional
          *  command line arguments.}</p>
@@ -305,7 +329,7 @@ public class ArgumentParser
                         .map( line -> replaceVariable( line, systemProperties ) )
                         .collect( toList() );
                 }
-                catch( @SuppressWarnings( "unused" ) final IOException e )
+                catch( final IOException ignored )
                 {
                     retValue = List.of( arg );
                     failedFiles.add( arg );
@@ -332,7 +356,7 @@ public class ArgumentParser
         }   //  next()
 
         /**
-         *  Skip the given number of entries..
+         *  Skip the given number of entries.
          *
          *  @param  n   The number of entries to skip; must be greater 0.
          */
@@ -377,7 +401,7 @@ public class ArgumentParser
     /**
      *  The definition for the current command line entry.
      */
-    @SuppressWarnings( "InstanceVariableOfConcreteClass" )
+    @SuppressWarnings( "UseOfConcreteClass" )
     private CLIOptionDefinition m_CurrentOptionDefinition = null;
 
     /**
@@ -440,7 +464,6 @@ public class ArgumentParser
      */
     private final void addArgument( final CLIDefinition definition )
     {
-        @SuppressWarnings( "CastToConcreteClass" )
         final var argumentDefinition = (CLIArgumentDefinition) requireNonNullArgument( definition, "definition" );
 
         //--* Make sure the argument will fit in the list *--------------------
@@ -466,7 +489,6 @@ public class ArgumentParser
         //---* We have at least one option ... *-------------------------------
         m_ParsingOptions = true;
 
-        @SuppressWarnings( "CastToConcreteClass" )
         final var optionDefinition = (CLIOptionDefinition) requireNonNullArgument( definition, "definition" );
         checkOptionNotYetUsed( optionDefinition.name() );
         m_OptionDefinitions.put( optionDefinition.name(), optionDefinition );
@@ -482,7 +504,7 @@ public class ArgumentParser
      *
      *  @param  name    The option name.
      *  @return The option definition.
-     *  @throws CmdLineException    There is not option definition for the
+     *  @throws CmdLineException    There is no option definition for the
      *      given option name.
      */
     private final CLIOptionDefinition findOptionDefinition( final String name )
@@ -570,6 +592,7 @@ public class ArgumentParser
      *      arguments or a mandatory option or argument is missing on the
      *      command line.
      */
+    @SuppressWarnings( "OverlyComplexMethod" )
     public final void parse( final String... args ) throws CmdLineException
     {
         final var cmdLine = new CmdLineImpl( requireNonNullArgument( args, "args" ) );
@@ -605,7 +628,7 @@ public class ArgumentParser
                 if( !currentArgumentDefinition.isMultiValued() )
                 {
                     /*
-                     * Multi-valued arguments are only allowed as the last
+                     * Multivalued arguments are only allowed as the last
                      * argument, and we can have as many values for them as we
                      * want (or the operating systems allows on the command
                      * line).
@@ -656,6 +679,7 @@ public class ArgumentParser
      *
      *  @see org.tquadrat.foundation.config.CLIBeanSpec#LEAD_IN
      */
+    @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     public final boolean parsingOptions() { return m_ParsingOptions; }
 
     /**
@@ -668,7 +692,8 @@ public class ArgumentParser
     public final String resolveCommandLine( final String... args )
     {
         final Iterator<String> cmdLine = new CmdLineImpl( args );
-        final var spliterator = spliterator( cmdLine, args.length, IMMUTABLE | NONNULL );
+        @SuppressWarnings( "ConstantExpression" )
+        final var spliterator = spliterator( cmdLine, (long) args.length, IMMUTABLE | NONNULL );
         final var retValue = StreamSupport.stream( spliterator, false )
             .map( a -> a.contains( " " ) ? format( "\"%s\"", a ) : a )
             .collect( joining( " " ) );

@@ -47,6 +47,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.config.CmdLineException;
+import org.tquadrat.foundation.config.spi.CLIDefinition;
 import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
 import org.tquadrat.foundation.config.spi.Parameters;
 import org.tquadrat.foundation.exception.NullArgumentException;
@@ -64,7 +65,7 @@ import org.w3c.dom.Document;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
-@SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "MisorderedAssertEqualsArguments"} )
+@SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi"} )
 @ClassVersion( sourceVersion = "$Id: ValueHandlerTestBase.java 895 2021-04-05 12:40:34Z tquadrat $" )
 public abstract class ValueHandlerTestBase<T> extends TestBaseClass
 {
@@ -125,6 +126,15 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
             //---* Done *------------------------------------------------------
             return retValue;
         }   //  getParameter()
+
+        @Override
+        public final boolean isParameter( final int index )
+        {
+            final var retValue = index < m_Arguments.length;
+
+            //---* Done *----------------------------------------------------------
+            return retValue;
+        }   //  isParameter()
     }
     //  class ParametersImpl
 
@@ -396,6 +406,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
      *  {@link Document}
      *  instance to a String.
      */
+    @SuppressWarnings( "OverlyComplexMethod" )
     private static final String toString( final Document source )
     {
         String retValue = null;
