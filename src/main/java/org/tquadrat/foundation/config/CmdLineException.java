@@ -51,7 +51,7 @@ import org.tquadrat.foundation.util.stringconverter.FileStringConverter;
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyConstructors" )
-@ClassVersion( sourceVersion = "$Id: CmdLineException.java 892 2021-04-03 18:07:28Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CmdLineException.java 1050 2023-02-25 21:37:07Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class CmdLineException extends ValidationException
 {
