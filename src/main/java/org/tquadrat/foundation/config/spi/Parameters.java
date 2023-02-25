@@ -32,12 +32,12 @@ import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
  *  to make it safe and easy to parse additional parameters for options.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Parameters.java 884 2021-03-22 18:02:51Z tquadrat $
+ *  @version $Id: Parameters.java 1049 2023-02-25 19:13:40Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Parameters.java 884 2021-03-22 18:02:51Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Parameters.java 1049 2023-02-25 19:13:40Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface Parameters
 {

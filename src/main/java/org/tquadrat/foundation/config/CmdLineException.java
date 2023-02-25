@@ -139,6 +139,7 @@ public final class CmdLineException extends ValidationException
      *
      *  @see #MSG_ArgumentMissing
      */
+    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )
     @Message
     (
         description = "The error message about an argument that is missing on the command line.",
@@ -155,6 +156,7 @@ public final class CmdLineException extends ValidationException
      *
      *  @see #MSG_IllegalOperand
      */
+    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )
     @Message
     (
         description = "The error message about an illegal operand.",
@@ -186,6 +188,7 @@ public final class CmdLineException extends ValidationException
      *
      *  @see #MSG_InvalidFormat
      */
+    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )
     @Message
     (
         description = "The error message about an invalid format.",
@@ -219,6 +222,7 @@ public final class CmdLineException extends ValidationException
      *
      *  @see #MSG_NoArgumentAllowed
      */
+    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )
     @Message
     (
         description = "The error message about an argument where none is allowed.",
@@ -235,9 +239,10 @@ public final class CmdLineException extends ValidationException
      *
      *  @see #MSG_OptionInvalid
      */
+    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )
     @Message
     (
-        description = "The error message about about an invalid option.",
+        description = "The error message about an invalid option.",
         translations =
         {
             @Translation( language = "en", text = MSG_OptionInvalid ),
@@ -252,9 +257,10 @@ public final class CmdLineException extends ValidationException
      *
      *  @see #MSG_OptionMissing
      */
+    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )
     @Message
     (
-        description = "The error message about about an option that is missing on the command line.",
+        description = "The error message about an option that is missing on the command line.",
         translations =
         {
             @Translation( language = "en", text = MSG_OptionMissing ),
@@ -271,7 +277,7 @@ public final class CmdLineException extends ValidationException
      */
     @Message
     (
-        description = "The error message about about aan unspecified failure of the parsing.",
+        description = "The error message about aan unspecified failure of the parsing.",
         translations =
         {
             @Translation( language = "en", text = MSG_ParseFailed ),
@@ -286,9 +292,10 @@ public final class CmdLineException extends ValidationException
      *
      *  @see #MSG_TooManyArguments
      */
+    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )
     @Message
     (
-        description = "The error message about about an unspecified failure of the parsing.",
+        description = "The error message about an unspecified failure of the parsing.",
         translations =
         {
             @Translation( language = "en", text = MSG_TooManyArguments ),
@@ -404,7 +411,7 @@ public final class CmdLineException extends ValidationException
      */
     public CmdLineException( final Throwable cause )
     {
-        this( null, cause );
+        this( Optional.empty(), cause );
     }   //  CmdLineException()
 
     /**
@@ -416,9 +423,24 @@ public final class CmdLineException extends ValidationException
      */
     public CmdLineException( final CLIDefinition cliDefinition, final Throwable cause )
     {
+        this( Optional.of( requireNonNullArgument( cliDefinition, "cliDefinition" ) ), cause );
+    }   //  CmdLineException()
+
+    /**
+     *  Creates a new {@code CmdLineException} instance.
+     *
+     *  @param  cliDefinition   An instance of
+     *      {@link Optional}
+     *      that holds the CLI definition for the argument/option that caused
+     *      this exception.
+     *  @param  cause   The exception that caused this exception.
+     */
+    @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" )
+    public CmdLineException( final Optional<CLIDefinition> cliDefinition, final Throwable cause )
+    {
         super( format( MSG_Aborted, nonNull( cause ) ? cause.getClass().getName() : "unknown" ), cause );
 
-        m_CLIDefinition = Optional.of( requireNonNullArgument( cliDefinition, "cliDefinition" ) );
+        m_CLIDefinition = requireNonNullArgument( cliDefinition, "cliDefinition" );
 
         m_MessageKey = MSGKEY_Aborted;
         m_MessageArguments = new Object [] {nonNull( cause ) ? cause.getClass().getName() : "unknown"};
@@ -431,7 +453,7 @@ public final class CmdLineException extends ValidationException
      *  {@inheritDoc}
      */
     @Override
-    public final Throwable fillInStackTrace()
+    public final synchronized Throwable fillInStackTrace()
     {
         final var retValue = Boolean.getBoolean( PROPERTY_IS_DEBUG )
             ? super.fillInStackTrace()

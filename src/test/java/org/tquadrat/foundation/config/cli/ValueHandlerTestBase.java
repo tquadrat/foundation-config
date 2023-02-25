@@ -66,7 +66,7 @@ import org.w3c.dom.Document;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi"} )
-@ClassVersion( sourceVersion = "$Id: ValueHandlerTestBase.java 895 2021-04-05 12:40:34Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValueHandlerTestBase.java 1049 2023-02-25 19:13:40Z tquadrat $" )
 public abstract class ValueHandlerTestBase<T> extends TestBaseClass
 {
         /*---------------*\
@@ -78,7 +78,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
      *  for test purposes.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: ValueHandlerTestBase.java 895 2021-04-05 12:40:34Z tquadrat $
+     *  @version $Id: ValueHandlerTestBase.java 1049 2023-02-25 19:13:40Z tquadrat $
      */
     private static class ParametersImpl implements Parameters
     {
