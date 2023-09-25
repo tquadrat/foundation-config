@@ -66,115 +66,114 @@
 <span class="source-line-no">053</span><span id="line-53"> *</span>
 <span class="source-line-no">054</span><span id="line-54"> *  @UMLGraph.link</span>
 <span class="source-line-no">055</span><span id="line-55"> */</span>
-<span class="source-line-no">056</span><span id="line-56">@SuppressWarnings( "AbstractClassNeverImplemented" )</span>
-<span class="source-line-no">057</span><span id="line-57">@ClassVersion( sourceVersion = "$Id: PreferenceAccessor.java 920 2021-05-23 14:27:24Z tquadrat $" )</span>
-<span class="source-line-no">058</span><span id="line-58">@API( status = STABLE, since = "0.0.1" )</span>
-<span class="source-line-no">059</span><span id="line-59">public abstract class PreferenceAccessor&lt;T&gt;</span>
-<span class="source-line-no">060</span><span id="line-60">{</span>
-<span class="source-line-no">061</span><span id="line-61">        /*------------*\</span>
-<span class="source-line-no">062</span><span id="line-62">    ====** Attributes **=======================================================</span>
-<span class="source-line-no">063</span><span id="line-63">        \*------------*/</span>
-<span class="source-line-no">064</span><span id="line-64">    /**</span>
-<span class="source-line-no">065</span><span id="line-65">     *  The property getter.</span>
-<span class="source-line-no">066</span><span id="line-66">     */</span>
-<span class="source-line-no">067</span><span id="line-67">    private final Getter&lt;T&gt; m_Getter;</span>
-<span class="source-line-no">068</span><span id="line-68"></span>
-<span class="source-line-no">069</span><span id="line-69">    /**</span>
-<span class="source-line-no">070</span><span id="line-70">     *  The property name.</span>
-<span class="source-line-no">071</span><span id="line-71">     */</span>
-<span class="source-line-no">072</span><span id="line-72">    private final String m_PropertyName;</span>
-<span class="source-line-no">073</span><span id="line-73"></span>
-<span class="source-line-no">074</span><span id="line-74">    /**</span>
-<span class="source-line-no">075</span><span id="line-75">     *  The property setter.</span>
-<span class="source-line-no">076</span><span id="line-76">     */</span>
-<span class="source-line-no">077</span><span id="line-77">    private final Setter&lt;T&gt; m_Setter;</span>
-<span class="source-line-no">078</span><span id="line-78"></span>
-<span class="source-line-no">079</span><span id="line-79">        /*--------------*\</span>
-<span class="source-line-no">080</span><span id="line-80">    ====** Constructors **=====================================================</span>
-<span class="source-line-no">081</span><span id="line-81">        \*--------------*/</span>
-<span class="source-line-no">082</span><span id="line-82">    /**</span>
-<span class="source-line-no">083</span><span id="line-83">     *  Creates a new {@code PreferenceAccessor} instance.</span>
-<span class="source-line-no">084</span><span id="line-84">     *</span>
-<span class="source-line-no">085</span><span id="line-85">     *  @param  propertyName    The name of the property.</span>
-<span class="source-line-no">086</span><span id="line-86">     *  @param  getter  The property getter.</span>
-<span class="source-line-no">087</span><span id="line-87">     *  @param  setter  The property setter.</span>
-<span class="source-line-no">088</span><span id="line-88">     */</span>
-<span class="source-line-no">089</span><span id="line-89">    protected PreferenceAccessor( final String propertyName, final Getter&lt;T&gt; getter, final Setter&lt;T&gt; setter )</span>
-<span class="source-line-no">090</span><span id="line-90">    {</span>
-<span class="source-line-no">091</span><span id="line-91">        m_PropertyName = requireNotEmptyArgument( propertyName, "propertyName" );</span>
-<span class="source-line-no">092</span><span id="line-92">        m_Getter = requireNonNullArgument( getter, "getter" );</span>
-<span class="source-line-no">093</span><span id="line-93">        m_Setter = requireNonNullArgument( setter, "setter" );</span>
-<span class="source-line-no">094</span><span id="line-94">    }   //  PreferenceAccessor()</span>
-<span class="source-line-no">095</span><span id="line-95"></span>
-<span class="source-line-no">096</span><span id="line-96">        /*---------*\</span>
-<span class="source-line-no">097</span><span id="line-97">    ====** Methods **==========================================================</span>
-<span class="source-line-no">098</span><span id="line-98">        \*---------*/</span>
-<span class="source-line-no">099</span><span id="line-99">    /**</span>
-<span class="source-line-no">100</span><span id="line-100">     *  Returns the property name.</span>
-<span class="source-line-no">101</span><span id="line-101">     *</span>
-<span class="source-line-no">102</span><span id="line-102">     *  @return The property name.</span>
-<span class="source-line-no">103</span><span id="line-103">     */</span>
-<span class="source-line-no">104</span><span id="line-104">    public final String getPropertyName() { return m_PropertyName; }</span>
-<span class="source-line-no">105</span><span id="line-105"></span>
-<span class="source-line-no">106</span><span id="line-106">    /**</span>
-<span class="source-line-no">107</span><span id="line-107">     *  Returns the getter.</span>
-<span class="source-line-no">108</span><span id="line-108">     *</span>
-<span class="source-line-no">109</span><span id="line-109">     *  @return The getter.</span>
-<span class="source-line-no">110</span><span id="line-110">     */</span>
-<span class="source-line-no">111</span><span id="line-111">    protected final Getter&lt;T&gt; getter() { return m_Getter; }</span>
-<span class="source-line-no">112</span><span id="line-112"></span>
-<span class="source-line-no">113</span><span id="line-113">    /**</span>
-<span class="source-line-no">114</span><span id="line-114">     *  Checks whether the provided preferences node has a key name like the</span>
-<span class="source-line-no">115</span><span id="line-115">     *  property name.</span>
-<span class="source-line-no">116</span><span id="line-116">     *</span>
-<span class="source-line-no">117</span><span id="line-117">     *  @param  node    The preferences node.</span>
-<span class="source-line-no">118</span><span id="line-118">     *  @return {@code true} if there is a key with that name, {@code false}</span>
-<span class="source-line-no">119</span><span id="line-119">     *      otherwise.</span>
-<span class="source-line-no">120</span><span id="line-120">     *  @throws BackingStoreException   There are problems on reading the given</span>
-<span class="source-line-no">121</span><span id="line-121">     *      node.</span>
-<span class="source-line-no">122</span><span id="line-122">     */</span>
-<span class="source-line-no">123</span><span id="line-123">    protected final boolean hasKey( final Preferences node ) throws BackingStoreException</span>
-<span class="source-line-no">124</span><span id="line-124">    {</span>
-<span class="source-line-no">125</span><span id="line-125">        final var retValue = asList( node.keys() ).contains( m_PropertyName );</span>
-<span class="source-line-no">126</span><span id="line-126"></span>
-<span class="source-line-no">127</span><span id="line-127">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">128</span><span id="line-128">        return retValue;</span>
-<span class="source-line-no">129</span><span id="line-129">    }   //  hasKey()</span>
-<span class="source-line-no">130</span><span id="line-130"></span>
-<span class="source-line-no">131</span><span id="line-131">    /**</span>
-<span class="source-line-no">132</span><span id="line-132">     *  Reads the preference value from the given node and writes it to the</span>
-<span class="source-line-no">133</span><span id="line-133">     *  property.</span>
-<span class="source-line-no">134</span><span id="line-134">     *</span>
-<span class="source-line-no">135</span><span id="line-135">     *  @param  node    The preference node.</span>
-<span class="source-line-no">136</span><span id="line-136">     *  @throws BackingStoreException   There are problems on reading the given</span>
-<span class="source-line-no">137</span><span id="line-137">     *      node.</span>
-<span class="source-line-no">138</span><span id="line-138">     *  @throws InvalidPreferenceValueException The preferences value cannot be</span>
-<span class="source-line-no">139</span><span id="line-139">     *      translated to the property type.</span>
-<span class="source-line-no">140</span><span id="line-140">     */</span>
-<span class="source-line-no">141</span><span id="line-141">    public abstract void readPreference( final Preferences node ) throws BackingStoreException, InvalidPreferenceValueException;</span>
-<span class="source-line-no">142</span><span id="line-142"></span>
-<span class="source-line-no">143</span><span id="line-143">    /**</span>
-<span class="source-line-no">144</span><span id="line-144">     *  Returns the setter.</span>
-<span class="source-line-no">145</span><span id="line-145">     *</span>
-<span class="source-line-no">146</span><span id="line-146">     *  @return The setter.</span>
-<span class="source-line-no">147</span><span id="line-147">     */</span>
-<span class="source-line-no">148</span><span id="line-148">    protected final Setter&lt;T&gt; setter() { return m_Setter; }</span>
-<span class="source-line-no">149</span><span id="line-149"></span>
-<span class="source-line-no">150</span><span id="line-150">    /**</span>
-<span class="source-line-no">151</span><span id="line-151">     *  Writes the preference value from the property and writes it to the</span>
-<span class="source-line-no">152</span><span id="line-152">     *  given node.</span>
-<span class="source-line-no">153</span><span id="line-153">     *</span>
-<span class="source-line-no">154</span><span id="line-154">     *  @param  node    The preference node.</span>
-<span class="source-line-no">155</span><span id="line-155">     *  @throws BackingStoreException   There are problems on writing the given</span>
-<span class="source-line-no">156</span><span id="line-156">     *      node.</span>
-<span class="source-line-no">157</span><span id="line-157">     */</span>
-<span class="source-line-no">158</span><span id="line-158">    public abstract void writePreference( final Preferences node ) throws BackingStoreException;</span>
-<span class="source-line-no">159</span><span id="line-159">}</span>
-<span class="source-line-no">160</span><span id="line-160">//  class PreferenceAccessor</span>
-<span class="source-line-no">161</span><span id="line-161"></span>
-<span class="source-line-no">162</span><span id="line-162">/*</span>
-<span class="source-line-no">163</span><span id="line-163"> *  End of File</span>
-<span class="source-line-no">164</span><span id="line-164"> */</span>
+<span class="source-line-no">056</span><span id="line-56">@ClassVersion( sourceVersion = "$Id: PreferenceAccessor.java 920 2021-05-23 14:27:24Z tquadrat $" )</span>
+<span class="source-line-no">057</span><span id="line-57">@API( status = STABLE, since = "0.0.1" )</span>
+<span class="source-line-no">058</span><span id="line-58">public abstract class PreferenceAccessor&lt;T&gt;</span>
+<span class="source-line-no">059</span><span id="line-59">{</span>
+<span class="source-line-no">060</span><span id="line-60">        /*------------*\</span>
+<span class="source-line-no">061</span><span id="line-61">    ====** Attributes **=======================================================</span>
+<span class="source-line-no">062</span><span id="line-62">        \*------------*/</span>
+<span class="source-line-no">063</span><span id="line-63">    /**</span>
+<span class="source-line-no">064</span><span id="line-64">     *  The property getter.</span>
+<span class="source-line-no">065</span><span id="line-65">     */</span>
+<span class="source-line-no">066</span><span id="line-66">    private final Getter&lt;T&gt; m_Getter;</span>
+<span class="source-line-no">067</span><span id="line-67"></span>
+<span class="source-line-no">068</span><span id="line-68">    /**</span>
+<span class="source-line-no">069</span><span id="line-69">     *  The property name.</span>
+<span class="source-line-no">070</span><span id="line-70">     */</span>
+<span class="source-line-no">071</span><span id="line-71">    private final String m_PropertyName;</span>
+<span class="source-line-no">072</span><span id="line-72"></span>
+<span class="source-line-no">073</span><span id="line-73">    /**</span>
+<span class="source-line-no">074</span><span id="line-74">     *  The property setter.</span>
+<span class="source-line-no">075</span><span id="line-75">     */</span>
+<span class="source-line-no">076</span><span id="line-76">    private final Setter&lt;T&gt; m_Setter;</span>
+<span class="source-line-no">077</span><span id="line-77"></span>
+<span class="source-line-no">078</span><span id="line-78">        /*--------------*\</span>
+<span class="source-line-no">079</span><span id="line-79">    ====** Constructors **=====================================================</span>
+<span class="source-line-no">080</span><span id="line-80">        \*--------------*/</span>
+<span class="source-line-no">081</span><span id="line-81">    /**</span>
+<span class="source-line-no">082</span><span id="line-82">     *  Creates a new {@code PreferenceAccessor} instance.</span>
+<span class="source-line-no">083</span><span id="line-83">     *</span>
+<span class="source-line-no">084</span><span id="line-84">     *  @param  propertyName    The name of the property.</span>
+<span class="source-line-no">085</span><span id="line-85">     *  @param  getter  The property getter.</span>
+<span class="source-line-no">086</span><span id="line-86">     *  @param  setter  The property setter.</span>
+<span class="source-line-no">087</span><span id="line-87">     */</span>
+<span class="source-line-no">088</span><span id="line-88">    protected PreferenceAccessor( final String propertyName, final Getter&lt;T&gt; getter, final Setter&lt;T&gt; setter )</span>
+<span class="source-line-no">089</span><span id="line-89">    {</span>
+<span class="source-line-no">090</span><span id="line-90">        m_PropertyName = requireNotEmptyArgument( propertyName, "propertyName" );</span>
+<span class="source-line-no">091</span><span id="line-91">        m_Getter = requireNonNullArgument( getter, "getter" );</span>
+<span class="source-line-no">092</span><span id="line-92">        m_Setter = requireNonNullArgument( setter, "setter" );</span>
+<span class="source-line-no">093</span><span id="line-93">    }   //  PreferenceAccessor()</span>
+<span class="source-line-no">094</span><span id="line-94"></span>
+<span class="source-line-no">095</span><span id="line-95">        /*---------*\</span>
+<span class="source-line-no">096</span><span id="line-96">    ====** Methods **==========================================================</span>
+<span class="source-line-no">097</span><span id="line-97">        \*---------*/</span>
+<span class="source-line-no">098</span><span id="line-98">    /**</span>
+<span class="source-line-no">099</span><span id="line-99">     *  Returns the property name.</span>
+<span class="source-line-no">100</span><span id="line-100">     *</span>
+<span class="source-line-no">101</span><span id="line-101">     *  @return The property name.</span>
+<span class="source-line-no">102</span><span id="line-102">     */</span>
+<span class="source-line-no">103</span><span id="line-103">    public final String getPropertyName() { return m_PropertyName; }</span>
+<span class="source-line-no">104</span><span id="line-104"></span>
+<span class="source-line-no">105</span><span id="line-105">    /**</span>
+<span class="source-line-no">106</span><span id="line-106">     *  Returns the getter.</span>
+<span class="source-line-no">107</span><span id="line-107">     *</span>
+<span class="source-line-no">108</span><span id="line-108">     *  @return The getter.</span>
+<span class="source-line-no">109</span><span id="line-109">     */</span>
+<span class="source-line-no">110</span><span id="line-110">    protected final Getter&lt;T&gt; getter() { return m_Getter; }</span>
+<span class="source-line-no">111</span><span id="line-111"></span>
+<span class="source-line-no">112</span><span id="line-112">    /**</span>
+<span class="source-line-no">113</span><span id="line-113">     *  Checks whether the provided preferences node has a key name like the</span>
+<span class="source-line-no">114</span><span id="line-114">     *  property name.</span>
+<span class="source-line-no">115</span><span id="line-115">     *</span>
+<span class="source-line-no">116</span><span id="line-116">     *  @param  node    The preferences node.</span>
+<span class="source-line-no">117</span><span id="line-117">     *  @return {@code true} if there is a key with that name, {@code false}</span>
+<span class="source-line-no">118</span><span id="line-118">     *      otherwise.</span>
+<span class="source-line-no">119</span><span id="line-119">     *  @throws BackingStoreException   There are problems on reading the given</span>
+<span class="source-line-no">120</span><span id="line-120">     *      node.</span>
+<span class="source-line-no">121</span><span id="line-121">     */</span>
+<span class="source-line-no">122</span><span id="line-122">    protected final boolean hasKey( final Preferences node ) throws BackingStoreException</span>
+<span class="source-line-no">123</span><span id="line-123">    {</span>
+<span class="source-line-no">124</span><span id="line-124">        final var retValue = asList( node.keys() ).contains( m_PropertyName );</span>
+<span class="source-line-no">125</span><span id="line-125"></span>
+<span class="source-line-no">126</span><span id="line-126">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">127</span><span id="line-127">        return retValue;</span>
+<span class="source-line-no">128</span><span id="line-128">    }   //  hasKey()</span>
+<span class="source-line-no">129</span><span id="line-129"></span>
+<span class="source-line-no">130</span><span id="line-130">    /**</span>
+<span class="source-line-no">131</span><span id="line-131">     *  Reads the preference value from the given node and writes it to the</span>
+<span class="source-line-no">132</span><span id="line-132">     *  property.</span>
+<span class="source-line-no">133</span><span id="line-133">     *</span>
+<span class="source-line-no">134</span><span id="line-134">     *  @param  node    The preference node.</span>
+<span class="source-line-no">135</span><span id="line-135">     *  @throws BackingStoreException   There are problems on reading the given</span>
+<span class="source-line-no">136</span><span id="line-136">     *      node.</span>
+<span class="source-line-no">137</span><span id="line-137">     *  @throws InvalidPreferenceValueException The preferences value cannot be</span>
+<span class="source-line-no">138</span><span id="line-138">     *      translated to the property type.</span>
+<span class="source-line-no">139</span><span id="line-139">     */</span>
+<span class="source-line-no">140</span><span id="line-140">    public abstract void readPreference( final Preferences node ) throws BackingStoreException, InvalidPreferenceValueException;</span>
+<span class="source-line-no">141</span><span id="line-141"></span>
+<span class="source-line-no">142</span><span id="line-142">    /**</span>
+<span class="source-line-no">143</span><span id="line-143">     *  Returns the setter.</span>
+<span class="source-line-no">144</span><span id="line-144">     *</span>
+<span class="source-line-no">145</span><span id="line-145">     *  @return The setter.</span>
+<span class="source-line-no">146</span><span id="line-146">     */</span>
+<span class="source-line-no">147</span><span id="line-147">    protected final Setter&lt;T&gt; setter() { return m_Setter; }</span>
+<span class="source-line-no">148</span><span id="line-148"></span>
+<span class="source-line-no">149</span><span id="line-149">    /**</span>
+<span class="source-line-no">150</span><span id="line-150">     *  Writes the preference value from the property and writes it to the</span>
+<span class="source-line-no">151</span><span id="line-151">     *  given node.</span>
+<span class="source-line-no">152</span><span id="line-152">     *</span>
+<span class="source-line-no">153</span><span id="line-153">     *  @param  node    The preference node.</span>
+<span class="source-line-no">154</span><span id="line-154">     *  @throws BackingStoreException   There are problems on writing the given</span>
+<span class="source-line-no">155</span><span id="line-155">     *      node.</span>
+<span class="source-line-no">156</span><span id="line-156">     */</span>
+<span class="source-line-no">157</span><span id="line-157">    public abstract void writePreference( final Preferences node ) throws BackingStoreException;</span>
+<span class="source-line-no">158</span><span id="line-158">}</span>
+<span class="source-line-no">159</span><span id="line-159">//  class PreferenceAccessor</span>
+<span class="source-line-no">160</span><span id="line-160"></span>
+<span class="source-line-no">161</span><span id="line-161">/*</span>
+<span class="source-line-no">162</span><span id="line-162"> *  End of File</span>
+<span class="source-line-no">163</span><span id="line-163"> */</span>
 
 
 

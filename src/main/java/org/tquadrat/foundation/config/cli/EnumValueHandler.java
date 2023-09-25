@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,9 +18,9 @@
 
 package org.tquadrat.foundation.config.cli;
 
+import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.util.Collection;
 import java.util.List;
@@ -63,7 +63,7 @@ public final class EnumValueHandler<T extends Enum<T>> extends CmdLineValueHandl
      *  that is used to translate the String value from the command line into
      *  the desired object instance.
      */
-    @SuppressWarnings( "InstanceVariableOfConcreteClass" )
+    @SuppressWarnings( "UseOfConcreteClass" )
     private final EnumStringConverter<T> m_StringConverter;
 
         /*-----------*\

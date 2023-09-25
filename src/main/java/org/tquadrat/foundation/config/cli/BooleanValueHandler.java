@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -124,7 +124,7 @@ public class BooleanValueHandler extends CmdLineValueHandler<Boolean>
             final var param = params.getParameter( 0 );
             retValue = List.of( BooleanStringConverter.INSTANCE.fromString( param ) );
         }
-        catch( @SuppressWarnings( "unused" ) final CmdLineException e )
+        catch( @SuppressWarnings( "unused" ) final CmdLineException ignored )
         {
             retValue = List.of();
         }

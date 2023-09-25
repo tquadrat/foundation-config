@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -59,7 +59,6 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see Preference
  *  @see NoPreference
  */
-@SuppressWarnings( "InterfaceNeverImplemented" )
 @ClassVersion( sourceVersion = "$Id: PreferencesBeanSpec.java 946 2021-12-23 14:48:19Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface PreferencesBeanSpec extends ConfigBeanSpec

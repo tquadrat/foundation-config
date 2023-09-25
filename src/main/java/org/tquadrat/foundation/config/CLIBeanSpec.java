@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -37,7 +37,6 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "InterfaceNeverImplemented" )
 @ClassVersion( sourceVersion = "$Id: CLIBeanSpec.java 884 2021-03-22 18:02:51Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public interface CLIBeanSpec extends ConfigBeanSpec
@@ -98,7 +97,7 @@ public interface CLIBeanSpec extends ConfigBeanSpec
      *  @return {@code true} if the command line could be parsed without
      *      issues, {@code false} otherwise.
      */
-    @SuppressWarnings( "MethodCanBeVariableArityMethod" )
+    @SuppressWarnings( {"MethodCanBeVariableArityMethod", "BooleanMethodNameMustStartWithQuestion"} )
     public boolean parseCommandLine( final String [] args );
 
     /**

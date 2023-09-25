@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -29,7 +29,6 @@ import java.lang.annotation.Target;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.internal.NullStringConverter;
 import org.tquadrat.foundation.lang.StringConverter;
 
 /**
@@ -51,6 +50,7 @@ import org.tquadrat.foundation.lang.StringConverter;
  *
  *  @see System#getProperty(String)
  */
+@SuppressWarnings( "removal" )
 @ClassVersion( sourceVersion = "$Id: SystemProperty.java 1010 2022-02-05 19:28:36Z tquadrat $" )
 @Documented
 @Retention( CLASS )
@@ -97,7 +97,7 @@ public @interface SystemProperty
      *  does not override {@code fromString()} itself. Otherwise the code
      *  generation process may throw an exception.</p>
      *  <p>The default value is
-     *  {@link NullStringConverter},
+     *  {@link org.tquadrat.foundation.config.internal.NullStringConverter},
      *  a placeholder implementation indicating that the string converter
      *  should be derived from the property type.</p>
      *
@@ -113,7 +113,7 @@ public @interface SystemProperty
      */
     @Deprecated( since = "0.1.0", forRemoval = true )
     @API( status = DEPRECATED, since = "0.0.2" )
-    Class<? extends StringConverter<?>> stringConverter() default NullStringConverter.class;
+    Class<? extends StringConverter<?>> stringConverter() default org.tquadrat.foundation.config.internal.NullStringConverter.class;
 }
 //  annotation SystemProperty
 

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -72,7 +72,7 @@ public final class ImageValueHandler extends CmdLineValueHandler<BufferedImage>
      */
     @Message
     (
-        description = "The error message about about a failed read attempt for the image file.",
+        description = "The error message about a failed read attempt for the image file.",
         translations =
         {
             @Translation( language = "en", text = MSG_ReadFailed ),

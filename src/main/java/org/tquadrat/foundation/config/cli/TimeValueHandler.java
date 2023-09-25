@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -110,7 +110,6 @@ public abstract class TimeValueHandler<T extends Temporal> extends CmdLineValueH
      *  that is used to translate the String value from the command line into
      *  the desired object instance.
      */
-    @SuppressWarnings( "InstanceVariableOfConcreteClass" )
     private final TimeDateStringConverter<T> m_StringConverter;
 
         /*--------------*\

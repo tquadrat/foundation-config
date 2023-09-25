@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,12 +18,12 @@
 
 package org.tquadrat.foundation.config.spi.prefs;
 
+import static java.lang.String.format;
 import static java.util.Arrays.stream;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.util.Collection;
 import java.util.prefs.BackingStoreException;
@@ -145,7 +145,7 @@ public abstract sealed class CollectionAccessor<T,C extends Collection<T>> exten
         {
             final var childNode = node.node( propertyName );
             final var keys = stream( childNode.keys() )
-                .filter( k -> k.startsWith( propertyName ) )
+                .filter( key -> key.startsWith( propertyName ) )
                 .toArray( String []::new );
             collection = createCollection( keys.length );
             for( var i = 0; i < keys.length; ++i )

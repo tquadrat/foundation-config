@@ -17,11 +17,11 @@
 
 package org.tquadrat.foundation.config;
 
+import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_DEBUG;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.io.Serial;
 import java.util.Optional;
@@ -46,6 +46,7 @@ import org.tquadrat.foundation.util.stringconverter.FileStringConverter;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Kohsuke Kawaguchi - kk@kohsuke.org
+ *  @version $Id: CLIBeanSpec.java 884 2021-03-22 18:02:51Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link

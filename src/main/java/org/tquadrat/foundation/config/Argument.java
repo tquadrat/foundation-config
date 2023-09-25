@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -101,7 +101,6 @@ public @interface Argument
      *
      *  @return The {@code CmdLineValueHandler} implementation.
      */
-    @SuppressWarnings( "rawtypes" )
     public Class<?> handler() default CmdLineValueHandler.class;
 
     /**
@@ -123,13 +122,13 @@ public @interface Argument
     String metaVar() default "";
 
     /**
-     *  A flag that indicates whether the argument is multi-valued, for
+     *  A flag that indicates whether the argument is multivalued, for
      *  mappings to a
      *  {@link java.util.Collection Collection}.
      *  As this will consume all remaining arguments from the command line,
      *  the annotated property has to be the last argument.
      *
-     *  @return {@code true} if the argument is multi-valued,
+     *  @return {@code true} if the argument is multivalued,
      *      {@code false} otherwise.
      */
     boolean multiValued() default false;

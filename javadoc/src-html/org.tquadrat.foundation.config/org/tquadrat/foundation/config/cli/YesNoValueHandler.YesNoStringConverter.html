@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2021 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> *  All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *  Licensed to the public under the agreements of the GNU Lesser General Public</span>
@@ -72,11 +72,11 @@
 <span class="source-line-no">059</span><span id="line-59">    ====** Inner Classes **====================================================</span>
 <span class="source-line-no">060</span><span id="line-60">        \*---------------*/</span>
 <span class="source-line-no">061</span><span id="line-61">    /**</span>
-<span class="source-line-no">062</span><span id="line-62">     *  An implementation of</span>
+<span class="source-line-no">062</span><span id="line-62">     *  &lt;p&gt;{@summary An implementation of</span>
 <span class="source-line-no">063</span><span id="line-63">     *  {@link StringConverter}</span>
-<span class="source-line-no">064</span><span id="line-64">     *  that translates 'yes' in various languages into {@code true}.&lt;br&gt;</span>
-<span class="source-line-no">065</span><span id="line-65">     *  &lt;br&gt;'yes', 'true' and 'ok' will always be taken as {@code true}, the</span>
-<span class="source-line-no">066</span><span id="line-66">     *  other variants only when valid for the current locale/language.</span>
+<span class="source-line-no">064</span><span id="line-64">     *  that translates 'yes' in various languages into {@code true}.}&lt;/p&gt;</span>
+<span class="source-line-no">065</span><span id="line-65">     *  &lt;p&gt;'yes', 'true' and 'ok' will always be taken as {@code true}, the</span>
+<span class="source-line-no">066</span><span id="line-66">     *  other variants only when valid for the current locale/language.&lt;/p&gt;</span>
 <span class="source-line-no">067</span><span id="line-67">     *</span>
 <span class="source-line-no">068</span><span id="line-68">     *  @see Locale#getDefault()</span>
 <span class="source-line-no">069</span><span id="line-69">     *</span>
@@ -102,120 +102,129 @@
 <span class="source-line-no">089</span><span id="line-89">        /**</span>
 <span class="source-line-no">090</span><span id="line-90">         *  The various forms of 'yes'.</span>
 <span class="source-line-no">091</span><span id="line-91">         */</span>
-<span class="source-line-no">092</span><span id="line-92">        public static final Map&lt;Locale,Set&lt;String&gt;&gt; YES;</span>
-<span class="source-line-no">093</span><span id="line-93"></span>
-<span class="source-line-no">094</span><span id="line-94">        static</span>
-<span class="source-line-no">095</span><span id="line-95">        {</span>
-<span class="source-line-no">096</span><span id="line-96">            final Map&lt;Locale,Set&lt;String&gt;&gt; yes = new HashMap&lt;&gt;();</span>
-<span class="source-line-no">097</span><span id="line-97"></span>
-<span class="source-line-no">098</span><span id="line-98">            yes.put( ROOT, Set.of( "ok", "true", "yes" ) );</span>
-<span class="source-line-no">099</span><span id="line-99">            yes.put( new Locale( "ar" ), Set.of( "naʿam", "نعم" ) );</span>
-<span class="source-line-no">100</span><span id="line-100">            yes.put( new Locale( "cs" ), Set.of( "ano" ) );</span>
-<span class="source-line-no">101</span><span id="line-101">            yes.put( new Locale( "el" ), Set.of( "ne", "ναι" ) );</span>
-<span class="source-line-no">102</span><span id="line-102">            yes.put( new Locale( "es" ), Set.of( "sí" ) );</span>
-<span class="source-line-no">103</span><span id="line-103">            yes.put( new Locale( "et" ), Set.of( "jah" ) );</span>
-<span class="source-line-no">104</span><span id="line-104">            yes.put( new Locale( "fa" ), Set.of( "baleh", "بله" ) );</span>
-<span class="source-line-no">105</span><span id="line-105">            yes.put( new Locale( "fi" ), Set.of( "kyllä" ) );</span>
-<span class="source-line-no">106</span><span id="line-106">            yes.put( new Locale( "fr" ), Set.of( "oui" ) );</span>
-<span class="source-line-no">107</span><span id="line-107">            yes.put( new Locale( "he" ), Set.of( "ken", "כֵּן", "כן" ) );</span>
-<span class="source-line-no">108</span><span id="line-108">            yes.put( new Locale( "hi" ), Set.of( "hā̃ ", "हाँ", "jī", "जी", "jī hā̃ ", "जी हाँ" ) );</span>
-<span class="source-line-no">109</span><span id="line-109">            yes.put( new Locale( "hu" ), Set.of( "igen" ) );</span>
-<span class="source-line-no">110</span><span id="line-110">            yes.put( new Locale( "id" ), Set.of( "ya" ) );</span>
-<span class="source-line-no">111</span><span id="line-111">            yes.put( new Locale( "is" ), Set.of( "já" ) );</span>
-<span class="source-line-no">112</span><span id="line-112">            yes.put( new Locale( "it" ), Set.of( "sì" ) );</span>
-<span class="source-line-no">113</span><span id="line-113">            yes.put( new Locale( "jp" ), Set.of( "hai", "はい", "ee", "ええ", "un", "うん" ) );</span>
-<span class="source-line-no">114</span><span id="line-114">            yes.put( new Locale( "ko" ), Set.of( "ne", "네" ) );</span>
-<span class="source-line-no">115</span><span id="line-115">            yes.put( new Locale( "ku" ), Set.of( "are" ) );</span>
-<span class="source-line-no">116</span><span id="line-116">            yes.put( new Locale( "lt" ), Set.of( "taip" ) );</span>
-<span class="source-line-no">117</span><span id="line-117">            yes.put( new Locale( "pl" ), Set.of( "tak" ) );</span>
-<span class="source-line-no">118</span><span id="line-118">            yes.put( new Locale( "pt" ), Set.of( "sim" ) );</span>
-<span class="source-line-no">119</span><span id="line-119">            yes.put( new Locale( "sq" ), Set.of( "po" ) );</span>
-<span class="source-line-no">120</span><span id="line-120">            yes.put( new Locale( "sw" ), Set.of( "ndiyo", "naam" ) );</span>
-<span class="source-line-no">121</span><span id="line-121">            yes.put( new Locale( "ta" ), Set.of( "ām", "ஆம்", "āmām", "ஆமாம்", "ōm", "ஓம்" ) );</span>
-<span class="source-line-no">122</span><span id="line-122">            yes.put( new Locale( "tg" ), Set.of( "bale", "бале", "ore", "оре" ) );</span>
-<span class="source-line-no">123</span><span id="line-123">            yes.put( new Locale( "tr" ), Set.of( "evet" ) );</span>
-<span class="source-line-no">124</span><span id="line-124">            yes.put( new Locale( "uk" ), Set.of( "tak", "так" ) );</span>
-<span class="source-line-no">125</span><span id="line-125"></span>
-<span class="source-line-no">126</span><span id="line-126">            var set = Set.of( "ja" );</span>
-<span class="source-line-no">127</span><span id="line-127">            yes.put( new Locale( "af" ), set );</span>
-<span class="source-line-no">128</span><span id="line-128">            yes.put( new Locale( "da" ), set );</span>
-<span class="source-line-no">129</span><span id="line-129">            yes.put( new Locale( "de" ), set );</span>
-<span class="source-line-no">130</span><span id="line-130">            yes.put( new Locale( "no" ), set );</span>
-<span class="source-line-no">131</span><span id="line-131">            yes.put( new Locale( "sv" ), set );</span>
-<span class="source-line-no">132</span><span id="line-132"></span>
-<span class="source-line-no">133</span><span id="line-133">            set = Set.of( "da", "да" );</span>
-<span class="source-line-no">134</span><span id="line-134">            yes.put( new Locale( "bg" ), set );</span>
-<span class="source-line-no">135</span><span id="line-135">            yes.put( new Locale( "hr" ), set );</span>
-<span class="source-line-no">136</span><span id="line-136">            yes.put( new Locale( "mk" ), set );</span>
-<span class="source-line-no">137</span><span id="line-137">            yes.put( new Locale( "ro" ), set );</span>
-<span class="source-line-no">138</span><span id="line-138">            yes.put( new Locale( "ru" ), set );</span>
-<span class="source-line-no">139</span><span id="line-139">            yes.put( new Locale( "sh" ), set );</span>
-<span class="source-line-no">140</span><span id="line-140">            yes.put( new Locale( "sl" ), set );</span>
-<span class="source-line-no">141</span><span id="line-141">            yes.put( new Locale( "sr" ), set );</span>
-<span class="source-line-no">142</span><span id="line-142"></span>
-<span class="source-line-no">143</span><span id="line-143">            YES = Map.copyOf( yes );</span>
-<span class="source-line-no">144</span><span id="line-144"></span>
-<span class="source-line-no">145</span><span id="line-145">            INSTANCE = new YesNoStringConverter();</span>
-<span class="source-line-no">146</span><span id="line-146">        }</span>
-<span class="source-line-no">147</span><span id="line-147"></span>
-<span class="source-line-no">148</span><span id="line-148">            /*---------*\</span>
-<span class="source-line-no">149</span><span id="line-149">        ====** Methods **======================================================</span>
-<span class="source-line-no">150</span><span id="line-150">            \*---------*/</span>
-<span class="source-line-no">151</span><span id="line-151">        /**</span>
-<span class="source-line-no">152</span><span id="line-152">         *  {@inheritDoc}</span>
-<span class="source-line-no">153</span><span id="line-153">         */</span>
-<span class="source-line-no">154</span><span id="line-154">        @Override</span>
-<span class="source-line-no">155</span><span id="line-155">        public Boolean fromString( final CharSequence source ) throws IllegalArgumentException</span>
-<span class="source-line-no">156</span><span id="line-156">        {</span>
-<span class="source-line-no">157</span><span id="line-157">            var retValue = FALSE;</span>
-<span class="source-line-no">158</span><span id="line-158">            if( isNotEmptyOrBlank( source ) )</span>
-<span class="source-line-no">159</span><span id="line-159">            {</span>
-<span class="source-line-no">160</span><span id="line-160">                final Collection&lt;String&gt; yes = new HashSet&lt;&gt;( YES.get( ROOT ) );</span>
-<span class="source-line-no">161</span><span id="line-161">                final var language = new Locale( Locale.getDefault().getLanguage() );</span>
-<span class="source-line-no">162</span><span id="line-162">                if( YES.containsKey( language ) ) yes.addAll( YES.get( language ) );</span>
-<span class="source-line-no">163</span><span id="line-163">                retValue = Boolean.valueOf( yes.contains( source.toString().toLowerCase() ) );</span>
-<span class="source-line-no">164</span><span id="line-164">            }</span>
-<span class="source-line-no">165</span><span id="line-165"></span>
-<span class="source-line-no">166</span><span id="line-166">            //---* Done *------------------------------------------------------</span>
-<span class="source-line-no">167</span><span id="line-167">            return retValue;</span>
-<span class="source-line-no">168</span><span id="line-168">        }   //  fromString()</span>
-<span class="source-line-no">169</span><span id="line-169">    }</span>
-<span class="source-line-no">170</span><span id="line-170">    //  class YesNoStringConverter</span>
-<span class="source-line-no">171</span><span id="line-171"></span>
-<span class="source-line-no">172</span><span id="line-172">        /*--------------*\</span>
-<span class="source-line-no">173</span><span id="line-173">    ====** Constructors **=====================================================</span>
-<span class="source-line-no">174</span><span id="line-174">        \*--------------*/</span>
-<span class="source-line-no">175</span><span id="line-175">    /**</span>
-<span class="source-line-no">176</span><span id="line-176">     *  Creates a new {@code YesNoValueHandler} instance.</span>
-<span class="source-line-no">177</span><span id="line-177">     *</span>
-<span class="source-line-no">178</span><span id="line-178">     *  @param  context The CLI definition that provides the context for this</span>
-<span class="source-line-no">179</span><span id="line-179">     *      value handler.</span>
-<span class="source-line-no">180</span><span id="line-180">     *  @param  valueSetter The function that places the translated value to</span>
-<span class="source-line-no">181</span><span id="line-181">     *      the property.</span>
-<span class="source-line-no">182</span><span id="line-182">     */</span>
-<span class="source-line-no">183</span><span id="line-183">    public YesNoValueHandler( final CLIDefinition context, final BiConsumer&lt;String,Boolean&gt; valueSetter )</span>
-<span class="source-line-no">184</span><span id="line-184">    {</span>
-<span class="source-line-no">185</span><span id="line-185">        //---* Daddy will do the null check *----------------------------------</span>
-<span class="source-line-no">186</span><span id="line-186">        super( context, valueSetter, YesNoStringConverter.INSTANCE );</span>
-<span class="source-line-no">187</span><span id="line-187">    }   //  YesNoValueHandler()</span>
-<span class="source-line-no">188</span><span id="line-188"></span>
-<span class="source-line-no">189</span><span id="line-189">    /**</span>
-<span class="source-line-no">190</span><span id="line-190">     *  Creates a new {@code YesNoValueHandler} instance.</span>
-<span class="source-line-no">191</span><span id="line-191">     *</span>
-<span class="source-line-no">192</span><span id="line-192">     *  @param  valueSetter The function that places the translated value to</span>
-<span class="source-line-no">193</span><span id="line-193">     *      the property.</span>
-<span class="source-line-no">194</span><span id="line-194">     */</span>
-<span class="source-line-no">195</span><span id="line-195">    public YesNoValueHandler( final BiConsumer&lt;String,Boolean&gt; valueSetter )</span>
-<span class="source-line-no">196</span><span id="line-196">    {</span>
-<span class="source-line-no">197</span><span id="line-197">        //---* Daddy will do the null check *----------------------------------</span>
-<span class="source-line-no">198</span><span id="line-198">        super( valueSetter, YesNoStringConverter.INSTANCE );</span>
-<span class="source-line-no">199</span><span id="line-199">    }   //  YesNoValueHandler()</span>
-<span class="source-line-no">200</span><span id="line-200">}</span>
-<span class="source-line-no">201</span><span id="line-201">//  class YesNoValueHandler</span>
-<span class="source-line-no">202</span><span id="line-202"></span>
-<span class="source-line-no">203</span><span id="line-203">/*</span>
-<span class="source-line-no">204</span><span id="line-204"> *  End of File</span>
-<span class="source-line-no">205</span><span id="line-205"> */</span>
+<span class="source-line-no">092</span><span id="line-92">        @SuppressWarnings( "StaticCollection" )</span>
+<span class="source-line-no">093</span><span id="line-93">        public static final Map&lt;Locale,Set&lt;String&gt;&gt; YES;</span>
+<span class="source-line-no">094</span><span id="line-94"></span>
+<span class="source-line-no">095</span><span id="line-95">        static</span>
+<span class="source-line-no">096</span><span id="line-96">        {</span>
+<span class="source-line-no">097</span><span id="line-97">            final Map&lt;Locale,Set&lt;String&gt;&gt; yes = new HashMap&lt;&gt;();</span>
+<span class="source-line-no">098</span><span id="line-98"></span>
+<span class="source-line-no">099</span><span id="line-99">            yes.put( ROOT, Set.of( "ok", "true", "yes" ) );</span>
+<span class="source-line-no">100</span><span id="line-100">            yes.put( new Locale( "ar" ), Set.of( "naʿam", "نعم" ) );</span>
+<span class="source-line-no">101</span><span id="line-101">            yes.put( new Locale( "cs" ), Set.of( "ano" ) );</span>
+<span class="source-line-no">102</span><span id="line-102">            yes.put( new Locale( "el" ), Set.of( "ne", "ναι" ) );</span>
+<span class="source-line-no">103</span><span id="line-103">            yes.put( new Locale( "es" ), Set.of( "sí" ) );</span>
+<span class="source-line-no">104</span><span id="line-104">            yes.put( new Locale( "et" ), Set.of( "jah" ) );</span>
+<span class="source-line-no">105</span><span id="line-105">            yes.put( new Locale( "fa" ), Set.of( "baleh", "بله" ) );</span>
+<span class="source-line-no">106</span><span id="line-106">            yes.put( new Locale( "fi" ), Set.of( "kyllä" ) );</span>
+<span class="source-line-no">107</span><span id="line-107">            yes.put( new Locale( "fr" ), Set.of( "oui" ) );</span>
+<span class="source-line-no">108</span><span id="line-108">            yes.put( new Locale( "he" ), Set.of( "ken", "כֵּן", "כן" ) );</span>
+<span class="source-line-no">109</span><span id="line-109">            yes.put( new Locale( "hi" ), Set.of( "hā̃ ", "हाँ", "jī", "जी", "jī hā̃ ", "जी हाँ" ) );</span>
+<span class="source-line-no">110</span><span id="line-110">            yes.put( new Locale( "hu" ), Set.of( "igen" ) );</span>
+<span class="source-line-no">111</span><span id="line-111">            yes.put( new Locale( "id" ), Set.of( "ya" ) );</span>
+<span class="source-line-no">112</span><span id="line-112">            yes.put( new Locale( "is" ), Set.of( "já" ) );</span>
+<span class="source-line-no">113</span><span id="line-113">            yes.put( new Locale( "it" ), Set.of( "sì" ) );</span>
+<span class="source-line-no">114</span><span id="line-114">            yes.put( new Locale( "jp" ), Set.of( "hai", "はい", "ee", "ええ", "un", "うん" ) );</span>
+<span class="source-line-no">115</span><span id="line-115">            yes.put( new Locale( "ko" ), Set.of( "ne", "네" ) );</span>
+<span class="source-line-no">116</span><span id="line-116">            yes.put( new Locale( "ku" ), Set.of( "are" ) );</span>
+<span class="source-line-no">117</span><span id="line-117">            yes.put( new Locale( "lt" ), Set.of( "taip" ) );</span>
+<span class="source-line-no">118</span><span id="line-118">            yes.put( new Locale( "pl" ), Set.of( "tak" ) );</span>
+<span class="source-line-no">119</span><span id="line-119">            yes.put( new Locale( "pt" ), Set.of( "sim" ) );</span>
+<span class="source-line-no">120</span><span id="line-120">            yes.put( new Locale( "sq" ), Set.of( "po" ) );</span>
+<span class="source-line-no">121</span><span id="line-121">            yes.put( new Locale( "sw" ), Set.of( "ndiyo", "naam" ) );</span>
+<span class="source-line-no">122</span><span id="line-122">            yes.put( new Locale( "ta" ), Set.of( "ām", "ஆம்", "āmām", "ஆமாம்", "ōm", "ஓம்" ) );</span>
+<span class="source-line-no">123</span><span id="line-123">            yes.put( new Locale( "tg" ), Set.of( "bale", "бале", "ore", "оре" ) );</span>
+<span class="source-line-no">124</span><span id="line-124">            yes.put( new Locale( "tr" ), Set.of( "evet" ) );</span>
+<span class="source-line-no">125</span><span id="line-125">            yes.put( new Locale( "uk" ), Set.of( "tak", "так" ) );</span>
+<span class="source-line-no">126</span><span id="line-126"></span>
+<span class="source-line-no">127</span><span id="line-127">            var set = Set.of( "ja" );</span>
+<span class="source-line-no">128</span><span id="line-128">            yes.put( new Locale( "af" ), set );</span>
+<span class="source-line-no">129</span><span id="line-129">            yes.put( new Locale( "da" ), set );</span>
+<span class="source-line-no">130</span><span id="line-130">            yes.put( new Locale( "de" ), set );</span>
+<span class="source-line-no">131</span><span id="line-131">            yes.put( new Locale( "no" ), set );</span>
+<span class="source-line-no">132</span><span id="line-132">            yes.put( new Locale( "sv" ), set );</span>
+<span class="source-line-no">133</span><span id="line-133"></span>
+<span class="source-line-no">134</span><span id="line-134">            set = Set.of( "da", "да" );</span>
+<span class="source-line-no">135</span><span id="line-135">            yes.put( new Locale( "bg" ), set );</span>
+<span class="source-line-no">136</span><span id="line-136">            yes.put( new Locale( "hr" ), set );</span>
+<span class="source-line-no">137</span><span id="line-137">            yes.put( new Locale( "mk" ), set );</span>
+<span class="source-line-no">138</span><span id="line-138">            yes.put( new Locale( "ro" ), set );</span>
+<span class="source-line-no">139</span><span id="line-139">            yes.put( new Locale( "ru" ), set );</span>
+<span class="source-line-no">140</span><span id="line-140">            yes.put( new Locale( "sh" ), set );</span>
+<span class="source-line-no">141</span><span id="line-141">            yes.put( new Locale( "sl" ), set );</span>
+<span class="source-line-no">142</span><span id="line-142">            yes.put( new Locale( "sr" ), set );</span>
+<span class="source-line-no">143</span><span id="line-143"></span>
+<span class="source-line-no">144</span><span id="line-144">            YES = Map.copyOf( yes );</span>
+<span class="source-line-no">145</span><span id="line-145"></span>
+<span class="source-line-no">146</span><span id="line-146">            INSTANCE = new YesNoStringConverter();</span>
+<span class="source-line-no">147</span><span id="line-147">        }</span>
+<span class="source-line-no">148</span><span id="line-148"></span>
+<span class="source-line-no">149</span><span id="line-149">            /*--------------*\</span>
+<span class="source-line-no">150</span><span id="line-150">        ====** Constructors **=================================================</span>
+<span class="source-line-no">151</span><span id="line-151">            \*--------------*/</span>
+<span class="source-line-no">152</span><span id="line-152">        /**</span>
+<span class="source-line-no">153</span><span id="line-153">         *  Creates a new instance of {@code YesNoValueStringConverter}.</span>
+<span class="source-line-no">154</span><span id="line-154">         */</span>
+<span class="source-line-no">155</span><span id="line-155">        public YesNoStringConverter() { super(); }</span>
+<span class="source-line-no">156</span><span id="line-156"></span>
+<span class="source-line-no">157</span><span id="line-157">            /*---------*\</span>
+<span class="source-line-no">158</span><span id="line-158">        ====** Methods **======================================================</span>
+<span class="source-line-no">159</span><span id="line-159">            \*---------*/</span>
+<span class="source-line-no">160</span><span id="line-160">        /**</span>
+<span class="source-line-no">161</span><span id="line-161">         *  {@inheritDoc}</span>
+<span class="source-line-no">162</span><span id="line-162">         */</span>
+<span class="source-line-no">163</span><span id="line-163">        @Override</span>
+<span class="source-line-no">164</span><span id="line-164">        public Boolean fromString( final CharSequence source ) throws IllegalArgumentException</span>
+<span class="source-line-no">165</span><span id="line-165">        {</span>
+<span class="source-line-no">166</span><span id="line-166">            var retValue = FALSE;</span>
+<span class="source-line-no">167</span><span id="line-167">            if( isNotEmptyOrBlank( source ) )</span>
+<span class="source-line-no">168</span><span id="line-168">            {</span>
+<span class="source-line-no">169</span><span id="line-169">                final Collection&lt;String&gt; yes = new HashSet&lt;&gt;( YES.get( ROOT ) );</span>
+<span class="source-line-no">170</span><span id="line-170">                final var language = new Locale( Locale.getDefault().getLanguage() );</span>
+<span class="source-line-no">171</span><span id="line-171">                if( YES.containsKey( language ) ) yes.addAll( YES.get( language ) );</span>
+<span class="source-line-no">172</span><span id="line-172">                retValue = Boolean.valueOf( yes.contains( source.toString().toLowerCase( Locale.getDefault() ) ) );</span>
+<span class="source-line-no">173</span><span id="line-173">            }</span>
+<span class="source-line-no">174</span><span id="line-174"></span>
+<span class="source-line-no">175</span><span id="line-175">            //---* Done *------------------------------------------------------</span>
+<span class="source-line-no">176</span><span id="line-176">            return retValue;</span>
+<span class="source-line-no">177</span><span id="line-177">        }   //  fromString()</span>
+<span class="source-line-no">178</span><span id="line-178">    }</span>
+<span class="source-line-no">179</span><span id="line-179">    //  class YesNoStringConverter</span>
+<span class="source-line-no">180</span><span id="line-180"></span>
+<span class="source-line-no">181</span><span id="line-181">        /*--------------*\</span>
+<span class="source-line-no">182</span><span id="line-182">    ====** Constructors **=====================================================</span>
+<span class="source-line-no">183</span><span id="line-183">        \*--------------*/</span>
+<span class="source-line-no">184</span><span id="line-184">    /**</span>
+<span class="source-line-no">185</span><span id="line-185">     *  Creates a new {@code YesNoValueHandler} instance.</span>
+<span class="source-line-no">186</span><span id="line-186">     *</span>
+<span class="source-line-no">187</span><span id="line-187">     *  @param  context The CLI definition that provides the context for this</span>
+<span class="source-line-no">188</span><span id="line-188">     *      value handler.</span>
+<span class="source-line-no">189</span><span id="line-189">     *  @param  valueSetter The function that places the translated value to</span>
+<span class="source-line-no">190</span><span id="line-190">     *      the property.</span>
+<span class="source-line-no">191</span><span id="line-191">     */</span>
+<span class="source-line-no">192</span><span id="line-192">    public YesNoValueHandler( final CLIDefinition context, final BiConsumer&lt;String,Boolean&gt; valueSetter )</span>
+<span class="source-line-no">193</span><span id="line-193">    {</span>
+<span class="source-line-no">194</span><span id="line-194">        //---* Daddy will do the null check *----------------------------------</span>
+<span class="source-line-no">195</span><span id="line-195">        super( context, valueSetter, YesNoStringConverter.INSTANCE );</span>
+<span class="source-line-no">196</span><span id="line-196">    }   //  YesNoValueHandler()</span>
+<span class="source-line-no">197</span><span id="line-197"></span>
+<span class="source-line-no">198</span><span id="line-198">    /**</span>
+<span class="source-line-no">199</span><span id="line-199">     *  Creates a new {@code YesNoValueHandler} instance.</span>
+<span class="source-line-no">200</span><span id="line-200">     *</span>
+<span class="source-line-no">201</span><span id="line-201">     *  @param  valueSetter The function that places the translated value to</span>
+<span class="source-line-no">202</span><span id="line-202">     *      the property.</span>
+<span class="source-line-no">203</span><span id="line-203">     */</span>
+<span class="source-line-no">204</span><span id="line-204">    public YesNoValueHandler( final BiConsumer&lt;String,Boolean&gt; valueSetter )</span>
+<span class="source-line-no">205</span><span id="line-205">    {</span>
+<span class="source-line-no">206</span><span id="line-206">        //---* Daddy will do the null check *----------------------------------</span>
+<span class="source-line-no">207</span><span id="line-207">        super( valueSetter, YesNoStringConverter.INSTANCE );</span>
+<span class="source-line-no">208</span><span id="line-208">    }   //  YesNoValueHandler()</span>
+<span class="source-line-no">209</span><span id="line-209">}</span>
+<span class="source-line-no">210</span><span id="line-210">//  class YesNoValueHandler</span>
+<span class="source-line-no">211</span><span id="line-211"></span>
+<span class="source-line-no">212</span><span id="line-212">/*</span>
+<span class="source-line-no">213</span><span id="line-213"> *  End of File</span>
+<span class="source-line-no">214</span><span id="line-214"> */</span>
 
 
 

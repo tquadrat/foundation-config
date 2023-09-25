@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -74,6 +74,7 @@ public final class PrimitiveByteAccessor extends PreferenceAccessor<Byte>
     public final void readPreference( final Preferences node ) throws InvalidPreferenceValueException
     {
         final var defaultValue = getter().get();
+        //noinspection NumericCastThatLosesPrecision
         setter().set( Byte.valueOf( (byte) requireNonNullArgument( node, "node" ).getInt( getPropertyName(), isNull( defaultValue ) ? 0 : defaultValue.intValue() ) ) );
     }   //  readPreference()
 
@@ -83,7 +84,7 @@ public final class PrimitiveByteAccessor extends PreferenceAccessor<Byte>
     @Override
     public final void writePreference( final Preferences node )
     {
-        node.putInt( getPropertyName(), getter().get().byteValue() );
+        node.putInt( getPropertyName(), (int) getter().get().byteValue() );
     }   //  writePreference()
 }
 //  class PrimitiveByteAccessor

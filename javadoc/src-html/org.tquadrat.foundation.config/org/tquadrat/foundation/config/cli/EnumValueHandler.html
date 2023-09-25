@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2021 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *</span>
@@ -31,9 +31,9 @@
 <span class="source-line-no">018</span><span id="line-18"></span>
 <span class="source-line-no">019</span><span id="line-19">package org.tquadrat.foundation.config.cli;</span>
 <span class="source-line-no">020</span><span id="line-20"></span>
-<span class="source-line-no">021</span><span id="line-21">import static org.apiguardian.api.API.Status.STABLE;</span>
-<span class="source-line-no">022</span><span id="line-22">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
-<span class="source-line-no">023</span><span id="line-23">import static org.tquadrat.foundation.util.StringUtils.format;</span>
+<span class="source-line-no">021</span><span id="line-21">import static java.lang.String.format;</span>
+<span class="source-line-no">022</span><span id="line-22">import static org.apiguardian.api.API.Status.STABLE;</span>
+<span class="source-line-no">023</span><span id="line-23">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
 <span class="source-line-no">024</span><span id="line-24"></span>
 <span class="source-line-no">025</span><span id="line-25">import java.util.Collection;</span>
 <span class="source-line-no">026</span><span id="line-26">import java.util.List;</span>
@@ -76,7 +76,7 @@
 <span class="source-line-no">063</span><span id="line-63">     *  that is used to translate the String value from the command line into</span>
 <span class="source-line-no">064</span><span id="line-64">     *  the desired object instance.</span>
 <span class="source-line-no">065</span><span id="line-65">     */</span>
-<span class="source-line-no">066</span><span id="line-66">    @SuppressWarnings( "InstanceVariableOfConcreteClass" )</span>
+<span class="source-line-no">066</span><span id="line-66">    @SuppressWarnings( "UseOfConcreteClass" )</span>
 <span class="source-line-no">067</span><span id="line-67">    private final EnumStringConverter&lt;T&gt; m_StringConverter;</span>
 <span class="source-line-no">068</span><span id="line-68"></span>
 <span class="source-line-no">069</span><span id="line-69">        /*-----------*\</span>

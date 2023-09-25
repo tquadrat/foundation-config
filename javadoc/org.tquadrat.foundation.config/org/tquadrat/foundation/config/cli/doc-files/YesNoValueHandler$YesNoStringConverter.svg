@@ -149,7 +149,7 @@
                     <text y='41.000'
                           class='static final'>+ YES:java.util.Map&lt;java.util.Locale,java.util.Set&lt;java.lang.String&gt;&gt;</text>
                     <text x='5.000'
-                          y='58.000'>- YesNoStringConverter()</text>
+                          y='58.000'>+ YesNoStringConverter()</text>
                     <text x='5.000'
                           y='69.000'>+ fromString(source:java.lang.CharSequence):java.lang.Boolean</text>
                 </g>

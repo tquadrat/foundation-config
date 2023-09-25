@@ -208,7 +208,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.String,org.tquadrat.foundation.function.Getter,org.tquadrat.foundation.function.Setter)">
 <h3>PreferenceAccessorBase</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name"><a href="../../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/prefs/PreferenceAccessorBase.html#line-61">PreferenceAccessorBase</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName,
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name"><a href="../../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/prefs/PreferenceAccessorBase.html#line-60">PreferenceAccessorBase</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName,
  <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Getter.html" title="class or interface in org.tquadrat.foundation.function" class="external-link">Getter</a>&lt;<a href="PreferenceAccessorBase.html" title="type parameter in PreferenceAccessorBase">T</a>&gt;&nbsp;getter,
  <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Setter.html" title="class or interface in org.tquadrat.foundation.function" class="external-link">Setter</a>&lt;<a href="PreferenceAccessorBase.html" title="type parameter in PreferenceAccessorBase">T</a>&gt;&nbsp;setter)</span></div>
 <div class="block">Creates a new <code>PreferenceAccessorBase</code> instance.</div>
@@ -231,7 +231,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="fromString(java.util.prefs.Preferences,java.lang.String)">
 <h3>fromString</h3>
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="PreferenceAccessorBase.html" title="type parameter in PreferenceAccessorBase">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/prefs/PreferenceAccessorBase.html#line-83">fromString</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.prefs/java/util/prefs/Preferences.html" title="class or interface in java.util.prefs" class="external-link">Preferences</a>&nbsp;node,
+<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="PreferenceAccessorBase.html" title="type parameter in PreferenceAccessorBase">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/prefs/PreferenceAccessorBase.html#line-82">fromString</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.prefs/java/util/prefs/Preferences.html" title="class or interface in java.util.prefs" class="external-link">Preferences</a>&nbsp;node,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</span>
                          throws <span class="exceptions"><a href="../InvalidPreferenceValueException.html" title="class in org.tquadrat.foundation.config.spi">InvalidPreferenceValueException</a></span></div>
 <div class="block"><p>Converts the given String to an instance of the property
@@ -255,7 +255,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="readPreference(java.util.prefs.Preferences)">
 <h3>readPreference</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/prefs/PreferenceAccessorBase.html#line-88">readPreference</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.prefs/java/util/prefs/Preferences.html" title="class or interface in java.util.prefs" class="external-link">Preferences</a>&nbsp;node)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/prefs/PreferenceAccessorBase.html#line-87">readPreference</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.prefs/java/util/prefs/Preferences.html" title="class or interface in java.util.prefs" class="external-link">Preferences</a>&nbsp;node)</span>
                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.prefs/java/util/prefs/BackingStoreException.html" title="class or interface in java.util.prefs" class="external-link">BackingStoreException</a>,
 <a href="../InvalidPreferenceValueException.html" title="class in org.tquadrat.foundation.config.spi">InvalidPreferenceValueException</a></span></div>
 <div class="block">Reads the preference value from the given node and writes it to the
@@ -276,7 +276,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="toString(T)">
 <h3 id="toString(java.lang.Object)">toString</h3>
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/prefs/PreferenceAccessorBase.html#line-106">toString</a></span><wbr><span class="parameters">(<a href="PreferenceAccessorBase.html" title="type parameter in PreferenceAccessorBase">T</a>&nbsp;t)</span></div>
+<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/prefs/PreferenceAccessorBase.html#line-105">toString</a></span><wbr><span class="parameters">(<a href="PreferenceAccessorBase.html" title="type parameter in PreferenceAccessorBase">T</a>&nbsp;t)</span></div>
 <div class="block"><p>Converts the given instance of the property type to a
   String.</p>
   <p>This implementation uses
@@ -294,7 +294,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="writePreference(java.util.prefs.Preferences)">
 <h3>writePreference</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/prefs/PreferenceAccessorBase.html#line-111">writePreference</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.prefs/java/util/prefs/Preferences.html" title="class or interface in java.util.prefs" class="external-link">Preferences</a>&nbsp;node)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/prefs/PreferenceAccessorBase.html#line-110">writePreference</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.prefs/java/util/prefs/Preferences.html" title="class or interface in java.util.prefs" class="external-link">Preferences</a>&nbsp;node)</span>
                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.prefs/java/util/prefs/BackingStoreException.html" title="class or interface in java.util.prefs" class="external-link">BackingStoreException</a></span></div>
 <div class="block">Writes the preference value from the property and writes it to the
   given node.</div>

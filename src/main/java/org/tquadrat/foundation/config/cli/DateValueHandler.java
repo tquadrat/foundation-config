@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -29,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.function.BiConsumer;
 
 import org.apiguardian.api.API;
@@ -120,7 +121,7 @@ public final class DateValueHandler extends CmdLineValueHandler<Date>
         final var argument = requireNonNullArgument( params, "params" ).getParameter( 0 );
         try
         {
-            final var parser = new SimpleDateFormat( getFormat() );
+            final var parser = new SimpleDateFormat( getFormat(), Locale.getDefault() );
             parser.setLenient( false );
             final var date = parser.parse( requireNonNullArgument( argument, "argument" ) );
             retValue = List.of( date );

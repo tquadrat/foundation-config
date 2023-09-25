@@ -176,7 +176,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><a href="#multiValued()" class="member-name-link">multiValued</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A flag that indicates whether the argument is multi-valued, for
+<div class="block">A flag that indicates whether the argument is multivalued, for
   mappings to a
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a>.</div>
 </div>
@@ -221,7 +221,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="index()">
 <h3>index</h3>
-<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-114">index</a></span></div>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-113">index</a></span></div>
 <div class="block">A command line argument is identified by its relative position on the
   command line, instead by a name. The first position has the index 0,
   the second is 1 and so on.</div>
@@ -300,7 +300,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="metaVar()">
 <h3>metaVar</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-123">metaVar</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-122">metaVar</a></span></div>
 <div class="block"><p>A name for the argument that is used in messages.</p>
   <p>If left unspecified, that name is inferred from the name of the
   configuration property itself.</p></div>
@@ -317,15 +317,15 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="multiValued()">
 <h3>multiValued</h3>
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-135">multiValued</a></span></div>
-<div class="block">A flag that indicates whether the argument is multi-valued, for
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-134">multiValued</a></span></div>
+<div class="block">A flag that indicates whether the argument is multivalued, for
   mappings to a
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a>.
   As this will consume all remaining arguments from the command line,
   the annotated property has to be the last argument.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd><code>true</code> if the argument is multi-valued,
+<dd><code>true</code> if the argument is multivalued,
       <code>false</code> otherwise.</dd>
 </dl>
 <dl class="notes">
@@ -337,7 +337,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="required()">
 <h3>required</h3>
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-145">required</a></span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-144">required</a></span></div>
 <div class="block">A flag that specifies whether this argument is mandatory. This implies
   that all previous arguments (those with lower indexes) are mandatory as
   well.</div>
@@ -355,7 +355,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="usage()">
 <h3>usage</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-162">usage</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-161">usage</a></span></div>
 <div class="block"><p>A help text that will be displayed in the usage output if
   <a href="ConfigBeanSpec.html#getResourceBundle()"><code>ConfigBeanSpec.getResourceBundle()</code></a>
   returns no
@@ -380,7 +380,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="usageKey()">
 <h3>usageKey</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-184">usageKey</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/Argument.html#line-183">usageKey</a></span></div>
 <div class="block"><p>The
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ResourceBundle.html#getString(java.lang.String)" title="class or interface in java.util" class="external-link">resource bundle key</a>
   for a help text that will be displayed in the usage output.</p>

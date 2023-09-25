@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -34,7 +34,6 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "InterfaceNeverImplemented" )
 @ClassVersion( sourceVersion = "$Id: SessionBeanSpec.java 884 2021-03-22 18:02:51Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface SessionBeanSpec extends ConfigBeanSpec

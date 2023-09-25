@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,6 +18,7 @@
 
 package org.tquadrat.foundation.config.internal;
 
+import static java.lang.String.format;
 import static java.nio.file.Files.lines;
 import static java.util.Spliterator.IMMUTABLE;
 import static java.util.Spliterator.NONNULL;
@@ -43,7 +44,6 @@ import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmpty;
 import static org.tquadrat.foundation.util.SystemUtils.systemPropertiesAsStringMap;
 import static org.tquadrat.foundation.util.Template.replaceVariable;
@@ -450,7 +450,7 @@ public class ArgumentParser
                 .filter( i -> isNull( m_ArgumentDefinitions.get( i ) ) )
                 .map( i -> Integer.toString( i ) )
                 .collect( joining( ", " ) );
-            throw new IllegalArgumentException( format( "Missing index: %s - Gap in Sequence", indexes ) );
+            throw new IllegalArgumentException( "Missing index: %s - Gap in Sequence".formatted( indexes ) );
         }
     }   //  ArgumentParser()
 
@@ -474,7 +474,7 @@ public class ArgumentParser
         }
         if( nonNull( m_ArgumentDefinitions.get( index ) ) )
         {
-            throw new IllegalArgumentException( format( "Argument index '%d' is used more than once", index ) );
+            throw new IllegalArgumentException( "Argument index '%d' is used more than once".formatted( index ) );
         }
         m_ArgumentDefinitions.set( index, argumentDefinition );
     }   //  addArgument()
@@ -579,7 +579,7 @@ public class ArgumentParser
 
         if( m_OptionDefinitions.containsKey( name ) )
         {
-            throw new IllegalArgumentException( format( "Option name '%s' is used more than once", name ) );
+            throw new IllegalArgumentException( "Option name '%s' is used more than once".formatted( name ) );
         }
     }   //  checkOptionNotYetUsed()
 

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -92,14 +92,12 @@ public abstract class PreferenceChangeListenerBase implements PreferenceChangeLi
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "AbstractMethodOverridesAbstractMethod" )
     @Override
     public abstract void childAdded( final NodeChangeEvent event );
 
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "AbstractMethodOverridesAbstractMethod" )
     @Override
     public abstract void childRemoved( final NodeChangeEvent event );
 
@@ -139,7 +137,6 @@ public abstract class PreferenceChangeListenerBase implements PreferenceChangeLi
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "AbstractMethodOverridesAbstractMethod" )
     @Override
     public abstract void preferenceChange( final PreferenceChangeEvent event );
 

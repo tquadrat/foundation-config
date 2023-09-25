@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2021 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *</span>
@@ -87,23 +87,24 @@
 <span class="source-line-no">074</span><span id="line-74">    public final void readPreference( final Preferences node ) throws InvalidPreferenceValueException</span>
 <span class="source-line-no">075</span><span id="line-75">    {</span>
 <span class="source-line-no">076</span><span id="line-76">        final var defaultValue = getter().get();</span>
-<span class="source-line-no">077</span><span id="line-77">        setter().set( Short.valueOf( (short) requireNonNullArgument( node, "node" ).getInt( getPropertyName(), isNull( defaultValue ) ? 0 : defaultValue.intValue() ) ) );</span>
-<span class="source-line-no">078</span><span id="line-78">    }   //  readPreference()</span>
-<span class="source-line-no">079</span><span id="line-79"></span>
-<span class="source-line-no">080</span><span id="line-80">    /**</span>
-<span class="source-line-no">081</span><span id="line-81">     *  {@inheritDoc}</span>
-<span class="source-line-no">082</span><span id="line-82">     */</span>
-<span class="source-line-no">083</span><span id="line-83">    @Override</span>
-<span class="source-line-no">084</span><span id="line-84">    public final void writePreference( final Preferences node )</span>
-<span class="source-line-no">085</span><span id="line-85">    {</span>
-<span class="source-line-no">086</span><span id="line-86">        node.putInt( getPropertyName(), getter().get().shortValue() );</span>
-<span class="source-line-no">087</span><span id="line-87">    }   //  writePreference()</span>
-<span class="source-line-no">088</span><span id="line-88">}</span>
-<span class="source-line-no">089</span><span id="line-89">//  class PrimitiveShortAccessor</span>
-<span class="source-line-no">090</span><span id="line-90"></span>
-<span class="source-line-no">091</span><span id="line-91">/*</span>
-<span class="source-line-no">092</span><span id="line-92"> *  End of File</span>
-<span class="source-line-no">093</span><span id="line-93"> */</span>
+<span class="source-line-no">077</span><span id="line-77">        //noinspection NumericCastThatLosesPrecision</span>
+<span class="source-line-no">078</span><span id="line-78">        setter().set( Short.valueOf( (short) requireNonNullArgument( node, "node" ).getInt( getPropertyName(), isNull( defaultValue ) ? 0 : defaultValue.intValue() ) ) );</span>
+<span class="source-line-no">079</span><span id="line-79">    }   //  readPreference()</span>
+<span class="source-line-no">080</span><span id="line-80"></span>
+<span class="source-line-no">081</span><span id="line-81">    /**</span>
+<span class="source-line-no">082</span><span id="line-82">     *  {@inheritDoc}</span>
+<span class="source-line-no">083</span><span id="line-83">     */</span>
+<span class="source-line-no">084</span><span id="line-84">    @Override</span>
+<span class="source-line-no">085</span><span id="line-85">    public final void writePreference( final Preferences node )</span>
+<span class="source-line-no">086</span><span id="line-86">    {</span>
+<span class="source-line-no">087</span><span id="line-87">        node.putInt( getPropertyName(), (int) getter().get().shortValue() );</span>
+<span class="source-line-no">088</span><span id="line-88">    }   //  writePreference()</span>
+<span class="source-line-no">089</span><span id="line-89">}</span>
+<span class="source-line-no">090</span><span id="line-90">//  class PrimitiveShortAccessor</span>
+<span class="source-line-no">091</span><span id="line-91"></span>
+<span class="source-line-no">092</span><span id="line-92">/*</span>
+<span class="source-line-no">093</span><span id="line-93"> *  End of File</span>
+<span class="source-line-no">094</span><span id="line-94"> */</span>
 
 
 

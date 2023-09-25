@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -19,7 +19,6 @@
 package org.tquadrat.foundation.config;
 
 import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.io.Serial;
 import java.util.EventObject;
@@ -134,7 +133,7 @@ public final class ConfigurationChangeEvent extends EventObject
     public final String toString()
     {
         final var retValue =
-            format( "%1$s [propertyName=%3$s; oldValue=%4$s; newValue=%5$s; source=%2$s]",
+            "%1$s [propertyName=%3$s; oldValue=%4$s; newValue=%5$s; source=%2$s]".formatted(
                 getClass().getName(),
                 getSource().getClass().getName(),
                 getPropertyName(),

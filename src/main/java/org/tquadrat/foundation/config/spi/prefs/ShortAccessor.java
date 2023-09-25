@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -77,6 +77,7 @@ public final class ShortAccessor extends PreferenceAccessor<Short>
         {
             if( hasKey( node ) )
             {
+                //noinspection NumericCastThatLosesPrecision
                 setter().set( Short.valueOf( (short) node.getInt( getPropertyName(), 0 ) ) );
             }
             else
@@ -86,6 +87,7 @@ public final class ShortAccessor extends PreferenceAccessor<Short>
         }
         else
         {
+            //noinspection NumericCastThatLosesPrecision
             setter().set( Short.valueOf( (short) node.getInt( getPropertyName(), defaultValue.intValue() ) ) );
         }
     }   //  readPreference()
@@ -104,7 +106,7 @@ public final class ShortAccessor extends PreferenceAccessor<Short>
         }
         else
         {
-            node.putInt( getPropertyName(), value.shortValue() );
+            node.putInt( getPropertyName(), (int) value.shortValue() );
         }
 
     }   //  writePreference()

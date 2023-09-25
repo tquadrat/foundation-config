@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -77,7 +77,7 @@ public interface I18nSupport extends ConfigBeanSpec
      */
     public default String getMessage( final String messageId, final Object... args )
     {
-        final var retValue = getResourceBundle().map( b -> retrieveMessage( b, getMessagePrefix(), messageId, true, args ) )
+        final var retValue = getResourceBundle().map( resourceBundle -> retrieveMessage( resourceBundle, getMessagePrefix(), messageId, true, args ) )
             .orElseGet( () -> createFallback( composeMessageKey( getMessagePrefix(), messageId ), args ) );
 
         //---* Done *----------------------------------------------------------
@@ -93,7 +93,7 @@ public interface I18nSupport extends ConfigBeanSpec
      */
     public default String getMessage( final int messageId, final Object... args )
     {
-        final var retValue = getResourceBundle().map( b -> retrieveMessage( b, getMessagePrefix(), messageId, true, args ) )
+        final var retValue = getResourceBundle().map( resourceBundle -> retrieveMessage( resourceBundle, getMessagePrefix(), messageId, true, args ) )
             .orElseGet( () -> createFallback( composeMessageKey( getMessagePrefix(), messageId ), args ) );
 
         //---* Done *----------------------------------------------------------

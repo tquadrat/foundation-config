@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2021 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> *  All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *  Licensed to the public under the agreements of the GNU Lesser General Public</span>
@@ -57,80 +57,79 @@
 <span class="source-line-no">044</span><span id="line-44"> *</span>
 <span class="source-line-no">045</span><span id="line-45"> *  @UMLGraph.link</span>
 <span class="source-line-no">046</span><span id="line-46"> */</span>
-<span class="source-line-no">047</span><span id="line-47">@SuppressWarnings( {"AbstractClassNeverImplemented", "AbstractClassWithoutAbstractMethods"} )</span>
-<span class="source-line-no">048</span><span id="line-48">@ClassVersion( sourceVersion = "$Id: SimplePreferenceAccessor.java 910 2021-05-06 21:38:06Z tquadrat $" )</span>
-<span class="source-line-no">049</span><span id="line-49">@API( status = STABLE, since = "0.1.0" )</span>
-<span class="source-line-no">050</span><span id="line-50">public sealed class SimplePreferenceAccessor&lt;T&gt; extends PreferenceAccessorBase&lt;T&gt;</span>
-<span class="source-line-no">051</span><span id="line-51">    permits EnumAccessor</span>
-<span class="source-line-no">052</span><span id="line-52">{</span>
-<span class="source-line-no">053</span><span id="line-53">        /*------------*\</span>
-<span class="source-line-no">054</span><span id="line-54">    ====** Attributes **=======================================================</span>
-<span class="source-line-no">055</span><span id="line-55">        \*------------*/</span>
-<span class="source-line-no">056</span><span id="line-56">    /**</span>
-<span class="source-line-no">057</span><span id="line-57">     *   The implementation of</span>
-<span class="source-line-no">058</span><span id="line-58">     *   {@link StringConverter}</span>
-<span class="source-line-no">059</span><span id="line-59">     *   that is used to convert the preference values back and force.</span>
-<span class="source-line-no">060</span><span id="line-60">     */</span>
-<span class="source-line-no">061</span><span id="line-61">    private final StringConverter&lt;T&gt; m_StringConverter;</span>
-<span class="source-line-no">062</span><span id="line-62"></span>
-<span class="source-line-no">063</span><span id="line-63">        /*--------------*\</span>
-<span class="source-line-no">064</span><span id="line-64">    ====** Constructors **=====================================================</span>
-<span class="source-line-no">065</span><span id="line-65">        \*--------------*/</span>
-<span class="source-line-no">066</span><span id="line-66">    /**</span>
-<span class="source-line-no">067</span><span id="line-67">     *  Creates a new {@code SimplePreferenceAccessor} instance.</span>
-<span class="source-line-no">068</span><span id="line-68">     *</span>
-<span class="source-line-no">069</span><span id="line-69">     *  @param  propertyName    The name of the property.</span>
-<span class="source-line-no">070</span><span id="line-70">     *  @param  getter  The property getter.</span>
-<span class="source-line-no">071</span><span id="line-71">     *  @param  setter  The property setter.</span>
-<span class="source-line-no">072</span><span id="line-72">     *  @param  stringConverter The implementation of</span>
-<span class="source-line-no">073</span><span id="line-73">     *      {@link StringConverter}</span>
-<span class="source-line-no">074</span><span id="line-74">     *      that is used to convert the preference values back and forth.</span>
-<span class="source-line-no">075</span><span id="line-75">     */</span>
-<span class="source-line-no">076</span><span id="line-76">    public SimplePreferenceAccessor( final String propertyName, final Getter&lt;T&gt; getter, final Setter&lt;T&gt; setter, final StringConverter&lt;T&gt; stringConverter )</span>
-<span class="source-line-no">077</span><span id="line-77">    {</span>
-<span class="source-line-no">078</span><span id="line-78">        super( propertyName, getter, setter );</span>
-<span class="source-line-no">079</span><span id="line-79">        m_StringConverter = requireNonNullArgument( stringConverter, "stringConverter" );</span>
-<span class="source-line-no">080</span><span id="line-80">    }   //  SimplePreferenceAccessorBase()</span>
-<span class="source-line-no">081</span><span id="line-81"></span>
-<span class="source-line-no">082</span><span id="line-82">        /*---------*\</span>
-<span class="source-line-no">083</span><span id="line-83">    ====** Methods **==========================================================</span>
-<span class="source-line-no">084</span><span id="line-84">        \*---------*/</span>
-<span class="source-line-no">085</span><span id="line-85">    /**</span>
-<span class="source-line-no">086</span><span id="line-86">     *  {@inheritDoc}</span>
-<span class="source-line-no">087</span><span id="line-87">     */</span>
-<span class="source-line-no">088</span><span id="line-88">    @Override</span>
-<span class="source-line-no">089</span><span id="line-89">    protected final T fromString( final Preferences node, final String s ) throws InvalidPreferenceValueException</span>
-<span class="source-line-no">090</span><span id="line-90">    {</span>
-<span class="source-line-no">091</span><span id="line-91">        final T retValue;</span>
-<span class="source-line-no">092</span><span id="line-92">        try</span>
-<span class="source-line-no">093</span><span id="line-93">        {</span>
-<span class="source-line-no">094</span><span id="line-94">            retValue = m_StringConverter.fromString( s );</span>
-<span class="source-line-no">095</span><span id="line-95">        }</span>
-<span class="source-line-no">096</span><span id="line-96">        catch( final IllegalArgumentException e )</span>
-<span class="source-line-no">097</span><span id="line-97">        {</span>
-<span class="source-line-no">098</span><span id="line-98">            throw new InvalidPreferenceValueException( node, getPropertyName(), s, e );</span>
-<span class="source-line-no">099</span><span id="line-99">        }</span>
-<span class="source-line-no">100</span><span id="line-100">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">101</span><span id="line-101">        return retValue;</span>
-<span class="source-line-no">102</span><span id="line-102">    }   //  fromString()</span>
-<span class="source-line-no">103</span><span id="line-103"></span>
-<span class="source-line-no">104</span><span id="line-104">    /**</span>
-<span class="source-line-no">105</span><span id="line-105">     *  {@inheritDoc}</span>
-<span class="source-line-no">106</span><span id="line-106">     */</span>
-<span class="source-line-no">107</span><span id="line-107">    @Override</span>
-<span class="source-line-no">108</span><span id="line-108">    protected String toString( final T t )</span>
-<span class="source-line-no">109</span><span id="line-109">    {</span>
-<span class="source-line-no">110</span><span id="line-110">        final var retValue = m_StringConverter.toString( t );</span>
-<span class="source-line-no">111</span><span id="line-111"></span>
-<span class="source-line-no">112</span><span id="line-112">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">113</span><span id="line-113">        return retValue;</span>
-<span class="source-line-no">114</span><span id="line-114">    }   //  toString()</span>
-<span class="source-line-no">115</span><span id="line-115">}</span>
-<span class="source-line-no">116</span><span id="line-116">//  class SimplePreferenceAccessor</span>
-<span class="source-line-no">117</span><span id="line-117"></span>
-<span class="source-line-no">118</span><span id="line-118">/*</span>
-<span class="source-line-no">119</span><span id="line-119"> *  End of File</span>
-<span class="source-line-no">120</span><span id="line-120"> */</span>
+<span class="source-line-no">047</span><span id="line-47">@ClassVersion( sourceVersion = "$Id: SimplePreferenceAccessor.java 910 2021-05-06 21:38:06Z tquadrat $" )</span>
+<span class="source-line-no">048</span><span id="line-48">@API( status = STABLE, since = "0.1.0" )</span>
+<span class="source-line-no">049</span><span id="line-49">public sealed class SimplePreferenceAccessor&lt;T&gt; extends PreferenceAccessorBase&lt;T&gt;</span>
+<span class="source-line-no">050</span><span id="line-50">    permits EnumAccessor</span>
+<span class="source-line-no">051</span><span id="line-51">{</span>
+<span class="source-line-no">052</span><span id="line-52">        /*------------*\</span>
+<span class="source-line-no">053</span><span id="line-53">    ====** Attributes **=======================================================</span>
+<span class="source-line-no">054</span><span id="line-54">        \*------------*/</span>
+<span class="source-line-no">055</span><span id="line-55">    /**</span>
+<span class="source-line-no">056</span><span id="line-56">     *   The implementation of</span>
+<span class="source-line-no">057</span><span id="line-57">     *   {@link StringConverter}</span>
+<span class="source-line-no">058</span><span id="line-58">     *   that is used to convert the preference values back and force.</span>
+<span class="source-line-no">059</span><span id="line-59">     */</span>
+<span class="source-line-no">060</span><span id="line-60">    private final StringConverter&lt;T&gt; m_StringConverter;</span>
+<span class="source-line-no">061</span><span id="line-61"></span>
+<span class="source-line-no">062</span><span id="line-62">        /*--------------*\</span>
+<span class="source-line-no">063</span><span id="line-63">    ====** Constructors **=====================================================</span>
+<span class="source-line-no">064</span><span id="line-64">        \*--------------*/</span>
+<span class="source-line-no">065</span><span id="line-65">    /**</span>
+<span class="source-line-no">066</span><span id="line-66">     *  Creates a new {@code SimplePreferenceAccessor} instance.</span>
+<span class="source-line-no">067</span><span id="line-67">     *</span>
+<span class="source-line-no">068</span><span id="line-68">     *  @param  propertyName    The name of the property.</span>
+<span class="source-line-no">069</span><span id="line-69">     *  @param  getter  The property getter.</span>
+<span class="source-line-no">070</span><span id="line-70">     *  @param  setter  The property setter.</span>
+<span class="source-line-no">071</span><span id="line-71">     *  @param  stringConverter The implementation of</span>
+<span class="source-line-no">072</span><span id="line-72">     *      {@link StringConverter}</span>
+<span class="source-line-no">073</span><span id="line-73">     *      that is used to convert the preference values back and forth.</span>
+<span class="source-line-no">074</span><span id="line-74">     */</span>
+<span class="source-line-no">075</span><span id="line-75">    public SimplePreferenceAccessor( final String propertyName, final Getter&lt;T&gt; getter, final Setter&lt;T&gt; setter, final StringConverter&lt;T&gt; stringConverter )</span>
+<span class="source-line-no">076</span><span id="line-76">    {</span>
+<span class="source-line-no">077</span><span id="line-77">        super( propertyName, getter, setter );</span>
+<span class="source-line-no">078</span><span id="line-78">        m_StringConverter = requireNonNullArgument( stringConverter, "stringConverter" );</span>
+<span class="source-line-no">079</span><span id="line-79">    }   //  SimplePreferenceAccessorBase()</span>
+<span class="source-line-no">080</span><span id="line-80"></span>
+<span class="source-line-no">081</span><span id="line-81">        /*---------*\</span>
+<span class="source-line-no">082</span><span id="line-82">    ====** Methods **==========================================================</span>
+<span class="source-line-no">083</span><span id="line-83">        \*---------*/</span>
+<span class="source-line-no">084</span><span id="line-84">    /**</span>
+<span class="source-line-no">085</span><span id="line-85">     *  {@inheritDoc}</span>
+<span class="source-line-no">086</span><span id="line-86">     */</span>
+<span class="source-line-no">087</span><span id="line-87">    @Override</span>
+<span class="source-line-no">088</span><span id="line-88">    protected final T fromString( final Preferences node, final String s ) throws InvalidPreferenceValueException</span>
+<span class="source-line-no">089</span><span id="line-89">    {</span>
+<span class="source-line-no">090</span><span id="line-90">        final T retValue;</span>
+<span class="source-line-no">091</span><span id="line-91">        try</span>
+<span class="source-line-no">092</span><span id="line-92">        {</span>
+<span class="source-line-no">093</span><span id="line-93">            retValue = m_StringConverter.fromString( s );</span>
+<span class="source-line-no">094</span><span id="line-94">        }</span>
+<span class="source-line-no">095</span><span id="line-95">        catch( final IllegalArgumentException e )</span>
+<span class="source-line-no">096</span><span id="line-96">        {</span>
+<span class="source-line-no">097</span><span id="line-97">            throw new InvalidPreferenceValueException( node, getPropertyName(), s, e );</span>
+<span class="source-line-no">098</span><span id="line-98">        }</span>
+<span class="source-line-no">099</span><span id="line-99">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">100</span><span id="line-100">        return retValue;</span>
+<span class="source-line-no">101</span><span id="line-101">    }   //  fromString()</span>
+<span class="source-line-no">102</span><span id="line-102"></span>
+<span class="source-line-no">103</span><span id="line-103">    /**</span>
+<span class="source-line-no">104</span><span id="line-104">     *  {@inheritDoc}</span>
+<span class="source-line-no">105</span><span id="line-105">     */</span>
+<span class="source-line-no">106</span><span id="line-106">    @Override</span>
+<span class="source-line-no">107</span><span id="line-107">    protected String toString( final T t )</span>
+<span class="source-line-no">108</span><span id="line-108">    {</span>
+<span class="source-line-no">109</span><span id="line-109">        final var retValue = m_StringConverter.toString( t );</span>
+<span class="source-line-no">110</span><span id="line-110"></span>
+<span class="source-line-no">111</span><span id="line-111">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">112</span><span id="line-112">        return retValue;</span>
+<span class="source-line-no">113</span><span id="line-113">    }   //  toString()</span>
+<span class="source-line-no">114</span><span id="line-114">}</span>
+<span class="source-line-no">115</span><span id="line-115">//  class SimplePreferenceAccessor</span>
+<span class="source-line-no">116</span><span id="line-116"></span>
+<span class="source-line-no">117</span><span id="line-117">/*</span>
+<span class="source-line-no">118</span><span id="line-118"> *  End of File</span>
+<span class="source-line-no">119</span><span id="line-119"> */</span>
 
 
 

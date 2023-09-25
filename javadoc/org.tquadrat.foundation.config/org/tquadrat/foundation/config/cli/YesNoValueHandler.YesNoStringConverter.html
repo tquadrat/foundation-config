@@ -97,11 +97,11 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">private static final class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/cli/YesNoValueHandler.html#line-76">YesNoValueHandler.YesNoStringConverter</a></span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/StringConverter.html" title="class or interface in org.tquadrat.foundation.lang" class="external-link">StringConverter</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span></div>
-<div class="block">An implementation of
+<div class="block"><p>An implementation of
   <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/StringConverter.html" title="class or interface in org.tquadrat.foundation.lang" class="external-link"><code>StringConverter</code></a>
-  that translates 'yes' in various languages into <code>true</code>.<br>
-  <br>'yes', 'true' and 'ok' will always be taken as <code>true</code>, the
-  other variants only when valid for the current locale/language.</div>
+  that translates 'yes' in various languages into <code>true</code>.</p>
+  <p>'yes', 'true' and 'ok' will always be taken as <code>true</code>, the
+  other variants only when valid for the current locale/language.</p></div>
 <dl class="notes">
 <dt>Author:</dt>
 <dd>Thomas Thrien - thomas.thrien@tquadrat.org</dd>
@@ -168,13 +168,13 @@ implements <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquad
 <section class="constructor-summary" id="constructor-summary">
 <h2>Constructor Summary</h2>
 <div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private </code></div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">YesNoStringConverter</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new instance of <code>YesNoValueStringConverter</code>.</div>
+</div>
 </div>
 </section>
 </li>
@@ -238,7 +238,8 @@ implements <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquad
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>YesNoStringConverter</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/cli/YesNoValueHandler.YesNoStringConverter.html#line-78">YesNoStringConverter</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/cli/YesNoValueHandler.YesNoStringConverter.html#line-155">YesNoStringConverter</a></span>()</div>
+<div class="block">Creates a new instance of <code>YesNoValueStringConverter</code>.</div>
 </section>
 </li>
 </ul>
@@ -252,7 +253,7 @@ implements <a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquad
 <li>
 <section class="detail" id="fromString(java.lang.CharSequence)">
 <h3>fromString</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/cli/YesNoValueHandler.YesNoStringConverter.html#line-154">fromString</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;source)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/cli/YesNoValueHandler.YesNoStringConverter.html#line-163">fromString</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;source)</span>
                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>

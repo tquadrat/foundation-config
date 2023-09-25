@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -133,7 +133,7 @@ public @interface Option
      *  the command line, and each value will be added to the underlying data
      *  structure.</p>
      *
-     *  @return {@code true} if the option is multi-valued,
+     *  @return {@code true} if the option is multivalued,
      *      {@code false} otherwise.
      */
     boolean multiValued() default false;

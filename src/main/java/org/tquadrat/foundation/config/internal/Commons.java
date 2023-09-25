@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -21,7 +21,6 @@ import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.config.internal.MessageRegistry.MSG_REGISTRY_FALLBACK;
 import static org.tquadrat.foundation.config.internal.MessageRegistry.m_MessageRegistry;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
@@ -97,7 +96,7 @@ public final class Commons
         }
         catch( final MissingResourceException e )
         {
-            final var error = new ExceptionInInitializerError( format( "Cannot load ResourceBundle '%s'", BASE_BUNDLE_NAME ) );
+            final var error = new ExceptionInInitializerError( "Cannot load ResourceBundle '%s'".formatted( BASE_BUNDLE_NAME ) );
             error.initCause( e );
             throw error;
         }
@@ -127,7 +126,7 @@ public final class Commons
      *  @return The instance of
      *      {@link CmdLineException}.
      */
-    @SuppressWarnings( {"rawtypes", "UseOfConcreteClass"} )
+    @SuppressWarnings( {"rawtypes"} )
     public static final CmdLineException createException( final Class<? extends StringConverter> stringConverterClass, final Throwable cause, final String value )
     {
         final var entry = m_MessageRegistry.getOrDefault( requireNonNullArgument( stringConverterClass, "stringConverterClass" ), MSG_REGISTRY_FALLBACK );

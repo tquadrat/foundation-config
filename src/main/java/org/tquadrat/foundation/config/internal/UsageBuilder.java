@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,8 +18,8 @@
 
 package org.tquadrat.foundation.config.internal;
 
+import static java.lang.String.format;
 import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
 import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.tquadrat.foundation.config.internal.Commons.retrieveText;
 import static org.tquadrat.foundation.i18n.I18nUtil.composeTextKey;
@@ -30,7 +30,6 @@ import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
 import static org.tquadrat.foundation.util.StringUtils.breakText;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
 
 import java.util.ArrayList;
@@ -191,7 +190,8 @@ public class UsageBuilder
                 leftLines.add( argument.metaVar() );
 
                 final var usageText = resolveMessage( m_CallerResourceBundle, argument );
-                rightLines.addAll( breakText( usageText, widthRight ).collect( toList() ) );
+                rightLines.addAll( breakText( usageText, widthRight )
+                    .toList() );
 
                 padLines( leftLines, widthLeft, rightLines, widthRight );
 
@@ -220,13 +220,13 @@ public class UsageBuilder
                 .append( ':' );
             @SuppressWarnings( "OptionalGetWithoutIsPresent" )
             final var widthLeft = options.values().stream()
-                .flatMap( d ->
+                .flatMap( definition ->
                 {
                     final Builder<String> builder = Stream.builder();
-                    builder.add( format( "%s %s", d.name(), d.metaVar() ) );
-                    for( final var a : d.aliases() )
+                    builder.add( format( "%s %s", definition.name(), definition.metaVar() ) );
+                    for( final var a : definition.aliases() )
                     {
-                        builder.add( format( "%s %s", a, d.metaVar() ) );
+                        builder.add( format( "%s %s", a, definition.metaVar() ) );
                     }
                     return builder.build();
                 } )
@@ -247,7 +247,8 @@ public class UsageBuilder
                 }
 
                 final var usageText = resolveMessage( m_CallerResourceBundle, option );
-                rightLines.addAll( breakText( usageText, widthRight ).collect( toList() ) );
+                rightLines.addAll( breakText( usageText, widthRight )
+                    .toList() );
 
                 padLines( leftLines, widthLeft, rightLines, widthRight );
 
@@ -268,21 +269,20 @@ public class UsageBuilder
      *  @param  definitions The CLI definitions.
      *  @return The usage text.
      */
-    @SuppressWarnings( "CastToConcreteClass" )
     public final String build( final CharSequence command, final Collection<? extends CLIDefinition> definitions )
     {
         final Map<String,CLIArgumentDefinition> arguments = new TreeMap<>();
         final Map<String,CLIOptionDefinition> options = new TreeMap<>();
 
-        requireNonNullArgument( definitions, "definitions" ).forEach( d ->
+        requireNonNullArgument( definitions, "definitions" ).forEach( definition ->
         {
-            if( d.isArgument() )
+            if( definition.isArgument() )
             {
-                arguments.put( d.getSortKey(), (CLIArgumentDefinition) d );
+                arguments.put( definition.getSortKey(), (CLIArgumentDefinition) definition );
             }
             else
             {
-                options.put( d.getSortKey(), (CLIOptionDefinition) d );
+                options.put( definition.getSortKey(), (CLIOptionDefinition) definition );
             }
         } );
 

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -21,7 +21,6 @@ import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_InvalidFileName;
 import static org.tquadrat.foundation.config.CmdLineException.MSG_InvalidFileName;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -76,11 +75,11 @@ public final class DocumentValueHandler extends CmdLineValueHandler<Document>
      */
     @Message
     (
-        description = "The error message about about a failed read attempt for the XML file.",
+        description = "The error message about a failed read attempt for the XML file.",
         translations =
         {
             @Translation( language = "en", text = MSG_ReadFailed ),
-            @Translation( language = "de", text = "Die XML-Datei '%1$s' kann nicht gelesen oder geparsed werden" )
+            @Translation( language = "de", text = "Die XML-Datei '%1$s' kann nicht gelesen oder geparst werden" )
         }
     )
     public static final int MSGKEY_ReadFailed = 27;
@@ -119,8 +118,8 @@ public final class DocumentValueHandler extends CmdLineValueHandler<Document>
             final var documentFile = FileStringConverter.INSTANCE.fromString( fileName ).getCanonicalFile().getAbsoluteFile();
             fileName = documentFile.getAbsolutePath();
             if( !documentFile.exists() ) throw new FileNotFoundException( fileName );
-            if( !documentFile.isFile() ) throw new IOException( format( "'%s' is not a file", fileName ) );
-            if( !documentFile.canRead() ) throw new IOException( format( "Cannot read '%s'", fileName ) );
+            if( !documentFile.isFile() ) throw new IOException( "'%s' is not a file".formatted( fileName ) );
+            if( !documentFile.canRead() ) throw new IOException( "Cannot read '%s'".formatted( fileName ) );
             final var document = builder.parse( documentFile );
             retValue = List.of( document );
         }

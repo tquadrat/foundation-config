@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2022 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,6 +18,7 @@
 
 package org.tquadrat.foundation.config.internal;
 
+import static java.lang.String.format;
 import static java.lang.String.join;
 import static java.lang.System.out;
 import static java.util.Locale.ROOT;
@@ -46,7 +47,6 @@ import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.util.JavaUtils.isValidName;
 import static org.tquadrat.foundation.util.JavaUtils.retrieveMethod;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isEmpty;
 import static org.tquadrat.foundation.util.StringUtils.isEmptyOrBlank;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
@@ -189,9 +189,21 @@ public final class CLIDefinitionParser
     @API( status = INTERNAL, since = "0.0.1" )
     private static class CLIDefinitionResolver implements XMLResolver
     {
+            /*--------------*\
+        ====** Constructors **=================================================
+            \*--------------*/
+        /**
+         *  Creates a new instance of {@code CLIDefinitionResolver}.
+         */
+        public CLIDefinitionResolver() { /* Just exists */ }
+
+            /*---------*\
+        ====** Methods **======================================================
+            \*---------*/
         /**
          *  {@inheritDoc}
          */
+        @SuppressWarnings( "UseOfSystemOutOrSystemErr" )
         @Override
         public final Object resolveEntity( final String publicID, final String systemID, final String baseURI, final String namespace ) throws XMLStreamException
         {
@@ -213,7 +225,7 @@ public final class CLIDefinitionParser
             return retValue;
         } // resolveEntity()
     }
-    //  class XMLResolver
+    //  class CLIDefinitionResolver
 
         /*-----------*\
     ====** Constants **========================================================
@@ -445,7 +457,6 @@ public final class CLIDefinitionParser
     private final <T> CmdLineValueHandler<T> createHandler( final Class<? extends T> type, final Class<?> processClass, final StringConverter<? extends T> stringConverter ) throws IllegalArgumentException
     {
         final var propertyTypeIsEnum = requireNonNullArgument( type, "type" ).isEnum();
-        @SuppressWarnings( "RedundantExplicitVariableType" )
         final BiConsumer<String, T> valueSetter = m_PropertyMap::put;
         CmdLineValueHandler<T> retValue = null;
         Class<? extends CmdLineValueHandler<?>> handlerClass = null;
@@ -473,7 +484,7 @@ public final class CLIDefinitionParser
         {
             if( !CmdLineValueHandler.class.isAssignableFrom( processClass ) )
             {
-                throw new IllegalArgumentException( format( "'%s' is neither a StringConverter nor a CmdLineValueHandler", processClass.getName() ) );
+                throw new IllegalArgumentException( "'%s' is neither a StringConverter nor a CmdLineValueHandler".formatted( processClass.getName() ) );
             }
 
             //---* We got a command line value handler *-----------------------
@@ -493,7 +504,7 @@ public final class CLIDefinitionParser
             }
             catch( final InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e )
             {
-                throw new IllegalArgumentException( format( "Unable to create value handler from '%s'", handlerClass.getName() ), e );
+                throw new IllegalArgumentException( "Unable to create value handler from '%s'".formatted( handlerClass.getName() ), e );
             }
         }
 
@@ -555,7 +566,7 @@ public final class CLIDefinitionParser
                 }
                 catch( final NoSuchMethodException e )
                 {
-                    throw new IllegalArgumentException( format( "No default constructor for StringConverter: %s", stringConverterClass.getName() ), e );
+                    throw new IllegalArgumentException( "No default constructor for StringConverter: %s".formatted( stringConverterClass.getName() ), e );
                 }
                 catch( final InstantiationException | InvocationTargetException | IllegalAccessException e )
                 {
@@ -589,6 +600,7 @@ public final class CLIDefinitionParser
                     case CDATA:
                     case CHARACTERS:
                     case END_ELEMENT:
+                        //noinspection UseOfSystemOutOrSystemErr
                         out.printf( "%d: %s%n", event.getEventType(), event );
                         throw new XMLStreamException( format( MSG_ExpectedStartEvent, event.toString() ), event.getLocation() );
 
@@ -619,6 +631,7 @@ public final class CLIDefinitionParser
                         break;
 
                     default:
+                        //noinspection UseOfSystemOutOrSystemErr
                         out.printf( "%d: %s%n", event.getEventType(), event );
                         throw new XMLStreamException( format( MSG_UnexpectedEvent, event.toString() ), event.getLocation() );
                 }
@@ -626,6 +639,7 @@ public final class CLIDefinitionParser
         }
         finally
         {
+            //noinspection ThrowFromFinallyBlock
             m_EventReader.close();
         }
 
@@ -724,6 +738,7 @@ public final class CLIDefinitionParser
                     break;
 
                 default:
+                    //noinspection UseOfSystemOutOrSystemErr
                     out.printf( "%d: %s\n", event.getEventType(), event );
                     throw new XMLStreamException( format( MSG_UnexpectedEvent, event.toString() ), event.getLocation() );
             }
@@ -746,7 +761,7 @@ public final class CLIDefinitionParser
      *  @throws XMLStreamException  A problem occurred while parsing the
      *      element.
      */
-    @SuppressWarnings( {"SwitchStatementWithTooManyBranches", "NestedSwitchStatement"} )
+    @SuppressWarnings( {"SwitchStatementWithTooManyBranches", "NestedSwitchStatement", "OverlyLongMethod", "OverlyComplexMethod"} )
     private CLIDefinition handleArgument( final StartElement element ) throws XMLStreamException
     {
         String format = null;
@@ -828,6 +843,7 @@ public final class CLIDefinitionParser
                 case NOTATION_DECLARATION:
                 case PROCESSING_INSTRUCTION:
                 case START_DOCUMENT:
+                    //noinspection UseOfSystemOutOrSystemErr
                     out.printf( "%d: %s\n", event.getEventType(), event );
                     throw new XMLStreamException( format( MSG_ExpectedStartEvent, event.toString() ), event.getLocation() );
 
@@ -869,6 +885,7 @@ public final class CLIDefinitionParser
                     break;
 
                 default:
+                    //noinspection UseOfSystemOutOrSystemErr
                     out.printf( "%d: %s\n", event.getEventType(), event );
                     throw new XMLStreamException( format( MSG_UnexpectedEvent, event.toString() ), event.getLocation() );
             }
@@ -945,6 +962,7 @@ public final class CLIDefinitionParser
                     break;
 
                 default:
+                    //noinspection UseOfSystemOutOrSystemErr
                     out.printf( "%d: %s\n", event.getEventType(), event );
                     throw new XMLStreamException( format( MSG_UnexpectedEvent, event.toString() ), event.getLocation() );
             }
@@ -1009,6 +1027,7 @@ public final class CLIDefinitionParser
                     break;
 
                 default:
+                    //noinspection UseOfSystemOutOrSystemErr
                     out.printf( "%d: %s\n", event.getEventType(), event );
                     throw new XMLStreamException( format( MSG_UnexpectedEvent, event.toString() ), event.getLocation() );
             }
@@ -1028,7 +1047,7 @@ public final class CLIDefinitionParser
      *  @throws XMLStreamException  A problem occurred while parsing the
      *      element.
      */
-    @SuppressWarnings( {"SwitchStatementWithTooManyBranches", "NestedSwitchStatement"} )
+    @SuppressWarnings( {"SwitchStatementWithTooManyBranches", "NestedSwitchStatement", "OverlyLongMethod", "OverlyComplexMethod"} )
     private final CLIDefinition handleOption( final StartElement element ) throws XMLStreamException
     {
         String format = null;
@@ -1094,6 +1113,7 @@ public final class CLIDefinitionParser
                 case NOTATION_DECLARATION:
                 case PROCESSING_INSTRUCTION:
                 case START_DOCUMENT:
+                    //noinspection UseOfSystemOutOrSystemErr
                     out.printf( "%d: %s\n", event.getEventType(), event );
                     throw new XMLStreamException( format( MSG_ExpectedStartEvent, event.toString() ), event.getLocation() );
 
@@ -1134,6 +1154,7 @@ public final class CLIDefinitionParser
                     break;
 
                 default:
+                    //noinspection UseOfSystemOutOrSystemErr
                     out.printf( "%d: %s\n", event.getEventType(), event );
                     throw new XMLStreamException( format( MSG_UnexpectedEvent, event.toString() ), event.getLocation() );
             }
@@ -1223,6 +1244,7 @@ public final class CLIDefinitionParser
                     break;
 
                 default:
+                    //noinspection UseOfSystemOutOrSystemErr
                     out.printf( "%d: %s\n", event.getEventType(), event );
                     throw new XMLStreamException( format( MSG_UnexpectedEvent, event.toString() ), event.getLocation() );
             }
@@ -1386,7 +1408,7 @@ public final class CLIDefinitionParser
             }
             if( !StringConverter.class.isAssignableFrom( result ) )
             {
-                throw new XMLStreamException( format( MSG_InvalidStringConverter, result.getName(), attribute.getLocation() ) );
+                throw new XMLStreamException( format( MSG_InvalidStringConverter, result.getName() ), attribute.getLocation() );
             }
         }
         else

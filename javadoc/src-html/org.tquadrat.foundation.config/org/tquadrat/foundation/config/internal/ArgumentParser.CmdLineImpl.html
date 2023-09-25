@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2021 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *</span>
@@ -31,32 +31,32 @@
 <span class="source-line-no">018</span><span id="line-18"></span>
 <span class="source-line-no">019</span><span id="line-19">package org.tquadrat.foundation.config.internal;</span>
 <span class="source-line-no">020</span><span id="line-20"></span>
-<span class="source-line-no">021</span><span id="line-21">import static java.nio.file.Files.lines;</span>
-<span class="source-line-no">022</span><span id="line-22">import static java.util.Spliterator.IMMUTABLE;</span>
-<span class="source-line-no">023</span><span id="line-23">import static java.util.Spliterator.NONNULL;</span>
-<span class="source-line-no">024</span><span id="line-24">import static java.util.Spliterators.spliterator;</span>
-<span class="source-line-no">025</span><span id="line-25">import static java.util.stream.Collectors.joining;</span>
-<span class="source-line-no">026</span><span id="line-26">import static java.util.stream.Collectors.toList;</span>
-<span class="source-line-no">027</span><span id="line-27">import static org.apiguardian.api.API.Status.INTERNAL;</span>
-<span class="source-line-no">028</span><span id="line-28">import static org.tquadrat.foundation.config.CLIBeanSpec.ARG_FILE_ESCAPE;</span>
-<span class="source-line-no">029</span><span id="line-29">import static org.tquadrat.foundation.config.CLIBeanSpec.LEAD_IN;</span>
-<span class="source-line-no">030</span><span id="line-30">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_ArgumentMissing;</span>
-<span class="source-line-no">031</span><span id="line-31">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_MissingOperand;</span>
-<span class="source-line-no">032</span><span id="line-32">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_NoArgumentAllowed;</span>
-<span class="source-line-no">033</span><span id="line-33">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_OptionInvalid;</span>
-<span class="source-line-no">034</span><span id="line-34">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_OptionMissing;</span>
-<span class="source-line-no">035</span><span id="line-35">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_TooManyArguments;</span>
-<span class="source-line-no">036</span><span id="line-36">import static org.tquadrat.foundation.config.CmdLineException.MSG_ArgumentMissing;</span>
-<span class="source-line-no">037</span><span id="line-37">import static org.tquadrat.foundation.config.CmdLineException.MSG_MissingOperand;</span>
-<span class="source-line-no">038</span><span id="line-38">import static org.tquadrat.foundation.config.CmdLineException.MSG_NoArgumentAllowed;</span>
-<span class="source-line-no">039</span><span id="line-39">import static org.tquadrat.foundation.config.CmdLineException.MSG_OptionInvalid;</span>
-<span class="source-line-no">040</span><span id="line-40">import static org.tquadrat.foundation.config.CmdLineException.MSG_OptionMissing;</span>
-<span class="source-line-no">041</span><span id="line-41">import static org.tquadrat.foundation.config.CmdLineException.MSG_TooManyArguments;</span>
-<span class="source-line-no">042</span><span id="line-42">import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;</span>
-<span class="source-line-no">043</span><span id="line-43">import static org.tquadrat.foundation.lang.Objects.isNull;</span>
-<span class="source-line-no">044</span><span id="line-44">import static org.tquadrat.foundation.lang.Objects.nonNull;</span>
-<span class="source-line-no">045</span><span id="line-45">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
-<span class="source-line-no">046</span><span id="line-46">import static org.tquadrat.foundation.util.StringUtils.format;</span>
+<span class="source-line-no">021</span><span id="line-21">import static java.lang.String.format;</span>
+<span class="source-line-no">022</span><span id="line-22">import static java.nio.file.Files.lines;</span>
+<span class="source-line-no">023</span><span id="line-23">import static java.util.Spliterator.IMMUTABLE;</span>
+<span class="source-line-no">024</span><span id="line-24">import static java.util.Spliterator.NONNULL;</span>
+<span class="source-line-no">025</span><span id="line-25">import static java.util.Spliterators.spliterator;</span>
+<span class="source-line-no">026</span><span id="line-26">import static java.util.stream.Collectors.joining;</span>
+<span class="source-line-no">027</span><span id="line-27">import static java.util.stream.Collectors.toList;</span>
+<span class="source-line-no">028</span><span id="line-28">import static org.apiguardian.api.API.Status.INTERNAL;</span>
+<span class="source-line-no">029</span><span id="line-29">import static org.tquadrat.foundation.config.CLIBeanSpec.ARG_FILE_ESCAPE;</span>
+<span class="source-line-no">030</span><span id="line-30">import static org.tquadrat.foundation.config.CLIBeanSpec.LEAD_IN;</span>
+<span class="source-line-no">031</span><span id="line-31">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_ArgumentMissing;</span>
+<span class="source-line-no">032</span><span id="line-32">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_MissingOperand;</span>
+<span class="source-line-no">033</span><span id="line-33">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_NoArgumentAllowed;</span>
+<span class="source-line-no">034</span><span id="line-34">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_OptionInvalid;</span>
+<span class="source-line-no">035</span><span id="line-35">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_OptionMissing;</span>
+<span class="source-line-no">036</span><span id="line-36">import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_TooManyArguments;</span>
+<span class="source-line-no">037</span><span id="line-37">import static org.tquadrat.foundation.config.CmdLineException.MSG_ArgumentMissing;</span>
+<span class="source-line-no">038</span><span id="line-38">import static org.tquadrat.foundation.config.CmdLineException.MSG_MissingOperand;</span>
+<span class="source-line-no">039</span><span id="line-39">import static org.tquadrat.foundation.config.CmdLineException.MSG_NoArgumentAllowed;</span>
+<span class="source-line-no">040</span><span id="line-40">import static org.tquadrat.foundation.config.CmdLineException.MSG_OptionInvalid;</span>
+<span class="source-line-no">041</span><span id="line-41">import static org.tquadrat.foundation.config.CmdLineException.MSG_OptionMissing;</span>
+<span class="source-line-no">042</span><span id="line-42">import static org.tquadrat.foundation.config.CmdLineException.MSG_TooManyArguments;</span>
+<span class="source-line-no">043</span><span id="line-43">import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;</span>
+<span class="source-line-no">044</span><span id="line-44">import static org.tquadrat.foundation.lang.Objects.isNull;</span>
+<span class="source-line-no">045</span><span id="line-45">import static org.tquadrat.foundation.lang.Objects.nonNull;</span>
+<span class="source-line-no">046</span><span id="line-46">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
 <span class="source-line-no">047</span><span id="line-47">import static org.tquadrat.foundation.util.StringUtils.isNotEmpty;</span>
 <span class="source-line-no">048</span><span id="line-48">import static org.tquadrat.foundation.util.SystemUtils.systemPropertiesAsStringMap;</span>
 <span class="source-line-no">049</span><span id="line-49">import static org.tquadrat.foundation.util.Template.replaceVariable;</span>
@@ -463,7 +463,7 @@
 <span class="source-line-no">450</span><span id="line-450">                .filter( i -&gt; isNull( m_ArgumentDefinitions.get( i ) ) )</span>
 <span class="source-line-no">451</span><span id="line-451">                .map( i -&gt; Integer.toString( i ) )</span>
 <span class="source-line-no">452</span><span id="line-452">                .collect( joining( ", " ) );</span>
-<span class="source-line-no">453</span><span id="line-453">            throw new IllegalArgumentException( format( "Missing index: %s - Gap in Sequence", indexes ) );</span>
+<span class="source-line-no">453</span><span id="line-453">            throw new IllegalArgumentException( "Missing index: %s - Gap in Sequence".formatted( indexes ) );</span>
 <span class="source-line-no">454</span><span id="line-454">        }</span>
 <span class="source-line-no">455</span><span id="line-455">    }   //  ArgumentParser()</span>
 <span class="source-line-no">456</span><span id="line-456"></span>
@@ -487,7 +487,7 @@
 <span class="source-line-no">474</span><span id="line-474">        }</span>
 <span class="source-line-no">475</span><span id="line-475">        if( nonNull( m_ArgumentDefinitions.get( index ) ) )</span>
 <span class="source-line-no">476</span><span id="line-476">        {</span>
-<span class="source-line-no">477</span><span id="line-477">            throw new IllegalArgumentException( format( "Argument index '%d' is used more than once", index ) );</span>
+<span class="source-line-no">477</span><span id="line-477">            throw new IllegalArgumentException( "Argument index '%d' is used more than once".formatted( index ) );</span>
 <span class="source-line-no">478</span><span id="line-478">        }</span>
 <span class="source-line-no">479</span><span id="line-479">        m_ArgumentDefinitions.set( index, argumentDefinition );</span>
 <span class="source-line-no">480</span><span id="line-480">    }   //  addArgument()</span>
@@ -592,7 +592,7 @@
 <span class="source-line-no">579</span><span id="line-579"></span>
 <span class="source-line-no">580</span><span id="line-580">        if( m_OptionDefinitions.containsKey( name ) )</span>
 <span class="source-line-no">581</span><span id="line-581">        {</span>
-<span class="source-line-no">582</span><span id="line-582">            throw new IllegalArgumentException( format( "Option name '%s' is used more than once", name ) );</span>
+<span class="source-line-no">582</span><span id="line-582">            throw new IllegalArgumentException( "Option name '%s' is used more than once".formatted( name ) );</span>
 <span class="source-line-no">583</span><span id="line-583">        }</span>
 <span class="source-line-no">584</span><span id="line-584">    }   //  checkOptionNotYetUsed()</span>
 <span class="source-line-no">585</span><span id="line-585"></span>

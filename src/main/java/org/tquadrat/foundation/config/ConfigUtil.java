@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -26,12 +26,12 @@ import static org.tquadrat.foundation.config.internal.CLIDefinitionParser.parse;
 import static org.tquadrat.foundation.i18n.I18nUtil.resolveText;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_Object_ARRAY;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
 import static org.tquadrat.foundation.util.JavaUtils.findMainClass;
 import static org.tquadrat.foundation.util.JavaUtils.loadClass;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
@@ -40,6 +40,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.lang.reflect.InvocationTargetException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -111,6 +112,7 @@ public final class ConfigUtil
      *  value is the initialised instance of the related configuration
      *  bean.</p>
      */
+    @SuppressWarnings( "StaticCollection" )
     private static final Map<Class<? extends ConfigBeanSpec>,ConfigBeanSpec> m_ConfigurationBeanRegistry = new HashMap<>();
 
     /**
@@ -119,6 +121,7 @@ public final class ConfigUtil
      *  value is a map holding the initialised instances of the related
      *  configuration beans, indexed by the session identifier.</p>
      */
+    @SuppressWarnings( "StaticCollection" )
     private static final Map<Class<? extends SessionBeanSpec>,Map<String,? extends SessionBeanSpec>> m_SessionConfigBeanRegistry = new HashMap<>();
 
         /*------------------------*\
@@ -173,7 +176,7 @@ public final class ConfigUtil
         requireNonNullArgument( specification, "specification" );
         requireNotEmptyArgument( sessionKey, "sessionKey" );
 
-        try( @SuppressWarnings( "unused" ) final var l = m_SessionConfigBeanRegistryLock.lock() )
+        try( @SuppressWarnings( "unused" ) final var ignored = m_SessionConfigBeanRegistryLock.lock() )
         {
             @SuppressWarnings( "unchecked" )
             final var beans = (Map<String,SessionBeanSpec>) m_SessionConfigBeanRegistry.get( specification );
@@ -191,11 +194,10 @@ public final class ConfigUtil
      *  @throws IOException Something went wrong when writing to the output
      *      stream.
      */
-    @SuppressWarnings( "CastToConcreteClass" )
     @API( status = STABLE, since = "0.0.2" )
     public static final void dumpParamFileTemplate( final List<? extends CLIDefinition> cmdLineDefinition, final OutputStream outputStream ) throws IOException
     {
-        try( final Writer writer = new OutputStreamWriter( requireNonNullArgument( outputStream, "outputStream" ) ) )
+        try( final Writer writer = new OutputStreamWriter( requireNonNullArgument( outputStream, "outputStream" ), UTF8 ) )
         {
             final List<CLIOptionDefinition> options = new ArrayList<>();
             final List<CLIArgumentDefinition> arguments = new ArrayList<>();
@@ -245,10 +247,10 @@ public final class ConfigUtil
         requireNonNullArgument( factory, "factory" );
 
         final T retValue;
-        try( @SuppressWarnings( "unused" ) final var l = m_ConfigurationBeanRegistryLock.lock() )
+        try( @SuppressWarnings( "unused" ) final var ignored = m_ConfigurationBeanRegistryLock.lock() )
         {
             @SuppressWarnings( "unchecked" )
-            final var bean = (T) m_ConfigurationBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), s -> loadConfigurationBean( s, factory ) );
+            final var bean = (T) m_ConfigurationBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), aClass -> loadConfigurationBean( aClass, factory ) );
             retValue = bean;
         }
 
@@ -275,10 +277,10 @@ public final class ConfigUtil
         requireNonNullArgument( factory, "factory" );
 
         final T retValue;
-        try( @SuppressWarnings( "unused" ) final var l = m_SessionConfigBeanRegistryLock.lock() )
+        try( @SuppressWarnings( "unused" ) final var ignored = m_SessionConfigBeanRegistryLock.lock() )
         {
             @SuppressWarnings( "unchecked" )
-            final var beans = (Map<String,SessionBeanSpec>) m_SessionConfigBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), s -> new HashMap<>() );
+            final var beans = (Map<String,SessionBeanSpec>) m_SessionConfigBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), aClass -> new HashMap<>() );
             @SuppressWarnings( "unchecked" )
             final var bean = (T) beans.computeIfAbsent( requireNotEmptyArgument( sessionKey, "sessionKey" ), s -> loadSessionBean( specification, s, factory ) );
             retValue = bean;
@@ -309,15 +311,15 @@ public final class ConfigUtil
         }
         catch( final ClassNotFoundException e )
         {
-            throw new ValidationException( format( "Invalid configuration bean specification: %s", specification.getName() ), e );
+            throw new ValidationException( "Invalid configuration bean specification: %s".formatted( specification.getName() ), e );
         }
         catch( final InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e )
         {
-            throw new ValidationException( format( "Unable to instantiate configuration bean for specification: %s", specification.getName() ), e );
+            throw new ValidationException( "Unable to instantiate configuration bean for specification: %s".formatted( specification.getName() ), e );
         }
         catch( final Exception e )
         {
-            throw new ValidationException( format( "Problems to instantiate configuration bean for specification: %s", specification.getName() ), e );
+            throw new ValidationException( "Problems to instantiate configuration bean for specification: %s".formatted( specification.getName() ), e );
         }
 
         //---* Done *----------------------------------------------------------
@@ -346,15 +348,15 @@ public final class ConfigUtil
         }
         catch( final ClassNotFoundException e )
         {
-            throw new ValidationException( format( "Invalid configuration bean specification: %s", specification.getName() ), e );
+            throw new ValidationException( "Invalid configuration bean specification: %s".formatted( specification.getName() ), e );
         }
         catch( final InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e )
         {
-            throw new ValidationException( format( "Unable to instantiate configuration bean  for specification: %s", specification.getName() ), e );
+            throw new ValidationException( "Unable to instantiate configuration bean  for specification: %s".formatted( specification.getName() ), e );
         }
         catch( final Exception e )
         {
-            throw new ValidationException( format( "Problems to instantiate configuration bean for specification: %s", specification.getName() ), e );
+            throw new ValidationException( "Problems to instantiate configuration bean for specification: %s".formatted( specification.getName() ), e );
         }
 
         //---* Done *----------------------------------------------------------
@@ -451,7 +453,9 @@ public final class ConfigUtil
         catch( final CmdLineException e )
         {
             final var command = findMainClass().orElse( "<MainClass>" );
+            //noinspection UseOfSystemOutOrSystemErr
             err.println( e.getMessage() );
+            //noinspection UseOfSystemOutOrSystemErr
             printUsage( err, Optional.ofNullable( resourceBundle ), command, cliDefinitions );
             throw e;
         }
@@ -470,13 +474,13 @@ public final class ConfigUtil
      *  @param  definitions The CLI definitions.
      *  @throws IOException A problem occurred on writing to the output stream.
      */
-    @SuppressWarnings( {"resource", "OptionalUsedAsFieldOrParameterType"} )
+    @SuppressWarnings( {"OptionalUsedAsFieldOrParameterType"} )
     @API( status = STABLE, since = "0.0.1" )
     public static final void printUsage( final OutputStream outputStream, final Optional<ResourceBundle> resources, final CharSequence command, final Collection<? extends CLIDefinition> definitions ) throws IOException
     {
         final var builder = new UsageBuilder( resources );
         final var usage = builder.build( command, definitions );
-        requireNonNullArgument( outputStream, "outputStream" ).write( usage.getBytes() );
+        requireNonNullArgument( outputStream, "outputStream" ).write( usage.getBytes( Charset.defaultCharset() ) );
     }   //  printUsage()
 
     /**

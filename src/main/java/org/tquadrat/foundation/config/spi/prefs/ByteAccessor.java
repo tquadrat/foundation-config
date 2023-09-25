@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -77,6 +77,7 @@ public final class ByteAccessor extends PreferenceAccessor<Byte>
         {
             if( hasKey( node ) )
             {
+                //noinspection NumericCastThatLosesPrecision
                 setter().set( Byte.valueOf( (byte) node.getInt( getPropertyName(), 0 ) ) );
             }
             else
@@ -86,6 +87,7 @@ public final class ByteAccessor extends PreferenceAccessor<Byte>
         }
         else
         {
+            //noinspection NumericCastThatLosesPrecision
             setter().set( Byte.valueOf( (byte) node.getInt( getPropertyName(), defaultValue.intValue() ) ) );
         }
     }   //  readPreference()
@@ -104,7 +106,7 @@ public final class ByteAccessor extends PreferenceAccessor<Byte>
         }
         else
         {
-            node.putInt( getPropertyName(), value.byteValue() );
+            node.putInt( getPropertyName(), (int) value.byteValue() );
         }
 
     }   //  writePreference()

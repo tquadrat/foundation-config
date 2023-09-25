@@ -104,7 +104,6 @@ public abstract class CmdLineValueHandler<T>
     /**
      *  The CLI definition that provides the context for this value handler.
      */
-    @SuppressWarnings( "InstanceVariableOfConcreteClass" )
     private CLIDefinition m_CLIDefinition;
 
     /**

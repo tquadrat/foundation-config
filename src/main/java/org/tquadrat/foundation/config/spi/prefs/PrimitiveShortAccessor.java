@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -74,6 +74,7 @@ public final class PrimitiveShortAccessor extends PreferenceAccessor<Short>
     public final void readPreference( final Preferences node ) throws InvalidPreferenceValueException
     {
         final var defaultValue = getter().get();
+        //noinspection NumericCastThatLosesPrecision
         setter().set( Short.valueOf( (short) requireNonNullArgument( node, "node" ).getInt( getPropertyName(), isNull( defaultValue ) ? 0 : defaultValue.intValue() ) ) );
     }   //  readPreference()
 
@@ -83,7 +84,7 @@ public final class PrimitiveShortAccessor extends PreferenceAccessor<Short>
     @Override
     public final void writePreference( final Preferences node )
     {
-        node.putInt( getPropertyName(), getter().get().shortValue() );
+        node.putInt( getPropertyName(), (int) getter().get().shortValue() );
     }   //  writePreference()
 }
 //  class PrimitiveShortAccessor

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -59,11 +59,11 @@ public final class YesNoValueHandler extends SimpleCmdLineValueHandler<Boolean>
     ====** Inner Classes **====================================================
         \*---------------*/
     /**
-     *  An implementation of
+     *  <p>{@summary An implementation of
      *  {@link StringConverter}
-     *  that translates 'yes' in various languages into {@code true}.<br>
-     *  <br>'yes', 'true' and 'ok' will always be taken as {@code true}, the
-     *  other variants only when valid for the current locale/language.
+     *  that translates 'yes' in various languages into {@code true}.}</p>
+     *  <p>'yes', 'true' and 'ok' will always be taken as {@code true}, the
+     *  other variants only when valid for the current locale/language.</p>
      *
      *  @see Locale#getDefault()
      *
@@ -89,6 +89,7 @@ public final class YesNoValueHandler extends SimpleCmdLineValueHandler<Boolean>
         /**
          *  The various forms of 'yes'.
          */
+        @SuppressWarnings( "StaticCollection" )
         public static final Map<Locale,Set<String>> YES;
 
         static
@@ -145,6 +146,14 @@ public final class YesNoValueHandler extends SimpleCmdLineValueHandler<Boolean>
             INSTANCE = new YesNoStringConverter();
         }
 
+            /*--------------*\
+        ====** Constructors **=================================================
+            \*--------------*/
+        /**
+         *  Creates a new instance of {@code YesNoValueStringConverter}.
+         */
+        public YesNoStringConverter() { super(); }
+
             /*---------*\
         ====** Methods **======================================================
             \*---------*/
@@ -160,7 +169,7 @@ public final class YesNoValueHandler extends SimpleCmdLineValueHandler<Boolean>
                 final Collection<String> yes = new HashSet<>( YES.get( ROOT ) );
                 final var language = new Locale( Locale.getDefault().getLanguage() );
                 if( YES.containsKey( language ) ) yes.addAll( YES.get( language ) );
-                retValue = Boolean.valueOf( yes.contains( source.toString().toLowerCase() ) );
+                retValue = Boolean.valueOf( yes.contains( source.toString().toLowerCase( Locale.getDefault() ) ) );
             }
 
             //---* Done *------------------------------------------------------

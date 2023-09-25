@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -43,7 +43,6 @@ import org.tquadrat.foundation.lang.StringConverter;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"AbstractClassNeverImplemented", "AbstractClassWithoutAbstractMethods"} )
 @ClassVersion( sourceVersion = "$Id: PreferenceAccessorBase.java 941 2021-12-18 22:34:37Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public abstract class PreferenceAccessorBase<T> extends PreferenceAccessor<T>

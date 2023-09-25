@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2022 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -28,7 +28,6 @@ import java.lang.annotation.Target;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.internal.NullStringConverter;
 import org.tquadrat.foundation.lang.StringConverter;
 
 /**
@@ -51,6 +50,7 @@ import org.tquadrat.foundation.lang.StringConverter;
  *
  *  @see System#getenv(String)
  */
+@SuppressWarnings( "removal" )
 @ClassVersion( sourceVersion = "$Id: EnvironmentVariable.java 1010 2022-02-05 19:28:36Z tquadrat $" )
 @Documented
 @Retention( CLASS )
@@ -93,7 +93,7 @@ public @interface EnvironmentVariable
      *      instead.
      */
     @Deprecated( since = "0.1.0", forRemoval = true )
-    Class<? extends StringConverter<?>> stringConverter() default NullStringConverter.class;
+    Class<? extends StringConverter<?>> stringConverter() default org.tquadrat.foundation.config.internal.NullStringConverter.class;
 }
 //  annotation EnvironmentVariable
 

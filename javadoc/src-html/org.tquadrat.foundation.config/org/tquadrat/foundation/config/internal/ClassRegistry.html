@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2021 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> *  All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *  Licensed to the public under the agreements of the GNU Lesser General Public</span>
@@ -107,68 +107,70 @@
 <span class="source-line-no">094</span><span id="line-94">    /**</span>
 <span class="source-line-no">095</span><span id="line-95">     *  The handler classes.</span>
 <span class="source-line-no">096</span><span id="line-96">     */</span>
-<span class="source-line-no">097</span><span id="line-97">    @API( status = INTERNAL, since = "0.1.0" )</span>
-<span class="source-line-no">098</span><span id="line-98">    public static final Map&lt;Class&lt;?&gt;,Class&lt;? extends CmdLineValueHandler&lt;?&gt;&gt;&gt; m_HandlerClasses;</span>
-<span class="source-line-no">099</span><span id="line-99"></span>
-<span class="source-line-no">100</span><span id="line-100">    /**</span>
-<span class="source-line-no">101</span><span id="line-101">     *  The preferences accessor classes.</span>
-<span class="source-line-no">102</span><span id="line-102">     */</span>
-<span class="source-line-no">103</span><span id="line-103">    @API( status = INTERNAL, since = "0.1.0" )</span>
-<span class="source-line-no">104</span><span id="line-104">    public static final Map&lt;Class&lt;?&gt;,Class&lt;? extends PreferenceAccessor&lt;?&gt;&gt;&gt; m_PrefsAccessorClasses;</span>
-<span class="source-line-no">105</span><span id="line-105"></span>
-<span class="source-line-no">106</span><span id="line-106">    static</span>
-<span class="source-line-no">107</span><span id="line-107">    {</span>
-<span class="source-line-no">108</span><span id="line-108">        m_HandlerClasses = Map.ofEntries</span>
-<span class="source-line-no">109</span><span id="line-109">        (</span>
-<span class="source-line-no">110</span><span id="line-110">            entry( boolean.class, BooleanValueHandler.class ),</span>
-<span class="source-line-no">111</span><span id="line-111">            entry( Boolean.class, BooleanValueHandler.class ),</span>
-<span class="source-line-no">112</span><span id="line-112">            entry( BufferedImage.class, ImageValueHandler.class ),</span>
-<span class="source-line-no">113</span><span id="line-113">            entry( Date.class, DateValueHandler.class ),</span>
-<span class="source-line-no">114</span><span id="line-114">            entry( Document.class, DocumentValueHandler.class ),</span>
-<span class="source-line-no">115</span><span id="line-115">            entry( Instant.class, InstantValueHandler.class ),</span>
-<span class="source-line-no">116</span><span id="line-116">            entry( LocalDate.class, LocalDateValueHandler.class ),</span>
-<span class="source-line-no">117</span><span id="line-117">            entry( LocalDateTime.class, LocalDateTimeValueHandler.class ),</span>
-<span class="source-line-no">118</span><span id="line-118">            entry( LocalTime.class, LocalDateTimeValueHandler.class ),</span>
-<span class="source-line-no">119</span><span id="line-119">            entry( String.class, StringValueHandler.class ),</span>
-<span class="source-line-no">120</span><span id="line-120">            entry( YearMonth.class, YearMonthValueHandler.class ),</span>
-<span class="source-line-no">121</span><span id="line-121">            entry( Year.class, YearValueHandler.class ),</span>
-<span class="source-line-no">122</span><span id="line-122">            entry( ZonedDateTime.class, ZonedDateTimeValueHandler.class )</span>
-<span class="source-line-no">123</span><span id="line-123">        );</span>
-<span class="source-line-no">124</span><span id="line-124"></span>
-<span class="source-line-no">125</span><span id="line-125">        m_PrefsAccessorClasses = Map.ofEntries</span>
-<span class="source-line-no">126</span><span id="line-126">        (</span>
-<span class="source-line-no">127</span><span id="line-127">            entry( boolean.class, PrimitiveBooleanAccessor.class ),</span>
-<span class="source-line-no">128</span><span id="line-128">            entry( Boolean.class, BooleanAccessor.class ),</span>
-<span class="source-line-no">129</span><span id="line-129">            entry( BufferedImage.class, ImageAccessor.class ),</span>
-<span class="source-line-no">130</span><span id="line-130">            entry( byte.class, PrimitiveByteAccessor.class ),</span>
-<span class="source-line-no">131</span><span id="line-131">            entry( Byte.class, ByteAccessor.class ),</span>
-<span class="source-line-no">132</span><span id="line-132">            entry( Date.class, DateAccessor.class ),</span>
-<span class="source-line-no">133</span><span id="line-133">            entry( double.class, PrimitiveDoubleAccessor.class ),</span>
-<span class="source-line-no">134</span><span id="line-134">            entry( Double.class, DoubleAccessor.class ),</span>
-<span class="source-line-no">135</span><span id="line-135">            entry( Float.class, FloatAccessor.class ),</span>
-<span class="source-line-no">136</span><span id="line-136">            entry( int.class, PrimitiveIntAccessor.class ),</span>
-<span class="source-line-no">137</span><span id="line-137">            entry( Integer.class, IntegerAccessor.class ),</span>
-<span class="source-line-no">138</span><span id="line-138">            entry( long.class, PrimitiveLongAccessor.class ),</span>
-<span class="source-line-no">139</span><span id="line-139">            entry( Long.class, LongAccessor.class ),</span>
-<span class="source-line-no">140</span><span id="line-140">            entry( short.class, PrimitiveShortAccessor.class ),</span>
-<span class="source-line-no">141</span><span id="line-141">            entry( Short.class, ShortAccessor.class ),</span>
-<span class="source-line-no">142</span><span id="line-142">            entry( String.class, StringAccessor.class )</span>
-<span class="source-line-no">143</span><span id="line-143">        );</span>
-<span class="source-line-no">144</span><span id="line-144">    }</span>
-<span class="source-line-no">145</span><span id="line-145"></span>
-<span class="source-line-no">146</span><span id="line-146">        /*--------------*\</span>
-<span class="source-line-no">147</span><span id="line-147">    ====** Constructors **=====================================================</span>
-<span class="source-line-no">148</span><span id="line-148">        \*--------------*/</span>
-<span class="source-line-no">149</span><span id="line-149">    /**</span>
-<span class="source-line-no">150</span><span id="line-150">     *  No instance allowed for this class.</span>
-<span class="source-line-no">151</span><span id="line-151">     */</span>
-<span class="source-line-no">152</span><span id="line-152">    private ClassRegistry() { throw new PrivateConstructorForStaticClassCalledError( ClassRegistry.class ); }</span>
-<span class="source-line-no">153</span><span id="line-153">}</span>
-<span class="source-line-no">154</span><span id="line-154">//  class ClassRegistry</span>
-<span class="source-line-no">155</span><span id="line-155"></span>
-<span class="source-line-no">156</span><span id="line-156">/*</span>
-<span class="source-line-no">157</span><span id="line-157"> *  End of File</span>
-<span class="source-line-no">158</span><span id="line-158"> */</span>
+<span class="source-line-no">097</span><span id="line-97">    @SuppressWarnings( "StaticCollection" )</span>
+<span class="source-line-no">098</span><span id="line-98">    @API( status = INTERNAL, since = "0.1.0" )</span>
+<span class="source-line-no">099</span><span id="line-99">    public static final Map&lt;Class&lt;?&gt;,Class&lt;? extends CmdLineValueHandler&lt;?&gt;&gt;&gt; m_HandlerClasses;</span>
+<span class="source-line-no">100</span><span id="line-100"></span>
+<span class="source-line-no">101</span><span id="line-101">    /**</span>
+<span class="source-line-no">102</span><span id="line-102">     *  The preferences accessor classes.</span>
+<span class="source-line-no">103</span><span id="line-103">     */</span>
+<span class="source-line-no">104</span><span id="line-104">    @SuppressWarnings( "StaticCollection" )</span>
+<span class="source-line-no">105</span><span id="line-105">    @API( status = INTERNAL, since = "0.1.0" )</span>
+<span class="source-line-no">106</span><span id="line-106">    public static final Map&lt;Class&lt;?&gt;,Class&lt;? extends PreferenceAccessor&lt;?&gt;&gt;&gt; m_PrefsAccessorClasses;</span>
+<span class="source-line-no">107</span><span id="line-107"></span>
+<span class="source-line-no">108</span><span id="line-108">    static</span>
+<span class="source-line-no">109</span><span id="line-109">    {</span>
+<span class="source-line-no">110</span><span id="line-110">        m_HandlerClasses = Map.ofEntries</span>
+<span class="source-line-no">111</span><span id="line-111">        (</span>
+<span class="source-line-no">112</span><span id="line-112">            entry( boolean.class, BooleanValueHandler.class ),</span>
+<span class="source-line-no">113</span><span id="line-113">            entry( Boolean.class, BooleanValueHandler.class ),</span>
+<span class="source-line-no">114</span><span id="line-114">            entry( BufferedImage.class, ImageValueHandler.class ),</span>
+<span class="source-line-no">115</span><span id="line-115">            entry( Date.class, DateValueHandler.class ),</span>
+<span class="source-line-no">116</span><span id="line-116">            entry( Document.class, DocumentValueHandler.class ),</span>
+<span class="source-line-no">117</span><span id="line-117">            entry( Instant.class, InstantValueHandler.class ),</span>
+<span class="source-line-no">118</span><span id="line-118">            entry( LocalDate.class, LocalDateValueHandler.class ),</span>
+<span class="source-line-no">119</span><span id="line-119">            entry( LocalDateTime.class, LocalDateTimeValueHandler.class ),</span>
+<span class="source-line-no">120</span><span id="line-120">            entry( LocalTime.class, LocalDateTimeValueHandler.class ),</span>
+<span class="source-line-no">121</span><span id="line-121">            entry( String.class, StringValueHandler.class ),</span>
+<span class="source-line-no">122</span><span id="line-122">            entry( YearMonth.class, YearMonthValueHandler.class ),</span>
+<span class="source-line-no">123</span><span id="line-123">            entry( Year.class, YearValueHandler.class ),</span>
+<span class="source-line-no">124</span><span id="line-124">            entry( ZonedDateTime.class, ZonedDateTimeValueHandler.class )</span>
+<span class="source-line-no">125</span><span id="line-125">        );</span>
+<span class="source-line-no">126</span><span id="line-126"></span>
+<span class="source-line-no">127</span><span id="line-127">        m_PrefsAccessorClasses = Map.ofEntries</span>
+<span class="source-line-no">128</span><span id="line-128">        (</span>
+<span class="source-line-no">129</span><span id="line-129">            entry( boolean.class, PrimitiveBooleanAccessor.class ),</span>
+<span class="source-line-no">130</span><span id="line-130">            entry( Boolean.class, BooleanAccessor.class ),</span>
+<span class="source-line-no">131</span><span id="line-131">            entry( BufferedImage.class, ImageAccessor.class ),</span>
+<span class="source-line-no">132</span><span id="line-132">            entry( byte.class, PrimitiveByteAccessor.class ),</span>
+<span class="source-line-no">133</span><span id="line-133">            entry( Byte.class, ByteAccessor.class ),</span>
+<span class="source-line-no">134</span><span id="line-134">            entry( Date.class, DateAccessor.class ),</span>
+<span class="source-line-no">135</span><span id="line-135">            entry( double.class, PrimitiveDoubleAccessor.class ),</span>
+<span class="source-line-no">136</span><span id="line-136">            entry( Double.class, DoubleAccessor.class ),</span>
+<span class="source-line-no">137</span><span id="line-137">            entry( Float.class, FloatAccessor.class ),</span>
+<span class="source-line-no">138</span><span id="line-138">            entry( int.class, PrimitiveIntAccessor.class ),</span>
+<span class="source-line-no">139</span><span id="line-139">            entry( Integer.class, IntegerAccessor.class ),</span>
+<span class="source-line-no">140</span><span id="line-140">            entry( long.class, PrimitiveLongAccessor.class ),</span>
+<span class="source-line-no">141</span><span id="line-141">            entry( Long.class, LongAccessor.class ),</span>
+<span class="source-line-no">142</span><span id="line-142">            entry( short.class, PrimitiveShortAccessor.class ),</span>
+<span class="source-line-no">143</span><span id="line-143">            entry( Short.class, ShortAccessor.class ),</span>
+<span class="source-line-no">144</span><span id="line-144">            entry( String.class, StringAccessor.class )</span>
+<span class="source-line-no">145</span><span id="line-145">        );</span>
+<span class="source-line-no">146</span><span id="line-146">    }</span>
+<span class="source-line-no">147</span><span id="line-147"></span>
+<span class="source-line-no">148</span><span id="line-148">        /*--------------*\</span>
+<span class="source-line-no">149</span><span id="line-149">    ====** Constructors **=====================================================</span>
+<span class="source-line-no">150</span><span id="line-150">        \*--------------*/</span>
+<span class="source-line-no">151</span><span id="line-151">    /**</span>
+<span class="source-line-no">152</span><span id="line-152">     *  No instance allowed for this class.</span>
+<span class="source-line-no">153</span><span id="line-153">     */</span>
+<span class="source-line-no">154</span><span id="line-154">    private ClassRegistry() { throw new PrivateConstructorForStaticClassCalledError( ClassRegistry.class ); }</span>
+<span class="source-line-no">155</span><span id="line-155">}</span>
+<span class="source-line-no">156</span><span id="line-156">//  class ClassRegistry</span>
+<span class="source-line-no">157</span><span id="line-157"></span>
+<span class="source-line-no">158</span><span id="line-158">/*</span>
+<span class="source-line-no">159</span><span id="line-159"> *  End of File</span>
+<span class="source-line-no">160</span><span id="line-160"> */</span>
 
 
 

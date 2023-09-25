@@ -53,7 +53,6 @@ import org.tquadrat.foundation.function.Setter;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "AbstractClassNeverImplemented" )
 @ClassVersion( sourceVersion = "$Id: PreferenceAccessor.java 920 2021-05-23 14:27:24Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public abstract class PreferenceAccessor<T>

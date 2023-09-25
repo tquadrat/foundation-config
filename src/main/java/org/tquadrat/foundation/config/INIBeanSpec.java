@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -60,7 +60,6 @@ import org.tquadrat.foundation.inifile.INIFile;
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@SuppressWarnings( "InterfaceNeverImplemented" )
 @ClassVersion( sourceVersion = "$Id: INIBeanSpec.java 946 2021-12-23 14:48:19Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface INIBeanSpec extends ConfigBeanSpec

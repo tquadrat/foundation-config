@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,7 +18,7 @@
 
 package org.tquadrat.foundation.config.internal;
 
-import static org.apiguardian.api.API.Status.INTERNAL;
+import static org.apiguardian.api.API.Status.DEPRECATED;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
@@ -30,16 +30,20 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  is used only as a mock for
  *  {@link org.tquadrat.foundation.config.SystemProperty#stringConverter() &#64;SystemProperty.stringConverter()}
  *  and
- *  {@link org.tquadrat.foundation.config.EnvironmentVariable#stringConverter() &#64;SystemProperty.stringConverter()}.
+ *  {@link org.tquadrat.foundation.config.EnvironmentVariable#stringConverter() &#64;EnvironmentVariable.stringConverter()}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: NullStringConverter.java 884 2021-03-22 18:02:51Z tquadrat $
  *  @since 0.0.2
  *
  *  @UMLGraph.link
+ *
+ *  @deprecated Now obsolete.
  */
+@SuppressWarnings( {"ClassWithoutConstructor", "removal"} )
 @ClassVersion( sourceVersion = "$Id: NullStringConverter.java 884 2021-03-22 18:02:51Z tquadrat $" )
-@API( status = INTERNAL, since = "0.0.2" )
+@Deprecated( since = "0.3.0", forRemoval = true )
+@API( status = DEPRECATED, since = "0.3.0" )
 public class NullStringConverter implements StringConverter<Void>
 {
         /*---------*\
