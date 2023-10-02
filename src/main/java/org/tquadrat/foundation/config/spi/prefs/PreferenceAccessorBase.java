@@ -36,14 +36,14 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  {@link PreferenceAccessor}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PreferenceAccessorBase.java 941 2021-12-18 22:34:37Z tquadrat $
+ *  @version $Id: PreferenceAccessorBase.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @param  <T> The type of the property.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: PreferenceAccessorBase.java 941 2021-12-18 22:34:37Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PreferenceAccessorBase.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public abstract class PreferenceAccessorBase<T> extends PreferenceAccessor<T>
 {

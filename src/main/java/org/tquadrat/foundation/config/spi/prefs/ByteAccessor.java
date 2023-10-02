@@ -38,12 +38,12 @@ import org.tquadrat.foundation.function.Setter;
  *  {@link Byte}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ByteAccessor.java 910 2021-05-06 21:38:06Z tquadrat $
+ *  @version $Id: ByteAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ByteAccessor.java 910 2021-05-06 21:38:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ByteAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class ByteAccessor extends PreferenceAccessor<Byte>
 {

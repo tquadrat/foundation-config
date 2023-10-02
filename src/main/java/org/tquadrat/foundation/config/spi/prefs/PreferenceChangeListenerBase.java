@@ -48,12 +48,12 @@ import org.tquadrat.foundation.lang.AutoLock;
  *  provides a default implementation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PreferenceChangeListenerBase.java 944 2021-12-21 21:56:24Z tquadrat $
+ *  @version $Id: PreferenceChangeListenerBase.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: PreferenceChangeListenerBase.java 944 2021-12-21 21:56:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PreferenceChangeListenerBase.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public abstract class PreferenceChangeListenerBase implements PreferenceChangeListener, NodeChangeListener
 {

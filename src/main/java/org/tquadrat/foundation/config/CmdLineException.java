@@ -46,13 +46,13 @@ import org.tquadrat.foundation.util.stringconverter.FileStringConverter;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Kohsuke Kawaguchi - kk@kohsuke.org
- *  @version $Id: CLIBeanSpec.java 884 2021-03-22 18:02:51Z tquadrat $
+ *  @version $Id: CmdLineException.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyConstructors" )
-@ClassVersion( sourceVersion = "$Id: CmdLineException.java 1050 2023-02-25 21:37:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CmdLineException.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class CmdLineException extends ValidationException
 {

@@ -29,12 +29,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  (&quot;Sessions&quot;).
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SessionBeanSpec.java 884 2021-03-22 18:02:51Z tquadrat $
+ *  @version $Id: SessionBeanSpec.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: SessionBeanSpec.java 884 2021-03-22 18:02:51Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SessionBeanSpec.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface SessionBeanSpec extends ConfigBeanSpec
 {

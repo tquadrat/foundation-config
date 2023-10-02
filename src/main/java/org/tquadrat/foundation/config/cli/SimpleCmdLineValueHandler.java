@@ -42,12 +42,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  @param  <T> The target type.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SimpleCmdLineValueHandler.java 892 2021-04-03 18:07:28Z tquadrat $
+ *  @version $Id: SimpleCmdLineValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: SimpleCmdLineValueHandler.java 892 2021-04-03 18:07:28Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SimpleCmdLineValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed class SimpleCmdLineValueHandler<T> extends CmdLineValueHandler<T>
     permits YesNoValueHandler

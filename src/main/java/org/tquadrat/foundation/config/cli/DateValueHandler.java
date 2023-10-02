@@ -51,13 +51,13 @@ import org.tquadrat.foundation.config.spi.Parameters;
  *  to parse the given String to an instance of {@code Date}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DateValueHandler.java 896 2021-04-05 20:25:33Z tquadrat $
+ *  @version $Id: DateValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "UseOfObsoleteDateTimeApi" )
-@ClassVersion( sourceVersion = "$Id: DateValueHandler.java 896 2021-04-05 20:25:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DateValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public final class DateValueHandler extends CmdLineValueHandler<Date>
 {

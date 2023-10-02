@@ -56,12 +56,12 @@ import org.tquadrat.foundation.i18n.TextUse;
  *      the resource bundle property if it extends this interface!
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: I18nSupport.java 1001 2022-01-29 16:42:15Z tquadrat $
+ *  @version $Id: I18nSupport.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.2
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: I18nSupport.java 1001 2022-01-29 16:42:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: I18nSupport.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.2" )
 public interface I18nSupport extends ConfigBeanSpec
 {

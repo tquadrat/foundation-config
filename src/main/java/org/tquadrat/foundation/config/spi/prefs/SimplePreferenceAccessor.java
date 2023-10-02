@@ -37,14 +37,14 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  to translate the values back and forth.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SimplePreferenceAccessor.java 910 2021-05-06 21:38:06Z tquadrat $
+ *  @version $Id: SimplePreferenceAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.1.0
  *
  *  @param  <T> The type of the property value.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: SimplePreferenceAccessor.java 910 2021-05-06 21:38:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SimplePreferenceAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed class SimplePreferenceAccessor<T> extends PreferenceAccessorBase<T>
     permits EnumAccessor

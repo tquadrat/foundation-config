@@ -45,13 +45,13 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  annotation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: EnvironmentVariable.java 1010 2022-02-05 19:28:36Z tquadrat $
+ *  @version $Id: EnvironmentVariable.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @see System#getenv(String)
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: EnvironmentVariable.java 1010 2022-02-05 19:28:36Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnvironmentVariable.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )

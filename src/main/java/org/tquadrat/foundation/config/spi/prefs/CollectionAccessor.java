@@ -49,12 +49,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  @param  <C> The type of the {@code Collection}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CollectionAccessor.java 942 2021-12-20 02:04:04Z tquadrat $
+ *  @version $Id: CollectionAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CollectionAccessor.java 942 2021-12-20 02:04:04Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CollectionAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public abstract sealed class CollectionAccessor<T,C extends Collection<T>> extends PreferenceAccessor<C>
     permits ListAccessor, SetAccessor

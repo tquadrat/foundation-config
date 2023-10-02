@@ -61,14 +61,14 @@ import org.tquadrat.foundation.util.stringconverter.TimeDateStringConverter;
  *  @param  <T> The type that is handled by this class.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TimeValueHandler.java 896 2021-04-05 20:25:33Z tquadrat $
+ *  @version $Id: TimeValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  *
  *  @see DateTimeFormatter
  */
-@ClassVersion( sourceVersion = "$Id: TimeValueHandler.java 896 2021-04-05 20:25:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TimeValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public abstract class TimeValueHandler<T extends Temporal> extends CmdLineValueHandler<T>
 {

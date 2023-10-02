@@ -46,14 +46,14 @@ import org.tquadrat.foundation.function.Setter;
  *  @see Preferences#MAX_VALUE_LENGTH
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PreferenceAccessor.java 920 2021-05-23 14:27:24Z tquadrat $
+ *  @version $Id: PreferenceAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @param  <T> The type of the property.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: PreferenceAccessor.java 920 2021-05-23 14:27:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PreferenceAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public abstract class PreferenceAccessor<T>
 {

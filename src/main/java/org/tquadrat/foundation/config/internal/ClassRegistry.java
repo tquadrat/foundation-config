@@ -77,14 +77,14 @@ import org.w3c.dom.Document;
  *  additional settings.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ClassRegistry.java 1005 2022-02-03 12:40:52Z tquadrat $
+ *  @version $Id: ClassRegistry.java 1061 2023-09-25 16:32:43Z tquadrat $
  *
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @SuppressWarnings( {"UseOfObsoleteDateTimeApi", "OverlyCoupledClass"} )
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: ClassRegistry.java 1005 2022-02-03 12:40:52Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ClassRegistry.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class ClassRegistry
 {

@@ -51,12 +51,12 @@ import org.xml.sax.SAXException;
  *  object that of course has to exist and needs to be accessible.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DocumentValueHandler.java 896 2021-04-05 20:25:33Z tquadrat $
+ *  @version $Id: DocumentValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DocumentValueHandler.java 896 2021-04-05 20:25:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DocumentValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 @SuppressWarnings( "exports" )
 public final class DocumentValueHandler extends CmdLineValueHandler<Document>

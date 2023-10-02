@@ -45,12 +45,12 @@ import org.tquadrat.foundation.util.stringconverter.EnumStringConverter;
  *      implementation.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: EnumValueHandler.java 892 2021-04-03 18:07:28Z tquadrat $
+ *  @version $Id: EnumValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: EnumValueHandler.java 892 2021-04-03 18:07:28Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnumValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class EnumValueHandler<T extends Enum<T>> extends CmdLineValueHandler<T>
 {

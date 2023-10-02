@@ -55,12 +55,12 @@ import org.tquadrat.foundation.inifile.INIFile;
  *  {@link #updateINIFile()}
  *  persists the respective value.</p>
  *
- *  @version $Id: INIBeanSpec.java 946 2021-12-23 14:48:19Z tquadrat $
+ *  @version $Id: INIBeanSpec.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: INIBeanSpec.java 946 2021-12-23 14:48:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: INIBeanSpec.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface INIBeanSpec extends ConfigBeanSpec
 {

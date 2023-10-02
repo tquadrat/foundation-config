@@ -90,13 +90,13 @@ import org.xml.sax.SAXParseException;
  *  Parses an XML CLI definition file.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $
+ *  @version $Id: CLIDefinitionParser.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"OverlyComplexClass", "ClassWithTooManyMethods"} )
-@ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public final class CLIDefinitionParser
 {
@@ -110,12 +110,12 @@ public final class CLIDefinitionParser
      *  {@link SAXParseException}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $
+     *  @version $Id: CLIDefinitionParser.java 1061 2023-09-25 16:32:43Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1061 2023-09-25 16:32:43Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     public static final class ExceptionLocation implements Location
     {
@@ -180,12 +180,12 @@ public final class CLIDefinitionParser
      *  for this parser.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $
+     *  @version $Id: CLIDefinitionParser.java 1061 2023-09-25 16:32:43Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1015 2022-02-09 08:25:36Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1061 2023-09-25 16:32:43Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     private static class CLIDefinitionResolver implements XMLResolver
     {

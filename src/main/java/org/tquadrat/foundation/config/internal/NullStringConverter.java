@@ -33,7 +33,7 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  {@link org.tquadrat.foundation.config.EnvironmentVariable#stringConverter() &#64;EnvironmentVariable.stringConverter()}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: NullStringConverter.java 884 2021-03-22 18:02:51Z tquadrat $
+ *  @version $Id: NullStringConverter.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.2
  *
  *  @UMLGraph.link
@@ -41,7 +41,7 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  @deprecated Now obsolete.
  */
 @SuppressWarnings( {"ClassWithoutConstructor", "removal"} )
-@ClassVersion( sourceVersion = "$Id: NullStringConverter.java 884 2021-03-22 18:02:51Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NullStringConverter.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @Deprecated( since = "0.3.0", forRemoval = true )
 @API( status = DEPRECATED, since = "0.3.0" )
 public class NullStringConverter implements StringConverter<Void>

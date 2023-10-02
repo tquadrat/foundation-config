@@ -40,12 +40,12 @@ import org.tquadrat.foundation.function.Setter;
  *  implementation has {@code null} as the default value.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PrimitiveShortAccessor.java 914 2021-05-07 21:22:12Z tquadrat $
+ *  @version $Id: PrimitiveShortAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: PrimitiveShortAccessor.java 914 2021-05-07 21:22:12Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PrimitiveShortAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class PrimitiveShortAccessor extends PreferenceAccessor<Short>
 {

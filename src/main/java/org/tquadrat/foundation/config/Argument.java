@@ -45,12 +45,12 @@ import org.tquadrat.foundation.config.cli.DateValueHandler;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Kohsuke Kawaguchi - kk@kohsuke.org
  *  @thanks Mark Sinke
- *  @version $Id: Argument.java 907 2021-05-05 23:09:17Z tquadrat $
+ *  @version $Id: Argument.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Argument.java 907 2021-05-05 23:09:17Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Argument.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )

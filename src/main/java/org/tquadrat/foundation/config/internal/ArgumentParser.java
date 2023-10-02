@@ -75,12 +75,12 @@ import org.tquadrat.foundation.util.StringUtils;
  *  The parser for the command line arguments.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ArgumentParser.java 1049 2023-02-25 19:13:40Z tquadrat $
+ *  @version $Id: ArgumentParser.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ArgumentParser.java 1049 2023-02-25 19:13:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ArgumentParser.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public class ArgumentParser
 {
@@ -98,12 +98,12 @@ public class ArgumentParser
      *  used.</p>
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: ArgumentParser.java 1049 2023-02-25 19:13:40Z tquadrat $
+     *  @version $Id: ArgumentParser.java 1061 2023-09-25 16:32:43Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: ArgumentParser.java 1049 2023-02-25 19:13:40Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: ArgumentParser.java 1061 2023-09-25 16:32:43Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     private final class CmdLineImpl implements Iterator<String>, Parameters
     {

@@ -60,12 +60,12 @@ import org.tquadrat.foundation.i18n.Translation;
  *  @param  <T> The target type.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CmdLineValueHandler.java 936 2021-12-13 16:08:37Z tquadrat $
+ *  @version $Id: CmdLineValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CmdLineValueHandler.java 936 2021-12-13 16:08:37Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CmdLineValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public abstract class CmdLineValueHandler<T>
 {

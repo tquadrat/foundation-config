@@ -41,12 +41,12 @@ import org.tquadrat.foundation.util.stringconverter.BooleanStringConverter;
  *
  *  @extauthor Kohsuke Kawaguchi - kk@kohsuke.org
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: BooleanValueHandler.java 898 2021-04-06 23:19:36Z tquadrat $
+ *  @version $Id: BooleanValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: BooleanValueHandler.java 898 2021-04-06 23:19:36Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: BooleanValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public class BooleanValueHandler extends CmdLineValueHandler<Boolean>
 {

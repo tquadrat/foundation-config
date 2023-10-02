@@ -51,7 +51,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      {@code initData()}!
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PreferencesBeanSpec.java 946 2021-12-23 14:48:19Z tquadrat $
+ *  @version $Id: PreferencesBeanSpec.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
@@ -59,7 +59,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see Preference
  *  @see NoPreference
  */
-@ClassVersion( sourceVersion = "$Id: PreferencesBeanSpec.java 946 2021-12-23 14:48:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PreferencesBeanSpec.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface PreferencesBeanSpec extends ConfigBeanSpec
 {

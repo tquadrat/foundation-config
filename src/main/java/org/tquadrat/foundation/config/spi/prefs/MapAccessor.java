@@ -50,12 +50,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  @param  <V> The value type of the {@code Map}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MapAccessor.java 942 2021-12-20 02:04:04Z tquadrat $
+ *  @version $Id: MapAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MapAccessor.java 942 2021-12-20 02:04:04Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MapAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class MapAccessor<K,V> extends PreferenceAccessor<Map<K,V>>
 {
