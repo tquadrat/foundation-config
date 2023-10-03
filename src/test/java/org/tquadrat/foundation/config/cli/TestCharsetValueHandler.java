@@ -18,10 +18,10 @@
 
 package org.tquadrat.foundation.config.cli;
 
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.nio.charset.Charset;
 
@@ -39,9 +39,9 @@ import org.tquadrat.foundation.util.stringconverter.CharsetStringConverter;
  *  properties.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestCharsetValueHandler.java 895 2021-04-05 12:40:34Z tquadrat $
+ *  @version $Id: TestCharsetValueHandler.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestCharsetValueHandler.java 895 2021-04-05 12:40:34Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestCharsetValueHandler.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.config.cli.TestCharsetValueHandler" )
 public class TestCharsetValueHandler extends ValueHandlerTestBase<Charset>
 {

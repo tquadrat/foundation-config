@@ -18,11 +18,11 @@
 
 package org.tquadrat.foundation.config.cli;
 
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
@@ -41,9 +41,9 @@ import org.w3c.dom.Document;
  *  {@link DocumentValueHandler}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestDocumentValueHandler.java 896 2021-04-05 20:25:33Z tquadrat $
+ *  @version $Id: TestDocumentValueHandler.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestDocumentValueHandler.java 896 2021-04-05 20:25:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestDocumentValueHandler.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.config.cli.TestDocumentValueHandler" )
 public class TestDocumentValueHandler extends ValueHandlerTestBase<Document>
 {

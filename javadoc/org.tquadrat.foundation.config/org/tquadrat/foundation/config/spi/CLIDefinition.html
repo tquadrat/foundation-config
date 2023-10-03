@@ -113,10 +113,10 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="CLIArgumentDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIArgumentDefinition</a></code>, <code><a href="CLIOptionDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIOptionDefinition</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: CLIDefinition.java 938 2021-12-15 14:42:53Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: CLIDefinition.java 1076 2023-10-03 18:36:07Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.1")
-</span><span class="modifiers">public abstract class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-57">CLIDefinition</a></span>
+</span><span class="modifiers">public abstract class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-56">CLIDefinition</a></span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Base class for the run-time copies of the
   <a href="../Option.html" title="annotation interface in org.tquadrat.foundation.config"><code>&#64;Option</code></a> or
@@ -130,7 +130,7 @@ loadScripts(document, 'script');</script>
 <dt><span class="simpleTagLabel">Thanks to:</span></dt>
   <dd>Mark Sinke</dd>
 <dt>Version:</dt>
-<dd>$Id: CLIDefinition.java 938 2021-12-15 14:42:53Z tquadrat $</dd>
+<dd>$Id: CLIDefinition.java 1076 2023-10-03 18:36:07Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.0.1</dd>
 <dt>See Also:</dt>
@@ -191,7 +191,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>private final boolean</code></div>
 <div class="col-second odd-row-color"><code><a href="#m_IsMultiValued" class="member-name-link">m_IsMultiValued</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block"><code>true</code> if the target property is multi-valued,
+<div class="block"><code>true</code> if the target property is multivalued,
   <code>false</code> otherwise.</div>
 </div>
 <div class="col-first even-row-color"><code>private final boolean</code></div>
@@ -321,7 +321,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isMultiValued()" class="member-name-link">isMultiValued</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a flag that indicates whether this option or argument is
-  multi-valued.</div>
+  multivalued.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#metaVar()" class="member-name-link">metaVar</a>()</code></div>
@@ -512,7 +512,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="m_IsArgument">
 <h3>m_IsArgument</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-184">m_IsArgument</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-183">m_IsArgument</a></span></div>
 <div class="block"><code>true</code> if this is an argument, <code>false</code> if it is
   an option.</div>
 </section>
@@ -520,15 +520,15 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="m_IsMultiValued">
 <h3>m_IsMultiValued</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-190">m_IsMultiValued</a></span></div>
-<div class="block"><code>true</code> if the target property is multi-valued,
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-189">m_IsMultiValued</a></span></div>
+<div class="block"><code>true</code> if the target property is multivalued,
   <code>false</code> otherwise.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_IsRequired">
 <h3>m_IsRequired</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-196">m_IsRequired</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-195">m_IsRequired</a></span></div>
 <div class="block"><code>true</code> if the option or argument is required,
   <code>false</code> otherwise.</div>
 </section>
@@ -536,28 +536,28 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="m_MetaVar">
 <h3>m_MetaVar</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-201">m_MetaVar</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-200">m_MetaVar</a></span></div>
 <div class="block">The name of the meta variable that is used in examples.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_Property">
 <h3>m_Property</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-206">m_Property</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-205">m_Property</a></span></div>
 <div class="block">The name of the property.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_Usage">
 <h3>m_Usage</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-211">m_Usage</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-210">m_Usage</a></span></div>
 <div class="block">The usage text.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_UsageKey">
 <h3>m_UsageKey</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-217">m_UsageKey</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-216">m_UsageKey</a></span></div>
 <div class="block">The resource key for the usage text.</div>
 </section>
 </li>
@@ -572,7 +572,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,boolean,org.tquadrat.foundation.config.cli.CmdLineValueHandler,boolean,java.lang.String)">
 <h3>CLIDefinition</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-239">CLIDefinition</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;property,
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-238">CLIDefinition</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;property,
  boolean&nbsp;isArgument,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;usage,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;usageKey,
@@ -610,7 +610,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="format()">
 <h3>format</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-266">format</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-267">format</a></span>()</div>
 <div class="block">Returns the optional format.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -630,7 +630,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getSortKey()">
 <h3>getSortKey</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-273">getSortKey</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-274">getSortKey</a></span>()</div>
 <div class="block">Returns the sort key for the option or argument.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -641,7 +641,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="handler()">
 <h3>handler</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../cli/CmdLineValueHandler.html" title="class in org.tquadrat.foundation.config.cli">CmdLineValueHandler</a>&lt;?&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-280">handler</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../cli/CmdLineValueHandler.html" title="class in org.tquadrat.foundation.config.cli">CmdLineValueHandler</a>&lt;?&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-281">handler</a></span>()</div>
 <div class="block">Returns the handler.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -652,7 +652,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="isArgument()">
 <h3>isArgument</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-293">isArgument</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-294">isArgument</a></span>()</div>
 <div class="block">Returns a flag that indicates whether this is the definition for an
   argument or an option.</div>
 <dl class="notes">
@@ -669,12 +669,12 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="isMultiValued()">
 <h3>isMultiValued</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-302">isMultiValued</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-303">isMultiValued</a></span>()</div>
 <div class="block">Returns a flag that indicates whether this option or argument is
-  multi-valued.</div>
+  multivalued.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd><code>true</code> if multi-valued, <code>false</code>
+<dd><code>true</code> if multivalued, <code>false</code>
       otherwise.</dd>
 </dl>
 </section>
@@ -682,7 +682,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="metaVar()">
 <h3>metaVar</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-309">metaVar</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-310">metaVar</a></span>()</div>
 <div class="block">The name of the meta variable.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -693,7 +693,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="processParameters(org.tquadrat.foundation.config.spi.Parameters)">
 <h3>processParameters</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-323">processParameters</a></span><wbr><span class="parameters">(<a href="Parameters.html" title="interface in org.tquadrat.foundation.config.spi">Parameters</a>&nbsp;params)</span>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-324">processParameters</a></span><wbr><span class="parameters">(<a href="Parameters.html" title="interface in org.tquadrat.foundation.config.spi">Parameters</a>&nbsp;params)</span>
                             throws <span class="exceptions"><a href="../CmdLineException.html" title="class in org.tquadrat.foundation.config">CmdLineException</a></span></div>
 <div class="block">Processes the given parameter(s).</div>
 <dl class="notes">
@@ -714,7 +714,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="propertyName()">
 <h3>propertyName</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-336">propertyName</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-337">propertyName</a></span>()</div>
 <div class="block">Returns the property name for this CLI element.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -725,7 +725,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="required()">
 <h3>required</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-347">required</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-348">required</a></span>()</div>
 <div class="block">Returns a flag indicating if the option or argument is mandatory.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -744,7 +744,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="toString()">
 <h3>toString</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-352">toString</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-353">toString</a></span>()</div>
 <div class="block"><br></div>
 <dl class="notes">
 <dt>Overrides:</dt>
@@ -755,7 +755,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="usage()">
 <h3>usage</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-362">usage</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-363">usage</a></span>()</div>
 <div class="block">Returns the usage text.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -768,7 +768,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="usageKey()">
 <h3>usageKey</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-371">usageKey</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-372">usageKey</a></span>()</div>
 <div class="block">Returns the resource key for the usage text.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -781,7 +781,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="validateOptionName(java.lang.String)">
 <h3>validateOptionName</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-381">validateOptionName</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/CLIDefinition.html#line-382">validateOptionName</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span>
                                         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
 <div class="block">Checks whether the given name for a command line option is valid.</div>
 <dl class="notes">

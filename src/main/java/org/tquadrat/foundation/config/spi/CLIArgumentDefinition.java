@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -24,7 +24,6 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.config.Argument;
 import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
-import org.tquadrat.foundation.util.StringUtils;
 
 /**
  *  Run-time copy of the
@@ -38,12 +37,12 @@ import org.tquadrat.foundation.util.StringUtils;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Mark Sinke
- *  @version $Id: CLIArgumentDefinition.java 884 2021-03-22 18:02:51Z tquadrat $
+ *  @version $Id: CLIArgumentDefinition.java 1076 2023-10-03 18:36:07Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CLIArgumentDefinition.java 884 2021-03-22 18:02:51Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIArgumentDefinition.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public class CLIArgumentDefinition extends CLIDefinition
 {
@@ -73,7 +72,7 @@ public class CLIArgumentDefinition extends CLIDefinition
      *      more than one value.
      *  @param  format  The optional format.
      */
-    @SuppressWarnings( "BooleanParameter" )
+    @SuppressWarnings( {"BooleanParameter", "ConstructorWithTooManyParameters"} )
     public CLIArgumentDefinition( final String property, final int index, final String usage, final String usageKey, final String metaVar, final boolean required, final CmdLineValueHandler<?> handler, final boolean multiValued, final String format )
     {
         super( property, true, usage, usageKey, requireNotEmptyArgument( metaVar, "metaVar" ), required, handler, multiValued, format );
@@ -100,7 +99,7 @@ public class CLIArgumentDefinition extends CLIDefinition
      *  {@inheritDoc}
      */
     @Override
-    public final String toString() { return StringUtils.format( required() ? "%s" : "[%s]", metaVar() ); }
+    public final String toString() { return String.format( required() ? "%s" : "[%s]", metaVar() ); }
 }
 //  class CLIArgumentDefinition
 

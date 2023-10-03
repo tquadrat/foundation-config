@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -35,7 +35,6 @@ import org.tquadrat.foundation.config.CmdLineException;
 import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
 import org.tquadrat.foundation.i18n.Message;
 import org.tquadrat.foundation.i18n.Translation;
-import org.tquadrat.foundation.util.StringUtils;
 
 /**
  *  Base class for the run-time copies of the
@@ -49,12 +48,13 @@ import org.tquadrat.foundation.util.StringUtils;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Mark Sinke
- *  @version $Id: CLIDefinition.java 938 2021-12-15 14:42:53Z tquadrat $
+ *  @version $Id: CLIDefinition.java 1076 2023-10-03 18:36:07Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CLIDefinition.java 938 2021-12-15 14:42:53Z tquadrat $" )
+@SuppressWarnings( {"ConstantExpression", "BooleanMethodNameMustStartWithQuestion"} )
+@ClassVersion( sourceVersion = "$Id: CLIDefinition.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public abstract class CLIDefinition
 {
@@ -159,7 +159,7 @@ public abstract class CLIDefinition
      *  {@link org.tquadrat.foundation.i18n.TextUse#USAGE USAGE}
      *  text is prepended with the name of the class that defines it.</p>
      */
-    public static final String USAGE_KEY_FORMAT = StringUtils.format( "%%s.%s_%%s", USAGE.name() );
+    public static final String USAGE_KEY_FORMAT = String.format( "%%s.%s_%%s", USAGE.name() );
 
         /*------------*\
     ====** Attributes **=======================================================
@@ -174,7 +174,6 @@ public abstract class CLIDefinition
      *  The handler that is used to parse and store the option or argument
      *  value.
      */
-    @SuppressWarnings( "InstanceVariableOfConcreteClass" )
     private final CmdLineValueHandler<?> m_Handler;
 
     /**
@@ -184,7 +183,7 @@ public abstract class CLIDefinition
     private final boolean m_IsArgument;
 
     /**
-     *  {@code true} if the target property is multi-valued,
+     *  {@code true} if the target property is multivalued,
      *  {@code false} otherwise.
      */
     private final boolean m_IsMultiValued;
@@ -236,6 +235,7 @@ public abstract class CLIDefinition
      *      more than one value.
      *  @param  format  The optional format.
      */
+    @SuppressWarnings( "ConstructorWithTooManyParameters" )
     protected CLIDefinition( final String property, final boolean isArgument, final String usage, final String usageKey, final String metaVar, final boolean required, final CmdLineValueHandler<?> handler, final boolean multiValued, final String format )
     {
         m_Property = requireNotEmptyArgument( property, "property" );
@@ -245,6 +245,7 @@ public abstract class CLIDefinition
         m_MetaVar = nonNull( metaVar ) ? metaVar :  property.toUpperCase( ROOT );
         m_IsRequired = required;
         m_Handler = requireNonNullArgument( handler, "handler" );
+        //noinspection ThisEscapedInObjectConstruction
         m_Handler.setContext( this );
         m_IsMultiValued = multiValued;
         m_Format = Optional.ofNullable( format );
@@ -294,9 +295,9 @@ public abstract class CLIDefinition
 
     /**
      *  Returns a flag that indicates whether this option or argument is
-     *  multi-valued.
+     *  multivalued.
      *
-     *  @return {@code true} if multi-valued, {@code false}
+     *  @return {@code true} if multivalued, {@code false}
      *      otherwise.
      */
     public final boolean isMultiValued() { return m_IsMultiValued; }

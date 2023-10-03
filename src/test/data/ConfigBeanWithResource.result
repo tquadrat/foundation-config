@@ -1,9 +1,9 @@
 package com.test.bean;
 
+import static java.lang.String.format;
 import static org.tquadrat.foundation.util.Objects.isNull;
 import static org.tquadrat.foundation.util.Objects.nonNull;
 import static org.tquadrat.foundation.util.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.Stringer.BASE_STRINGER;
 
 import java.io.FileNotFoundException;

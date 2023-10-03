@@ -18,13 +18,13 @@
 
 package org.tquadrat.foundation.config.cli;
 
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static java.util.Locale.ROOT;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.util.StringUtils.capitalize;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.time.Month;
 import java.util.Map;
@@ -44,10 +44,10 @@ import org.tquadrat.foundation.exception.NullArgumentException;
  *  as the value type.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestEnumValueHandler.java 895 2021-04-05 12:40:34Z tquadrat $
+ *  @version $Id: TestEnumValueHandler.java 1076 2023-10-03 18:36:07Z tquadrat $
  *  @since 11
  */
-@ClassVersion( sourceVersion = "$Id: TestEnumValueHandler.java 895 2021-04-05 12:40:34Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestEnumValueHandler.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.config.cli.TestEnumValueHandler" )
 public class TestEnumValueHandler extends ValueHandlerTestBase<Month>
 {

@@ -18,6 +18,7 @@
 
 package org.tquadrat.foundation.config.cli;
 
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -26,7 +27,6 @@ import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
 
 import javax.xml.transform.TransformerConfigurationException;
@@ -66,7 +66,7 @@ import org.w3c.dom.Document;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi"} )
-@ClassVersion( sourceVersion = "$Id: ValueHandlerTestBase.java 1049 2023-02-25 19:13:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValueHandlerTestBase.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 public abstract class ValueHandlerTestBase<T> extends TestBaseClass
 {
         /*---------------*\
@@ -78,7 +78,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
      *  for test purposes.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: ValueHandlerTestBase.java 1049 2023-02-25 19:13:40Z tquadrat $
+     *  @version $Id: ValueHandlerTestBase.java 1076 2023-10-03 18:36:07Z tquadrat $
      */
     private static class ParametersImpl implements Parameters
     {

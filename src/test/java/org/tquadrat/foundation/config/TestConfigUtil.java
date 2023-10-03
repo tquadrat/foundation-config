@@ -18,6 +18,7 @@
 package org.tquadrat.foundation.config;
 
 import static java.io.OutputStream.nullOutputStream;
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static java.util.Locale.ENGLISH;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,7 +28,6 @@ import static org.tquadrat.foundation.config.ConfigUtil.parseCommandLine;
 import static org.tquadrat.foundation.config.ConfigUtil.printUsage;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_String_ARRAY;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -58,7 +58,7 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
 @SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestConfigUtil.java 895 2021-04-05 12:40:34Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestConfigUtil.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.config.TestConfigUtil" )
 public class TestConfigUtil extends TestBaseClass
 {
