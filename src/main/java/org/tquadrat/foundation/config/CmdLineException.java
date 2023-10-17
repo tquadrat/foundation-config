@@ -310,6 +310,8 @@ public final class CmdLineException extends ValidationException
         \*------------*/
     /**
      *  The CLI definition for the argument/option that caused this exception.
+     *
+     *  @serial
      */
     @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" )
     private final Optional<CLIDefinition> m_CLIDefinition;
@@ -317,11 +319,15 @@ public final class CmdLineException extends ValidationException
     /**
      *  The arguments for the message that is retrieved with the
      *  {@link #m_MessageKey}.
+     *
+     *  @serial
      */
     private final Object [] m_MessageArguments;
 
     /**
      *  The message key.
+     *
+     *  @serial
      */
     private final int m_MessageKey;
 

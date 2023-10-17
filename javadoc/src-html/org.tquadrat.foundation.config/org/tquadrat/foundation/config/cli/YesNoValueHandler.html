@@ -110,49 +110,49 @@
 <span class="source-line-no">097</span><span id="line-97">            final Map&lt;Locale,Set&lt;String&gt;&gt; yes = new HashMap&lt;&gt;();</span>
 <span class="source-line-no">098</span><span id="line-98"></span>
 <span class="source-line-no">099</span><span id="line-99">            yes.put( ROOT, Set.of( "ok", "true", "yes" ) );</span>
-<span class="source-line-no">100</span><span id="line-100">            yes.put( new Locale( "ar" ), Set.of( "naʿam", "نعم" ) );</span>
-<span class="source-line-no">101</span><span id="line-101">            yes.put( new Locale( "cs" ), Set.of( "ano" ) );</span>
-<span class="source-line-no">102</span><span id="line-102">            yes.put( new Locale( "el" ), Set.of( "ne", "ναι" ) );</span>
-<span class="source-line-no">103</span><span id="line-103">            yes.put( new Locale( "es" ), Set.of( "sí" ) );</span>
-<span class="source-line-no">104</span><span id="line-104">            yes.put( new Locale( "et" ), Set.of( "jah" ) );</span>
-<span class="source-line-no">105</span><span id="line-105">            yes.put( new Locale( "fa" ), Set.of( "baleh", "بله" ) );</span>
-<span class="source-line-no">106</span><span id="line-106">            yes.put( new Locale( "fi" ), Set.of( "kyllä" ) );</span>
-<span class="source-line-no">107</span><span id="line-107">            yes.put( new Locale( "fr" ), Set.of( "oui" ) );</span>
-<span class="source-line-no">108</span><span id="line-108">            yes.put( new Locale( "he" ), Set.of( "ken", "כֵּן", "כן" ) );</span>
-<span class="source-line-no">109</span><span id="line-109">            yes.put( new Locale( "hi" ), Set.of( "hā̃ ", "हाँ", "jī", "जी", "jī hā̃ ", "जी हाँ" ) );</span>
-<span class="source-line-no">110</span><span id="line-110">            yes.put( new Locale( "hu" ), Set.of( "igen" ) );</span>
-<span class="source-line-no">111</span><span id="line-111">            yes.put( new Locale( "id" ), Set.of( "ya" ) );</span>
-<span class="source-line-no">112</span><span id="line-112">            yes.put( new Locale( "is" ), Set.of( "já" ) );</span>
-<span class="source-line-no">113</span><span id="line-113">            yes.put( new Locale( "it" ), Set.of( "sì" ) );</span>
-<span class="source-line-no">114</span><span id="line-114">            yes.put( new Locale( "jp" ), Set.of( "hai", "はい", "ee", "ええ", "un", "うん" ) );</span>
-<span class="source-line-no">115</span><span id="line-115">            yes.put( new Locale( "ko" ), Set.of( "ne", "네" ) );</span>
-<span class="source-line-no">116</span><span id="line-116">            yes.put( new Locale( "ku" ), Set.of( "are" ) );</span>
-<span class="source-line-no">117</span><span id="line-117">            yes.put( new Locale( "lt" ), Set.of( "taip" ) );</span>
-<span class="source-line-no">118</span><span id="line-118">            yes.put( new Locale( "pl" ), Set.of( "tak" ) );</span>
-<span class="source-line-no">119</span><span id="line-119">            yes.put( new Locale( "pt" ), Set.of( "sim" ) );</span>
-<span class="source-line-no">120</span><span id="line-120">            yes.put( new Locale( "sq" ), Set.of( "po" ) );</span>
-<span class="source-line-no">121</span><span id="line-121">            yes.put( new Locale( "sw" ), Set.of( "ndiyo", "naam" ) );</span>
-<span class="source-line-no">122</span><span id="line-122">            yes.put( new Locale( "ta" ), Set.of( "ām", "ஆம்", "āmām", "ஆமாம்", "ōm", "ஓம்" ) );</span>
-<span class="source-line-no">123</span><span id="line-123">            yes.put( new Locale( "tg" ), Set.of( "bale", "бале", "ore", "оре" ) );</span>
-<span class="source-line-no">124</span><span id="line-124">            yes.put( new Locale( "tr" ), Set.of( "evet" ) );</span>
-<span class="source-line-no">125</span><span id="line-125">            yes.put( new Locale( "uk" ), Set.of( "tak", "так" ) );</span>
+<span class="source-line-no">100</span><span id="line-100">            yes.put( Locale.of( "ar" ), Set.of( "naʿam", "نعم" ) );</span>
+<span class="source-line-no">101</span><span id="line-101">            yes.put( Locale.of( "cs" ), Set.of( "ano" ) );</span>
+<span class="source-line-no">102</span><span id="line-102">            yes.put( Locale.of( "el" ), Set.of( "ne", "ναι" ) );</span>
+<span class="source-line-no">103</span><span id="line-103">            yes.put( Locale.of( "es" ), Set.of( "sí" ) );</span>
+<span class="source-line-no">104</span><span id="line-104">            yes.put( Locale.of( "et" ), Set.of( "jah" ) );</span>
+<span class="source-line-no">105</span><span id="line-105">            yes.put( Locale.of( "fa" ), Set.of( "baleh", "بله" ) );</span>
+<span class="source-line-no">106</span><span id="line-106">            yes.put( Locale.of( "fi" ), Set.of( "kyllä" ) );</span>
+<span class="source-line-no">107</span><span id="line-107">            yes.put( Locale.of( "fr" ), Set.of( "oui" ) );</span>
+<span class="source-line-no">108</span><span id="line-108">            yes.put( Locale.of( "he" ), Set.of( "ken", "כֵּן", "כן" ) );</span>
+<span class="source-line-no">109</span><span id="line-109">            yes.put( Locale.of( "hi" ), Set.of( "hā̃ ", "हाँ", "jī", "जी", "jī hā̃ ", "जी हाँ" ) );</span>
+<span class="source-line-no">110</span><span id="line-110">            yes.put( Locale.of( "hu" ), Set.of( "igen" ) );</span>
+<span class="source-line-no">111</span><span id="line-111">            yes.put( Locale.of( "id" ), Set.of( "ya" ) );</span>
+<span class="source-line-no">112</span><span id="line-112">            yes.put( Locale.of( "is" ), Set.of( "já" ) );</span>
+<span class="source-line-no">113</span><span id="line-113">            yes.put( Locale.of( "it" ), Set.of( "sì" ) );</span>
+<span class="source-line-no">114</span><span id="line-114">            yes.put( Locale.of( "jp" ), Set.of( "hai", "はい", "ee", "ええ", "un", "うん" ) );</span>
+<span class="source-line-no">115</span><span id="line-115">            yes.put( Locale.of( "ko" ), Set.of( "ne", "네" ) );</span>
+<span class="source-line-no">116</span><span id="line-116">            yes.put( Locale.of( "ku" ), Set.of( "are" ) );</span>
+<span class="source-line-no">117</span><span id="line-117">            yes.put( Locale.of( "lt" ), Set.of( "taip" ) );</span>
+<span class="source-line-no">118</span><span id="line-118">            yes.put( Locale.of( "pl" ), Set.of( "tak" ) );</span>
+<span class="source-line-no">119</span><span id="line-119">            yes.put( Locale.of( "pt" ), Set.of( "sim" ) );</span>
+<span class="source-line-no">120</span><span id="line-120">            yes.put( Locale.of( "sq" ), Set.of( "po" ) );</span>
+<span class="source-line-no">121</span><span id="line-121">            yes.put( Locale.of( "sw" ), Set.of( "ndiyo", "naam" ) );</span>
+<span class="source-line-no">122</span><span id="line-122">            yes.put( Locale.of( "ta" ), Set.of( "ām", "ஆம்", "āmām", "ஆமாம்", "ōm", "ஓம்" ) );</span>
+<span class="source-line-no">123</span><span id="line-123">            yes.put( Locale.of( "tg" ), Set.of( "bale", "бале", "ore", "оре" ) );</span>
+<span class="source-line-no">124</span><span id="line-124">            yes.put( Locale.of( "tr" ), Set.of( "evet" ) );</span>
+<span class="source-line-no">125</span><span id="line-125">            yes.put( Locale.of( "uk" ), Set.of( "tak", "так" ) );</span>
 <span class="source-line-no">126</span><span id="line-126"></span>
 <span class="source-line-no">127</span><span id="line-127">            var set = Set.of( "ja" );</span>
-<span class="source-line-no">128</span><span id="line-128">            yes.put( new Locale( "af" ), set );</span>
-<span class="source-line-no">129</span><span id="line-129">            yes.put( new Locale( "da" ), set );</span>
-<span class="source-line-no">130</span><span id="line-130">            yes.put( new Locale( "de" ), set );</span>
-<span class="source-line-no">131</span><span id="line-131">            yes.put( new Locale( "no" ), set );</span>
-<span class="source-line-no">132</span><span id="line-132">            yes.put( new Locale( "sv" ), set );</span>
+<span class="source-line-no">128</span><span id="line-128">            yes.put( Locale.of( "af" ), set );</span>
+<span class="source-line-no">129</span><span id="line-129">            yes.put( Locale.of( "da" ), set );</span>
+<span class="source-line-no">130</span><span id="line-130">            yes.put( Locale.of( "de" ), set );</span>
+<span class="source-line-no">131</span><span id="line-131">            yes.put( Locale.of( "no" ), set );</span>
+<span class="source-line-no">132</span><span id="line-132">            yes.put( Locale.of( "sv" ), set );</span>
 <span class="source-line-no">133</span><span id="line-133"></span>
 <span class="source-line-no">134</span><span id="line-134">            set = Set.of( "da", "да" );</span>
-<span class="source-line-no">135</span><span id="line-135">            yes.put( new Locale( "bg" ), set );</span>
-<span class="source-line-no">136</span><span id="line-136">            yes.put( new Locale( "hr" ), set );</span>
-<span class="source-line-no">137</span><span id="line-137">            yes.put( new Locale( "mk" ), set );</span>
-<span class="source-line-no">138</span><span id="line-138">            yes.put( new Locale( "ro" ), set );</span>
-<span class="source-line-no">139</span><span id="line-139">            yes.put( new Locale( "ru" ), set );</span>
-<span class="source-line-no">140</span><span id="line-140">            yes.put( new Locale( "sh" ), set );</span>
-<span class="source-line-no">141</span><span id="line-141">            yes.put( new Locale( "sl" ), set );</span>
-<span class="source-line-no">142</span><span id="line-142">            yes.put( new Locale( "sr" ), set );</span>
+<span class="source-line-no">135</span><span id="line-135">            yes.put( Locale.of( "bg" ), set );</span>
+<span class="source-line-no">136</span><span id="line-136">            yes.put( Locale.of( "hr" ), set );</span>
+<span class="source-line-no">137</span><span id="line-137">            yes.put( Locale.of( "mk" ), set );</span>
+<span class="source-line-no">138</span><span id="line-138">            yes.put( Locale.of( "ro" ), set );</span>
+<span class="source-line-no">139</span><span id="line-139">            yes.put( Locale.of( "ru" ), set );</span>
+<span class="source-line-no">140</span><span id="line-140">            yes.put( Locale.of( "sh" ), set );</span>
+<span class="source-line-no">141</span><span id="line-141">            yes.put( Locale.of( "sl" ), set );</span>
+<span class="source-line-no">142</span><span id="line-142">            yes.put( Locale.of( "sr" ), set );</span>
 <span class="source-line-no">143</span><span id="line-143"></span>
 <span class="source-line-no">144</span><span id="line-144">            YES = Map.copyOf( yes );</span>
 <span class="source-line-no">145</span><span id="line-145"></span>
@@ -180,7 +180,7 @@
 <span class="source-line-no">167</span><span id="line-167">            if( isNotEmptyOrBlank( source ) )</span>
 <span class="source-line-no">168</span><span id="line-168">            {</span>
 <span class="source-line-no">169</span><span id="line-169">                final Collection&lt;String&gt; yes = new HashSet&lt;&gt;( YES.get( ROOT ) );</span>
-<span class="source-line-no">170</span><span id="line-170">                final var language = new Locale( Locale.getDefault().getLanguage() );</span>
+<span class="source-line-no">170</span><span id="line-170">                final var language = Locale.of( Locale.getDefault().getLanguage() );</span>
 <span class="source-line-no">171</span><span id="line-171">                if( YES.containsKey( language ) ) yes.addAll( YES.get( language ) );</span>
 <span class="source-line-no">172</span><span id="line-172">                retValue = Boolean.valueOf( yes.contains( source.toString().toLowerCase( Locale.getDefault() ) ) );</span>
 <span class="source-line-no">173</span><span id="line-173">            }</span>

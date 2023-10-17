@@ -46,16 +46,22 @@ public final class ConfigurationChangeEvent extends EventObject
         \*------------*/
     /**
      *  The new value of the property.
+     *
+     *  @serial
      */
     private final Object m_NewValue;
 
     /**
      *  The old value of the property.
+     *
+     *  @serial
      */
     private final Object m_OldValue;
 
     /**
      *  The name of the property.
+     *
+     *  @serial
      */
     private final String m_PropertyName;
 

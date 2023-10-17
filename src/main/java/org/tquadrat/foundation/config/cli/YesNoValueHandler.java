@@ -97,49 +97,49 @@ public final class YesNoValueHandler extends SimpleCmdLineValueHandler<Boolean>
             final Map<Locale,Set<String>> yes = new HashMap<>();
 
             yes.put( ROOT, Set.of( "ok", "true", "yes" ) );
-            yes.put( new Locale( "ar" ), Set.of( "naʿam", "نعم" ) );
-            yes.put( new Locale( "cs" ), Set.of( "ano" ) );
-            yes.put( new Locale( "el" ), Set.of( "ne", "ναι" ) );
-            yes.put( new Locale( "es" ), Set.of( "sí" ) );
-            yes.put( new Locale( "et" ), Set.of( "jah" ) );
-            yes.put( new Locale( "fa" ), Set.of( "baleh", "بله" ) );
-            yes.put( new Locale( "fi" ), Set.of( "kyllä" ) );
-            yes.put( new Locale( "fr" ), Set.of( "oui" ) );
-            yes.put( new Locale( "he" ), Set.of( "ken", "כֵּן", "כן" ) );
-            yes.put( new Locale( "hi" ), Set.of( "hā̃ ", "हाँ", "jī", "जी", "jī hā̃ ", "जी हाँ" ) );
-            yes.put( new Locale( "hu" ), Set.of( "igen" ) );
-            yes.put( new Locale( "id" ), Set.of( "ya" ) );
-            yes.put( new Locale( "is" ), Set.of( "já" ) );
-            yes.put( new Locale( "it" ), Set.of( "sì" ) );
-            yes.put( new Locale( "jp" ), Set.of( "hai", "はい", "ee", "ええ", "un", "うん" ) );
-            yes.put( new Locale( "ko" ), Set.of( "ne", "네" ) );
-            yes.put( new Locale( "ku" ), Set.of( "are" ) );
-            yes.put( new Locale( "lt" ), Set.of( "taip" ) );
-            yes.put( new Locale( "pl" ), Set.of( "tak" ) );
-            yes.put( new Locale( "pt" ), Set.of( "sim" ) );
-            yes.put( new Locale( "sq" ), Set.of( "po" ) );
-            yes.put( new Locale( "sw" ), Set.of( "ndiyo", "naam" ) );
-            yes.put( new Locale( "ta" ), Set.of( "ām", "ஆம்", "āmām", "ஆமாம்", "ōm", "ஓம்" ) );
-            yes.put( new Locale( "tg" ), Set.of( "bale", "бале", "ore", "оре" ) );
-            yes.put( new Locale( "tr" ), Set.of( "evet" ) );
-            yes.put( new Locale( "uk" ), Set.of( "tak", "так" ) );
+            yes.put( Locale.of( "ar" ), Set.of( "naʿam", "نعم" ) );
+            yes.put( Locale.of( "cs" ), Set.of( "ano" ) );
+            yes.put( Locale.of( "el" ), Set.of( "ne", "ναι" ) );
+            yes.put( Locale.of( "es" ), Set.of( "sí" ) );
+            yes.put( Locale.of( "et" ), Set.of( "jah" ) );
+            yes.put( Locale.of( "fa" ), Set.of( "baleh", "بله" ) );
+            yes.put( Locale.of( "fi" ), Set.of( "kyllä" ) );
+            yes.put( Locale.of( "fr" ), Set.of( "oui" ) );
+            yes.put( Locale.of( "he" ), Set.of( "ken", "כֵּן", "כן" ) );
+            yes.put( Locale.of( "hi" ), Set.of( "hā̃ ", "हाँ", "jī", "जी", "jī hā̃ ", "जी हाँ" ) );
+            yes.put( Locale.of( "hu" ), Set.of( "igen" ) );
+            yes.put( Locale.of( "id" ), Set.of( "ya" ) );
+            yes.put( Locale.of( "is" ), Set.of( "já" ) );
+            yes.put( Locale.of( "it" ), Set.of( "sì" ) );
+            yes.put( Locale.of( "jp" ), Set.of( "hai", "はい", "ee", "ええ", "un", "うん" ) );
+            yes.put( Locale.of( "ko" ), Set.of( "ne", "네" ) );
+            yes.put( Locale.of( "ku" ), Set.of( "are" ) );
+            yes.put( Locale.of( "lt" ), Set.of( "taip" ) );
+            yes.put( Locale.of( "pl" ), Set.of( "tak" ) );
+            yes.put( Locale.of( "pt" ), Set.of( "sim" ) );
+            yes.put( Locale.of( "sq" ), Set.of( "po" ) );
+            yes.put( Locale.of( "sw" ), Set.of( "ndiyo", "naam" ) );
+            yes.put( Locale.of( "ta" ), Set.of( "ām", "ஆம்", "āmām", "ஆமாம்", "ōm", "ஓம்" ) );
+            yes.put( Locale.of( "tg" ), Set.of( "bale", "бале", "ore", "оре" ) );
+            yes.put( Locale.of( "tr" ), Set.of( "evet" ) );
+            yes.put( Locale.of( "uk" ), Set.of( "tak", "так" ) );
 
             var set = Set.of( "ja" );
-            yes.put( new Locale( "af" ), set );
-            yes.put( new Locale( "da" ), set );
-            yes.put( new Locale( "de" ), set );
-            yes.put( new Locale( "no" ), set );
-            yes.put( new Locale( "sv" ), set );
+            yes.put( Locale.of( "af" ), set );
+            yes.put( Locale.of( "da" ), set );
+            yes.put( Locale.of( "de" ), set );
+            yes.put( Locale.of( "no" ), set );
+            yes.put( Locale.of( "sv" ), set );
 
             set = Set.of( "da", "да" );
-            yes.put( new Locale( "bg" ), set );
-            yes.put( new Locale( "hr" ), set );
-            yes.put( new Locale( "mk" ), set );
-            yes.put( new Locale( "ro" ), set );
-            yes.put( new Locale( "ru" ), set );
-            yes.put( new Locale( "sh" ), set );
-            yes.put( new Locale( "sl" ), set );
-            yes.put( new Locale( "sr" ), set );
+            yes.put( Locale.of( "bg" ), set );
+            yes.put( Locale.of( "hr" ), set );
+            yes.put( Locale.of( "mk" ), set );
+            yes.put( Locale.of( "ro" ), set );
+            yes.put( Locale.of( "ru" ), set );
+            yes.put( Locale.of( "sh" ), set );
+            yes.put( Locale.of( "sl" ), set );
+            yes.put( Locale.of( "sr" ), set );
 
             YES = Map.copyOf( yes );
 
@@ -167,7 +167,7 @@ public final class YesNoValueHandler extends SimpleCmdLineValueHandler<Boolean>
             if( isNotEmptyOrBlank( source ) )
             {
                 final Collection<String> yes = new HashSet<>( YES.get( ROOT ) );
-                final var language = new Locale( Locale.getDefault().getLanguage() );
+                final var language = Locale.of( Locale.getDefault().getLanguage() );
                 if( YES.containsKey( language ) ) yes.addAll( YES.get( language ) );
                 retValue = Boolean.valueOf( yes.contains( source.toString().toLowerCase( Locale.getDefault() ) ) );
             }
