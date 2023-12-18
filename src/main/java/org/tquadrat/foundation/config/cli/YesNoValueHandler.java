@@ -46,12 +46,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  phrase and {@code null} are taken as {@code false}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: YesNoValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class YesNoValueHandler extends SimpleCmdLineValueHandler<Boolean>
 {
@@ -68,12 +68,12 @@ public final class YesNoValueHandler extends SimpleCmdLineValueHandler<Boolean>
      *  @see Locale#getDefault()
      *
      *  @author Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: YesNoValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $
+     *  @version $Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $" )
     @API( status = STABLE, since = "0.0.1" )
     private static final class YesNoStringConverter implements StringConverter<Boolean>
     {
