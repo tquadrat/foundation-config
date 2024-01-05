@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -20,7 +20,6 @@ package org.tquadrat.foundation.config;
 
 import static java.lang.System.err;
 import static java.util.Comparator.comparing;
-import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.config.internal.CLIDefinitionParser.parse;
 import static org.tquadrat.foundation.i18n.I18nUtil.resolveText;
@@ -62,7 +61,6 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
 import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.function.tce.TCEBiFunction;
 import org.tquadrat.foundation.function.tce.TCEFunction;
-import org.tquadrat.foundation.i18n.I18nUtil;
 import org.tquadrat.foundation.lang.AutoLock;
 
 /**
@@ -93,13 +91,13 @@ import org.tquadrat.foundation.lang.AutoLock;
  *  that holds the generated configuration beans.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigUtil.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: ConfigUtil.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: ConfigUtil.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigUtil.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class ConfigUtil
 {
@@ -280,7 +278,7 @@ public final class ConfigUtil
         try( @SuppressWarnings( "unused" ) final var ignored = m_SessionConfigBeanRegistryLock.lock() )
         {
             @SuppressWarnings( "unchecked" )
-            final var beans = (Map<String,SessionBeanSpec>) m_SessionConfigBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), aClass -> new HashMap<>() );
+            final var beans = (Map<String,SessionBeanSpec>) m_SessionConfigBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), _ -> new HashMap<>() );
             @SuppressWarnings( "unchecked" )
             final var bean = (T) beans.computeIfAbsent( requireNotEmptyArgument( sessionKey, "sessionKey" ), s -> loadSessionBean( specification, s, factory ) );
             retValue = bean;
@@ -482,49 +480,6 @@ public final class ConfigUtil
         final var usage = builder.build( command, definitions );
         requireNonNullArgument( outputStream, "outputStream" ).write( usage.getBytes( Charset.defaultCharset() ) );
     }   //  printUsage()
-
-    /**
-     *  Returns the message for the given key, or the alternative text.
-     *
-     *  @param  bundle  The resource bundle.
-     *  @param  message The message.
-     *  @param  messageKey  The resource bundle key for the alternative
-     *      message.
-     *  @param  args    The argument for the alternative message.
-     *  @return The resolved message.
-     *
-     *  @deprecated Use
-     *      {@link I18nUtil#resolveText(Optional, String, String, Object...)}
-     *      instead.
-     */
-    @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" )
-    @Deprecated( since = "0.0.2", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.1" )
-    public static final String resolveMessage( final Optional<ResourceBundle> bundle, final String message, final String messageKey, final Object... args )
-    {
-        return resolveText( bundle, message, messageKey, args );
-    }   //  resolveMessage()
-
-    /**
-     *  Returns the message from the given
-     *  {@link CmdLineException}
-     *
-     *  @param  bundle  The resource bundle.
-     *  @param  e   The {@code CmdLineException}.
-     *  @return The resolved message.
-     *
-     *  @deprecated This method is now obsolete.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @SuppressWarnings( {"OptionalUsedAsFieldOrParameterType", "UseOfConcreteClass"} )
-    @API( status = DEPRECATED, since = "0.0.2" )
-    public static final String resolveMessage( @SuppressWarnings( "unused" ) final Optional<ResourceBundle> bundle, final CmdLineException e )
-    {
-        final var retValue = requireNonNullArgument( e, "e" ).getLocalizedMessage();
-
-        //---* Done *----------------------------------------------------------
-        return retValue;
-    }   //  resolveMessage()
 
     /**
      *  Returns the message from the given

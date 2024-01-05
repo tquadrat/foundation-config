@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -20,7 +20,6 @@ package org.tquadrat.foundation.config;
 
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.CLASS;
-import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.apiguardian.api.API.Status.STABLE;
 
 import java.lang.annotation.Documented;
@@ -45,13 +44,13 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  annotation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SystemProperty.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: SystemProperty.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @since 0.0.1
  *
  *  @see System#getProperty(String)
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: SystemProperty.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SystemProperty.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )
@@ -80,40 +79,6 @@ public @interface SystemProperty
      *  @return The name for the system property.
      */
     String value();
-
-    /**
-     *  <p>{@summary The implementation of
-     *  {@link StringConverter}
-     *  that is used to translate the value of the system property.}</p>
-     *  <p>This should be set only for implementations of
-     *  {@code StringConverter} that cannot be retrieved through
-     *  {@link StringConverter#forClass(Class)}
-     *  with the class/type of the annotated property as argument.</p>
-     *  <p>It is also important that the return type of the <i>provided</i>
-     *  implementation of
-     *  {@link StringConverter#fromString(CharSequence)}
-     *  is <i>exactly</i> the same as the type of the property; this is usually
-     *  not the case if this implementation is derived from a base class and
-     *  does not override {@code fromString()} itself. Otherwise the code
-     *  generation process may throw an exception.</p>
-     *  <p>The default value is
-     *  {@link org.tquadrat.foundation.config.internal.NullStringConverter},
-     *  a placeholder implementation indicating that the string converter
-     *  should be derived from the property type.</p>
-     *
-     *  @note   The code generation process does not regard a potentially
-     *      existing {@code getSubjectClass()} method on the string converter
-     *      implementation.
-     *
-     *  @return The class for the String converter.
-     *
-     *  @deprecated Use the annotation
-     *      {@link StringConversion &#64;StringConversion}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.2" )
-    Class<? extends StringConverter<?>> stringConverter() default org.tquadrat.foundation.config.internal.NullStringConverter.class;
 }
 //  annotation SystemProperty
 

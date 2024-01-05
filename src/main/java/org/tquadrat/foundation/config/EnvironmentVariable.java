@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -45,13 +45,13 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  annotation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: EnvironmentVariable.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: EnvironmentVariable.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @since 0.0.1
  *
  *  @see System#getenv(String)
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: EnvironmentVariable.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnvironmentVariable.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )
@@ -80,20 +80,6 @@ public @interface EnvironmentVariable
      *  @return The name for the environment variable.
      */
     String value();
-
-    /**
-     *  The implementation of
-     *  {@link StringConverter}
-     *  that is used to translate the value of the environment variable.
-     *
-     *  @return The class for the String converter.
-     *
-     *  @deprecated Use the annotation
-     *      {@link StringConversion &#64;StringConversion}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    Class<? extends StringConverter<?>> stringConverter() default org.tquadrat.foundation.config.internal.NullStringConverter.class;
 }
 //  annotation EnvironmentVariable
 
