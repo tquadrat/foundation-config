@@ -291,7 +291,7 @@
 <span class="source-line-no">278</span><span id="line-278">        try( @SuppressWarnings( "unused" ) final var ignored = m_SessionConfigBeanRegistryLock.lock() )</span>
 <span class="source-line-no">279</span><span id="line-279">        {</span>
 <span class="source-line-no">280</span><span id="line-280">            @SuppressWarnings( "unchecked" )</span>
-<span class="source-line-no">281</span><span id="line-281">            final var beans = (Map&lt;String,SessionBeanSpec&gt;) m_SessionConfigBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), _ -&gt; new HashMap&lt;&gt;() );</span>
+<span class="source-line-no">281</span><span id="line-281">            final var beans = (Map&lt;String,SessionBeanSpec&gt;) m_SessionConfigBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), $ -&gt; new HashMap&lt;&gt;() );</span>
 <span class="source-line-no">282</span><span id="line-282">            @SuppressWarnings( "unchecked" )</span>
 <span class="source-line-no">283</span><span id="line-283">            final var bean = (T) beans.computeIfAbsent( requireNotEmptyArgument( sessionKey, "sessionKey" ), s -&gt; loadSessionBean( specification, s, factory ) );</span>
 <span class="source-line-no">284</span><span id="line-284">            retValue = bean;</span>

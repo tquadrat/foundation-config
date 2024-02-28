@@ -278,7 +278,7 @@ public final class ConfigUtil
         try( @SuppressWarnings( "unused" ) final var ignored = m_SessionConfigBeanRegistryLock.lock() )
         {
             @SuppressWarnings( "unchecked" )
-            final var beans = (Map<String,SessionBeanSpec>) m_SessionConfigBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), _ -> new HashMap<>() );
+            final var beans = (Map<String,SessionBeanSpec>) m_SessionConfigBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), $ -> new HashMap<>() );
             @SuppressWarnings( "unchecked" )
             final var bean = (T) beans.computeIfAbsent( requireNotEmptyArgument( sessionKey, "sessionKey" ), s -> loadSessionBean( specification, s, factory ) );
             retValue = bean;
