@@ -91,13 +91,13 @@ import org.tquadrat.foundation.lang.AutoLock;
  *  that holds the generated configuration beans.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigUtil.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: ConfigUtil.java 1105 2024-02-28 12:58:46Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: ConfigUtil.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigUtil.java 1105 2024-02-28 12:58:46Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class ConfigUtil
 {
