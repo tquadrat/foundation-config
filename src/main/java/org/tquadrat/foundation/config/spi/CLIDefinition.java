@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,24 +17,22 @@
 
 package org.tquadrat.foundation.config.spi;
 
-import static java.lang.Character.isWhitespace;
-import static java.util.Locale.ROOT;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.config.CLIBeanSpec.LEAD_IN;
-import static org.tquadrat.foundation.config.internal.Commons.retrieveMessage;
-import static org.tquadrat.foundation.i18n.TextUse.USAGE;
-import static org.tquadrat.foundation.lang.Objects.nonNull;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-
-import java.util.Optional;
-
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.config.CmdLineException;
 import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
 import org.tquadrat.foundation.i18n.Message;
 import org.tquadrat.foundation.i18n.Translation;
+
+import java.util.Optional;
+
+import static java.lang.Character.isWhitespace;
+import static java.util.Locale.ROOT;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.config.CLIBeanSpec.LEAD_IN;
+import static org.tquadrat.foundation.config.internal.Commons.retrieveMessage;
+import static org.tquadrat.foundation.i18n.TextUse.USAGE;
+import static org.tquadrat.foundation.lang.Objects.*;
 
 /**
  *  Base class for the run-time copies of the
@@ -48,13 +46,13 @@ import org.tquadrat.foundation.i18n.Translation;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Mark Sinke
- *  @version $Id: CLIDefinition.java 1076 2023-10-03 18:36:07Z tquadrat $
+ *  @version $Id: CLIDefinition.java 1120 2024-03-16 09:48:00Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"ConstantExpression", "BooleanMethodNameMustStartWithQuestion"} )
-@ClassVersion( sourceVersion = "$Id: CLIDefinition.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIDefinition.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public abstract class CLIDefinition
 {
@@ -379,7 +377,7 @@ public abstract class CLIDefinition
      *      otherwise.
      *  @throws IllegalArgumentException    The given name is invalid.
      */
-    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )
+    @SuppressWarnings({"StaticMethodOnlyUsedInOneClass", "ConstantValue"})
     public static final boolean validateOptionName( final String name ) throws IllegalArgumentException
     {
         final var retValue = switch( requireNonNullArgument( name, "name" ).length() )

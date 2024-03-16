@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,30 +17,6 @@
 
 package org.tquadrat.foundation.config;
 
-import static java.io.OutputStream.nullOutputStream;
-import static java.lang.String.format;
-import static java.lang.System.out;
-import static java.util.Locale.ENGLISH;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.config.ConfigUtil.parseCommandLine;
-import static org.tquadrat.foundation.config.ConfigUtil.printUsage;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_String_ARRAY;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Optional;
-import java.util.ResourceBundle;
-import java.util.TreeMap;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -51,6 +27,21 @@ import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.*;
+
+import static java.io.OutputStream.nullOutputStream;
+import static java.lang.String.format;
+import static java.lang.System.out;
+import static java.util.Locale.ENGLISH;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.tquadrat.foundation.config.ConfigUtil.parseCommandLine;
+import static org.tquadrat.foundation.config.ConfigUtil.printUsage;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_String_ARRAY;
+
 /**
  *  Tests for
  *  {@link ConfigUtil}
@@ -58,7 +49,7 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
 @SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestConfigUtil.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestConfigUtil.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.config.TestConfigUtil" )
 public class TestConfigUtil extends TestBaseClass
 {
@@ -98,7 +89,7 @@ public class TestConfigUtil extends TestBaseClass
     /**
      *  Test parsing command lines.
      *
-     *  @see ConfigUtil#parseCommandLine(List, String...)
+     *  @see ConfigUtil#parseCommandLine(Collection,String...)
      */
     @SuppressWarnings( "UseOfObsoleteDateTimeApi" )
     @Test
@@ -193,11 +184,10 @@ public class TestConfigUtil extends TestBaseClass
 
     /**
      *  Tests for the method
-     *  {@link ConfigUtil#printUsage(OutputStream, Optional, CharSequence, List)}.
+     *  {@link ConfigUtil#printUsage(OutputStream,Optional,CharSequence,Collection)}.
      *
      *  @throws IOException Something unexpected went wrong.
      */
-    @SuppressWarnings( "resource" )
     @Test
     final void testPrintUsage() throws IOException
     {

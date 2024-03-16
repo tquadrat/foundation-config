@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,8 +17,6 @@
 
 package com.sample.test;
 
-import java.util.Optional;
-
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.annotation.PropertyName;
 import org.tquadrat.foundation.config.CLIBeanSpec;
@@ -26,20 +24,22 @@ import org.tquadrat.foundation.config.CheckEmpty;
 import org.tquadrat.foundation.config.ConfigurationBeanSpecification;
 import org.tquadrat.foundation.config.PreferencesBeanSpec;
 
+import java.util.Optional;
+
 /**
  *  <p>{@summary The definition for a configuration bean that is used for
  *  testing.}</p>
  *  <p>It extends
- *  {@link org.tquadrat.foundation.ui.configuration.ConfigBeanBase}
+ *  {@link org.tquadrat.foundation.config.ConfigBeanSpec}
  *  (indirectly, via the two other interfaces),
- *  {@link CLIBean}
+ *  {@link CLIBeanSpec}
  *  and
- *  {@link PreferencesBean}.</p>
+ *  {@link PreferencesBeanSpec}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AConfigurationBean.java 893 2021-04-03 19:07:07Z tquadrat $
+ *  @version $Id: AConfigurationBean.java 1120 2024-03-16 09:48:00Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: AConfigurationBean.java 893 2021-04-03 19:07:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AConfigurationBean.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 @ConfigurationBeanSpecification
 public interface AConfigurationBean extends CLIBeanSpec, PreferencesBeanSpec
 {

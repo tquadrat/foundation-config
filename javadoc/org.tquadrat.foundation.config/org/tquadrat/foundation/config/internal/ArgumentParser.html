@@ -108,17 +108,17 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: ArgumentParser.java 1061 2023-09-25 16:32:43Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: ArgumentParser.java 1120 2024-03-16 09:48:00Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#INTERNAL" title="class or interface in org.apiguardian.api" class="external-link">INTERNAL</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.1")
-</span><span class="modifiers">public class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-83">ArgumentParser</a></span>
+</span><span class="modifiers">public class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-62">ArgumentParser</a></span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">The parser for the command line arguments.</div>
 <dl class="notes">
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: ArgumentParser.java 1061 2023-09-25 16:32:43Z tquadrat $</dd>
+<dd>$Id: ArgumentParser.java 1120 2024-03-16 09:48:00Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.0.1</dd>
 
@@ -302,7 +302,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="m_ArgumentDefinitions">
 <h3>m_ArgumentDefinitions</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../spi/CLIArgumentDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIArgumentDefinition</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-399">m_ArgumentDefinitions</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../spi/CLIArgumentDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIArgumentDefinition</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-378">m_ArgumentDefinitions</a></span></div>
 <div class="block">The
   <a href="../spi/CLIDefinition.html" title="class in org.tquadrat.foundation.config.spi"><code>CLIDefinition</code></a>
   instances for arguments.</div>
@@ -311,14 +311,14 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="m_CurrentOptionDefinition">
 <h3>m_CurrentOptionDefinition</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../spi/CLIOptionDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIOptionDefinition</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-404">m_CurrentOptionDefinition</a></span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../spi/CLIOptionDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIOptionDefinition</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-383">m_CurrentOptionDefinition</a></span></div>
 <div class="block">The definition for the current command line entry.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_OptionDefinitions">
 <h3>m_OptionDefinitions</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="../spi/CLIOptionDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIOptionDefinition</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-412">m_OptionDefinitions</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="../spi/CLIOptionDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIOptionDefinition</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-391">m_OptionDefinitions</a></span></div>
 <div class="block">The
   <a href="../spi/CLIDefinition.html" title="class in org.tquadrat.foundation.config.spi"><code>CLIDefinition</code></a>
   instances for options.</div>
@@ -327,7 +327,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="m_ParsingOptions">
 <h3>m_ParsingOptions</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-420">m_ParsingOptions</a></span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-399">m_ParsingOptions</a></span></div>
 <div class="block"><code>true</code> (the default) if options has to be parsed. If set to
   <code>false</code>, only arguments are parsed.</div>
 <dl class="notes">
@@ -351,7 +351,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;(java.util.Collection)">
 <h3>ArgumentParser</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-431">ArgumentParser</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="../spi/CLIDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIDefinition</a>&gt;&nbsp;cliDefinitions)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-410">ArgumentParser</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="../spi/CLIDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIDefinition</a>&gt;&nbsp;cliDefinitions)</span></div>
 <div class="block">Creates a new <code>ArgumentParser</code> instance.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -371,7 +371,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="addArgument(org.tquadrat.foundation.config.spi.CLIDefinition)">
 <h3>addArgument</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-465">addArgument</a></span><wbr><span class="parameters">(<a href="../spi/CLIDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIDefinition</a>&nbsp;definition)</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-444">addArgument</a></span><wbr><span class="parameters">(<a href="../spi/CLIDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIDefinition</a>&nbsp;definition)</span></div>
 <div class="block">Adds an argument definition to the registry for arguments.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -382,7 +382,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="addOption(org.tquadrat.foundation.config.spi.CLIDefinition)">
 <h3>addOption</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-487">addOption</a></span><wbr><span class="parameters">(<a href="../spi/CLIDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIDefinition</a>&nbsp;definition)</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-466">addOption</a></span><wbr><span class="parameters">(<a href="../spi/CLIDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIDefinition</a>&nbsp;definition)</span></div>
 <div class="block">Adds an option definition to the registry for options.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -393,7 +393,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="findOptionDefinition(java.lang.String)">
 <h3>findOptionDefinition</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../spi/CLIOptionDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIOptionDefinition</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-510">findOptionDefinition</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../spi/CLIOptionDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIOptionDefinition</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-489">findOptionDefinition</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 <div class="block">Finds an option definition by the given option name.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -409,7 +409,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getCurrentOptionDefinition()">
 <h3>getCurrentOptionDefinition</h3>
-<div class="member-signature"><span class="modifiers">final</span>&nbsp;<span class="return-type"><a href="../spi/CLIOptionDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIOptionDefinition</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-529">getCurrentOptionDefinition</a></span>()</div>
+<div class="member-signature"><span class="modifiers">final</span>&nbsp;<span class="return-type"><a href="../spi/CLIOptionDefinition.html" title="class in org.tquadrat.foundation.config.spi">CLIOptionDefinition</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-508">getCurrentOptionDefinition</a></span>()</div>
 <div class="block">Returns the current CLI option definition.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -420,7 +420,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getOptionName()">
 <h3>getOptionName</h3>
-<div class="member-signature"><span class="modifiers">final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-536">getOptionName</a></span>()</div>
+<div class="member-signature"><span class="modifiers">final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-515">getOptionName</a></span>()</div>
 <div class="block">Returns the name of the option that is being processed currently.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -431,7 +431,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="isOption(java.lang.String)">
 <h3>isOption</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-558">isOption</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token)</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-537">isOption</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token)</span></div>
 <div class="block">Checks if the given token is an option (as opposed to an argument).
   Option tokens will have a hyphen
   (<a href="../CLIBeanSpec.html#LEAD_IN">"-"</a>)
@@ -456,7 +456,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="checkOptionNotYetUsed(java.lang.String)">
 <h3>checkOptionNotYetUsed</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-576">checkOptionNotYetUsed</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-555">checkOptionNotYetUsed</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span>
                                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
 <div class="block">Checks the command line definition whether the given name is not yet
   used, either as a name or an alias.</div>
@@ -471,7 +471,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="parse(java.lang.String...)">
 <h3>parse</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-595">parse</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;args)</span>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-574">parse</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;args)</span>
                  throws <span class="exceptions"><a href="../CmdLineException.html" title="class in org.tquadrat.foundation.config">CmdLineException</a></span></div>
 <div class="block">Parses the given command line arguments and sets the retrieved values
   to the configuration bean.</div>
@@ -488,7 +488,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="parsingOptions()">
 <h3>parsingOptions</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-682">parsingOptions</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-661">parsingOptions</a></span>()</div>
 <div class="block">Returns <code>true</code> if this <code>ArgumentParser</code> will parse
   options. This can be set to <code>false</code> either when no
   <a href="../Option.html" title="annotation interface in org.tquadrat.foundation.config"><code>&#64;Option</code></a>
@@ -513,7 +513,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="resolveCommandLine(java.lang.String...)">
 <h3>resolveCommandLine</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-692">resolveCommandLine</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-671">resolveCommandLine</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;args)</span></div>
 <div class="block"><p>Resolves the given command line.</p>
   <p>The method is mainly meant for test and debugging purposes.</p></div>
 <dl class="notes">
@@ -527,7 +527,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="stopOptionParsing()">
 <h3>stopOptionParsing</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-710">stopOptionParsing</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/internal/ArgumentParser.html#line-689">stopOptionParsing</a></span>()</div>
 <div class="block">Stops the parsing for options. After the call, the argument list will
   be parsed only for
   <a href="../Argument.html" title="annotation interface in org.tquadrat.foundation.config">arguments</a>.</div>

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,20 +18,6 @@
 
 package org.tquadrat.foundation.config.internal;
 
-import static java.lang.String.format;
-import static java.lang.System.out;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.ResourceBundle;
-
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.config.spi.CLIDefinition;
@@ -39,16 +25,23 @@ import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
+import java.util.*;
+
+import static java.lang.String.format;
+import static java.lang.System.out;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+
 /**
  *  Tests for the class
  *  {@link UsageBuilder}.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestUsageBuilder.java 1076 2023-10-03 18:36:07Z tquadrat $
+ *  @version $Id: TestUsageBuilder.java 1120 2024-03-16 09:48:00Z tquadrat $
  *  @since 10
  */
 @SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestUsageBuilder.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestUsageBuilder.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 public class TestUsageBuilder extends TestBaseClass
 {
         /*---------*\
@@ -56,7 +49,7 @@ public class TestUsageBuilder extends TestBaseClass
         \*---------*/
     /**
      *  Tests for the method
-     *  {@link UsageBuilder#build(CharSequence, List)}
+     *  {@link UsageBuilder#build(CharSequence,Collection)}
      */
     @Test
     final void testBuild()
@@ -92,7 +85,7 @@ public class TestUsageBuilder extends TestBaseClass
 
     /**
      *  Tests for the method
-     *  {@link UsageBuilder#build(CharSequence, List)}
+     *  {@link UsageBuilder#build(CharSequence,Collection)}
      */
     @Test
     final void testBuild_Empty()
@@ -121,7 +114,7 @@ public class TestUsageBuilder extends TestBaseClass
 
     /**
      *  Tests for the method
-     *  {@link UsageBuilder#build(CharSequence, List)}
+     *  {@link UsageBuilder#build(CharSequence,Collection)}
      */
     @Test
     final void testBuild_Null()
@@ -209,6 +202,7 @@ public class TestUsageBuilder extends TestBaseClass
         candidate = new UsageBuilder( resources );
         assertNotNull( candidate );
 
+        //noinspection OptionalOfNullableMisuse
         optionalResources = Optional.ofNullable( resources );
         candidate = new UsageBuilder( optionalResources );
         assertNotNull( candidate );

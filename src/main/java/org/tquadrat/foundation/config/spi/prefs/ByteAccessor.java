@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,18 +18,18 @@
 
 package org.tquadrat.foundation.config.spi.prefs;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-
-import java.util.prefs.BackingStoreException;
-import java.util.prefs.Preferences;
-
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.config.spi.InvalidPreferenceValueException;
 import org.tquadrat.foundation.function.Getter;
 import org.tquadrat.foundation.function.Setter;
+
+import java.util.prefs.BackingStoreException;
+import java.util.prefs.Preferences;
+
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 /**
  *  The implementation of
@@ -38,12 +38,12 @@ import org.tquadrat.foundation.function.Setter;
  *  {@link Byte}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ByteAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: ByteAccessor.java 1120 2024-03-16 09:48:00Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ByteAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ByteAccessor.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class ByteAccessor extends PreferenceAccessor<Byte>
 {
@@ -106,7 +106,7 @@ public final class ByteAccessor extends PreferenceAccessor<Byte>
         }
         else
         {
-            node.putInt( getPropertyName(), (int) value.byteValue() );
+            node.putInt( getPropertyName(), value.byteValue());
         }
 
     }   //  writePreference()

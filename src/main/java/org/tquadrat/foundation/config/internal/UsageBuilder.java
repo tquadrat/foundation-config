@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,6 +18,19 @@
 
 package org.tquadrat.foundation.config.internal;
 
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.config.spi.CLIArgumentDefinition;
+import org.tquadrat.foundation.config.spi.CLIDefinition;
+import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
+import org.tquadrat.foundation.i18n.Text;
+import org.tquadrat.foundation.i18n.Translation;
+
+import java.util.*;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+import java.util.stream.Stream.Builder;
+
 import static java.lang.String.format;
 import static java.util.stream.Collectors.joining;
 import static org.apiguardian.api.API.Status.INTERNAL;
@@ -32,37 +45,18 @@ import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
 import static org.tquadrat.foundation.util.StringUtils.breakText;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.ResourceBundle;
-import java.util.TreeMap;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-import java.util.stream.Stream.Builder;
-
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.spi.CLIArgumentDefinition;
-import org.tquadrat.foundation.config.spi.CLIDefinition;
-import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
-import org.tquadrat.foundation.i18n.Text;
-import org.tquadrat.foundation.i18n.Translation;
-
 /**
  *  Builds the <i>usage</i> message that will be printed to the console (or
  *  wherever) in case help is requested on the command line, or an invalid
  *  option or argument is provided on it.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: UsageBuilder.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: UsageBuilder.java 1120 2024-03-16 09:48:00Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: UsageBuilder.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: UsageBuilder.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public class UsageBuilder
 {
@@ -367,7 +361,7 @@ public class UsageBuilder
 
         final List<String> list = new ArrayList<>( leftLines );
         leftLines.clear();
-        final var buffer = new StringBuilder( list.get( 0 ) );
+        final var buffer = new StringBuilder( list.getFirst() );
         while( buffer.length() < widthLeft - 2 ) buffer.append( ' ' );
         buffer.append( ": " );
         leftLines.add( buffer.toString() );

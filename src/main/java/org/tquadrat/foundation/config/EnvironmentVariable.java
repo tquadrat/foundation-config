@@ -18,17 +18,17 @@
 
 package org.tquadrat.foundation.config;
 
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.RetentionPolicy.CLASS;
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.lang.StringConverter;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.lang.StringConverter;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.RetentionPolicy.CLASS;
+import static org.apiguardian.api.API.Status.STABLE;
 
 /**
  *  <p>{@summary This annotation indicates that the property for the annotated
@@ -45,13 +45,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  annotation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: EnvironmentVariable.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: EnvironmentVariable.java 1120 2024-03-16 09:48:00Z tquadrat $
  *  @since 0.0.1
  *
  *  @see System#getenv(String)
  */
-@SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: EnvironmentVariable.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EnvironmentVariable.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,24 +18,24 @@
 
 package org.tquadrat.foundation.config.cli;
 
-import java.math.BigInteger;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.util.stringconverter.BigIntegerStringConverter;
 
+import java.math.BigInteger;
+
 /**
  *  Tests for an instance of
  *  {@link CmdLineValueHandler}
  *  that handles
- *  {@link BigDecimal}
+ *  {@link java.math.BigDecimal}
  *  properties.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestBigIntegerValueHandler.java 895 2021-04-05 12:40:34Z tquadrat $
+ *  @version $Id: TestBigIntegerValueHandler.java 1120 2024-03-16 09:48:00Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestBigIntegerValueHandler.java 895 2021-04-05 12:40:34Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestBigIntegerValueHandler.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.config.cli.TestBigIntegerValueHandler" )
 public class TestBigIntegerValueHandler extends ValueHandlerTestBase<BigInteger>
 {

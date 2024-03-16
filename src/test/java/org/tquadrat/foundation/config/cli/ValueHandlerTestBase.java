@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,16 +18,17 @@
 
 package org.tquadrat.foundation.config.cli;
 
-import static java.lang.String.format;
-import static java.lang.System.out;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.nonNull;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.config.CmdLineException;
+import org.tquadrat.foundation.config.spi.CLIDefinition;
+import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
+import org.tquadrat.foundation.config.spi.Parameters;
+import org.tquadrat.foundation.exception.NullArgumentException;
+import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import org.tquadrat.foundation.testutil.TestBaseClass;
+import org.w3c.dom.Document;
 
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -43,17 +44,12 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Pattern;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.CmdLineException;
-import org.tquadrat.foundation.config.spi.CLIDefinition;
-import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
-import org.tquadrat.foundation.config.spi.Parameters;
-import org.tquadrat.foundation.exception.NullArgumentException;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
-import org.tquadrat.foundation.testutil.TestBaseClass;
-import org.w3c.dom.Document;
+import static java.lang.String.format;
+import static java.lang.System.out;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
+import static org.tquadrat.foundation.lang.Objects.*;
+import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
 
 /**
  *  Base class for tests with implementations of
@@ -66,7 +62,7 @@ import org.w3c.dom.Document;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi"} )
-@ClassVersion( sourceVersion = "$Id: ValueHandlerTestBase.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValueHandlerTestBase.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 public abstract class ValueHandlerTestBase<T> extends TestBaseClass
 {
         /*---------------*\
@@ -78,7 +74,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
      *  for test purposes.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: ValueHandlerTestBase.java 1076 2023-10-03 18:36:07Z tquadrat $
+     *  @version $Id: ValueHandlerTestBase.java 1120 2024-03-16 09:48:00Z tquadrat $
      */
     private static class ParametersImpl implements Parameters
     {
@@ -235,7 +231,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
     protected void checkPatternValue( final String property, final Pattern expected ) throws AssertionError
     {
         final Object value = m_ValueContainer.get( property );
-        assertTrue( value instanceof Pattern );
+        assertInstanceOf( Pattern.class, value );
         assertEquals( expected.toString(), value.toString() );
     }   //  checkPatternValue()
 
@@ -261,7 +257,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
     protected void checkTemporalValue( final String property, final Temporal expected ) throws AssertionError
     {
         final Object value = m_ValueContainer.get( property );
-        assertTrue( value instanceof Temporal );
+        assertInstanceOf( Temporal.class, value );
         if( !value.equals( expected ) )
         {
             if( ((Comparable<Temporal>) value).compareTo( expected ) < 0 ) throw new AssertionError( format( "%s before %s", value.toString(), expected.toString() ) );
@@ -354,7 +350,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
 
     /**
      *  Tests the method
-     *  {@link CmdLineValueHandler#parseCmdLine(org.tquadrat.foundation.ui.spi.Parameters)}.
+     *  {@link CmdLineValueHandler#parseCmdLine(Parameters)}.
      *
      *  @throws Exception   Something went wrong unexpectedly.
      */
@@ -363,7 +359,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
 
     /**
      *  Tests the method
-     *  {@link CmdLineValueHandler#setContext(org.tquadrat.foundation.ui.spi.CLIDefinition)}.
+     *  {@link CmdLineValueHandler#setContext(CLIDefinition)}.
      */
     @Test
     public final void testSetContext_Null()

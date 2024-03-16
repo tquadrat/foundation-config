@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,6 +18,21 @@
 
 package org.tquadrat.foundation.config.internal;
 
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.config.CmdLineException;
+import org.tquadrat.foundation.config.spi.CLIArgumentDefinition;
+import org.tquadrat.foundation.config.spi.CLIDefinition;
+import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
+import org.tquadrat.foundation.config.spi.Parameters;
+import org.tquadrat.foundation.util.StringUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
+
 import static java.lang.String.format;
 import static java.nio.file.Files.lines;
 import static java.util.Spliterator.IMMUTABLE;
@@ -28,59 +43,23 @@ import static java.util.stream.Collectors.toList;
 import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.tquadrat.foundation.config.CLIBeanSpec.ARG_FILE_ESCAPE;
 import static org.tquadrat.foundation.config.CLIBeanSpec.LEAD_IN;
-import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_ArgumentMissing;
-import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_MissingOperand;
-import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_NoArgumentAllowed;
-import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_OptionInvalid;
-import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_OptionMissing;
-import static org.tquadrat.foundation.config.CmdLineException.MSGKEY_TooManyArguments;
-import static org.tquadrat.foundation.config.CmdLineException.MSG_ArgumentMissing;
-import static org.tquadrat.foundation.config.CmdLineException.MSG_MissingOperand;
-import static org.tquadrat.foundation.config.CmdLineException.MSG_NoArgumentAllowed;
-import static org.tquadrat.foundation.config.CmdLineException.MSG_OptionInvalid;
-import static org.tquadrat.foundation.config.CmdLineException.MSG_OptionMissing;
-import static org.tquadrat.foundation.config.CmdLineException.MSG_TooManyArguments;
+import static org.tquadrat.foundation.config.CmdLineException.*;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.nonNull;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import static org.tquadrat.foundation.lang.Objects.*;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmpty;
 import static org.tquadrat.foundation.util.SystemUtils.systemPropertiesAsStringMap;
 import static org.tquadrat.foundation.util.Template.replaceVariable;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Objects;
-import java.util.TreeMap;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
-
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.CmdLineException;
-import org.tquadrat.foundation.config.spi.CLIArgumentDefinition;
-import org.tquadrat.foundation.config.spi.CLIDefinition;
-import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
-import org.tquadrat.foundation.config.spi.Parameters;
-import org.tquadrat.foundation.util.StringUtils;
 
 /**
  *  The parser for the command line arguments.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ArgumentParser.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: ArgumentParser.java 1120 2024-03-16 09:48:00Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ArgumentParser.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ArgumentParser.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public class ArgumentParser
 {
@@ -98,12 +77,12 @@ public class ArgumentParser
      *  used.</p>
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: ArgumentParser.java 1061 2023-09-25 16:32:43Z tquadrat $
+     *  @version $Id: ArgumentParser.java 1120 2024-03-16 09:48:00Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: ArgumentParser.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: ArgumentParser.java 1120 2024-03-16 09:48:00Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     private final class CmdLineImpl implements Iterator<String>, Parameters
     {
@@ -240,7 +219,7 @@ public class ArgumentParser
             if( m_CurrentPos + index < m_ArgumentList.size() )
             {
                 retValue = m_ArgumentList.get( m_CurrentPos + index );
-                if( retValue.startsWith( LEAD_IN ) && ArgumentParser.this.parsingOptions() )
+                if( retValue.startsWith( LEAD_IN ) && parsingOptions() )
                 {
                     //---* We found the next option *--------------------------
                     throw new CmdLineException( getCurrentOptionDefinition(), MSG_MissingOperand, MSGKEY_MissingOperand, getOptionName() );
@@ -273,7 +252,7 @@ public class ArgumentParser
             assert index >= 0 : "index is less than 0";
 
             var retValue = m_CurrentPos + index < m_ArgumentList.size();
-            if( retValue && ArgumentParser.this.parsingOptions() )
+            if( retValue && parsingOptions() )
             {
                 var pos = m_CurrentPos + index;
                 while( retValue && (pos < m_ArgumentList.size()) )
@@ -693,7 +672,7 @@ public class ArgumentParser
     {
         final Iterator<String> cmdLine = new CmdLineImpl( args );
         @SuppressWarnings( "ConstantExpression" )
-        final var spliterator = spliterator( cmdLine, (long) args.length, IMMUTABLE | NONNULL );
+        final var spliterator = spliterator( cmdLine, args.length, IMMUTABLE | NONNULL );
         final var retValue = StreamSupport.stream( spliterator, false )
             .map( a -> a.contains( " " ) ? format( "\"%s\"", a ) : a )
             .collect( joining( " " ) );

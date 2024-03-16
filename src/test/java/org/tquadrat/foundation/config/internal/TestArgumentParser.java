@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,23 +18,6 @@
 
 package org.tquadrat.foundation.config.internal;
 
-import static java.lang.String.format;
-import static java.lang.System.getProperty;
-import static java.lang.System.out;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.util.Template.replaceVariable;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.TreeMap;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
@@ -49,16 +32,25 @@ import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
+import java.util.*;
+
+import static java.lang.String.format;
+import static java.lang.System.getProperty;
+import static java.lang.System.out;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.util.Template.replaceVariable;
+
 /**
  *  Tests for
  *  {@link ArgumentParser}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestArgumentParser.java 1076 2023-10-03 18:36:07Z tquadrat $
+ *  @version $Id: TestArgumentParser.java 1120 2024-03-16 09:48:00Z tquadrat $
  *  @since 10
  */
 @SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestArgumentParser.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestArgumentParser.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 public class TestArgumentParser extends TestBaseClass
 {
         /*------------*\
@@ -89,7 +81,8 @@ public class TestArgumentParser extends TestBaseClass
      *      {@link CLIDefinition}
      *      instances.
      */
-    public static final List<CLIDefinition> createCLIDefinitions( final Map<? super String, Object> target )
+    @SuppressWarnings("DataFlowIssue")
+    public static final List<CLIDefinition> createCLIDefinitions(final Map<? super String, Object> target )
     {
         String property;
         var index = 0;
@@ -517,7 +510,7 @@ public class TestArgumentParser extends TestBaseClass
         assertTrue( m_Values.containsKey( propertyName ) );
         final var v = m_Values.get( propertyName );
         assertNotNull( v );
-        assertTrue( v instanceof String );
+        assertInstanceOf( String.class, v );
         assertEquals( value, v.toString() );
     }   //  testCreateArgumentParser()
 }

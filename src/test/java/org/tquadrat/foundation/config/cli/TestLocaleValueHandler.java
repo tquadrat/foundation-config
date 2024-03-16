@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,6 +18,14 @@
 
 package org.tquadrat.foundation.config.cli;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.config.CmdLineException;
+import org.tquadrat.foundation.util.stringconverter.LocaleStringConverter;
+
+import java.util.Locale;
+
 import static java.lang.String.format;
 import static java.lang.System.out;
 import static java.util.Locale.GERMAN;
@@ -25,22 +33,16 @@ import static java.util.Locale.GERMANY;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import java.util.Locale;
-
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.CmdLineException;
-import org.tquadrat.foundation.util.stringconverter.LocaleStringConverter;
-
 /**
  *  Tests for the class
- *  {@link LocaleValueHandler}.
+ *  {@link SimpleCmdLineValueHandler}
+ *  for the type
+ *  {@link Locale}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestLocaleValueHandler.java 1076 2023-10-03 18:36:07Z tquadrat $
+ *  @version $Id: TestLocaleValueHandler.java 1120 2024-03-16 09:48:00Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestLocaleValueHandler.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestLocaleValueHandler.java 1120 2024-03-16 09:48:00Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.config.cli.TestLocaleValueHandler" )
 public class TestLocaleValueHandler extends ValueHandlerTestBase<Locale>
 {
@@ -97,23 +99,23 @@ public class TestLocaleValueHandler extends ValueHandlerTestBase<Locale>
         checkValue( expected );
 
         var language = "in";
-        expected = new Locale( language );
+        expected = Locale.of( language );
         candidate.parseCmdLine( createParameters( language ) );
         checkValue( expected );
 
         var country = "IN";
-        expected = new Locale( language, country );
+        expected = Locale.of( language, country );
         candidate.parseCmdLine( createParameters( format( "%s_%s", language, country ) ) );
         checkValue( expected );
 
         final var variant = "Variant";
-        expected = new Locale( language, country, variant );
+        expected = Locale.of( language, country, variant );
         candidate.parseCmdLine( createParameters( format( "%s_%s_%s", language, country, variant ) ) );
         checkValue( expected );
 
         language = "ger";
         country = "756";
-        expected = new Locale( language, country );
+        expected = Locale.of( language, country );
         candidate.parseCmdLine( createParameters( format( "%s_%s", language, country ) ) );
         checkValue( expected );
     }   //  testParseCmdLine()
