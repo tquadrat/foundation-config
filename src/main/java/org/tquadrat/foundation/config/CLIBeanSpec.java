@@ -28,16 +28,30 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  When a configuration bean should be initialised from the command line, the
- *  respective specification interface needs to extend this interface.
+ *  <p>{@summary When a configuration bean should be initialised from the
+ *  command line, the respective specification interface needs to extend this
+ *  interface.}</p>
+ *  <p>If none of the getters in the extended interface is annotated with
+ *  either
+ *  {@link Option &#x0040;Option}
+ *  or
+ *  {@link Argument &#x0040;Argument},
+ *  the compilation failed because the generated class does not implement the
+ *  methods from this interface
+ *  ({@link #dumpParamFileTemplate(OutputStream)},
+ *  {@link #parseCommandLine(String[])},
+ *  {@link #printUsage(OutputStream, CharSequence)}
+ *  and
+ *  {@link #retrieveParseErrorMessage()}). The error message will be something
+ *  like &quot;&lt;Generated Class&gt; is not abstract&quot;.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CLIBeanSpec.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: CLIBeanSpec.java 1156 2025-12-29 01:16:37Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CLIBeanSpec.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIBeanSpec.java 1156 2025-12-29 01:16:37Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public interface CLIBeanSpec extends ConfigBeanSpec
 {
@@ -71,14 +85,14 @@ public interface CLIBeanSpec extends ConfigBeanSpec
     public void dumpParamFileTemplate( final OutputStream outputStream ) throws IOException;
 
     /**
-     *  Parses the command line.<br>
-     *  <br>As a result from parsing the given command line arguments, the
+     *  <p>{@summary Parses the command line.}<br>
+     *  <p>As a result from parsing the given command line arguments, the
      *  accordingly annotated properties will be initialised with the values
-     *  from the command line.<br>
-     *  <br>Arguments starting with <code>&#64;</code> (like
+     *  from the command line.</p>
+     *  <p>Arguments starting with <code>&#64;</code> (like
      *  <code>&#64;param.lst</code>) are treated as a file that contains
-     *  further arguments.<br>
-     *  <br>Assuming the file {@code param.lst} has the following contents:
+     *  further arguments.</p>
+     *  <p>Assuming the file {@code param.lst} has the following contents:</p>
      *  <blockquote><pre><code>-opt0
      *value0
      *-opt1
@@ -86,11 +100,11 @@ public interface CLIBeanSpec extends ConfigBeanSpec
      *--
      *arg0
      *arg1</code></pre></blockquote>
-     *  and {@code args} looks like this: <code>-opt value &#64;param.lst
-     *  arg</code>, the resulting command line arguments set would be:
+     *  <p>and {@code args} looks like this: <code>-opt value &#64;param.lst
+     *  arg</code>, the resulting command line arguments set would be:</p>
      *  <pre><code>-opt value -opt0 value0 -opt1 value1 -- arg0 arg1 arg</code></pre>
-     *  In case the file could not be opened for whatever reason, the parameter
-     *  will not be replaced.
+     *  <p>In case the file could not be opened for whatever reason, the parameter
+     *  will not be replaced.</p>
      *
      *  @param  args    The command line arguments; usually the same as the
      *      arguments to the method {@code main()}.

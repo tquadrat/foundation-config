@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2025 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -34,18 +34,18 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  <p>This annotation implies the
  *  {@link NoPreference &#64;NoPreference}
  *  annotation.</p>
- *  <p>Any type of a property can be persisted to an {@code INI} file as long
+ *  <p>Properties of any type can be persisted to an {@code INI} file as long
  *  as a proper implementation of
  *  {@link org.tquadrat.foundation.lang.StringConverter}
  *  can be provided for that type.</p>
  *
- *  @version $Id: INIValue.java 946 2021-12-23 14:48:19Z tquadrat $
+ *  @version $Id: INIValue.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @since 0.1.0
  *
  *  @see StringConversion &#64;StringConversion
  */
-@ClassVersion( sourceVersion = "$Id: INIValue.java 946 2021-12-23 14:48:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: INIValue.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )

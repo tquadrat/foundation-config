@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2024 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -91,13 +91,13 @@ import org.tquadrat.foundation.lang.AutoLock;
  *  that holds the generated configuration beans.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigUtil.java 1105 2024-02-28 12:58:46Z tquadrat $
+ *  @version $Id: ConfigUtil.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: ConfigUtil.java 1105 2024-02-28 12:58:46Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigUtil.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class ConfigUtil
 {
@@ -158,7 +158,7 @@ public final class ConfigUtil
     /**
      *  <p>{@summary Drops the configuration bean for the given specification
      *  and the given session key.}</p>
-     *  <p>The &quot;session key&quot; can be any arbitrary kind of a unique
+     *  <p>The &quot;session key&quot; can be any arbitrary kind of unique
      *  identifier: a user id, a session id, a URI, or a UUID.</p>
      *  <p>Nothing happens if the there is not configuration bean for the
      *  given specification and/or session key.</p>
@@ -259,7 +259,7 @@ public final class ConfigUtil
     /**
      *  <p>{@summary Retrieves the configuration bean for the given
      *  specification and the given session key.}</p>
-     *  <p>The &quot;session key&quot; can be any arbitrary kind of a unique
+     *  <p>The &quot;session key&quot; can be any arbitrary kind of unique
      *  identifier: a user id, a session id, a URI, or a UUID.</p>
      *
      *  @param  <T> The type of the configuration bean specification.
@@ -278,7 +278,7 @@ public final class ConfigUtil
         try( @SuppressWarnings( "unused" ) final var ignored = m_SessionConfigBeanRegistryLock.lock() )
         {
             @SuppressWarnings( "unchecked" )
-            final var beans = (Map<String,SessionBeanSpec>) m_SessionConfigBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), $ -> new HashMap<>() );
+            final var beans = (Map<String,SessionBeanSpec>) m_SessionConfigBeanRegistry.computeIfAbsent( requireNonNullArgument( specification, "specification" ), _ -> new HashMap<>() );
             @SuppressWarnings( "unchecked" )
             final var bean = (T) beans.computeIfAbsent( requireNotEmptyArgument( sessionKey, "sessionKey" ), s -> loadSessionBean( specification, s, factory ) );
             retValue = bean;

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -46,12 +46,12 @@ import org.tquadrat.foundation.config.cli.DateValueHandler;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Kohsuke Kawaguchi - kk@kohsuke.org
  *  @thanks Mark Sinke
- *  @version $Id: Option.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: Option.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Option.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Option.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )
@@ -64,7 +64,7 @@ public @interface Option
     /**
      *  <p>{@summary Aliases for the
      *  {@linkplain #name() option name}.}</p>
-     *  <p>The aliases has to follow the same rules as for the option name
+     *  <p>The aliases have to follow the same rules as for the option name
      *  itself.</p>
      *
      *  @return The list of aliases.
@@ -176,7 +176,7 @@ public @interface Option
      *  {@link java.util.Optional}.</p>
      *  <p>Note that in most of the command line interface design principles,
      *  options should be really optional. So use caution when using this flag.
-     *  Consequently the default is {@code false}.</p>
+     *  Consequently, the default is {@code false}.</p>
      *
      *  @return {@code true} if the option is mandatory,
      *      {@code false} otherwise.

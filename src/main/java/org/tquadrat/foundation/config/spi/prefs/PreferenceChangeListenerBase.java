@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -40,7 +40,7 @@ import org.tquadrat.foundation.lang.AutoLock;
  *  {@link NodeChangeListener}
  *  and
  *  {@link PreferenceChangeListener}.}</p>
- *  <p>All implementations must provided a {@code public} constructor with the
+ *  <p>All implementations must provide a {@code public} constructor with the
  *  same signature as
  *  {@linkplain #PreferenceChangeListenerBase(Map, AutoLock) that for this class}.</p>
  *  <p>The class
@@ -48,12 +48,12 @@ import org.tquadrat.foundation.lang.AutoLock;
  *  provides a default implementation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PreferenceChangeListenerBase.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: PreferenceChangeListenerBase.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: PreferenceChangeListenerBase.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PreferenceChangeListenerBase.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public abstract class PreferenceChangeListenerBase implements PreferenceChangeListener, NodeChangeListener
 {

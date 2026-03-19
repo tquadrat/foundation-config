@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2024 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,18 +17,18 @@
 
 package org.tquadrat.foundation.config.spi;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
-
-import java.util.Collection;
-import java.util.List;
-
 import static java.util.stream.Collectors.joining;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmpty;
+
+import java.util.Collection;
+import java.util.List;
+
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
 
 /**
  *  Run-time copy of the
@@ -42,12 +42,12 @@ import static org.tquadrat.foundation.util.StringUtils.isNotEmpty;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Mark Sinke
- *  @version $Id: CLIOptionDefinition.java 1120 2024-03-16 09:48:00Z tquadrat $
+ *  @version $Id: CLIOptionDefinition.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CLIOptionDefinition.java 1120 2024-03-16 09:48:00Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIOptionDefinition.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public class CLIOptionDefinition extends CLIDefinition
 {
@@ -82,7 +82,7 @@ public class CLIOptionDefinition extends CLIDefinition
      *      more than one value.
      *  @param  format  The optional format.
      */
-    @SuppressWarnings( "BooleanParameter" )
+    @SuppressWarnings( {"BooleanParameter", "ConstructorWithTooManyParameters"} )
     public CLIOptionDefinition( final String property, final List<String> names, final String usage, final String usageKey, final String metaVar, final boolean required, final CmdLineValueHandler<?> handler, final boolean multiValued, final String format )
     {
         super( property, false, usage, usageKey, isNull( metaVar ) ? EMPTY_STRING : metaVar, required, handler, multiValued, format );

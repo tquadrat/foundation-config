@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -40,17 +40,17 @@ import org.tquadrat.foundation.config.cli.DateValueHandler;
  *  <p>A command line argument will be identified by its relative position on
  *  the parameter list, after any
  *  {@linkplain Option command line options}.
- *  Therefore it has an index, where an option has a name.</p>
+ *  Therefore, it has an index, where an option has a name.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Kohsuke Kawaguchi - kk@kohsuke.org
  *  @thanks Mark Sinke
- *  @version $Id: Argument.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: Argument.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Argument.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Argument.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )

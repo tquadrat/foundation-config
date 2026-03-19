@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -39,12 +39,12 @@ import org.tquadrat.foundation.i18n.Translation;
  *  cannot be converted into the target format, for whatever reason.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: InvalidPreferenceValueException.java 914 2021-05-07 21:22:12Z tquadrat $
+ *  @version $Id: InvalidPreferenceValueException.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: InvalidPreferenceValueException.java 914 2021-05-07 21:22:12Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: InvalidPreferenceValueException.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 public class InvalidPreferenceValueException extends IllegalArgumentException
 {
         /*-----------*\
@@ -59,7 +59,7 @@ public class InvalidPreferenceValueException extends IllegalArgumentException
         description = "The message indicating an invalid preference value.",
         translations =
         {
-            @Translation( language = "en", text = "Preference value for '%2$s' from '%1$s' cannot converted to target format" )
+            @Translation( language = "en", text = "Preference value for '%2$s' from '%1$s' cannot be converted to target format" )
         }
     )
     public static final int MSGKEY_InvalidValue1 = 37;
@@ -73,7 +73,7 @@ public class InvalidPreferenceValueException extends IllegalArgumentException
         description = "The message indicating an invalid preference value.",
         translations =
         {
-            @Translation( language = "en", text = "Preference value '%3$s' for '%2$s' from '%1$s' cannot converted to target format" )
+            @Translation( language = "en", text = "Preference value '%3$s' for '%2$s' from '%1$s' cannot be converted to target format" )
         }
     )
     public static final int MSGKEY_InvalidValue2 = 38;

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2024 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,19 +18,44 @@
 
 package org.tquadrat.foundation.config.internal;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
-import org.tquadrat.foundation.config.cli.EnumValueHandler;
-import org.tquadrat.foundation.config.cli.SimpleCmdLineValueHandler;
-import org.tquadrat.foundation.config.spi.CLIArgumentDefinition;
-import org.tquadrat.foundation.config.spi.CLIDefinition;
-import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
-import org.tquadrat.foundation.lang.StringConverter;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
+import static java.lang.String.format;
+import static java.lang.String.join;
+import static java.lang.System.out;
+import static java.util.Locale.ROOT;
+import static javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI;
+import static javax.xml.stream.XMLStreamConstants.ATTRIBUTE;
+import static javax.xml.stream.XMLStreamConstants.CDATA;
+import static javax.xml.stream.XMLStreamConstants.CHARACTERS;
+import static javax.xml.stream.XMLStreamConstants.COMMENT;
+import static javax.xml.stream.XMLStreamConstants.DTD;
+import static javax.xml.stream.XMLStreamConstants.END_DOCUMENT;
+import static javax.xml.stream.XMLStreamConstants.END_ELEMENT;
+import static javax.xml.stream.XMLStreamConstants.ENTITY_DECLARATION;
+import static javax.xml.stream.XMLStreamConstants.NAMESPACE;
+import static javax.xml.stream.XMLStreamConstants.NOTATION_DECLARATION;
+import static javax.xml.stream.XMLStreamConstants.PROCESSING_INSTRUCTION;
+import static javax.xml.stream.XMLStreamConstants.SPACE;
+import static javax.xml.stream.XMLStreamConstants.START_DOCUMENT;
+import static javax.xml.stream.XMLStreamConstants.START_ELEMENT;
+import static org.apiguardian.api.API.Status.INTERNAL;
+import static org.tquadrat.foundation.config.internal.ClassRegistry.m_HandlerClasses;
+import static org.tquadrat.foundation.config.spi.CLIDefinition.validateOptionName;
+import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
+import static org.tquadrat.foundation.lang.CommonConstants.XMLATTRIBUTE_Name;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.nonNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import static org.tquadrat.foundation.util.JavaUtils.isValidName;
+import static org.tquadrat.foundation.util.JavaUtils.retrieveMethod;
+import static org.tquadrat.foundation.util.StringUtils.isEmpty;
+import static org.tquadrat.foundation.util.StringUtils.isEmptyOrBlank;
+import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
 
-import javax.xml.stream.*;
+import javax.xml.stream.Location;
+import javax.xml.stream.XMLEventReader;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLResolver;
+import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.StartElement;
 import javax.xml.transform.stax.StAXSource;
@@ -41,36 +66,38 @@ import java.io.StringReader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.function.BiConsumer;
 
-import static java.lang.String.format;
-import static java.lang.String.join;
-import static java.lang.System.out;
-import static java.util.Locale.ROOT;
-import static javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI;
-import static javax.xml.stream.XMLStreamConstants.*;
-import static org.apiguardian.api.API.Status.INTERNAL;
-import static org.tquadrat.foundation.config.internal.ClassRegistry.m_HandlerClasses;
-import static org.tquadrat.foundation.config.spi.CLIDefinition.validateOptionName;
-import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
-import static org.tquadrat.foundation.lang.CommonConstants.XMLATTRIBUTE_Name;
-import static org.tquadrat.foundation.lang.Objects.*;
-import static org.tquadrat.foundation.util.JavaUtils.isValidName;
-import static org.tquadrat.foundation.util.JavaUtils.retrieveMethod;
-import static org.tquadrat.foundation.util.StringUtils.*;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.NotRecord;
+import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
+import org.tquadrat.foundation.config.cli.EnumValueHandler;
+import org.tquadrat.foundation.config.cli.SimpleCmdLineValueHandler;
+import org.tquadrat.foundation.config.spi.CLIArgumentDefinition;
+import org.tquadrat.foundation.config.spi.CLIDefinition;
+import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
+import org.tquadrat.foundation.lang.StringConverter;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 /**
  *  Parses an XML CLI definition file.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CLIDefinitionParser.java 1120 2024-03-16 09:48:00Z tquadrat $
+ *  @version $Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"OverlyComplexClass", "ClassWithTooManyMethods"} )
-@ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1120 2024-03-16 09:48:00Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public final class CLIDefinitionParser
 {
@@ -84,13 +111,14 @@ public final class CLIDefinitionParser
      *  {@link SAXParseException}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: CLIDefinitionParser.java 1120 2024-03-16 09:48:00Z tquadrat $
+     *  @version $Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1120 2024-03-16 09:48:00Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
+    @NotRecord
     public static final class ExceptionLocation implements Location
     {
             /*------------*\
@@ -154,12 +182,12 @@ public final class CLIDefinitionParser
      *  for this parser.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: CLIDefinitionParser.java 1120 2024-03-16 09:48:00Z tquadrat $
+     *  @version $Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1120 2024-03-16 09:48:00Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     private static class CLIDefinitionResolver implements XMLResolver
     {
@@ -613,6 +641,7 @@ public final class CLIDefinitionParser
         }
         finally
         {
+            //noinspection ThrowFromFinallyBlock
             m_EventReader.close();
         }
 

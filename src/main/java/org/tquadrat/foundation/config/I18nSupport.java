@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2025 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -41,7 +41,7 @@ import org.tquadrat.foundation.i18n.TextUse;
  *  </ul>
  *  <p>If the annotation processor cannot find these annotations in the
  *  configuration bean specification, it will throw an error. This behaviour is
- *  different from that when the i18n support is used independent from a
+ *  different from that when the i18n support is used independent of a
  *  configuration bean.</p>
  *  <p>When the methods</p>
  *  <ul>
@@ -56,12 +56,12 @@ import org.tquadrat.foundation.i18n.TextUse;
  *      the resource bundle property if it extends this interface!
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: I18nSupport.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: I18nSupport.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.2
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: I18nSupport.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: I18nSupport.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.2" )
 public interface I18nSupport extends ConfigBeanSpec
 {
