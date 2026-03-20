@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -38,7 +38,7 @@
  *      Options and Arguments.</li>
  *      <li>The values can be read from the
  *      {@link java.util.prefs.Preferences Preferences}, and, in case of User
- *      Preferences, they can also stored there.</li>
+ *      Preferences, they can also be stored there.</li>
  *      <li>The values can be read from a Windows INI file, and they can be
  *      persisted there, too.</li>
  *      <li>The values can be read from a
@@ -114,14 +114,14 @@
  *  development environment in use &mdash; it is strongly discouraged to modify
  *  the generated code.</p>
  *  <p>To obtain an instance of the generated configuration bean, call
- *  {@link org.tquadrat.foundation.config.ConfigUtil#getConfiguration(java.lang.Class, org.tquadrat.foundation.function.tce.TCEFunction) org.tquadrat.foundation.config.ConfigUtil.getConfiguration()}
+ *  {@link org.tquadrat.foundation.config.ConfigUtil#getConfiguration(java.lang.Class,org.tquadrat.foundation.function.tce.TCEFunction) org.tquadrat.foundation.config.ConfigUtil.getConfiguration()}
  *  like this:</p>
  *
- *  <div class="source-container"><pre>  <span class="source-line-no">001</span>&hellip;
+ *  <div class="source-container"><pre><span class="source-line-no">001</span>&hellip;
  *  <span class="source-line-no">002</span>final AConfigBean configBean = ConfigUtil.getConfiguration( AConfigBean.class, c -&gt; c.getConstructor().newInstance() );
  *  <span class="source-line-no">003</span>&hellip;</pre></div>
  *  <p>For a session bean, the call looks like this:</p>
- *  <div class="source-container"><pre>  <span class="source-line-no">001</span>&hellip;
+ *  <div class="source-container"><pre><span class="source-line-no">001</span>&hellip;
  *  <span class="source-line-no">002</span>String sessionKey = &hellip;
  *  <span class="source-line-no">003</span>&hellip;
  *
@@ -145,7 +145,7 @@
  *  it is recommended to add a {@code static} factory method to the
  *  configuration bean specification interface, like this:</p>
  *
- *  <div class="source-container"><pre>  <span class="source-line-no">001</span>&hellip;
+ *  <div class="source-container"><pre><span class="source-line-no">001</span>&hellip;
  *  <span class="source-line-no">002</span>public static AConfigBean getInstance()
  *  <span class="source-line-no">003</span>{
  *  <span class="source-line-no">004</span>    return ConfigUtil.getConfiguration( AConfigBean.class, c -&gt; c.getConstructor().newInstance() );
@@ -155,7 +155,7 @@
  *  <p>This would allow to obtain a reference to the configuration bean like
  *  this:</p>
  *
- *  <div class="source-container"><pre>  <span class="source-line-no">001</span>&hellip;
+ *  <div class="source-container"><pre><span class="source-line-no">001</span>&hellip;
  *  <span class="source-line-no">002</span>final var configBean = AConfigBean.getInstance();
  *  <span class="source-line-no">003</span>&hellip;</pre></div>
  *
@@ -163,9 +163,9 @@
  *  <p>Annotation processing does not support the manipulation of source code
  *  before it will be compiled, at least not without breaking some rules: the
  *  class {@code JCTree}, that does provide some basic capabilities for that
- *  purpose, belongs to the package {@code com.sun.tools.javac.tree<}, and that
- *  is not exported by the module <code>jdk.compiler</code>, at least not to
- *  the public.</p>
+ *  purpose, belongs to the package {@code com.sun.tools.javac.tree}, and that
+ *  is not exported by the module {@code jdk.compiler}, at least not to the
+ *  public.</p>
  *  <p>Perhaps a future version of annotation processing will provide that
  *  capability, or we try an implementation with byte code manipulation.</p>
  *  </div>
@@ -174,7 +174,7 @@
  *  <p>A simple configuration bean specification interface may look like
  *  this:</p>
  *
- *  <div class="source-container"><pre>  <span class="source-line-no">001</span>package com.sample.test;
+ *  <div class="source-container"><pre><span class="source-line-no">001</span>package com.sample.test;
  *  <span class="source-line-no">002</span>
  *  <span class="source-line-no">003</span>import java.util.Optional;
  *  <span class="source-line-no">004</span>
@@ -307,13 +307,13 @@
  *  for
  *  {@link java.util.Date},
  *  and for all {@code enum} types. {@code Date} is special, as an instance is
- *  to be represented as the milliseconds since the begin of the epoch
+ *  to be represented as the milliseconds since the start of the epoch
  *  (1970-01-01T00:00:00 UTC).
  *
  *  <h4>{@anchor #h4_annotations The Annotations for the basic Configuration Bean}</h4>
  *  <p>As seen in the sample, the behaviour of a configuration property can be
  *  changed by adding some annotations to the getter and setter methods.</p>
- *  <p>For a simple configuration bean without additional features, this are
+ *  <p>For a simple configuration bean without additional features, these are
  *  the annotations</p>
  *  <ul>
  *      <li><a href="#h5_checkempty"><code>&#64;CheckEmpty</code></a></li>
@@ -342,7 +342,7 @@
  *  <p>It triggers the code generator to add a check on empty or {@code null}
  *  to the setter method, like in code below:</p>
  *
- *  <div class="source-container"><pre>  <span class="source-line-no">001</span>&hellip;
+ *  <div class="source-container"><pre><span class="source-line-no">001</span>&hellip;
  *  <span class="source-line-no">002</span>&#47;**
  *  <span class="source-line-no">003</span> * {&#64;inheritDoc}
  *  <span class="source-line-no">004</span> *&#47;
@@ -364,7 +364,7 @@
  *  setter that takes any non-primitive argument; in this case, it checks that
  *  the given argument value is not {@code null}:</p>
  *
- *  <div class="source-container"><pre>  <span class="source-line-no">001</span>&hellip;
+ *  <div class="source-container"><pre><span class="source-line-no">001</span>&hellip;
  *  <span class="source-line-no">002</span>&#47;**
  *  <span class="source-line-no">003</span> * {&#64;inheritDoc}
  *  <span class="source-line-no">004</span> *&#47;
@@ -392,7 +392,7 @@
  *  {@code com.sample.application.generated.MyConfigImpl}. But if
  *  {@code MyConfig} is annotated with</p>
  *
- *  <div class="source-container"><pre>  <span class="source-line-no">001</span>&hellip;
+ *  <div class="source-container"><pre><span class="source-line-no">001</span>&hellip;
  *  <span class="source-line-no">002</span>&#64;ConfigurationBeanSpecification( name = "MyConfigBean", samePackage = true )
  *  <span class="source-line-no">003</span>public interface MyConfig
  *  <span class="source-line-no">004</span>{
@@ -425,7 +425,7 @@
  *  that it is a valid Java identifier.</p>
  *  <p>The code</p>
  *
- *  <div class="source-container"><pre>  <span class="source-line-no">001</span>&hellip;
+ *  <div class="source-container"><pre><span class="source-line-no">001</span>&hellip;
  *  <span class="source-line-no">002</span>&#64;PropertyName( "StartDate" )
  *  <span class="source-line-no">003</span>public Date getConfigValue();
  *  <span class="source-line-no">004</span>&hellip;</pre></div>
@@ -442,7 +442,7 @@
  *  {@code &#64;PropertyName} will be applied to the method.</p>
  *
  *  <h5><a id="h5_specialproperty"></a>{@link org.tquadrat.foundation.config.SpecialProperty &#64;SpecialProperty}</h5>
- *  <p><i>Special Properties</i>are configuration properties that have a
+ *  <p><i>Special Properties</i> are configuration properties that have a
  *  somehow special behaviour; they will be initialised in a special way or do
  *  have a special meaning or alike. The types of the available special
  *  properties are defined in
@@ -474,8 +474,8 @@
  *  environment variables cannot be manipulated from inside the running
  *  program.</p>
  *  <p>Calling the setter for the configuration property will not modify
- *  neither the system property nor the environment variable,and a change of
- *  the system property that occurs after the configuration bean was
+ *  neither the system property nor the environment variable. Similarly, a
+ *  change of the system property that occurs after the configuration bean was
  *  initialised is not reflected to the configuration property.</p>
  *  <p>The {@code &#64;EnvironmentVariable} is especially handy when writing
  *  code that should run later in a Docker (or similar) container environment
@@ -535,7 +535,7 @@
  *  {@href #h4_cliannotations below}.
  *  Parsing the command line is then as easy as:</p>
  *
- *  <div class="source-container"><pre>  <span class="source-line-no">001</span>&hellip;
+ *  <div class="source-container"><pre><span class="source-line-no">001</span>&hellip;
  *  <span class="source-line-no">002</span>public final static int main( final String...args )
  *  <span class="source-line-no">003</span>{
  *  <span class="source-line-no">004</span>    &hellip;
@@ -558,7 +558,7 @@
  *  <p>Confessed, there is a little bit more: not all data types can be
  *  annotated, only those with an implementation of
  *  {@link org.tquadrat.foundation.config.cli.CmdLineValueHandler}
- *  existing on the{@code CLASSPATH}at compile time and during execution.The
+ *  existing on the {@code CLASSPATH}at compile time and during execution.The
  *  library knows already several value handlers, others can be provided by the
  *  program or other libraries,too.</p>
  *
@@ -638,7 +638,7 @@
  *
  *      <dt>{@code boolean multiValued}</dt>
  *      <dd><p>A flag that indicates whether the argument or option is
- *      multi-valued, for mappings to a
+ *      multivalued, for mappings to a
  *      {@link java.util.Collection Collection}.</p>
  *      <p>As this will consume all remaining arguments from the command line,
  *      the so annotated property has to be the last argument.</p>
@@ -786,7 +786,7 @@
  *  a Linux system.</p>
  *  <p>This library connects the configuration values (at least most of them)
  *  with preferences values, using the name of the configuration bean
- *  specification as the name of the node and the key is the name of the
+ *  specification as the name of the node and the key are the name of the
  *  property. Both can be modified by annotations.</p>
  *  <p>To enable the preferences support for a configuration bean
  *  specification, it needs to extend the interface
@@ -817,9 +817,9 @@
  *  {@link org.tquadrat.foundation.config.PreferencesBeanSpec#updatePreferences() PreferencesBeanSpec.updatePreferences()}.</p>
  *
  *  <div style="border-style: solid; border-radius: 8px; margin-left: 10px; padding-left:5px; padding-right:5px;">
- *      <p>On a UNIX based system (this includes Linux and MacOS), the
+ *      <p>On a UNIX based system (this includes Linux and macOS), the
  *      preferences are stored in the file system.</p>
- *      <p>For MacOS, the preferences files generated by the Preferences API
+ *      <p>For macOS, the preferences files generated by the Preferences API
  *      are named {@code com.apple.java.util.prefs.plist}. The user's
  *      preferences file is stored in their home directory
  *      ({@code ~/Library/Preferences/}). The system preferences are stored in
@@ -846,10 +846,10 @@
  *      for a UNIX folder name &mdash; according to the logic of the API, this
  *      includes the dot('.',0x2e) and the underscore ('_',0x5f) &mdash; the
  *      folder name will be the BASE64 encrypted form of the node name,
- *      prepended with an underscore ('_',0x5f)(sic!). As the the default name
- *      for the preferences node for a configuration bean is its fully
- *      qualified class name &mdash; containing dots &mdash; the folder name
- *      for that preferences file is usually something cryptic like
+ *      prepended with an underscore ('_',0x5f)(sic!). As the default name for
+ *      the preferences node for a configuration bean is its fully qualified
+ *      class name &mdash; containing dots &mdash; the folder name for that
+ *      preferences file is usually something cryptic like
  *      &quot;{@code _!':!bw"t!#4!cw"h!'0!c!"s!'`!.g"0!'`!cw"0!#4!~w"l!'4!~@"y!'%!d!"l!'@!.g"$!'8!bg"m!'k!~w"1!()!}@"0!'k!bw"u!%)!~@"h!'4!]@"t!(!!b!==}&quot;
  *      (this is for &quot;{@code com.sample.test.generated.ConfigurationBeanImpl}&quot;).</p>
  *  </div>

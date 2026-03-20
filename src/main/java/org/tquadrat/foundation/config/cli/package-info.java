@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -28,7 +28,7 @@
  *  <h2>The Code Approach</h2>
  *  <p>The API can be used directly from the code, without any external
  *  configuration. This may look like this:</p>
- *  <div class="source-container"><pre>  <span class="source-line-no">201</span>&hellip;
+ *  <div class="source-container"><pre><span class="source-line-no">201</span>&hellip;
  *  <span class="source-line-no">202</span>import static org.tquadrat.foundation.ui.spi.ConfigUtil.parseCommandLine;
  *  <span class="source-line-no">203</span>import static org.tquadrat.foundation.ui.spi.ConfigUtil.printUsage;
  *  <span class="source-line-no">204</span>
@@ -128,7 +128,7 @@
  *  the also provided XML Schema file.</p>
  *  <p>Sample code:</p>
  *
- *  <div class="source-container"><pre>  <span class="source-line-no">201</span>&hellip;
+ *  <div class="source-container"><pre><span class="source-line-no">201</span>&hellip;
  *  <span class="source-line-no">201</span>final var cliDefinition = getClass().getResourceAsStream( CLI_DEFINITION_XML );
  *  <span class="source-line-no">202</span>final Map&lt;String,Object&gt; cmdLineData = ConfigUtil.parseCommandLine( cliDefinition, false, args );;
  *  <span class="source-line-no">203</span>&hellip;</pre></div>
