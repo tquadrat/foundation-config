@@ -25,7 +25,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.config 0.25.2 API</p></div>      <p>Build: 2026-03-20T14:58:11.249319363Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.config 0.25.2 API</p></div>      <p>Build: 2026-03-20T17:08:11.103457757Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -233,11 +233,11 @@ configuration bean specification interface.</p></div>
 configuration bean. The default is the empty String.</p>
 <p>If no explicit class name is set, it will be derived from the name
 of the interface that specifies the configuration bean as below:
-<pre><code>  var packageName = specification.getClass().getPackageName();
+<div class="source-container"><pre>var packageName = specification.getClass().getPackageName();
 var specificationName = specification.getClass().getSimpleName();
 var className = format( "%sgenerated.%sImpl", packageName.isEmpty()
     ? ""
-    : packageName + ".", specificationName );</code></pre>
+    : packageName + ".", specificationName );</pre></div>
 For a specification interface named <code>com.sample.Specification</code>,
 the resulting name would be
 <code>com.sample.generated.SpecificationImpl</code>.</div>

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -51,9 +51,9 @@ import org.tquadrat.foundation.i18n.Translation;
  *  implemented in any way, but the annotation processor creates them as simple
  *  as possible. To set a value to the attribute {@code m_Value}, it would look
  *  like</p>
- *  <pre><code>(p,v) -&gt; m_Value = v;</code></pre>
+ *  <div class="source-container"><pre>(p,v) -&gt; m_Value = v;</pre></div>
  *  <p>and to add a value to the list attribute {@code m_List}, it would be</p>
- *  <pre><code>(p,v) -&gt; m_List.add( v );</code></pre>
+ *  <div class="source-container"><pre>(p,v) -&gt; m_List.add( v );</pre></div>
  *  <p>That means that the name of the property is ignored.</p>
  *  <p>But customer implementations may use other implementations as well.</p>
  *

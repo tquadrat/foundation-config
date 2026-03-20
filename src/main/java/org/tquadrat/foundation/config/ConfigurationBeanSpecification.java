@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -85,11 +85,11 @@ public @interface ConfigurationBeanSpecification
      *  configuration bean.} The default is the empty String.</p>
      *  <p>If no explicit class name is set, it will be derived from the name
      *  of the interface that specifies the configuration bean as below:
-     *  <pre><code>  var packageName = specification.getClass().getPackageName();
+     *  <div class="source-container"><pre>var packageName = specification.getClass().getPackageName();
      *  var specificationName = specification.getClass().getSimpleName();
      *  var className = format( "%sgenerated.%sImpl", packageName.isEmpty()
      *      ? ""
-     *      : packageName + ".", specificationName );</code></pre>
+     *      : packageName + ".", specificationName );</pre></div>
      *  For a specification interface named {@code com.sample.Specification},
      *  the resulting name would be
      *  {@code com.sample.generated.SpecificationImpl}.

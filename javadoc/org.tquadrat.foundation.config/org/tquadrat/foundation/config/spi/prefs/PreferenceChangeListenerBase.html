@@ -29,7 +29,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.config 0.25.2 API</p></div>      <p>Build: 2026-03-20T14:58:11.249319363Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.config 0.25.2 API</p></div>      <p>Build: 2026-03-20T17:08:11.103457757Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -339,10 +339,10 @@ provides a default implementation.</p></div>
 <div class="block"><p>Returns a reference to the lock instance. This does
 <i>not</i> trigger the lock!</p>
 <p>Use this method like this:</p>
-<pre><code>  …
+<div class="source-container"><pre>…
 final var lock = getLockInstance();
 lock.execute( () -&gt; doSomething() );
-…</code></pre></div>
+…</pre></div></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The lock instance.</dd>
@@ -357,12 +357,12 @@ lock.execute( () -&gt; doSomething() );
 <div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html" title="class or interface in org.tquadrat.foundation.lang" class="external-link">AutoLock</a></span>&nbsp;<span class="element-name"><a href="../../../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/spi/prefs/PreferenceChangeListenerBase.html#line-129">lock</a></span>()</div>
 <div class="block"><p>Locks the connected configuration bean for writing.</p>
 <p>Use this method like this:</p>
-<pre><code>  …
+<div class="source-container"><pre>…
 try( final var ignore = lock() )
 {
     // Add here whatever needs to be done …
 }
-…</code></pre></div>
+…</pre></div></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The locked lock.</dd>

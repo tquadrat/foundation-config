@@ -31,7 +31,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.config 0.25.2 API</p></div>      <p>Build: 2026-03-20T14:58:11.249319363Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.config 0.25.2 API</p></div>      <p>Build: 2026-03-20T17:08:11.103457757Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -291,7 +291,7 @@ this method will return the default <code>Charset</code> or a
 configured.<br>
 <br>The <code>Charset</code> cannot be set via a self-defined command line
 option, but through JVM options:
-<pre><code>java -Dfile.encoding=&lt;<i>charset</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre></div>
+<div class="source-container"><pre>java -Dfile.encoding=&lt;<i>charset</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</pre></div></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The <code>Charset</code>.</dd>
@@ -319,7 +319,7 @@ this method will return the default locale or a locale that was
 previously stored as a preference value, if configured.<br>
 <br>The locale cannot be set via a self-defined command line option,
 but through JVM options:
-<pre><code>java -Duser.country=&lt;<i>country_code</i>&gt; -Duser.language=&lt;<i>language_code</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre></div>
+<div class="source-container"><pre>java -Duser.country=&lt;<i>country_code</i>&gt; -Duser.language=&lt;<i>language_code</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</pre></div></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The locale.</dd>
@@ -352,7 +352,7 @@ configuration bean specification implements
 or with the method <code>initData()</code>. But if necessary, a setter for
 this attribute can be added to the configuration bean specification
 like this:</p>
-<pre><code>  &#47;**
+<div class="source-container"><pre>&#47;**
  *  Sets the
  *  {&#64;link ResourceBundle}
  *  that should be used to retrieve texts and messages for the
@@ -368,7 +368,7 @@ like this:</p>
  *&#47;
 &#64;SpecialProperty( CONFIG_PROPERTY_RESOURCEBUNDLE )
 &#64;CheckNull
-public void setResourceBundle( final ResourceBundle bundle );</code></pre></div>
+public void setResourceBundle( final ResourceBundle bundle );</pre></div></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>An instance of
@@ -391,7 +391,7 @@ this method will return the default time zone or a time zone that was
 previously stored as a preference value, if configured.<br>
 <br>The time zone cannot be set via a self-defined command line option,
 but through JVM options:
-<pre><code>java -Duser.timezone=&lt;<i>zone_id</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre></div>
+<div class="source-container"><pre>java -Duser.timezone=&lt;<i>zone_id</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</pre></div></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The time zone.</dd>

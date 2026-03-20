@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -94,7 +94,7 @@ public interface ConfigBeanSpec
      *  configured.<br>
      *  <br>The {@code Charset} cannot be set via a self-defined command line
      *  option, but through JVM options:
-     *  <pre><code>java -Dfile.encoding=&lt;<i>charset</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre>
+     *  <div class="source-container"><pre>java -Dfile.encoding=&lt;<i>charset</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</pre></div>
      *
      *  @return The {@code Charset}.
      *
@@ -113,7 +113,7 @@ public interface ConfigBeanSpec
      *  previously stored as a preference value, if configured.<br>
      *  <br>The locale cannot be set via a self-defined command line option,
      *  but through JVM options:
-     *  <pre><code>java -Duser.country=&lt;<i>country_code</i>&gt; -Duser.language=&lt;<i>language_code</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre>
+     *  <div class="source-container"><pre>java -Duser.country=&lt;<i>country_code</i>&gt; -Duser.language=&lt;<i>language_code</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</pre></div>
      *
      *  @return The locale.
      *
@@ -135,7 +135,7 @@ public interface ConfigBeanSpec
      *  or with the method {@code initData()}. But if necessary, a setter for
      *  this attribute can be added to the configuration bean specification
      *  like this:</p>
-     *  <pre><code>  &#47;**
+     *  <div class="source-container"><pre>&#47;**
      *   *  Sets the
      *   *  {&#64;link ResourceBundle}
      *   *  that should be used to retrieve texts and messages for the
@@ -151,7 +151,7 @@ public interface ConfigBeanSpec
      *   *&#47;
      *  &#64;SpecialProperty( CONFIG_PROPERTY_RESOURCEBUNDLE )
      *  &#64;CheckNull
-     *  public void setResourceBundle( final ResourceBundle bundle );</code></pre>
+     *  public void setResourceBundle( final ResourceBundle bundle );</pre></div>
      *
      *  @return An instance of
      *      {@link Optional}
@@ -169,7 +169,7 @@ public interface ConfigBeanSpec
      *  previously stored as a preference value, if configured.<br>
      *  <br>The time zone cannot be set via a self-defined command line option,
      *  but through JVM options:
-     *  <pre><code>java -Duser.timezone=&lt;<i>zone_id</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</code></pre>
+     *  <div class="source-container"><pre>java -Duser.timezone=&lt;<i>zone_id</i>&gt; &lt;<i>program</i>&gt; &lt;<i>program_options</i> &hellip;&gt;</pre></div>
      *
      *  @return The time zone.
      *

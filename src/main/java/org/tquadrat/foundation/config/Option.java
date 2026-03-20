@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2025 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -102,7 +102,7 @@ public @interface Option
      *  that is used as the handler. This is convenient for defining a
      *  non-standard option parsing semantics.</p>
      *  <p><b>Example</b></p>
-     *  <pre><code>
+     *  <div class="source-container"><pre>
      *  // this is a normal &quot;-r&quot; option
      *  &#064;Option()
      *  boolean getFlag();
@@ -110,7 +110,7 @@ public @interface Option
      *  // This causes that MyHandler is used instead of the default handler
      *  // provided for boolean
      *  &#064;Option( handler = MyHandler.class )
-     *  boolean getYesNo();</code></pre>
+     *  boolean getYesNo();</pre></div>
      *
      *  @return The {@code CmdLineValueHandler} implementation.
      */

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -94,17 +94,19 @@ public interface CLIBeanSpec extends ConfigBeanSpec
      *  further arguments.</p>
      *  <p>Assuming the file {@code param.lst} has the following contents:</p>
      *  <blockquote><pre><code>-opt0
-     *value0
-     *-opt1
-     *value1
-     *--
-     *arg0
-     *arg1</code></pre></blockquote>
-     *  <p>and {@code args} looks like this: <code>-opt value &#64;param.lst
-     *  arg</code>, the resulting command line arguments set would be:</p>
-     *  <pre><code>-opt value -opt0 value0 -opt1 value1 -- arg0 arg1 arg</code></pre>
+     *  value0
+     *  -opt1
+     *  value1
+     *  --
+     *  arg0
+     *  arg1</code></pre></blockquote>
+     *  <p>and {@code args} looks like this:</p>
+     *  <blockquote><pre><code>-opt value &#64;param.lst arg</code></pre></blockquote>,
+     *  <p>the resulting command line arguments set would be:</p>
+     *  <blockquote><pre><code>-opt value -opt0 value0 -opt1 value1 -- arg0 arg1 arg</code></pre></blockquote>
      *  <p>In case the file could not be opened for whatever reason, the parameter
-     *  will not be replaced.</p>
+     *  will not be replaced – meaning the resulting command line would have
+     *  the value <code>&#64;param.lst</code> as one value.</p>
      *
      *  @param  args    The command line arguments; usually the same as the
      *      arguments to the method {@code main()}.

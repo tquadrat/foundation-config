@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2023 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2026 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *</span>
@@ -107,52 +107,54 @@
 <span class="source-line-no">094</span><span id="line-94">     *  further arguments.&lt;/p&gt;</span>
 <span class="source-line-no">095</span><span id="line-95">     *  &lt;p&gt;Assuming the file {@code param.lst} has the following contents:&lt;/p&gt;</span>
 <span class="source-line-no">096</span><span id="line-96">     *  &lt;blockquote&gt;&lt;pre&gt;&lt;code&gt;-opt0</span>
-<span class="source-line-no">097</span><span id="line-97">     *value0</span>
-<span class="source-line-no">098</span><span id="line-98">     *-opt1</span>
-<span class="source-line-no">099</span><span id="line-99">     *value1</span>
-<span class="source-line-no">100</span><span id="line-100">     *--</span>
-<span class="source-line-no">101</span><span id="line-101">     *arg0</span>
-<span class="source-line-no">102</span><span id="line-102">     *arg1&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;</span>
-<span class="source-line-no">103</span><span id="line-103">     *  &lt;p&gt;and {@code args} looks like this: &lt;code&gt;-opt value &amp;#64;param.lst</span>
-<span class="source-line-no">104</span><span id="line-104">     *  arg&lt;/code&gt;, the resulting command line arguments set would be:&lt;/p&gt;</span>
-<span class="source-line-no">105</span><span id="line-105">     *  &lt;pre&gt;&lt;code&gt;-opt value -opt0 value0 -opt1 value1 -- arg0 arg1 arg&lt;/code&gt;&lt;/pre&gt;</span>
-<span class="source-line-no">106</span><span id="line-106">     *  &lt;p&gt;In case the file could not be opened for whatever reason, the parameter</span>
-<span class="source-line-no">107</span><span id="line-107">     *  will not be replaced.&lt;/p&gt;</span>
-<span class="source-line-no">108</span><span id="line-108">     *</span>
-<span class="source-line-no">109</span><span id="line-109">     *  @param  args    The command line arguments; usually the same as the</span>
-<span class="source-line-no">110</span><span id="line-110">     *      arguments to the method {@code main()}.</span>
-<span class="source-line-no">111</span><span id="line-111">     *  @return {@code true} if the command line could be parsed without</span>
-<span class="source-line-no">112</span><span id="line-112">     *      issues, {@code false} otherwise.</span>
-<span class="source-line-no">113</span><span id="line-113">     */</span>
-<span class="source-line-no">114</span><span id="line-114">    @SuppressWarnings( {"MethodCanBeVariableArityMethod", "BooleanMethodNameMustStartWithQuestion"} )</span>
-<span class="source-line-no">115</span><span id="line-115">    public boolean parseCommandLine( final String [] args );</span>
-<span class="source-line-no">116</span><span id="line-116"></span>
-<span class="source-line-no">117</span><span id="line-117">    /**</span>
-<span class="source-line-no">118</span><span id="line-118">     *  Prints a &lt;i&gt;usage&lt;/i&gt; message to the given</span>
-<span class="source-line-no">119</span><span id="line-119">     *  {@link OutputStream}.</span>
-<span class="source-line-no">120</span><span id="line-120">     *</span>
-<span class="source-line-no">121</span><span id="line-121">     *  @param  outputStream    The output stream.</span>
-<span class="source-line-no">122</span><span id="line-122">     *  @param  command The command used to start the program.</span>
-<span class="source-line-no">123</span><span id="line-123">     *  @throws IOException A problem occurred on writing to the output stream.</span>
-<span class="source-line-no">124</span><span id="line-124">     */</span>
-<span class="source-line-no">125</span><span id="line-125">    public void printUsage( final OutputStream outputStream, final CharSequence command ) throws IOException;</span>
-<span class="source-line-no">126</span><span id="line-126"></span>
-<span class="source-line-no">127</span><span id="line-127">    /**</span>
-<span class="source-line-no">128</span><span id="line-128">     *  Retrieves the message for the error caused by the last call to</span>
-<span class="source-line-no">129</span><span id="line-129">     *  {@link #parseCommandLine(String[])},</span>
-<span class="source-line-no">130</span><span id="line-130">     *  given that this return {@code false}.</span>
-<span class="source-line-no">131</span><span id="line-131">     *</span>
-<span class="source-line-no">132</span><span id="line-132">     *  @return An instance of</span>
-<span class="source-line-no">133</span><span id="line-133">     *      {@link Optional}</span>
-<span class="source-line-no">134</span><span id="line-134">     *      that holds the error message.</span>
-<span class="source-line-no">135</span><span id="line-135">     */</span>
-<span class="source-line-no">136</span><span id="line-136">    public Optional&lt;String&gt; retrieveParseErrorMessage();</span>
-<span class="source-line-no">137</span><span id="line-137">}</span>
-<span class="source-line-no">138</span><span id="line-138">//  interface CLIBeanSpec</span>
-<span class="source-line-no">139</span><span id="line-139"></span>
-<span class="source-line-no">140</span><span id="line-140">/*</span>
-<span class="source-line-no">141</span><span id="line-141"> *  End of File</span>
-<span class="source-line-no">142</span><span id="line-142"> */</span>
+<span class="source-line-no">097</span><span id="line-97">     *  value0</span>
+<span class="source-line-no">098</span><span id="line-98">     *  -opt1</span>
+<span class="source-line-no">099</span><span id="line-99">     *  value1</span>
+<span class="source-line-no">100</span><span id="line-100">     *  --</span>
+<span class="source-line-no">101</span><span id="line-101">     *  arg0</span>
+<span class="source-line-no">102</span><span id="line-102">     *  arg1&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;</span>
+<span class="source-line-no">103</span><span id="line-103">     *  &lt;p&gt;and {@code args} looks like this:&lt;/p&gt;</span>
+<span class="source-line-no">104</span><span id="line-104">     *  &lt;blockquote&gt;&lt;pre&gt;&lt;code&gt;-opt value &amp;#64;param.lst arg&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;,</span>
+<span class="source-line-no">105</span><span id="line-105">     *  &lt;p&gt;the resulting command line arguments set would be:&lt;/p&gt;</span>
+<span class="source-line-no">106</span><span id="line-106">     *  &lt;blockquote&gt;&lt;pre&gt;&lt;code&gt;-opt value -opt0 value0 -opt1 value1 -- arg0 arg1 arg&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;</span>
+<span class="source-line-no">107</span><span id="line-107">     *  &lt;p&gt;In case the file could not be opened for whatever reason, the parameter</span>
+<span class="source-line-no">108</span><span id="line-108">     *  will not be replaced – meaning the resulting command line would have</span>
+<span class="source-line-no">109</span><span id="line-109">     *  the value &lt;code&gt;&amp;#64;param.lst&lt;/code&gt; as one value.&lt;/p&gt;</span>
+<span class="source-line-no">110</span><span id="line-110">     *</span>
+<span class="source-line-no">111</span><span id="line-111">     *  @param  args    The command line arguments; usually the same as the</span>
+<span class="source-line-no">112</span><span id="line-112">     *      arguments to the method {@code main()}.</span>
+<span class="source-line-no">113</span><span id="line-113">     *  @return {@code true} if the command line could be parsed without</span>
+<span class="source-line-no">114</span><span id="line-114">     *      issues, {@code false} otherwise.</span>
+<span class="source-line-no">115</span><span id="line-115">     */</span>
+<span class="source-line-no">116</span><span id="line-116">    @SuppressWarnings( {"MethodCanBeVariableArityMethod", "BooleanMethodNameMustStartWithQuestion"} )</span>
+<span class="source-line-no">117</span><span id="line-117">    public boolean parseCommandLine( final String [] args );</span>
+<span class="source-line-no">118</span><span id="line-118"></span>
+<span class="source-line-no">119</span><span id="line-119">    /**</span>
+<span class="source-line-no">120</span><span id="line-120">     *  Prints a &lt;i&gt;usage&lt;/i&gt; message to the given</span>
+<span class="source-line-no">121</span><span id="line-121">     *  {@link OutputStream}.</span>
+<span class="source-line-no">122</span><span id="line-122">     *</span>
+<span class="source-line-no">123</span><span id="line-123">     *  @param  outputStream    The output stream.</span>
+<span class="source-line-no">124</span><span id="line-124">     *  @param  command The command used to start the program.</span>
+<span class="source-line-no">125</span><span id="line-125">     *  @throws IOException A problem occurred on writing to the output stream.</span>
+<span class="source-line-no">126</span><span id="line-126">     */</span>
+<span class="source-line-no">127</span><span id="line-127">    public void printUsage( final OutputStream outputStream, final CharSequence command ) throws IOException;</span>
+<span class="source-line-no">128</span><span id="line-128"></span>
+<span class="source-line-no">129</span><span id="line-129">    /**</span>
+<span class="source-line-no">130</span><span id="line-130">     *  Retrieves the message for the error caused by the last call to</span>
+<span class="source-line-no">131</span><span id="line-131">     *  {@link #parseCommandLine(String[])},</span>
+<span class="source-line-no">132</span><span id="line-132">     *  given that this return {@code false}.</span>
+<span class="source-line-no">133</span><span id="line-133">     *</span>
+<span class="source-line-no">134</span><span id="line-134">     *  @return An instance of</span>
+<span class="source-line-no">135</span><span id="line-135">     *      {@link Optional}</span>
+<span class="source-line-no">136</span><span id="line-136">     *      that holds the error message.</span>
+<span class="source-line-no">137</span><span id="line-137">     */</span>
+<span class="source-line-no">138</span><span id="line-138">    public Optional&lt;String&gt; retrieveParseErrorMessage();</span>
+<span class="source-line-no">139</span><span id="line-139">}</span>
+<span class="source-line-no">140</span><span id="line-140">//  interface CLIBeanSpec</span>
+<span class="source-line-no">141</span><span id="line-141"></span>
+<span class="source-line-no">142</span><span id="line-142">/*</span>
+<span class="source-line-no">143</span><span id="line-143"> *  End of File</span>
+<span class="source-line-no">144</span><span id="line-144"> */</span>
 
 
 

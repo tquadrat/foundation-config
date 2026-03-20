@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2021 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2026 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *</span>
@@ -98,11 +98,11 @@
 <span class="source-line-no">085</span><span id="line-85">     *  configuration bean.} The default is the empty String.&lt;/p&gt;</span>
 <span class="source-line-no">086</span><span id="line-86">     *  &lt;p&gt;If no explicit class name is set, it will be derived from the name</span>
 <span class="source-line-no">087</span><span id="line-87">     *  of the interface that specifies the configuration bean as below:</span>
-<span class="source-line-no">088</span><span id="line-88">     *  &lt;pre&gt;&lt;code&gt;  var packageName = specification.getClass().getPackageName();</span>
+<span class="source-line-no">088</span><span id="line-88">     *  &lt;div class="source-container"&gt;&lt;pre&gt;var packageName = specification.getClass().getPackageName();</span>
 <span class="source-line-no">089</span><span id="line-89">     *  var specificationName = specification.getClass().getSimpleName();</span>
 <span class="source-line-no">090</span><span id="line-90">     *  var className = format( "%sgenerated.%sImpl", packageName.isEmpty()</span>
 <span class="source-line-no">091</span><span id="line-91">     *      ? ""</span>
-<span class="source-line-no">092</span><span id="line-92">     *      : packageName + ".", specificationName );&lt;/code&gt;&lt;/pre&gt;</span>
+<span class="source-line-no">092</span><span id="line-92">     *      : packageName + ".", specificationName );&lt;/pre&gt;&lt;/div&gt;</span>
 <span class="source-line-no">093</span><span id="line-93">     *  For a specification interface named {@code com.sample.Specification},</span>
 <span class="source-line-no">094</span><span id="line-94">     *  the resulting name would be</span>
 <span class="source-line-no">095</span><span id="line-95">     *  {@code com.sample.generated.SpecificationImpl}.</span>

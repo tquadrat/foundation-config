@@ -738,7 +738,7 @@
  *  file containing a single command line entry per line. This means that an
  *  argument file with the contents</p>
  *
- *  <blockquote><pre><code>  # This is an argument file
+ *  <blockquote><pre><code># This is an argument file
  *  --flag
  *  --option1
  *  value
@@ -758,14 +758,14 @@
  *  location of the reference to that file: if {@code argfile} has the
  *  contents</p>
  *
- *  <blockquote><pre><code>  --flag
+ *  <blockquote><pre><code>--flag
  *  --option
  *  value
  *  argument</code></pre></blockquote>
  *
  *  <p>and the command line was given like</p>
  *
- *  <blockquote><pre><code>  --loc NONE &#64;argfile</code></pre></blockquote>
+ *  <blockquote><pre><code>--loc NONE &#64;argfile</code></pre></blockquote>
  *
  *  <p>the final sequence is</p>
  *

@@ -28,7 +28,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.config 0.25.2 API</p></div>      <p>Build: 2026-03-20T14:58:11.249319363Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.config 0.25.2 API</p></div>      <p>Build: 2026-03-20T17:08:11.103457757Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -271,14 +271,15 @@ a constructor with the signature
 that is used as the handler. This is convenient for defining a
 non-standard option parsing semantics.</p>
 <p><b>Example</b></p>
-<pre><code>// this is a normal &quot;-r&quot; option
+<div class="source-container"><pre>
+// this is a normal &quot;-r&quot; option
 &#064;Option()
 boolean getFlag();
 
 // This causes that MyHandler is used instead of the default handler
 // provided for boolean
 &#064;Option( handler = MyHandler.class )
-boolean getYesNo();</code></pre></div>
+boolean getYesNo();</pre></div></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The <code>CmdLineValueHandler</code> implementation.</dd>

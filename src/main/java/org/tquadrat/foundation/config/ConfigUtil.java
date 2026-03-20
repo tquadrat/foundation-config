@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2025 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -80,11 +80,11 @@ import org.tquadrat.foundation.lang.AutoLock;
  *  <p>The {@code factory} argument for
  *  {@link #getConfiguration(Class, TCEFunction)}
  *  can be a lambda like this:</p>
- *  <blockquote><pre><code>c -&gt; c.getConstructor().newInstance()</code></pre></blockquote>
+ *  <blockquote><div class="source-container"><pre>c -&gt; c.getConstructor().newInstance()</pre></div></blockquote>
  *  <p>and for</p>
  *  {@link #getConfiguration(Class, String, TCEBiFunction)},
  *  <p>it could be:</p>
- *  <blockquote><pre><code>(c,s) -&gt; c.getConstructor( String.class ).newInstance( s )</code></pre></blockquote>
+ *  <blockquote><div class="source-container"><pre>(c,s) -&gt; c.getConstructor( String.class ).newInstance( s )</pre></div></blockquote>
  *  <p>The factory is required because the code in the module
  *  {@code org.tquadrat.foundation.ui} cannot access classes in the
  *  {@code ~.generated} package of the module that uses the configuration, and

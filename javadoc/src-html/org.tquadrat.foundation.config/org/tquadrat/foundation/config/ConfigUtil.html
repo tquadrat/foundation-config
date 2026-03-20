@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2025 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2026 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *</span>
@@ -93,11 +93,11 @@
 <span class="source-line-no">080</span><span id="line-80"> *  &lt;p&gt;The {@code factory} argument for</span>
 <span class="source-line-no">081</span><span id="line-81"> *  {@link #getConfiguration(Class, TCEFunction)}</span>
 <span class="source-line-no">082</span><span id="line-82"> *  can be a lambda like this:&lt;/p&gt;</span>
-<span class="source-line-no">083</span><span id="line-83"> *  &lt;blockquote&gt;&lt;pre&gt;&lt;code&gt;c -&amp;gt; c.getConstructor().newInstance()&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;</span>
+<span class="source-line-no">083</span><span id="line-83"> *  &lt;blockquote&gt;&lt;div class="source-container"&gt;&lt;pre&gt;c -&amp;gt; c.getConstructor().newInstance()&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;</span>
 <span class="source-line-no">084</span><span id="line-84"> *  &lt;p&gt;and for&lt;/p&gt;</span>
 <span class="source-line-no">085</span><span id="line-85"> *  {@link #getConfiguration(Class, String, TCEBiFunction)},</span>
 <span class="source-line-no">086</span><span id="line-86"> *  &lt;p&gt;it could be:&lt;/p&gt;</span>
-<span class="source-line-no">087</span><span id="line-87"> *  &lt;blockquote&gt;&lt;pre&gt;&lt;code&gt;(c,s) -&amp;gt; c.getConstructor( String.class ).newInstance( s )&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;</span>
+<span class="source-line-no">087</span><span id="line-87"> *  &lt;blockquote&gt;&lt;div class="source-container"&gt;&lt;pre&gt;(c,s) -&amp;gt; c.getConstructor( String.class ).newInstance( s )&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;</span>
 <span class="source-line-no">088</span><span id="line-88"> *  &lt;p&gt;The factory is required because the code in the module</span>
 <span class="source-line-no">089</span><span id="line-89"> *  {@code org.tquadrat.foundation.ui} cannot access classes in the</span>
 <span class="source-line-no">090</span><span id="line-90"> *  {@code ~.generated} package of the module that uses the configuration, and</span>

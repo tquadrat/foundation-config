@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -76,7 +76,7 @@ public final class PreferencesException extends RuntimeException
     /**
      *  Creates a new {@code PreferencesException} instance with the specified
      *  cause and a detail message of
-     *  <pre><code>(cause == null ? null : cause.toString() )</code></pre>
+     *  <div class="source-container"><pre>(cause == null ? null : cause.toString() )</pre></div>
      *  (which typically contains the class and detail message of
      *  {@code cause}). This constructor is useful for exceptions that are
      *  little more than wrappers for other instances of

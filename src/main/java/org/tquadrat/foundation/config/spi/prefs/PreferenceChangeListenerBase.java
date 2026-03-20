@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2025 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -105,10 +105,10 @@ public abstract class PreferenceChangeListenerBase implements PreferenceChangeLi
      *  <p>{@summary Returns a reference to the lock instance.} This does
      *  <i>not</i> trigger the lock!</p>
      *  <p>Use this method like this:</p>
-     *  <pre><code>  …
+     *  <div class="source-container"><pre>…
      *  final var lock = getLockInstance();
      *  lock.execute( () -> doSomething() );
-     *  …</code></pre>
+     *  …</pre></div>
      *
      *  @return The lock instance.
      */
@@ -117,12 +117,12 @@ public abstract class PreferenceChangeListenerBase implements PreferenceChangeLi
     /**
      *  <p>{@summary Locks the connected configuration bean for writing.}</p>
      *  <p>Use this method like this:</p>
-     *  <pre><code>  …
+     *  <div class="source-container"><pre>…
      *  try( final var ignore = lock() )
      *  {
      *      // Add here whatever needs to be done …
      *  }
-     *  …</code></pre>
+     *  …</pre></div>
      *
      *  @return The locked lock.
      */

@@ -26,7 +26,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.config 0.25.2 API</p></div>      <p>Build: 2026-03-20T14:58:11.249319363Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.config 0.25.2 API</p></div>      <p>Build: 2026-03-20T17:08:11.103457757Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -288,34 +288,36 @@ given that this return <code>false</code>.</div>
 <section class="detail" id="parseCommandLine(java.lang.String[])">
 <h3>parseCommandLine</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/CLIBeanSpec.html#line-114">parseCommandLine</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/CLIBeanSpec.html#line-116">parseCommandLine</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</span></div>
 <div class="block"><p>Parses the command line.<br>
-  <p>As a result from parsing the given command line arguments, the
-  accordingly annotated properties will be initialised with the values
-  from the command line.</p>
-  <p>Arguments starting with <code>&#64;</code> (like
-  <code>&#64;param.lst</code>) are treated as a file that contains
-  further arguments.</p>
-  <p>Assuming the file <code>param.lst</code> has the following contents:</p>
-  <blockquote><pre><code>-opt0
+<p>As a result from parsing the given command line arguments, the
+accordingly annotated properties will be initialised with the values
+from the command line.</p>
+<p>Arguments starting with <code>&#64;</code> (like
+<code>&#64;param.lst</code>) are treated as a file that contains
+further arguments.</p>
+<p>Assuming the file <code>param.lst</code> has the following contents:</p>
+<blockquote><pre><code>-opt0
 value0
 -opt1
 value1
 --
 arg0
 arg1</code></pre></blockquote>
-  <p>and <code>args</code> looks like this: <code>-opt value &#64;param.lst
-  arg</code>, the resulting command line arguments set would be:</p>
-  <pre><code>-opt value -opt0 value0 -opt1 value1 -- arg0 arg1 arg</code></pre>
-  <p>In case the file could not be opened for whatever reason, the parameter
-  will not be replaced.</p></div>
+<p>and <code>args</code> looks like this:</p>
+<blockquote><pre><code>-opt value &#64;param.lst arg</code></pre></blockquote>,
+<p>the resulting command line arguments set would be:</p>
+<blockquote><pre><code>-opt value -opt0 value0 -opt1 value1 -- arg0 arg1 arg</code></pre></blockquote>
+<p>In case the file could not be opened for whatever reason, the parameter
+will not be replaced – meaning the resulting command line would have
+the value <code>&#64;param.lst</code> as one value.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>args</code> - The command line arguments; usually the same as the
-      arguments to the method <code>main()</code>.</dd>
+    arguments to the method <code>main()</code>.</dd>
 <dt>Returns:</dt>
 <dd><code>true</code> if the command line could be parsed without
-      issues, <code>false</code> otherwise.</dd>
+    issues, <code>false</code> otherwise.</dd>
 </dl>
 </div>
 </section>
@@ -324,7 +326,7 @@ arg1</code></pre></blockquote>
 <section class="detail" id="printUsage(java.io.OutputStream,java.lang.CharSequence)">
 <h3>printUsage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/CLIBeanSpec.html#line-125">printUsage</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a>&nbsp;outputStream,
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/CLIBeanSpec.html#line-127">printUsage</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a>&nbsp;outputStream,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;command)</span>
          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Prints a <i>usage</i> message to the given
@@ -343,7 +345,7 @@ arg1</code></pre></blockquote>
 <section class="detail" id="retrieveParseErrorMessage()">
 <h3>retrieveParseErrorMessage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/CLIBeanSpec.html#line-136">retrieveParseErrorMessage</a></span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.config/org/tquadrat/foundation/config/CLIBeanSpec.html#line-138">retrieveParseErrorMessage</a></span>()</div>
 <div class="block">Retrieves the message for the error caused by the last call to
 <a href="#parseCommandLine(java.lang.String%5B%5D)"><code>parseCommandLine(String[])</code></a>,
 given that this return <code>false</code>.</div>
