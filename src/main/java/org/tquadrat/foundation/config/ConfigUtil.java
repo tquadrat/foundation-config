@@ -18,19 +18,19 @@
 
 package org.tquadrat.foundation.config;
 
-import static java.lang.System.err;
-import static java.util.Comparator.comparing;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.config.internal.CLIDefinitionParser.parse;
-import static org.tquadrat.foundation.i18n.I18nUtil.resolveText;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_Object_ARRAY;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
-import static org.tquadrat.foundation.lang.Objects.nonNull;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.util.JavaUtils.findMainClass;
-import static org.tquadrat.foundation.util.JavaUtils.loadClass;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.UtilityClass;
+import org.tquadrat.foundation.config.internal.ArgumentParser;
+import org.tquadrat.foundation.config.internal.UsageBuilder;
+import org.tquadrat.foundation.config.spi.CLIArgumentDefinition;
+import org.tquadrat.foundation.config.spi.CLIDefinition;
+import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
+import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
+import org.tquadrat.foundation.exception.ValidationException;
+import org.tquadrat.foundation.function.tce.TCEBiFunction;
+import org.tquadrat.foundation.function.tce.TCEFunction;
+import org.tquadrat.foundation.lang.AutoLock;
 
 import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
@@ -49,19 +49,19 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.annotation.UtilityClass;
-import org.tquadrat.foundation.config.internal.ArgumentParser;
-import org.tquadrat.foundation.config.internal.UsageBuilder;
-import org.tquadrat.foundation.config.spi.CLIArgumentDefinition;
-import org.tquadrat.foundation.config.spi.CLIDefinition;
-import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
-import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
-import org.tquadrat.foundation.exception.ValidationException;
-import org.tquadrat.foundation.function.tce.TCEBiFunction;
-import org.tquadrat.foundation.function.tce.TCEFunction;
-import org.tquadrat.foundation.lang.AutoLock;
+import static java.lang.System.err;
+import static java.util.Comparator.comparing;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.config.internal.CLIDefinitionParser.parse;
+import static org.tquadrat.foundation.i18n.I18nUtil.resolveText;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_Object_ARRAY;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
+import static org.tquadrat.foundation.lang.Objects.nonNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
+import static org.tquadrat.foundation.util.JavaUtils.findMainClass;
+import static org.tquadrat.foundation.util.JavaUtils.loadClass;
 
 /**
  *  <p>{@summary Utility methods that can be used to handle configuration
@@ -91,13 +91,13 @@ import org.tquadrat.foundation.lang.AutoLock;
  *  that holds the generated configuration beans.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigUtil.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: ConfigUtil.java 1164 2026-03-20 17:38:18Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: ConfigUtil.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigUtil.java 1164 2026-03-20 17:38:18Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class ConfigUtil
 {

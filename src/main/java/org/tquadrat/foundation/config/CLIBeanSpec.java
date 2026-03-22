@@ -18,14 +18,14 @@
 
 package org.tquadrat.foundation.config;
 
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Optional;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
 
 /**
  *  <p>{@summary When a configuration bean should be initialised from the
@@ -46,12 +46,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  like &quot;&lt;Generated Class&gt; is not abstract&quot;.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CLIBeanSpec.java 1156 2025-12-29 01:16:37Z tquadrat $
+ *  @version $Id: CLIBeanSpec.java 1164 2026-03-20 17:38:18Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CLIBeanSpec.java 1156 2025-12-29 01:16:37Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIBeanSpec.java 1164 2026-03-20 17:38:18Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public interface CLIBeanSpec extends ConfigBeanSpec
 {

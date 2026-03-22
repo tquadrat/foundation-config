@@ -18,13 +18,9 @@
 
 package org.tquadrat.foundation.config;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_CHARSET;
-import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_LOCALE;
-import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_RESOURCEBUNDLE;
-import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_TIMEZONE;
-import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_DEBUG;
-import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_TEST;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.PropertyName;
 
 import java.nio.charset.Charset;
 import java.time.ZoneId;
@@ -32,9 +28,13 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.annotation.PropertyName;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_CHARSET;
+import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_LOCALE;
+import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_RESOURCEBUNDLE;
+import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_TIMEZONE;
+import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_DEBUG;
+import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_TEST;
 
 /**
  *  <p>{@summary The base for the specification of a configuration bean; the
@@ -53,12 +53,12 @@ import org.tquadrat.foundation.annotation.PropertyName;
  *  extend both.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigBeanSpec.java 1010 2022-02-05 19:28:36Z tquadrat $
+ *  @version $Id: ConfigBeanSpec.java 1164 2026-03-20 17:38:18Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ConfigBeanSpec.java 1010 2022-02-05 19:28:36Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigBeanSpec.java 1164 2026-03-20 17:38:18Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface ConfigBeanSpec
 {

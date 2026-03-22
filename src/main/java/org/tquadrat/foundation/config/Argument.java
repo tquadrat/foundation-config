@@ -18,9 +18,10 @@
 
 package org.tquadrat.foundation.config;
 
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.RetentionPolicy.CLASS;
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
+import org.tquadrat.foundation.config.cli.DateValueHandler;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -28,10 +29,9 @@ import java.lang.annotation.Target;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
-import org.tquadrat.foundation.config.cli.DateValueHandler;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.RetentionPolicy.CLASS;
+import static org.apiguardian.api.API.Status.STABLE;
 
 /**
  *  <p>{@summary This annotation is used in the context of a configuration bean
@@ -45,12 +45,12 @@ import org.tquadrat.foundation.config.cli.DateValueHandler;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Kohsuke Kawaguchi - kk@kohsuke.org
  *  @thanks Mark Sinke
- *  @version $Id: Argument.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: Argument.java 1164 2026-03-20 17:38:18Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Argument.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Argument.java 1164 2026-03-20 17:38:18Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )

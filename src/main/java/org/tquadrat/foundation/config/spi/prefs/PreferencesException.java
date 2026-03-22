@@ -18,12 +18,12 @@
 
 package org.tquadrat.foundation.config.spi.prefs;
 
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.io.Serial;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
 
 /**
  *  The exception that is thrown from a configuration bean in case an
@@ -32,12 +32,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  instance fails.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PreferencesException.java 941 2021-12-18 22:34:37Z tquadrat $
+ *  @version $Id: PreferencesException.java 1164 2026-03-20 17:38:18Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: PreferencesException.java 941 2021-12-18 22:34:37Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PreferencesException.java 1164 2026-03-20 17:38:18Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class PreferencesException extends RuntimeException
 {

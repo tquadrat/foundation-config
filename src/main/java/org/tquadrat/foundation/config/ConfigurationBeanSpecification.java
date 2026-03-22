@@ -18,16 +18,16 @@
 
 package org.tquadrat.foundation.config;
 
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import static org.apiguardian.api.API.Status.STABLE;
 
 /**
  *  The marker for a configuration bean specification. It will work only on
@@ -35,12 +35,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  {@link ConfigBeanSpec}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigurationBeanSpecification.java 920 2021-05-23 14:27:24Z tquadrat $
+ *  @version $Id: ConfigurationBeanSpecification.java 1164 2026-03-20 17:38:18Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ConfigurationBeanSpecification.java 920 2021-05-23 14:27:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigurationBeanSpecification.java 1164 2026-03-20 17:38:18Z tquadrat $" )
 @Documented
 @Retention( RUNTIME )
 @Target( TYPE )

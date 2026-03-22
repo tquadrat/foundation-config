@@ -17,13 +17,6 @@
 
 package org.tquadrat.foundation.config.cli;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-
-import java.util.Collection;
-import java.util.Optional;
-import java.util.function.BiConsumer;
-
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.annotation.MountPoint;
@@ -32,6 +25,13 @@ import org.tquadrat.foundation.config.spi.CLIDefinition;
 import org.tquadrat.foundation.config.spi.Parameters;
 import org.tquadrat.foundation.i18n.Message;
 import org.tquadrat.foundation.i18n.Translation;
+
+import java.util.Collection;
+import java.util.Optional;
+import java.util.function.BiConsumer;
+
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 /**
  *  <p>{@summary The abstract base class for the value handler that takes a
@@ -60,12 +60,12 @@ import org.tquadrat.foundation.i18n.Translation;
  *  @param  <T> The target type.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CmdLineValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: CmdLineValueHandler.java 1164 2026-03-20 17:38:18Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CmdLineValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CmdLineValueHandler.java 1164 2026-03-20 17:38:18Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public abstract class CmdLineValueHandler<T>
 {
