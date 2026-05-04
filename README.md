@@ -28,4 +28,4 @@ Refer also to [`foundation-config-ap`](https://tquadrat.github.io/foundation-con
     ```
   The current version for the annotation processor can be different than that for this component.
 ---  
-Last updated: 2026-05-03T21:51:30.661341564+02:00[Europe/Berlin]
+Last updated: 2026-05-04T21:13:03.674936824+02:00[Europe/Berlin]
