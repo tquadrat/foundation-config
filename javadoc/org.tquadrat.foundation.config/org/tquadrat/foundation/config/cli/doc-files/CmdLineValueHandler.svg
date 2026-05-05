@@ -6,7 +6,7 @@
      xmlns:xlink="http://www.w3.org/1999/xlink"
      version='1.1'
      baseProfile='full'
-     width='8655.000'
+     width='9729.000'
      height='893.000'>
     <defs>
         <style><![CDATA[
@@ -406,13 +406,51 @@
         <clipPath id='ID000006'>
             <rect class='otherClass'
                   height='73.000'
+                  width='1024.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.config.cli.PathMatcherValueHandler'>
+            <g>
+                <g clip-path='url(#ID000006)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1024.000'
+                          height='73.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1024.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='443.000'
+                          y='13.000'>PathMatcherValueHandler</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='1024.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ PathMatcherValueHandler(valueSetter:java.util.function.BiConsumer&lt;java.lang.String,java.nio.file.PathMatcher&gt;)</text>
+                    <text x='5.000'
+                          y='58.000'>+ PathMatcherValueHandler(context:org.tquadrat.foundation.config.spi.CLIDefinition,valueSetter:java.util.function.BiConsumer&lt;java.lang.String,java.nio.file.PathMatcher&gt;)</text>
+                    <text x='5.000'
+                          y='69.000'># translate(params:org.tquadrat.foundation.config.spi.Parameters):java.util.Collection&lt;java.nio.file.PathMatcher&gt;</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000007'>
+            <rect class='otherClass'
+                  height='73.000'
                   width='658.000'
                   x='0.000'
                   y='0.000'/>
         </clipPath>
         <symbol id='org.tquadrat.foundation.config.cli.DocumentValueHandler'>
             <g>
-                <g clip-path='url(#ID000006)'>
+                <g clip-path='url(#ID000007)'>
                     <rect x='0.000'
                           y='0.000'
                           width='658.000'
@@ -441,7 +479,7 @@
                 </g>
             </g>
         </symbol>
-        <clipPath id='ID000007'>
+        <clipPath id='ID000008'>
             <rect class='otherClass'
                   height='84.000'
                   width='1006.000'
@@ -450,7 +488,7 @@
         </clipPath>
         <symbol id='org.tquadrat.foundation.config.cli.ImageValueHandler'>
             <g>
-                <g clip-path='url(#ID000007)'>
+                <g clip-path='url(#ID000008)'>
                     <rect x='0.000'
                           y='0.000'
                           width='1006.000'
@@ -481,7 +519,7 @@
                 </g>
             </g>
         </symbol>
-        <clipPath id='ID000008'>
+        <clipPath id='ID000009'>
             <rect class='otherClass'
                   height='95.000'
                   width='1006.000'
@@ -490,7 +528,7 @@
         </clipPath>
         <symbol id='org.tquadrat.foundation.config.cli.EnumValueHandler'>
             <g>
-                <g clip-path='url(#ID000008)'>
+                <g clip-path='url(#ID000009)'>
                     <rect x='0.000'
                           y='8.000'
                           width='1006.000'
@@ -539,7 +577,7 @@
                 </g>
             </g>
         </symbol>
-        <clipPath id='ID000009'>
+        <clipPath id='ID000010'>
             <rect class='otherClass'
                   height='84.000'
                   width='952.000'
@@ -548,7 +586,7 @@
         </clipPath>
         <symbol id='org.tquadrat.foundation.config.cli.BooleanValueHandler'>
             <g>
-                <g clip-path='url(#ID000009)'>
+                <g clip-path='url(#ID000010)'>
                     <rect x='0.000'
                           y='0.000'
                           width='952.000'
@@ -579,7 +617,7 @@
                 </g>
             </g>
         </symbol>
-        <clipPath id='ID000010'>
+        <clipPath id='ID000011'>
             <rect class='externalClass'
                   height='172.000'
                   width='244.000'
@@ -588,7 +626,7 @@
         </clipPath>
         <symbol id='java.lang.Object'>
             <g>
-                <g clip-path='url(#ID000010)'>
+                <g clip-path='url(#ID000011)'>
                     <rect x='0.000'
                           y='0.000'
                           width='244.000'
@@ -637,36 +675,39 @@
         </symbol>
     </defs>
     <path class='inheritance'
-          d='M693.000,596.000 c0.000,-93.000,3517.000,0.000,3517.000,-93.000 v-15'
+          d='M693.000,596.000 c0.000,-93.000,4039.000,0.000,4039.000,-93.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M1894.000,588.000 c0.000,-85.000,2346.000,0.000,2346.000,-85.000 v-15'
+          d='M1894.000,588.000 c0.000,-85.000,2868.000,0.000,2868.000,-85.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M3085.000,596.000 c0.000,-93.000,1185.000,0.000,1185.000,-93.000 v-15'
+          d='M3085.000,596.000 c0.000,-93.000,1707.000,0.000,1707.000,-93.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M4313.000,588.000 c0.000,-85.000,-13.000,0.000,-13.000,-85.000 v-15'
+          d='M4313.000,588.000 c0.000,-85.000,509.000,0.000,509.000,-85.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M5162.000,588.000 c0.000,-85.000,-832.000,0.000,-832.000,-85.000 v-15'
+          d='M5345.000,588.000 c0.000,-85.000,-493.000,0.000,-493.000,-85.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M6044.000,588.000 c0.000,-85.000,-1684.000,0.000,-1684.000,-85.000 v-15'
+          d='M6236.000,588.000 c0.000,-85.000,-1354.000,0.000,-1354.000,-85.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M7100.000,596.000 c0.000,-93.000,-2710.000,0.000,-2710.000,-93.000 v-15'
+          d='M7118.000,588.000 c0.000,-85.000,-2206.000,0.000,-2206.000,-85.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M8154.000,588.000 c0.000,-85.000,-3734.000,0.000,-3734.000,-85.000 v-15'
+          d='M8174.000,596.000 c0.000,-93.000,-3232.000,0.000,-3232.000,-93.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M4315.000,305.000 c0.000,-93.000,12.500,0.000,12.500,-93.000 v-15'
+          d='M9228.000,588.000 c0.000,-85.000,-4256.000,0.000,-4256.000,-85.000 v-15'
           marker-end='url(#inheritance)'/>
-    <use x='4205.500'
+    <path class='inheritance'
+          d='M4852.000,305.000 c0.000,-93.000,12.500,0.000,12.500,-93.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <use x='4742.500'
          y='25.000'
          xlink:href='#java.lang.Object'/>
-    <use x='3887.000'
+    <use x='4424.000'
          y='297.000'
          xlink:href='#org.tquadrat.foundation.config.cli.CmdLineValueHandler'/>
     <use x='25.000'
@@ -683,14 +724,17 @@
          xlink:href='#org.tquadrat.foundation.config.cli.StringValueHandler'/>
     <use x='4833.000'
          y='588.000'
+         xlink:href='#org.tquadrat.foundation.config.cli.PathMatcherValueHandler'/>
+    <use x='5907.000'
+         y='588.000'
          xlink:href='#org.tquadrat.foundation.config.cli.DocumentValueHandler'/>
-    <use x='5541.000'
+    <use x='6615.000'
          y='588.000'
          xlink:href='#org.tquadrat.foundation.config.cli.ImageValueHandler'/>
-    <use x='6597.000'
+    <use x='7671.000'
          y='588.000'
          xlink:href='#org.tquadrat.foundation.config.cli.EnumValueHandler'/>
-    <use x='7678.000'
+    <use x='8752.000'
          y='588.000'
          xlink:href='#org.tquadrat.foundation.config.cli.BooleanValueHandler'/>
 </svg>
