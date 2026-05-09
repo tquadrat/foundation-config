@@ -22,10 +22,10 @@ Refer also to [`foundation-config-ap`](https://tquadrat.github.io/foundation-con
   
       //---* The tquadrat configuration stuff *-------------------------------
       implementation 'org.tquadrat.library:org.tquadrat.foundation.config:0.25.5'
-      annotationProcessor 'org.tquadrat.tool:org.tquadrat.foundation.config.ap:0.25.5'
+      annotationProcessor 'org.tquadrat.tool:org.tquadrat.foundation.config.ap:0.25.7'
       …
     }  //  dependencies
     ```
-  The current version for the annotation processor can be different than that for this component.
+  The current version for the annotation processor can be different from that for this component.
 ---  
-Last updated: 2026-05-05T16:38:25.333843721+02:00[Europe/Berlin]
+Last updated: 2026-05-09T10:19:24.889075428+02:00[Europe/Berlin]
