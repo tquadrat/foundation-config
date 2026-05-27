@@ -12,7 +12,7 @@ Refer also to [`foundation-config-ap`](https://tquadrat.github.io/foundation-con
     <dependency>
       <groupId>org.tquadrat.library</groupId>
       <artifactId>org.tquadrat.foundation.config</artifactId>
-      <version>0.25.10</version>
+      <version>0.25.11</version>
     </dependency>
     ```
 - Gradle
@@ -21,8 +21,8 @@ Refer also to [`foundation-config-ap`](https://tquadrat.github.io/foundation-con
       …
   
       //---* The tquadrat configuration stuff *-------------------------------
-      implementation 'org.tquadrat.library:org.tquadrat.foundation.config:0.25.10'
-      annotationProcessor 'org.tquadrat.tool:org.tquadrat.foundation.config.ap:0.25.10'
+      implementation 'org.tquadrat.library:org.tquadrat.foundation.config:0.25.11'
+      annotationProcessor 'org.tquadrat.tool:org.tquadrat.foundation.config.ap:0.25.11'
       …
     }  //  dependencies
     ```
@@ -30,4 +30,4 @@ Refer also to [`foundation-config-ap`](https://tquadrat.github.io/foundation-con
 
 ---
 
-Last updated: 2026-05-25T23:11:26.523285381+02:00[Europe/Berlin]
+Last updated: 2026-05-27T20:05:39.738699136+02:00[Europe/Berlin]
