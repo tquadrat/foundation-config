@@ -33,13 +33,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  Used with a setter and indicates that a
  *  {@link org.tquadrat.foundation.exception.NullArgumentException}
  *  should be thrown when the new value for the property is
- *  {@code null}.
+ *  {@null}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CheckNull.java 884 2021-03-22 18:02:51Z tquadrat $
+ *  @version $Id: CheckNull.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  */
-@ClassVersion( sourceVersion = "$Id: CheckNull.java 884 2021-03-22 18:02:51Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CheckNull.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )

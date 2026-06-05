@@ -32,12 +32,12 @@ import org.tquadrat.foundation.lang.Objects;
  *  bean is changed.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigurationChangeEvent.java 1078 2023-10-19 14:39:47Z tquadrat $
+ *  @version $Id: ConfigurationChangeEvent.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ConfigurationChangeEvent.java 1078 2023-10-19 14:39:47Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigurationChangeEvent.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class ConfigurationChangeEvent extends EventObject
 {
@@ -86,9 +86,9 @@ public final class ConfigurationChangeEvent extends EventObject
      *      the change event.
      *  @param  propertyName    The name of the property that was modified.
      *  @param  oldValue    The property's value before the change; obviously,
-     *      this can be {@code null}, depending on the property.
+     *      this can be {@null}, depending on the property.
      *  @param  newValue    The new value of the property; if allowed by the
-     *      property, this can be {@code null} also.
+     *      property, this can be {@null} also.
      */
     public ConfigurationChangeEvent( final ConfigBeanSpec sourceBean, final String propertyName, final Object oldValue, final Object newValue )
     {
@@ -106,7 +106,7 @@ public final class ConfigurationChangeEvent extends EventObject
      *  {@link Object}.
      *
      *  @return The new value for the property, expressed as an instance of
-     *      {@code Object}. May be {@code null}.
+     *      {@code Object}. May be {@null}.
      */
     public final Object getNewValue() { return m_NewValue; }
 
@@ -115,7 +115,7 @@ public final class ConfigurationChangeEvent extends EventObject
      *  {@link Object}.
      *
      *  @return The old value for the property, expressed as an instance of
-     *      {@code Object}. May be {@code null}.
+     *      {@code Object}. May be {@null}.
      */
     public final Object getOldValue() { return m_OldValue; }
 

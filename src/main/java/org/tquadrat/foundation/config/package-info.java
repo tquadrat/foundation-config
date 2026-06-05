@@ -46,7 +46,7 @@
  *      file.</li>
  *  </ul>
  *  <p>Other origins, like XML, JSON and JavaScript are planned.</p>
- *  <p>Unless otherwise stated, {@code null} argument values will cause
+ *  <p>Unless otherwise stated, {@null} argument values will cause
  *  methods and constructors of all classes in this package to throw an
  *  {@link java.lang.Exception Exception},
  *  usually a
@@ -243,7 +243,7 @@
  *  interface may be abstract (neither {@code static} nor {@code default}).</p>
  *  <p>The property name is the key for the {@code Map}, and the associated
  *  value is the value for the property, <i>as the proper type</i>, not as its
- *  String representation! Neither the key nor the value may be {@code null},
+ *  String representation! Neither the key nor the value may be {@null},
  *  but it is not necessary to provide values for all properties defined by the
  *  configuration bean specification.</p>
  *  <p>The method {@code initData()} will be called from the constructor of the
@@ -299,7 +299,7 @@
  *  {@link java.util.Set#copyOf(java.util.Collection) Set.copyOf()},
  *  or
  *  {@link java.util.Map#copyOf(java.util.Map) Map.copyOf()},
- *  respectively. This means that {@code null} values are not allowed, for a
+ *  respectively. This means that {@null} values are not allowed, for a
  *  {@code Map} neither as key nor as value.</p>
  *  <p>The {@href #h4_initialisation initialisation} works only for types that
  *  have a known implementation of
@@ -339,7 +339,7 @@
  *  {@link java.util.List}
  *  or
  *  {@link java.util.Map}.</p>
- *  <p>It triggers the code generator to add a check on empty or {@code null}
+ *  <p>It triggers the code generator to add a check on empty or {@null}
  *  to the setter method, like in code below:</p>
  *
  *  <div class="source-container"><pre><span class="source-line-no">001</span>&hellip;
@@ -362,7 +362,7 @@
  *  {@href #h5_checkempty above},
  *  the annotation <code>&#64;CheckNull</code> adds an argument validation to a
  *  setter that takes any non-primitive argument; in this case, it checks that
- *  the given argument value is not {@code null}:</p>
+ *  the given argument value is not {@null}:</p>
  *
  *  <div class="source-container"><pre><span class="source-line-no">001</span>&hellip;
  *  <span class="source-line-no">002</span>&#47;**
@@ -508,7 +508,7 @@
  *  takes a single argument of the collection's element type. The methods will
  *  be generated always to throw a
  *  {@link org.tquadrat.foundation.exception.NullArgumentException}
- *  when the given argument is {@code null}, like if the method would be
+ *  when the given argument is {@null}, like if the method would be
  *  annotated with {@code &#64;checkEmpty}.</p>
  *
  *  <h3>{@anchor #h3_cmdlineparser Parsing and Interpretation of the Command Line}</h3>
@@ -715,7 +715,7 @@
  *      {@link java.util.ResourceBundle ResourceBundle}
  *      that is returned from
  *      {@link org.tquadrat.foundation.config.ConfigBeanSpec#getResourceBundle() ConfigBeanSpec.getResourceBundle()};
- *      if that is {@code null} the value of &quot;{@code usage()}&quot; (see
+ *      if that is {@null} the value of &quot;{@code usage()}&quot; (see
  *      above) is taken instead.</p>
  *      <p>This allows to localise the usage output.</p></dd>
  *  </dl>

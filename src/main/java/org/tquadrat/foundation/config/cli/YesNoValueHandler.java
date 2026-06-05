@@ -42,16 +42,16 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  {@link Boolean}
  *  values that does accept also &quot;yes&quot;, &quot;qui&quot;,
  *  &quot;ja&quot;, &quot;sí&quot;, &quot;sì&quot;, &quot;да&quot;,
- *  &quot;sim&quot;, &quot;tak&quot; and more as {@code true}. Still any other
- *  phrase and {@code null} are taken as {@code false}.
+ *  &quot;sim&quot;, &quot;tak&quot; and more as {@true}. Still any other
+ *  phrase and {@null} are taken as {@false}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $
+ *  @version $Id: YesNoValueHandler.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class YesNoValueHandler extends SimpleCmdLineValueHandler<Boolean>
 {
@@ -61,19 +61,19 @@ public final class YesNoValueHandler extends SimpleCmdLineValueHandler<Boolean>
     /**
      *  <p>{@summary An implementation of
      *  {@link StringConverter}
-     *  that translates 'yes' in various languages into {@code true}.}</p>
-     *  <p>'yes', 'true' and 'ok' will always be taken as {@code true}, the
+     *  that translates 'yes' in various languages into {@true}.}</p>
+     *  <p>'yes', 'true' and 'ok' will always be taken as {@true}, the
      *  other variants only when valid for the current locale/language.</p>
      *
      *  @see Locale#getDefault()
      *
      *  @author Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $
+     *  @version $Id: YesNoValueHandler.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = STABLE, since = "0.0.1" )
     private static final class YesNoStringConverter implements StringConverter<Boolean>
     {

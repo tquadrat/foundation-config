@@ -17,22 +17,24 @@
 
 package org.tquadrat.foundation.config.spi;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.CmdLineException;
-import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
-import org.tquadrat.foundation.i18n.Message;
-import org.tquadrat.foundation.i18n.Translation;
-
-import java.util.Optional;
-
 import static java.lang.Character.isWhitespace;
 import static java.util.Locale.ROOT;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.config.CLIBeanSpec.LEAD_IN;
 import static org.tquadrat.foundation.config.internal.Commons.retrieveMessage;
 import static org.tquadrat.foundation.i18n.TextUse.USAGE;
-import static org.tquadrat.foundation.lang.Objects.*;
+import static org.tquadrat.foundation.lang.Objects.nonNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
+
+import java.util.Optional;
+
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.config.CmdLineException;
+import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
+import org.tquadrat.foundation.i18n.Message;
+import org.tquadrat.foundation.i18n.Translation;
 
 /**
  *  Base class for the run-time copies of the
@@ -46,13 +48,13 @@ import static org.tquadrat.foundation.lang.Objects.*;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Mark Sinke
- *  @version $Id: CLIDefinition.java 1120 2024-03-16 09:48:00Z tquadrat $
+ *  @version $Id: CLIDefinition.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"ConstantExpression", "BooleanMethodNameMustStartWithQuestion"} )
-@ClassVersion( sourceVersion = "$Id: CLIDefinition.java 1120 2024-03-16 09:48:00Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIDefinition.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public abstract class CLIDefinition
 {
@@ -175,20 +177,20 @@ public abstract class CLIDefinition
     private final CmdLineValueHandler<?> m_Handler;
 
     /**
-     *  {@code true} if this is an argument, {@code false} if it is
+     *  {@true} if this is an argument, {@false} if it is
      *  an option.
      */
     private final boolean m_IsArgument;
 
     /**
-     *  {@code true} if the target property is multivalued,
-     *  {@code false} otherwise.
+     *  {@true} if the target property is multivalued,
+     *  {@false} otherwise.
      */
     private final boolean m_IsMultiValued;
 
     /**
-     *  {@code true} if the option or argument is required,
-     *  {@code false} otherwise.
+     *  {@true} if the option or argument is required,
+     *  {@false} otherwise.
      */
     private final boolean m_IsRequired;
 
@@ -221,15 +223,15 @@ public abstract class CLIDefinition
      *  Creates a new {@code CLIDefinition} instance.
      *
      *  @param  property    The name of the property.
-     *  @param  isArgument  {@code true} for an argument,
-     *      {@code false} for an option.
+     *  @param  isArgument  {@true} for an argument,
+     *      {@false} for an option.
      *  @param  usage   The usage text.
      *  @param  usageKey    The resource bundle key for the usage text.
      *  @param  metaVar The meta variable name.
-     *  @param  required    {@code true} if the argument or option is
+     *  @param  required    {@true} if the argument or option is
      *      mandatory.
      *  @param  handler The handler for the option or argument value.
-     *  @param  multiValued {@code true} if the option or argument allows
+     *  @param  multiValued {@true} if the option or argument allows
      *      more than one value.
      *  @param  format  The optional format.
      */
@@ -282,10 +284,10 @@ public abstract class CLIDefinition
      *  Returns a flag that indicates whether this is the definition for an
      *  argument or an option.
      *
-     *  @return {@code true} if this instance of {@code OptionDef} is defined
+     *  @return {@true} if this instance of {@code OptionDef} is defined
      *      by an
      *      {@link org.tquadrat.foundation.config.Argument &#64;Argument}
-     *      annotation, {@code false} if it is defined by an
+     *      annotation, {@false} if it is defined by an
      *      {@link org.tquadrat.foundation.config.Option &#64;Option}
      *      annotation.
      */
@@ -295,7 +297,7 @@ public abstract class CLIDefinition
      *  Returns a flag that indicates whether this option or argument is
      *  multivalued.
      *
-     *  @return {@code true} if multivalued, {@code false}
+     *  @return {@true} if multivalued, {@false}
      *      otherwise.
      */
     public final boolean isMultiValued() { return m_IsMultiValued; }
@@ -337,8 +339,8 @@ public abstract class CLIDefinition
     /**
      *  Returns a flag indicating if the option or argument is mandatory.
      *
-     *  @return {@code true} if the argument or option is required,
-     *      {@code false} otherwise.
+     *  @return {@true} if the argument or option is required,
+     *      {@false} otherwise.
      *
      *  @see org.tquadrat.foundation.config.Argument#required()
      *  @see org.tquadrat.foundation.config.Option#required()
@@ -373,7 +375,7 @@ public abstract class CLIDefinition
      *  Checks whether the given name for a command line option is valid.
      *
      *  @param  name    The intended name for the command line option.
-     *  @return {@code true} if the given name is valid, {@code false}
+     *  @return {@true} if the given name is valid, {@false}
      *      otherwise.
      *  @throws IllegalArgumentException    The given name is invalid.
      */

@@ -41,12 +41,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  The internal tools for the configuration module.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Commons.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: Commons.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: Commons.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Commons.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @UseAdditionalTexts
 public final class Commons
@@ -143,7 +143,7 @@ public final class Commons
      *  the key itself will be returned, appended with the arguments.</p>
      *
      *  @param  key The key for the message.
-     *  @param  addKey  The recommended value is {@code true}; this means that
+     *  @param  addKey  The recommended value is {@true}; this means that
      *      the message will be prefixed with the generated message key.
      *  @param  args    The arguments for the message.
      *  @return The text.

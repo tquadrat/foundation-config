@@ -18,12 +18,12 @@
 
 package org.tquadrat.foundation.config.spi.prefs;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
 
 import java.io.Serial;
 
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  The exception that is thrown from a configuration bean in case an
@@ -32,12 +32,12 @@ import static org.apiguardian.api.API.Status.STABLE;
  *  instance fails.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PreferencesException.java 1164 2026-03-20 17:38:18Z tquadrat $
+ *  @version $Id: PreferencesException.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: PreferencesException.java 1164 2026-03-20 17:38:18Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PreferencesException.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class PreferencesException extends RuntimeException
 {
@@ -84,7 +84,7 @@ public final class PreferencesException extends RuntimeException
      *
      *  @param  cause   The cause (which is saved for later retrieval by the
      *      {@link #getCause()}
-     *      method). A {@code null} value is permitted, and indicates that the
+     *      method). A {@null} value is permitted, and indicates that the
      *      cause is non-existent or unknown.
      */
     public PreferencesException( final Throwable cause ) { super( cause ); }
@@ -102,7 +102,7 @@ public final class PreferencesException extends RuntimeException
      *      method.
      *  @param  cause   The cause (which is saved for later retrieval by the
      *      {@link #getCause()}
-     *      method). A {@code null} value is permitted, and indicates that the
+     *      method). A {@null} value is permitted, and indicates that the
      *      cause is non-existent or unknown.
      */
     public PreferencesException( final String message, final Throwable cause ) { super( message, cause ); }

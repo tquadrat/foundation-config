@@ -50,12 +50,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  @param  <V> The value type of the {@code Map}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MapAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: MapAccessor.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MapAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MapAccessor.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class MapAccessor<K,V> extends PreferenceAccessor<Map<K,V>>
 {
@@ -107,9 +107,9 @@ public final class MapAccessor<K,V> extends PreferenceAccessor<Map<K,V>>
      *
      *  @param  node The {@code Preferences} node that provides the key and
      *      value.
-     *  @param  map The input map; can be {@code null}.
-     *  @return The converted map; will be {@code null} if the provided map was
-     *      {@code null}.
+     *  @param  map The input map; can be {@null}.
+     *  @return The converted map; will be {@null} if the provided map was
+     *      {@null}.
      *  @throws InvalidPreferenceValueException The preferences value cannot be
      *      translated to the property type.
      */

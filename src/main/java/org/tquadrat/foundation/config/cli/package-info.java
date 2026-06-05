@@ -17,7 +17,7 @@
  *  <p>{@summary The API for the Command Line Interface (CLI)} can also be used
  *  without the annotation processor, in two different ways, as described
  *  below.</p>
- *  <p>Unless otherwise stated, {@code null} argument values will cause methods
+ *  <p>Unless otherwise stated, {@null} argument values will cause methods
  *  and constructors of all classes in this package to throw an
  *  {@link java.lang.Exception Exception},
  *  usually a

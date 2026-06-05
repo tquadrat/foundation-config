@@ -44,12 +44,12 @@ import org.tquadrat.foundation.lang.AutoLock;
  *  Provides support for the event handling to the configuration beans.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigChangeListenerSupport.java 1076 2023-10-03 18:36:07Z tquadrat $
+ *  @version $Id: ConfigChangeListenerSupport.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ConfigChangeListenerSupport.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigChangeListenerSupport.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class ConfigChangeListenerSupport
 {
@@ -142,8 +142,8 @@ public final class ConfigChangeListenerSupport
      *  called in its own thread.
      *
      *  @param  propertyName    The name of the property.
-     *  @param  oldValue    The old value; can be {@code null}.
-     *  @param  newValue    The new value; can be {@code null}.
+     *  @param  oldValue    The old value; can be {@null}.
+     *  @param  newValue    The new value; can be {@null}.
      */
     public final void fireEvent( final String propertyName, final Object oldValue, final Object newValue )
     {

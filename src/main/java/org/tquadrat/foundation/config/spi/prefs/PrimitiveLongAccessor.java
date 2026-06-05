@@ -37,15 +37,15 @@ import org.tquadrat.foundation.function.Setter;
  *  <p>This differs from
  *  {@link LongAccessor}
  *  as it forces 0 (zero) as the default value, while the other
- *  implementation has {@code null} as the default value.</p>
+ *  implementation has {@null} as the default value.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PrimitiveLongAccessor.java 914 2021-05-07 21:22:12Z tquadrat $
+ *  @version $Id: PrimitiveLongAccessor.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: PrimitiveLongAccessor.java 914 2021-05-07 21:22:12Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PrimitiveLongAccessor.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class PrimitiveLongAccessor extends PreferenceAccessor<Long>
 {

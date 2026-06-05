@@ -18,16 +18,16 @@
 
 package org.tquadrat.foundation.config;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import static org.apiguardian.api.API.Status.STABLE;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  The marker for a configuration bean specification. It will work only on
@@ -35,12 +35,12 @@ import static org.apiguardian.api.API.Status.STABLE;
  *  {@link ConfigBeanSpec}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigurationBeanSpecification.java 1164 2026-03-20 17:38:18Z tquadrat $
+ *  @version $Id: ConfigurationBeanSpecification.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ConfigurationBeanSpecification.java 1164 2026-03-20 17:38:18Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigurationBeanSpecification.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @Documented
 @Retention( RUNTIME )
 @Target( TYPE )
@@ -100,24 +100,24 @@ public @interface ConfigurationBeanSpecification
 
     /**
      *  The flag that determines the package for the generated bean. If
-     *  {@code false} (the default) it will be put to a package named
+     *  {@false} (the default) it will be put to a package named
      *  {@code generated} below the package of the specification interface, on
-     *  {@code true} it will be stored to the same package with the
+     *  {@true} it will be stored to the same package with the
      *  specification interface.
      *
-     *  @return {@code true} if the generated configuration bean should be
+     *  @return {@true} if the generated configuration bean should be
      *      placed in the same package as the specification interface,
-     *      {@code false} if it should be placed to the {@code generated}
+     *      {@false} if it should be placed to the {@code generated}
      *      sub-package.
      */
     boolean samePackage() default false;
 
     /**
      *  The flag that indicates whether the access to the configuration bean
-     *  properties should be synchronised. The default is {@code true}.
+     *  properties should be synchronised. The default is {@true}.
      *
-     *  @return {@code true} if any access to a configuration value has to be
-     *      thread-safe, {@code false} otherwise.
+     *  @return {@true} if any access to a configuration value has to be
+     *      thread-safe, {@false} otherwise.
      */
     boolean synchronizeAccess() default true;
 }

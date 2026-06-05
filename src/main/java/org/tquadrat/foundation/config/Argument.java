@@ -18,10 +18,9 @@
 
 package org.tquadrat.foundation.config;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
-import org.tquadrat.foundation.config.cli.DateValueHandler;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.RetentionPolicy.CLASS;
+import static org.apiguardian.api.API.Status.STABLE;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -29,9 +28,10 @@ import java.lang.annotation.Target;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.RetentionPolicy.CLASS;
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
+import org.tquadrat.foundation.config.cli.DateValueHandler;
 
 /**
  *  <p>{@summary This annotation is used in the context of a configuration bean
@@ -45,12 +45,12 @@ import static org.apiguardian.api.API.Status.STABLE;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Kohsuke Kawaguchi - kk@kohsuke.org
  *  @thanks Mark Sinke
- *  @version $Id: Argument.java 1164 2026-03-20 17:38:18Z tquadrat $
+ *  @version $Id: Argument.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Argument.java 1164 2026-03-20 17:38:18Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Argument.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )
@@ -128,8 +128,8 @@ public @interface Argument
      *  As this will consume all remaining arguments from the command line,
      *  the annotated property has to be the last argument.
      *
-     *  @return {@code true} if the argument is multivalued,
-     *      {@code false} otherwise.
+     *  @return {@true} if the argument is multivalued,
+     *      {@false} otherwise.
      */
     boolean multiValued() default false;
 
@@ -138,8 +138,8 @@ public @interface Argument
      *  that all previous arguments (those with lower indexes) are mandatory as
      *  well.
      *
-     *  @return {@code true} if the argument is mandatory,
-     *      {@code false} otherwise.
+     *  @return {@true} if the argument is mandatory,
+     *      {@false} otherwise.
      */
     boolean required() default false;
 
@@ -171,7 +171,7 @@ public @interface Argument
      *  {@link java.util.ResourceBundle ResourceBundle}
      *  that is returned from
      *  {@link org.tquadrat.foundation.config.ConfigBeanSpec#getResourceBundle() ConfigBeanSpec.getResourceBundle()};
-     *  if that is {@code null} the value of
+     *  if that is {@null} the value of
      *  {@link #usage()}
      *  is taken instead.</p>
      *  <p>This allows to localise the usage output.</p>

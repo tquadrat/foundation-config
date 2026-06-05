@@ -33,11 +33,11 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  configuration bean implementing
  *  {@link INIBeanSpec}.
  *
- *  @version $Id: INIFileConfig.java 1015 2022-02-09 08:25:36Z tquadrat $
+ *  @version $Id: INIFileConfig.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: INIFileConfig.java 1015 2022-02-09 08:25:36Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: INIFileConfig.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( TYPE )
@@ -57,7 +57,7 @@ public @interface INIFileConfig
 
     /**
      *  Flag that indicates whether the configuration file must already exist
-     *  prior to the first attempt to open it. If {@code true} and the file
+     *  prior to the first attempt to open it. If {@true} and the file
      *  does not exist, the creation of the configuration bean will fail with
      *  an
      *  {@link ExceptionInInitializerError}
@@ -66,8 +66,8 @@ public @interface INIFileConfig
      *  as the
      *  {@linkplain Throwable#getCause() cause}.
      *
-     *  @return {@code true} if the file needs to exist on program start,
-     *      {@code false} if it will be created when missing.
+     *  @return {@true} if the file needs to exist on program start,
+     *      {@false} if it will be created when missing.
      */
     public boolean mustExist() default false;
 

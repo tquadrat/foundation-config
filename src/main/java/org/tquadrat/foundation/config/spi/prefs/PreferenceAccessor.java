@@ -46,14 +46,14 @@ import org.tquadrat.foundation.function.Setter;
  *  @see Preferences#MAX_VALUE_LENGTH
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PreferenceAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: PreferenceAccessor.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @param  <T> The type of the property.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: PreferenceAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PreferenceAccessor.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public abstract class PreferenceAccessor<T>
 {
@@ -114,7 +114,7 @@ public abstract class PreferenceAccessor<T>
      *  property name.
      *
      *  @param  node    The preferences node.
-     *  @return {@code true} if there is a key with that name, {@code false}
+     *  @return {@true} if there is a key with that name, {@false}
      *      otherwise.
      *  @throws BackingStoreException   There are problems on reading the given
      *      node.

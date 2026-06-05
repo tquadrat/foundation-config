@@ -45,12 +45,12 @@
 <span class="source-line-no">032</span><span id="line-32"> *  bean is changed.</span>
 <span class="source-line-no">033</span><span id="line-33"> *</span>
 <span class="source-line-no">034</span><span id="line-34"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">035</span><span id="line-35"> *  @version $Id: ConfigurationChangeEvent.java 1078 2023-10-19 14:39:47Z tquadrat $</span>
+<span class="source-line-no">035</span><span id="line-35"> *  @version $Id: ConfigurationChangeEvent.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">036</span><span id="line-36"> *  @since 0.0.1</span>
 <span class="source-line-no">037</span><span id="line-37"> *</span>
 <span class="source-line-no">038</span><span id="line-38"> *  @UMLGraph.link</span>
 <span class="source-line-no">039</span><span id="line-39"> */</span>
-<span class="source-line-no">040</span><span id="line-40">@ClassVersion( sourceVersion = "$Id: ConfigurationChangeEvent.java 1078 2023-10-19 14:39:47Z tquadrat $" )</span>
+<span class="source-line-no">040</span><span id="line-40">@ClassVersion( sourceVersion = "$Id: ConfigurationChangeEvent.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">041</span><span id="line-41">@API( status = STABLE, since = "0.0.1" )</span>
 <span class="source-line-no">042</span><span id="line-42">public final class ConfigurationChangeEvent extends EventObject</span>
 <span class="source-line-no">043</span><span id="line-43">{</span>
@@ -99,9 +99,9 @@
 <span class="source-line-no">086</span><span id="line-86">     *      the change event.</span>
 <span class="source-line-no">087</span><span id="line-87">     *  @param  propertyName    The name of the property that was modified.</span>
 <span class="source-line-no">088</span><span id="line-88">     *  @param  oldValue    The property's value before the change; obviously,</span>
-<span class="source-line-no">089</span><span id="line-89">     *      this can be {@code null}, depending on the property.</span>
+<span class="source-line-no">089</span><span id="line-89">     *      this can be {@null}, depending on the property.</span>
 <span class="source-line-no">090</span><span id="line-90">     *  @param  newValue    The new value of the property; if allowed by the</span>
-<span class="source-line-no">091</span><span id="line-91">     *      property, this can be {@code null} also.</span>
+<span class="source-line-no">091</span><span id="line-91">     *      property, this can be {@null} also.</span>
 <span class="source-line-no">092</span><span id="line-92">     */</span>
 <span class="source-line-no">093</span><span id="line-93">    public ConfigurationChangeEvent( final ConfigBeanSpec sourceBean, final String propertyName, final Object oldValue, final Object newValue )</span>
 <span class="source-line-no">094</span><span id="line-94">    {</span>
@@ -119,7 +119,7 @@
 <span class="source-line-no">106</span><span id="line-106">     *  {@link Object}.</span>
 <span class="source-line-no">107</span><span id="line-107">     *</span>
 <span class="source-line-no">108</span><span id="line-108">     *  @return The new value for the property, expressed as an instance of</span>
-<span class="source-line-no">109</span><span id="line-109">     *      {@code Object}. May be {@code null}.</span>
+<span class="source-line-no">109</span><span id="line-109">     *      {@code Object}. May be {@null}.</span>
 <span class="source-line-no">110</span><span id="line-110">     */</span>
 <span class="source-line-no">111</span><span id="line-111">    public final Object getNewValue() { return m_NewValue; }</span>
 <span class="source-line-no">112</span><span id="line-112"></span>
@@ -128,7 +128,7 @@
 <span class="source-line-no">115</span><span id="line-115">     *  {@link Object}.</span>
 <span class="source-line-no">116</span><span id="line-116">     *</span>
 <span class="source-line-no">117</span><span id="line-117">     *  @return The old value for the property, expressed as an instance of</span>
-<span class="source-line-no">118</span><span id="line-118">     *      {@code Object}. May be {@code null}.</span>
+<span class="source-line-no">118</span><span id="line-118">     *      {@code Object}. May be {@null}.</span>
 <span class="source-line-no">119</span><span id="line-119">     */</span>
 <span class="source-line-no">120</span><span id="line-120">    public final Object getOldValue() { return m_OldValue; }</span>
 <span class="source-line-no">121</span><span id="line-121"></span>

@@ -55,16 +55,16 @@
 <span class="source-line-no">042</span><span id="line-42"> *  {@link Boolean}</span>
 <span class="source-line-no">043</span><span id="line-43"> *  values that does accept also &amp;quot;yes&amp;quot;, &amp;quot;qui&amp;quot;,</span>
 <span class="source-line-no">044</span><span id="line-44"> *  &amp;quot;ja&amp;quot;, &amp;quot;sí&amp;quot;, &amp;quot;sì&amp;quot;, &amp;quot;да&amp;quot;,</span>
-<span class="source-line-no">045</span><span id="line-45"> *  &amp;quot;sim&amp;quot;, &amp;quot;tak&amp;quot; and more as {@code true}. Still any other</span>
-<span class="source-line-no">046</span><span id="line-46"> *  phrase and {@code null} are taken as {@code false}.</span>
+<span class="source-line-no">045</span><span id="line-45"> *  &amp;quot;sim&amp;quot;, &amp;quot;tak&amp;quot; and more as {@true}. Still any other</span>
+<span class="source-line-no">046</span><span id="line-46"> *  phrase and {@null} are taken as {@false}.</span>
 <span class="source-line-no">047</span><span id="line-47"> *</span>
 <span class="source-line-no">048</span><span id="line-48"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">049</span><span id="line-49"> *  @version $Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $</span>
+<span class="source-line-no">049</span><span id="line-49"> *  @version $Id: YesNoValueHandler.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">050</span><span id="line-50"> *  @since 0.0.1</span>
 <span class="source-line-no">051</span><span id="line-51"> *</span>
 <span class="source-line-no">052</span><span id="line-52"> *  @UMLGraph.link</span>
 <span class="source-line-no">053</span><span id="line-53"> */</span>
-<span class="source-line-no">054</span><span id="line-54">@ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $" )</span>
+<span class="source-line-no">054</span><span id="line-54">@ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">055</span><span id="line-55">@API( status = STABLE, since = "0.0.1" )</span>
 <span class="source-line-no">056</span><span id="line-56">public final class YesNoValueHandler extends SimpleCmdLineValueHandler&lt;Boolean&gt;</span>
 <span class="source-line-no">057</span><span id="line-57">{</span>
@@ -74,19 +74,19 @@
 <span class="source-line-no">061</span><span id="line-61">    /**</span>
 <span class="source-line-no">062</span><span id="line-62">     *  &lt;p&gt;{@summary An implementation of</span>
 <span class="source-line-no">063</span><span id="line-63">     *  {@link StringConverter}</span>
-<span class="source-line-no">064</span><span id="line-64">     *  that translates 'yes' in various languages into {@code true}.}&lt;/p&gt;</span>
-<span class="source-line-no">065</span><span id="line-65">     *  &lt;p&gt;'yes', 'true' and 'ok' will always be taken as {@code true}, the</span>
+<span class="source-line-no">064</span><span id="line-64">     *  that translates 'yes' in various languages into {@true}.}&lt;/p&gt;</span>
+<span class="source-line-no">065</span><span id="line-65">     *  &lt;p&gt;'yes', 'true' and 'ok' will always be taken as {@true}, the</span>
 <span class="source-line-no">066</span><span id="line-66">     *  other variants only when valid for the current locale/language.&lt;/p&gt;</span>
 <span class="source-line-no">067</span><span id="line-67">     *</span>
 <span class="source-line-no">068</span><span id="line-68">     *  @see Locale#getDefault()</span>
 <span class="source-line-no">069</span><span id="line-69">     *</span>
 <span class="source-line-no">070</span><span id="line-70">     *  @author Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">071</span><span id="line-71">     *  @version $Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $</span>
+<span class="source-line-no">071</span><span id="line-71">     *  @version $Id: YesNoValueHandler.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">072</span><span id="line-72">     *  @since 0.0.1</span>
 <span class="source-line-no">073</span><span id="line-73">     *</span>
 <span class="source-line-no">074</span><span id="line-74">     *  @UMLGraph.link</span>
 <span class="source-line-no">075</span><span id="line-75">     */</span>
-<span class="source-line-no">076</span><span id="line-76">    @ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1078 2023-10-19 14:39:47Z tquadrat $" )</span>
+<span class="source-line-no">076</span><span id="line-76">    @ClassVersion( sourceVersion = "$Id: YesNoValueHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">077</span><span id="line-77">    @API( status = STABLE, since = "0.0.1" )</span>
 <span class="source-line-no">078</span><span id="line-78">    private static final class YesNoStringConverter implements StringConverter&lt;Boolean&gt;</span>
 <span class="source-line-no">079</span><span id="line-79">    {</span>

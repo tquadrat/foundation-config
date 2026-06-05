@@ -41,12 +41,12 @@ import org.tquadrat.foundation.config.spi.prefs.PreferenceChangeListenerBase;
  *  preferences. But this annotation allows to configure it.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PreferencesRoot.java 944 2021-12-21 21:56:24Z tquadrat $
+ *  @version $Id: PreferencesRoot.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @see java.util.prefs.Preferences#userNodeForPackage(Class)
  */
-@ClassVersion( sourceVersion = "$Id: PreferencesRoot.java 944 2021-12-21 21:56:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PreferencesRoot.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( TYPE )
@@ -71,7 +71,7 @@ public @interface PreferencesRoot
      *  {@link org.tquadrat.foundation.config.spi.prefs.PreferenceChangeListenerImpl}
      *  provides a default implementation.</p>
      *
-     *  @return The class for the change listener; if {@code null}, no listener
+     *  @return The class for the change listener; if {@null}, no listener
      *      support will be generated.
      */
     Class<? extends PreferenceChangeListenerBase> changeListenerClass();

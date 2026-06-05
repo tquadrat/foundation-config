@@ -32,14 +32,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  The types of the special properties for a configuration bean.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SpecialPropertyType.java 1001 2022-01-29 16:42:15Z tquadrat $
+ *  @version $Id: SpecialPropertyType.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  *
  *  @see SpecialProperty
  */
-@ClassVersion( sourceVersion = "$Id: SpecialPropertyType.java 1001 2022-01-29 16:42:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SpecialPropertyType.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public enum SpecialPropertyType
 {
@@ -52,7 +52,7 @@ public enum SpecialPropertyType
      *  <p>The property will be initialised with a call to
      *  {@link java.nio.charset.Charset#defaultCharset()},
      *  and the same will be made also when the setter is called with the
-     *  argument {@code null} later.</p>
+     *  argument {@null} later.</p>
      *  <p>Getter and setter for this special are defined in
      *  {@link ConfigBeanSpec}.</p>
      *
@@ -69,7 +69,7 @@ public enum SpecialPropertyType
      *  <p>The property will be initialised with a call to
      *  {@link java.time.Clock#systemUTC()},
      *  and the same call will be made also when the setter is called with the
-     *  argument {@code null} later.</p>
+     *  argument {@null} later.</p>
      *  <p>Getter and setter for this special property can be added to a
      *  configuration bean specification.</p>
      *
@@ -84,7 +84,7 @@ public enum SpecialPropertyType
      *  <p>The property will be initialised with a call to
      *  {@link java.util.Locale#getDefault()},
      *  and the same call will be made also when the setter is called with the
-     *  argument {@code null}.</p>
+     *  argument {@null}.</p>
      *  <p>Getter and setter for this property are defined in
      *  {@link ConfigBeanSpec}.</p>
      *
@@ -154,7 +154,7 @@ public enum SpecialPropertyType
      *  <p>The property will be initialised with a call to
      *  {@link java.time.ZoneId#systemDefault()},
      *  and this call will be made also when the setter is called with the
-     *  argument {@code null} later.</p>
+     *  argument {@null} later.</p>
      *  <p>Getter and setter for this property are defined in
      *  {@link ConfigBeanSpec}.</p>
      *

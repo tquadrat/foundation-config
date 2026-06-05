@@ -51,13 +51,13 @@ import org.tquadrat.foundation.config.spi.Parameters;
  *  to parse the given String to an instance of {@code Date}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DateValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: DateValueHandler.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "UseOfObsoleteDateTimeApi" )
-@ClassVersion( sourceVersion = "$Id: DateValueHandler.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DateValueHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public final class DateValueHandler extends CmdLineValueHandler<Date>
 {
@@ -95,7 +95,7 @@ public final class DateValueHandler extends CmdLineValueHandler<Date>
         \*---------*/
     /**
      *  Retrieves the format that was given with the annotation; if that is
-     *  empty or {@code null}, the default &quot;{@code yyyy-MM-dd}&quot; will
+     *  empty or {@null}, the default &quot;{@code yyyy-MM-dd}&quot; will
      *  be returned.<br>
      *  <br>Override this method for a different default.
      *

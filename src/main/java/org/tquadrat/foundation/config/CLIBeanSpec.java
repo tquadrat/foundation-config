@@ -18,14 +18,14 @@
 
 package org.tquadrat.foundation.config;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Optional;
 
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  <p>{@summary When a configuration bean should be initialised from the
@@ -46,12 +46,12 @@ import static org.apiguardian.api.API.Status.STABLE;
  *  like &quot;&lt;Generated Class&gt; is not abstract&quot;.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CLIBeanSpec.java 1164 2026-03-20 17:38:18Z tquadrat $
+ *  @version $Id: CLIBeanSpec.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CLIBeanSpec.java 1164 2026-03-20 17:38:18Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIBeanSpec.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public interface CLIBeanSpec extends ConfigBeanSpec
 {
@@ -110,8 +110,8 @@ public interface CLIBeanSpec extends ConfigBeanSpec
      *
      *  @param  args    The command line arguments; usually the same as the
      *      arguments to the method {@code main()}.
-     *  @return {@code true} if the command line could be parsed without
-     *      issues, {@code false} otherwise.
+     *  @return {@true} if the command line could be parsed without
+     *      issues, {@false} otherwise.
      */
     @SuppressWarnings( {"MethodCanBeVariableArityMethod", "BooleanMethodNameMustStartWithQuestion"} )
     public boolean parseCommandLine( final String [] args );
@@ -129,7 +129,7 @@ public interface CLIBeanSpec extends ConfigBeanSpec
     /**
      *  Retrieves the message for the error caused by the last call to
      *  {@link #parseCommandLine(String[])},
-     *  given that this return {@code false}.
+     *  given that this return {@false}.
      *
      *  @return An instance of
      *      {@link Optional}

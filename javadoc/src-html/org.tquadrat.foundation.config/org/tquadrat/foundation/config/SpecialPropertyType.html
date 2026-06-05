@@ -45,14 +45,14 @@
 <span class="source-line-no">032</span><span id="line-32"> *  The types of the special properties for a configuration bean.</span>
 <span class="source-line-no">033</span><span id="line-33"> *</span>
 <span class="source-line-no">034</span><span id="line-34"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">035</span><span id="line-35"> *  @version $Id: SpecialPropertyType.java 1001 2022-01-29 16:42:15Z tquadrat $</span>
+<span class="source-line-no">035</span><span id="line-35"> *  @version $Id: SpecialPropertyType.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">036</span><span id="line-36"> *  @since 0.0.1</span>
 <span class="source-line-no">037</span><span id="line-37"> *</span>
 <span class="source-line-no">038</span><span id="line-38"> *  @UMLGraph.link</span>
 <span class="source-line-no">039</span><span id="line-39"> *</span>
 <span class="source-line-no">040</span><span id="line-40"> *  @see SpecialProperty</span>
 <span class="source-line-no">041</span><span id="line-41"> */</span>
-<span class="source-line-no">042</span><span id="line-42">@ClassVersion( sourceVersion = "$Id: SpecialPropertyType.java 1001 2022-01-29 16:42:15Z tquadrat $" )</span>
+<span class="source-line-no">042</span><span id="line-42">@ClassVersion( sourceVersion = "$Id: SpecialPropertyType.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">043</span><span id="line-43">@API( status = STABLE, since = "0.0.1" )</span>
 <span class="source-line-no">044</span><span id="line-44">public enum SpecialPropertyType</span>
 <span class="source-line-no">045</span><span id="line-45">{</span>
@@ -65,7 +65,7 @@
 <span class="source-line-no">052</span><span id="line-52">     *  &lt;p&gt;The property will be initialised with a call to</span>
 <span class="source-line-no">053</span><span id="line-53">     *  {@link java.nio.charset.Charset#defaultCharset()},</span>
 <span class="source-line-no">054</span><span id="line-54">     *  and the same will be made also when the setter is called with the</span>
-<span class="source-line-no">055</span><span id="line-55">     *  argument {@code null} later.&lt;/p&gt;</span>
+<span class="source-line-no">055</span><span id="line-55">     *  argument {@null} later.&lt;/p&gt;</span>
 <span class="source-line-no">056</span><span id="line-56">     *  &lt;p&gt;Getter and setter for this special are defined in</span>
 <span class="source-line-no">057</span><span id="line-57">     *  {@link ConfigBeanSpec}.&lt;/p&gt;</span>
 <span class="source-line-no">058</span><span id="line-58">     *</span>
@@ -82,7 +82,7 @@
 <span class="source-line-no">069</span><span id="line-69">     *  &lt;p&gt;The property will be initialised with a call to</span>
 <span class="source-line-no">070</span><span id="line-70">     *  {@link java.time.Clock#systemUTC()},</span>
 <span class="source-line-no">071</span><span id="line-71">     *  and the same call will be made also when the setter is called with the</span>
-<span class="source-line-no">072</span><span id="line-72">     *  argument {@code null} later.&lt;/p&gt;</span>
+<span class="source-line-no">072</span><span id="line-72">     *  argument {@null} later.&lt;/p&gt;</span>
 <span class="source-line-no">073</span><span id="line-73">     *  &lt;p&gt;Getter and setter for this special property can be added to a</span>
 <span class="source-line-no">074</span><span id="line-74">     *  configuration bean specification.&lt;/p&gt;</span>
 <span class="source-line-no">075</span><span id="line-75">     *</span>
@@ -97,7 +97,7 @@
 <span class="source-line-no">084</span><span id="line-84">     *  &lt;p&gt;The property will be initialised with a call to</span>
 <span class="source-line-no">085</span><span id="line-85">     *  {@link java.util.Locale#getDefault()},</span>
 <span class="source-line-no">086</span><span id="line-86">     *  and the same call will be made also when the setter is called with the</span>
-<span class="source-line-no">087</span><span id="line-87">     *  argument {@code null}.&lt;/p&gt;</span>
+<span class="source-line-no">087</span><span id="line-87">     *  argument {@null}.&lt;/p&gt;</span>
 <span class="source-line-no">088</span><span id="line-88">     *  &lt;p&gt;Getter and setter for this property are defined in</span>
 <span class="source-line-no">089</span><span id="line-89">     *  {@link ConfigBeanSpec}.&lt;/p&gt;</span>
 <span class="source-line-no">090</span><span id="line-90">     *</span>
@@ -167,7 +167,7 @@
 <span class="source-line-no">154</span><span id="line-154">     *  &lt;p&gt;The property will be initialised with a call to</span>
 <span class="source-line-no">155</span><span id="line-155">     *  {@link java.time.ZoneId#systemDefault()},</span>
 <span class="source-line-no">156</span><span id="line-156">     *  and this call will be made also when the setter is called with the</span>
-<span class="source-line-no">157</span><span id="line-157">     *  argument {@code null} later.&lt;/p&gt;</span>
+<span class="source-line-no">157</span><span id="line-157">     *  argument {@null} later.&lt;/p&gt;</span>
 <span class="source-line-no">158</span><span id="line-158">     *  &lt;p&gt;Getter and setter for this property are defined in</span>
 <span class="source-line-no">159</span><span id="line-159">     *  {@link ConfigBeanSpec}.&lt;/p&gt;</span>
 <span class="source-line-no">160</span><span id="line-160">     *</span>

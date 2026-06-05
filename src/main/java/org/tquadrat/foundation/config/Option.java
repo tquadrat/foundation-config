@@ -18,10 +18,9 @@
 
 package org.tquadrat.foundation.config;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
-import org.tquadrat.foundation.config.cli.DateValueHandler;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.RetentionPolicy.CLASS;
+import static org.apiguardian.api.API.Status.STABLE;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -30,9 +29,10 @@ import java.util.Collection;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.RetentionPolicy.CLASS;
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
+import org.tquadrat.foundation.config.cli.DateValueHandler;
 
 /**
  *  <p>{@summary This annotation is used in the context of a configuration bean
@@ -46,12 +46,12 @@ import static org.apiguardian.api.API.Status.STABLE;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Kohsuke Kawaguchi - kk@kohsuke.org
  *  @thanks Mark Sinke
- *  @version $Id: Option.java 1164 2026-03-20 17:38:18Z tquadrat $
+ *  @version $Id: Option.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Option.java 1164 2026-03-20 17:38:18Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Option.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @Documented
 @Retention( CLASS )
 @Target( METHOD )
@@ -129,12 +129,12 @@ public @interface Option
      *  <p>{@summary A flag that indicates whether the option is multi-valued,
      *  for mappings to a
      *  {@link Collection Collection}.}</p>
-     *  <p>If set to {@code true}, the same option can appear multiple times on
+     *  <p>If set to {@true}, the same option can appear multiple times on
      *  the command line, and each value will be added to the underlying data
      *  structure.</p>
      *
-     *  @return {@code true} if the option is multivalued,
-     *      {@code false} otherwise.
+     *  @return {@true} if the option is multivalued,
+     *      {@false} otherwise.
      */
     boolean multiValued() default false;
 
@@ -176,10 +176,10 @@ public @interface Option
      *  {@link java.util.Optional}.</p>
      *  <p>Note that in most of the command line interface design principles,
      *  options should be really optional. So use caution when using this flag.
-     *  Consequently, the default is {@code false}.</p>
+     *  Consequently, the default is {@false}.</p>
      *
-     *  @return {@code true} if the option is mandatory,
-     *      {@code false} otherwise.
+     *  @return {@true} if the option is mandatory,
+     *      {@false} otherwise.
      */
     boolean required() default false;
 
@@ -211,7 +211,7 @@ public @interface Option
      *  {@link java.util.ResourceBundle ResourceBundle}
      *  that is returned from
      *  {@link org.tquadrat.foundation.config.ConfigBeanSpec#getResourceBundle() ConfigBeanSpec.getResourceBundle()};
-     *  if that is {@code null} the value of
+     *  if that is {@null} the value of
      *  {@link #usage()}
      *  is taken instead.</p>
      *  <p>This allows to localise the usage output.</p>

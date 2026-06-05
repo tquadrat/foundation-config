@@ -37,12 +37,12 @@ import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Mark Sinke
- *  @version $Id: CLIArgumentDefinition.java 1076 2023-10-03 18:36:07Z tquadrat $
+ *  @version $Id: CLIArgumentDefinition.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CLIArgumentDefinition.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIArgumentDefinition.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public class CLIArgumentDefinition extends CLIDefinition
 {
@@ -65,10 +65,10 @@ public class CLIArgumentDefinition extends CLIDefinition
      *  @param  usage   The usage text.
      *  @param  usageKey    The resource bundle key for the usage text.
      *  @param  metaVar The meta variable name.
-     *  @param  required    {@code true} if the argument or option is
+     *  @param  required    {@true} if the argument or option is
      *      mandatory.
      *  @param  handler The handler for the option or argument value.
-     *  @param  multiValued {@code true} if the option or argument allows
+     *  @param  multiValued {@true} if the option or argument allows
      *      more than one value.
      *  @param  format  The optional format.
      */

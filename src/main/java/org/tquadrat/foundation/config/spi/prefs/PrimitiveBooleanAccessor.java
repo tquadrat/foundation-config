@@ -36,16 +36,16 @@ import org.tquadrat.foundation.function.Setter;
  *  for {@code boolean}.}</p>
  *  <p>This differs from
  *  {@link BooleanAccessor}
- *  as it forces {@code false} as the default value, while the other
- *  implementation has {@code null} as the default value.</p>
+ *  as it forces {@false} as the default value, while the other
+ *  implementation has {@null} as the default value.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PrimitiveBooleanAccessor.java 913 2021-05-06 22:28:06Z tquadrat $
+ *  @version $Id: PrimitiveBooleanAccessor.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: PrimitiveBooleanAccessor.java 913 2021-05-06 22:28:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PrimitiveBooleanAccessor.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class PrimitiveBooleanAccessor extends PreferenceAccessor<Boolean>
 {

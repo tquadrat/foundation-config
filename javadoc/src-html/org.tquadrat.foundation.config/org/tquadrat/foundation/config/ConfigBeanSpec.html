@@ -31,23 +31,23 @@
 <span class="source-line-no">018</span><span id="line-18"></span>
 <span class="source-line-no">019</span><span id="line-19">package org.tquadrat.foundation.config;</span>
 <span class="source-line-no">020</span><span id="line-20"></span>
-<span class="source-line-no">021</span><span id="line-21">import org.apiguardian.api.API;</span>
-<span class="source-line-no">022</span><span id="line-22">import org.tquadrat.foundation.annotation.ClassVersion;</span>
-<span class="source-line-no">023</span><span id="line-23">import org.tquadrat.foundation.annotation.PropertyName;</span>
-<span class="source-line-no">024</span><span id="line-24"></span>
-<span class="source-line-no">025</span><span id="line-25">import java.nio.charset.Charset;</span>
-<span class="source-line-no">026</span><span id="line-26">import java.time.ZoneId;</span>
-<span class="source-line-no">027</span><span id="line-27">import java.util.Locale;</span>
-<span class="source-line-no">028</span><span id="line-28">import java.util.Optional;</span>
-<span class="source-line-no">029</span><span id="line-29">import java.util.ResourceBundle;</span>
-<span class="source-line-no">030</span><span id="line-30"></span>
-<span class="source-line-no">031</span><span id="line-31">import static org.apiguardian.api.API.Status.STABLE;</span>
-<span class="source-line-no">032</span><span id="line-32">import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_CHARSET;</span>
-<span class="source-line-no">033</span><span id="line-33">import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_LOCALE;</span>
-<span class="source-line-no">034</span><span id="line-34">import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_RESOURCEBUNDLE;</span>
-<span class="source-line-no">035</span><span id="line-35">import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_TIMEZONE;</span>
-<span class="source-line-no">036</span><span id="line-36">import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_DEBUG;</span>
-<span class="source-line-no">037</span><span id="line-37">import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_TEST;</span>
+<span class="source-line-no">021</span><span id="line-21">import static org.apiguardian.api.API.Status.STABLE;</span>
+<span class="source-line-no">022</span><span id="line-22">import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_CHARSET;</span>
+<span class="source-line-no">023</span><span id="line-23">import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_LOCALE;</span>
+<span class="source-line-no">024</span><span id="line-24">import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_RESOURCEBUNDLE;</span>
+<span class="source-line-no">025</span><span id="line-25">import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_TIMEZONE;</span>
+<span class="source-line-no">026</span><span id="line-26">import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_DEBUG;</span>
+<span class="source-line-no">027</span><span id="line-27">import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_TEST;</span>
+<span class="source-line-no">028</span><span id="line-28"></span>
+<span class="source-line-no">029</span><span id="line-29">import java.nio.charset.Charset;</span>
+<span class="source-line-no">030</span><span id="line-30">import java.time.ZoneId;</span>
+<span class="source-line-no">031</span><span id="line-31">import java.util.Locale;</span>
+<span class="source-line-no">032</span><span id="line-32">import java.util.Optional;</span>
+<span class="source-line-no">033</span><span id="line-33">import java.util.ResourceBundle;</span>
+<span class="source-line-no">034</span><span id="line-34"></span>
+<span class="source-line-no">035</span><span id="line-35">import org.apiguardian.api.API;</span>
+<span class="source-line-no">036</span><span id="line-36">import org.tquadrat.foundation.annotation.ClassVersion;</span>
+<span class="source-line-no">037</span><span id="line-37">import org.tquadrat.foundation.annotation.PropertyName;</span>
 <span class="source-line-no">038</span><span id="line-38"></span>
 <span class="source-line-no">039</span><span id="line-39">/**</span>
 <span class="source-line-no">040</span><span id="line-40"> *  &lt;p&gt;{@summary The base for the specification of a configuration bean; the</span>
@@ -66,12 +66,12 @@
 <span class="source-line-no">053</span><span id="line-53"> *  extend both.&lt;/p&gt;</span>
 <span class="source-line-no">054</span><span id="line-54"> *</span>
 <span class="source-line-no">055</span><span id="line-55"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">056</span><span id="line-56"> *  @version $Id: ConfigBeanSpec.java 1164 2026-03-20 17:38:18Z tquadrat $</span>
+<span class="source-line-no">056</span><span id="line-56"> *  @version $Id: ConfigBeanSpec.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">057</span><span id="line-57"> *  @since 0.1.0</span>
 <span class="source-line-no">058</span><span id="line-58"> *</span>
 <span class="source-line-no">059</span><span id="line-59"> *  @UMLGraph.link</span>
 <span class="source-line-no">060</span><span id="line-60"> */</span>
-<span class="source-line-no">061</span><span id="line-61">@ClassVersion( sourceVersion = "$Id: ConfigBeanSpec.java 1164 2026-03-20 17:38:18Z tquadrat $" )</span>
+<span class="source-line-no">061</span><span id="line-61">@ClassVersion( sourceVersion = "$Id: ConfigBeanSpec.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">062</span><span id="line-62">@API( status = STABLE, since = "0.1.0" )</span>
 <span class="source-line-no">063</span><span id="line-63">public interface ConfigBeanSpec</span>
 <span class="source-line-no">064</span><span id="line-64">{</span>
@@ -196,7 +196,7 @@
 <span class="source-line-no">183</span><span id="line-183">     *  Returns a flag that indicates whether the application should produce</span>
 <span class="source-line-no">184</span><span id="line-184">     *  debug output of some kind.</span>
 <span class="source-line-no">185</span><span id="line-185">     *</span>
-<span class="source-line-no">186</span><span id="line-186">     *  @return {@code true} if the application is in debug mode, {@code false}</span>
+<span class="source-line-no">186</span><span id="line-186">     *  @return {@true} if the application is in debug mode, {@false}</span>
 <span class="source-line-no">187</span><span id="line-187">     *      otherwise.</span>
 <span class="source-line-no">188</span><span id="line-188">     *</span>
 <span class="source-line-no">189</span><span id="line-189">     *  @see org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_DEBUG</span>
@@ -209,7 +209,7 @@
 <span class="source-line-no">196</span><span id="line-196">     *  Returns a flag that indicates whether the application should produce</span>
 <span class="source-line-no">197</span><span id="line-197">     *  test output of some kind.</span>
 <span class="source-line-no">198</span><span id="line-198">     *</span>
-<span class="source-line-no">199</span><span id="line-199">     *  @return {@code true} if the application is in test mode, {@code false}</span>
+<span class="source-line-no">199</span><span id="line-199">     *  @return {@true} if the application is in test mode, {@false}</span>
 <span class="source-line-no">200</span><span id="line-200">     *      otherwise.</span>
 <span class="source-line-no">201</span><span id="line-201">     *</span>
 <span class="source-line-no">202</span><span id="line-202">     *  @see org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_TEST</span>
@@ -225,7 +225,7 @@
 <span class="source-line-no">212</span><span id="line-212">     *  &lt;br&gt;Setting a new {@code Charset} with this method will not change the</span>
 <span class="source-line-no">213</span><span id="line-213">     *  system default {@code Charset}.</span>
 <span class="source-line-no">214</span><span id="line-214">     *</span>
-<span class="source-line-no">215</span><span id="line-215">     *  @param  charset The new {@code Charset}; if {@code null}, the</span>
+<span class="source-line-no">215</span><span id="line-215">     *  @param  charset The new {@code Charset}; if {@null}, the</span>
 <span class="source-line-no">216</span><span id="line-216">     *      {@code Charset} will be set to the default locale.</span>
 <span class="source-line-no">217</span><span id="line-217">     *</span>
 <span class="source-line-no">218</span><span id="line-218">     *  @see Charset#defaultCharset()</span>
@@ -238,7 +238,7 @@
 <span class="source-line-no">225</span><span id="line-225">     *  &lt;br&gt;Setting a new locale with this method will not change the system</span>
 <span class="source-line-no">226</span><span id="line-226">     *  default locale.</span>
 <span class="source-line-no">227</span><span id="line-227">     *</span>
-<span class="source-line-no">228</span><span id="line-228">     *  @param  locale  The new locale; if {@code null}, the locale will be set</span>
+<span class="source-line-no">228</span><span id="line-228">     *  @param  locale  The new locale; if {@null}, the locale will be set</span>
 <span class="source-line-no">229</span><span id="line-229">     *      to the default locale.</span>
 <span class="source-line-no">230</span><span id="line-230">     *</span>
 <span class="source-line-no">231</span><span id="line-231">     *  @see Locale#getDefault()</span>
@@ -251,7 +251,7 @@
 <span class="source-line-no">238</span><span id="line-238">     *  &lt;br&gt;Setting a new time zone with this method will not change the system</span>
 <span class="source-line-no">239</span><span id="line-239">     *  default time zone.</span>
 <span class="source-line-no">240</span><span id="line-240">     *</span>
-<span class="source-line-no">241</span><span id="line-241">     *  @param  timezone    The new time zone; if {@code null} the time zone</span>
+<span class="source-line-no">241</span><span id="line-241">     *  @param  timezone    The new time zone; if {@null} the time zone</span>
 <span class="source-line-no">242</span><span id="line-242">     *      will be set to the default time zone.</span>
 <span class="source-line-no">243</span><span id="line-243">     */</span>
 <span class="source-line-no">244</span><span id="line-244">    @SpecialProperty( CONFIG_PROPERTY_TIMEZONE )</span>

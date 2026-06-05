@@ -32,12 +32,12 @@ import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
  *  to make it safe and easy to parse additional parameters for options.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Parameters.java 1049 2023-02-25 19:13:40Z tquadrat $
+ *  @version $Id: Parameters.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Parameters.java 1049 2023-02-25 19:13:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Parameters.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface Parameters
 {
@@ -72,14 +72,14 @@ public interface Parameters
      *  <p>Assume the command line looks like this:</p>
      *  <pre><code>-o abc def -d x</code></pre>
      *  <p>Then {@code isParameter(0)} and {@code isParameter(1)} would return
-     *  {@code true}, but {@code isParameter(3)} returns {@code false}:
+     *  {@true}, but {@code isParameter(3)} returns {@false}:
      *  {@code x} is an additional parameter, but for the option {@code -d} in
      *  this case.</p>
      *
      *  @param  index   The index for the requested parameter; must be 0 or
      *      greater.
-     *  @return {@code true} if the argument at the given location is an
-     *      additional parameter for the current option, {@code false} if not.
+     *  @return {@true} if the argument at the given location is an
+     *      additional parameter for the current option, {@false} if not.
      *  @since 0.1.2
      */
     @API( status = STABLE, since = "0.1.2" )

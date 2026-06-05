@@ -18,17 +18,17 @@
 
 package org.tquadrat.foundation.config.cli;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.config.CmdLineException;
-import org.tquadrat.foundation.config.spi.CLIDefinition;
-import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
-import org.tquadrat.foundation.config.spi.Parameters;
-import org.tquadrat.foundation.exception.NullArgumentException;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
-import org.tquadrat.foundation.testutil.TestBaseClass;
-import org.w3c.dom.Document;
+import static java.lang.String.format;
+import static java.lang.System.out;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.nonNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
 
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -44,12 +44,17 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Pattern;
 
-import static java.lang.String.format;
-import static java.lang.System.out;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
-import static org.tquadrat.foundation.lang.Objects.*;
-import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.config.CmdLineException;
+import org.tquadrat.foundation.config.spi.CLIDefinition;
+import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
+import org.tquadrat.foundation.config.spi.Parameters;
+import org.tquadrat.foundation.exception.NullArgumentException;
+import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import org.tquadrat.foundation.testutil.TestBaseClass;
+import org.w3c.dom.Document;
 
 /**
  *  Base class for tests with implementations of
@@ -62,7 +67,7 @@ import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi"} )
-@ClassVersion( sourceVersion = "$Id: ValueHandlerTestBase.java 1120 2024-03-16 09:48:00Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValueHandlerTestBase.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 public abstract class ValueHandlerTestBase<T> extends TestBaseClass
 {
         /*---------------*\
@@ -74,7 +79,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
      *  for test purposes.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: ValueHandlerTestBase.java 1120 2024-03-16 09:48:00Z tquadrat $
+     *  @version $Id: ValueHandlerTestBase.java 1258 2026-06-04 18:33:06Z tquadrat $
      */
     private static class ParametersImpl implements Parameters
     {
@@ -315,7 +320,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
      *
      *  @param  valueHandler    The value handler.
      *  @param  format  The format as defined by the annotation; can be
-     *      {@code null}.
+     *      {@null}.
      *  @return The given value handler with the CLI definition applied to it.
      */
     protected CmdLineValueHandler<T> createDefinition( final CmdLineValueHandler<T> valueHandler, final String format )

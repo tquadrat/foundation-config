@@ -18,16 +18,6 @@
 
 package org.tquadrat.foundation.config;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.annotation.PropertyName;
-
-import java.nio.charset.Charset;
-import java.time.ZoneId;
-import java.util.Locale;
-import java.util.Optional;
-import java.util.ResourceBundle;
-
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_CHARSET;
 import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_LOCALE;
@@ -35,6 +25,16 @@ import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY
 import static org.tquadrat.foundation.config.SpecialPropertyType.CONFIG_PROPERTY_TIMEZONE;
 import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_DEBUG;
 import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_TEST;
+
+import java.nio.charset.Charset;
+import java.time.ZoneId;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.ResourceBundle;
+
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.PropertyName;
 
 /**
  *  <p>{@summary The base for the specification of a configuration bean; the
@@ -53,12 +53,12 @@ import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_TEST;
  *  extend both.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ConfigBeanSpec.java 1164 2026-03-20 17:38:18Z tquadrat $
+ *  @version $Id: ConfigBeanSpec.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ConfigBeanSpec.java 1164 2026-03-20 17:38:18Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ConfigBeanSpec.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface ConfigBeanSpec
 {
@@ -183,7 +183,7 @@ public interface ConfigBeanSpec
      *  Returns a flag that indicates whether the application should produce
      *  debug output of some kind.
      *
-     *  @return {@code true} if the application is in debug mode, {@code false}
+     *  @return {@true} if the application is in debug mode, {@false}
      *      otherwise.
      *
      *  @see org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_DEBUG
@@ -196,7 +196,7 @@ public interface ConfigBeanSpec
      *  Returns a flag that indicates whether the application should produce
      *  test output of some kind.
      *
-     *  @return {@code true} if the application is in test mode, {@code false}
+     *  @return {@true} if the application is in test mode, {@false}
      *      otherwise.
      *
      *  @see org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_TEST
@@ -212,7 +212,7 @@ public interface ConfigBeanSpec
      *  <br>Setting a new {@code Charset} with this method will not change the
      *  system default {@code Charset}.
      *
-     *  @param  charset The new {@code Charset}; if {@code null}, the
+     *  @param  charset The new {@code Charset}; if {@null}, the
      *      {@code Charset} will be set to the default locale.
      *
      *  @see Charset#defaultCharset()
@@ -225,7 +225,7 @@ public interface ConfigBeanSpec
      *  <br>Setting a new locale with this method will not change the system
      *  default locale.
      *
-     *  @param  locale  The new locale; if {@code null}, the locale will be set
+     *  @param  locale  The new locale; if {@null}, the locale will be set
      *      to the default locale.
      *
      *  @see Locale#getDefault()
@@ -238,7 +238,7 @@ public interface ConfigBeanSpec
      *  <br>Setting a new time zone with this method will not change the system
      *  default time zone.
      *
-     *  @param  timezone    The new time zone; if {@code null} the time zone
+     *  @param  timezone    The new time zone; if {@null} the time zone
      *      will be set to the default time zone.
      */
     @SpecialProperty( CONFIG_PROPERTY_TIMEZONE )

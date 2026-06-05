@@ -42,12 +42,12 @@ import org.tquadrat.foundation.config.cli.CmdLineValueHandler;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Mark Sinke
- *  @version $Id: CLIOptionDefinition.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: CLIOptionDefinition.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CLIOptionDefinition.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIOptionDefinition.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public class CLIOptionDefinition extends CLIDefinition
 {
@@ -74,11 +74,11 @@ public class CLIOptionDefinition extends CLIDefinition
      *  @param  names   The names for the option.
      *  @param  usage   The usage text.
      *  @param  usageKey    The resource bundle key for the usage text.
-     *  @param  metaVar The meta variable name; can be {@code null}.
-     *  @param  required    {@code true} if the argument or option is
+     *  @param  metaVar The meta variable name; can be {@null}.
+     *  @param  required    {@true} if the argument or option is
      *      mandatory.
      *  @param  handler The handler for the option or argument value.
-     *  @param  multiValued {@code true} if the option or argument allows
+     *  @param  multiValued {@true} if the option or argument allows
      *      more than one value.
      *  @param  format  The optional format.
      */
@@ -97,7 +97,7 @@ public class CLIOptionDefinition extends CLIDefinition
     /**
      *  Returns the aliases.
      *
-     *  @return The aliases; may be empty, but will never be {@code null}.
+     *  @return The aliases; may be empty, but will never be {@null}.
      */
     public final Collection<String> aliases() { return m_Aliases; }
 

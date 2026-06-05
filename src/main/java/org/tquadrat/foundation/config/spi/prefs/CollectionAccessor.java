@@ -49,12 +49,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  @param  <C> The type of the {@code Collection}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CollectionAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: CollectionAccessor.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CollectionAccessor.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CollectionAccessor.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public abstract sealed class CollectionAccessor<T,C extends Collection<T>> extends PreferenceAccessor<C>
     permits ListAccessor, SetAccessor
@@ -100,9 +100,9 @@ public abstract sealed class CollectionAccessor<T,C extends Collection<T>> exten
      *
      *  @param  node The {@code Preferences} node that provides the value.
      *  @param  index   The value index.
-     *  @param  s   The String value; can be {@code null}.
-     *  @return The value instance; will be {@code null} if the provided
-     *      String is {@code null} or cannot be converted to the type of the
+     *  @param  s   The String value; can be {@null}.
+     *  @return The value instance; will be {@null} if the provided
+     *      String is {@null} or cannot be converted to the type of the
      *      property.
      *  @throws InvalidPreferenceValueException The preferences value cannot be
      *      translated to the property type.
@@ -164,9 +164,9 @@ public abstract sealed class CollectionAccessor<T,C extends Collection<T>> exten
      *  {@link StringConverter#toString(Object)}
      *  for the conversion.</p>
      *
-     *  @param  t   The property value; can be {@code null}.
-     *  @return The String implementation; will be {@code null} if the provided
-     *      value is {@code null} or cannot be converted to a String.
+     *  @param  t   The property value; can be {@null}.
+     *  @return The String implementation; will be {@null} if the provided
+     *      value is {@null} or cannot be converted to a String.
      */
     protected final String toString( final T t )
     {

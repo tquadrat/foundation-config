@@ -45,12 +45,12 @@ import org.tquadrat.foundation.function.Setter;
  *  @param  <T> The type of the property.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: BulkDataAccessorBase.java 942 2021-12-20 02:04:04Z tquadrat $
+ *  @version $Id: BulkDataAccessorBase.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: BulkDataAccessorBase.java 942 2021-12-20 02:04:04Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: BulkDataAccessorBase.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public abstract class BulkDataAccessorBase<T> extends PreferenceAccessor<T>
 {
@@ -76,11 +76,11 @@ public abstract class BulkDataAccessorBase<T> extends PreferenceAccessor<T>
      *  Converts the given {@code byte} array to an instance of the property
      *  type.
      *
-     *  @param  source  The byte array; can be {@code null}.
+     *  @param  source  The byte array; can be {@null}.
      *  @param  node    The reference to the {@code Preferences} node that
      *      provides the value.
-     *  @return The instance, or {@code null} if the source was already
-     *      {@code null}.
+     *  @return The instance, or {@null} if the source was already
+     *      {@null}.
      *  @throws InvalidPreferenceValueException The preferences value cannot be
      *      translated to the property type.
      */
@@ -102,11 +102,11 @@ public abstract class BulkDataAccessorBase<T> extends PreferenceAccessor<T>
      *  Converts the given instance of the property type into a {@code byte}
      *  array.
      *
-     *  @param  source  The instance; can be {@code null}.
+     *  @param  source  The instance; can be {@null}.
      *  @param  node    The reference to the {@code Preferences} node that is
      *      used to store the preferences value.
-     *  @return The {@code byte} array, or {@code null} if the source was
-     *      already {@code null}.
+     *  @return The {@code byte} array, or {@null} if the source was
+     *      already {@null}.
      *  @throws InvalidPreferenceValueException   The conversion failed to a
      *      {@code byte} array failed.
      */

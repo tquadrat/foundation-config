@@ -91,13 +91,13 @@ import org.xml.sax.SAXParseException;
  *  Parses an XML CLI definition file.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: CLIDefinitionParser.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"OverlyComplexClass", "ClassWithTooManyMethods"} )
-@ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.1" )
 public final class CLIDefinitionParser
 {
@@ -111,12 +111,12 @@ public final class CLIDefinitionParser
      *  {@link SAXParseException}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $
+     *  @version $Id: CLIDefinitionParser.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     @NotRecord
     public static final class ExceptionLocation implements Location
@@ -182,12 +182,12 @@ public final class CLIDefinitionParser
      *  for this parser.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $
+     *  @version $Id: CLIDefinitionParser.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.0.1
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: CLIDefinitionParser.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.1" )
     private static class CLIDefinitionResolver implements XMLResolver
     {
@@ -432,14 +432,14 @@ public final class CLIDefinitionParser
     /**
      *  <p>{@summary Creates the instance for the command line value handler
      *  based on the given class for the type and class for the handler
-     *  implementation.} If {@code processClass} is {@code null}, the method
+     *  implementation.} If {@code processClass} is {@null}, the method
      *  will search for a specialised handler class in the internal registry;
-     *  if none can be found, and {@code stringConverter} is not {@code null},
+     *  if none can be found, and {@code stringConverter} is not {@null},
      *  it creates an instance of
      *  {@link org.tquadrat.foundation.config.cli.SimpleCmdLineValueHandler}
-     *  with it. But if {@code stringConverter} is {@code null}, an exception
+     *  with it. But if {@code stringConverter} is {@null}, an exception
      *  will be thrown.</p>
-     *  <p>If {@code processClass} is not {@code null}, it has to be a class
+     *  <p>If {@code processClass} is not {@null}, it has to be a class
      *  that implements
      *  {@link CmdLineValueHandler}.
      *  In that case that class will be instantiated.</p>
@@ -447,10 +447,10 @@ public final class CLIDefinitionParser
      *  @param  <T> The type of the property the set.
      *  @param  type    The class for the property to set.
      *  @param  processClass    This is either the handler class or
-     *      {@code null}.
+     *      {@null}.
      *  @param  stringConverter The
      *      {@link StringConverter}
-     *      instance for the property; can be {@code null}.
+     *      instance for the property; can be {@null}.
      *  @return The command line value handler instance.
      *  @throws IllegalArgumentException    A command line value handler
      *      instance cannot be created.
@@ -517,14 +517,14 @@ public final class CLIDefinitionParser
     /**
      *  <p>{@summary Creates the instance for the string converter based on the
      *  given class for the type and class for the string converter
-     *  implementation.} If {@code stringConverterClass} is {@code null}, the
+     *  implementation.} If {@code stringConverterClass} is {@null}, the
      *  method will search for an implementation class in the internal
-     *  registry; if none can be found, {@code null} will be returned.</p>
+     *  registry; if none can be found, {@null} will be returned.</p>
      *
      *  @param  <T> The type of the property to convert.
      *  @param  type    The class for the property to convert.
      *  @param  stringConverterClass    The String converter class or
-     *      {@code null}.
+     *      {@null}.
      *  @return The String converter instance.
      */
     @SuppressWarnings( {"unchecked", "rawtypes"} )
@@ -1266,9 +1266,9 @@ public final class CLIDefinitionParser
      *      definition.
      *  @param  propertyMap The target data structure for the values from the
      *      command line.
-     *  @param  validate    {@code true} if the given XML should be validated
+     *  @param  validate    {@true} if the given XML should be validated
      *      against the schema {@code CLIDefinition.xsd} previous to parsing
-     *      it, {@code false} if the validation can be omitted.
+     *      it, {@false} if the validation can be omitted.
      *
      *  @return The parsed CLI definition.
      *  @throws XMLStreamException  Cannot parse the given input stream.
