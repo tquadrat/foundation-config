@@ -30,4 +30,4 @@ Refer also to [`foundation-config-ap`](https://tquadrat.github.io/foundation-con
 
 ---
 
-Last updated: 2026-10-17T17:17:28.442942988+02:00[Europe/Berlin]
+Last updated: 2026-10-18T12:55:20.980748337+02:00[Europe/Berlin]
