@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2024 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -52,7 +52,7 @@ import org.tquadrat.foundation.config.spi.CLIDefinition;
 import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
 import org.tquadrat.foundation.config.spi.Parameters;
 import org.tquadrat.foundation.exception.NullArgumentException;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import org.tquadrat.foundation.exception.UnlikelyExceptionError;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 import org.w3c.dom.Document;
 
@@ -74,11 +74,11 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
     ====** Inner Classes **====================================================
         \*---------------*/
     /**
-     *  An implementation of
+     *  <p>{@summary An implementation of
      *  {@link Parameters}
-     *  for test purposes.
+     *  for test purposes.}</p>
      *
-     *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+     *  @author Thomas Thrien - thomas.thrien@tquadrat.org
      *  @version $Id: ValueHandlerTestBase.java 1258 2026-06-04 18:33:06Z tquadrat $
      */
     private static class ParametersImpl implements Parameters
@@ -128,6 +128,9 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
             return retValue;
         }   //  getParameter()
 
+        /**
+         *  {@inheritDoc}
+         */
         @Override
         public final boolean isParameter( final int index )
         {
@@ -442,7 +445,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
             }
             catch( final TransformerConfigurationException e )
             {
-                throw new UnexpectedExceptionError( "Cannot instantiate Transformer", e );
+                throw new UnlikelyExceptionError( "Cannot instantiate Transformer", e );
             }
             catch( final TransformerException e )
             {
@@ -450,7 +453,7 @@ public abstract class ValueHandlerTestBase<T> extends TestBaseClass
             }
             catch( final UnsupportedEncodingException e )
             {
-                throw new UnexpectedExceptionError( format( "Invalid encoding: %s", encoding ), e );
+                throw new UnlikelyExceptionError( format( "Invalid encoding: %s", encoding ), e );
             }
         }
 
