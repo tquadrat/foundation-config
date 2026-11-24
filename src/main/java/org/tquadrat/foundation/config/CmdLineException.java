@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -30,7 +30,6 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.config.internal.Commons;
 import org.tquadrat.foundation.config.spi.CLIDefinition;
-import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.i18n.Message;
 import org.tquadrat.foundation.i18n.Translation;
 import org.tquadrat.foundation.util.stringconverter.FileStringConverter;
@@ -44,7 +43,7 @@ import org.tquadrat.foundation.util.stringconverter.FileStringConverter;
  *  {@link #MSG_Aborted}
  *  and so on.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @thanks Kohsuke Kawaguchi - kk@kohsuke.org
  *  @version $Id: CmdLineException.java 1078 2023-10-19 14:39:47Z tquadrat $
  *  @since 0.0.1
@@ -54,7 +53,7 @@ import org.tquadrat.foundation.util.stringconverter.FileStringConverter;
 @SuppressWarnings( "ClassWithTooManyConstructors" )
 @ClassVersion( sourceVersion = "$Id: CmdLineException.java 1078 2023-10-19 14:39:47Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
-public final class CmdLineException extends ValidationException
+public final class CmdLineException extends IllegalArgumentException
 {
         /*-----------*\
     ====** Constants **========================================================

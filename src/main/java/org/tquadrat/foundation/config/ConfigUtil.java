@@ -58,7 +58,6 @@ import org.tquadrat.foundation.config.spi.CLIArgumentDefinition;
 import org.tquadrat.foundation.config.spi.CLIDefinition;
 import org.tquadrat.foundation.config.spi.CLIOptionDefinition;
 import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
-import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.function.tce.TCEBiFunction;
 import org.tquadrat.foundation.function.tce.TCEFunction;
 import org.tquadrat.foundation.lang.AutoLock;
@@ -90,7 +89,7 @@ import org.tquadrat.foundation.lang.AutoLock;
  *  {@code ~.generated} package of the module that uses the configuration, and
  *  that holds the generated configuration beans.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: ConfigUtil.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
@@ -289,7 +288,7 @@ public final class ConfigUtil
     }   //  getConfiguration()
 
     /**
-     *  Retrieves the configuration bean class and loads it.
+     *  <p>{@summary Retrieves the configuration bean class and loads it.}</p>
      *
      *  @param  <T> The type of the configuration bean specification.
      *  @param  specification   The specification interface for the
@@ -309,15 +308,15 @@ public final class ConfigUtil
         }
         catch( final ClassNotFoundException e )
         {
-            throw new ValidationException( "Invalid configuration bean specification: %s".formatted( specification.getName() ), e );
+            throw new IllegalArgumentException( "Invalid configuration bean specification: %s".formatted( specification.getName() ), e );
         }
         catch( final InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e )
         {
-            throw new ValidationException( "Unable to instantiate configuration bean for specification: %s".formatted( specification.getName() ), e );
+            throw new IllegalArgumentException( "Unable to instantiate configuration bean for specification: %s".formatted( specification.getName() ), e );
         }
         catch( final Exception e )
         {
-            throw new ValidationException( "Problems to instantiate configuration bean for specification: %s".formatted( specification.getName() ), e );
+            throw new IllegalArgumentException( "Problems to instantiate configuration bean for specification: %s".formatted( specification.getName() ), e );
         }
 
         //---* Done *----------------------------------------------------------
@@ -325,7 +324,8 @@ public final class ConfigUtil
     }   //  loadConfigurationBean()
 
     /**
-     *  Retrieves the configuration bean class for a session bean and loads it.
+     *  <p>{@summary Retrieves the configuration bean class for a session bean
+     *  and loads it.}</p>
      *
      *  @param  <T> The type of the configuration bean specification.
      *  @param  specification   The specification interface for the
@@ -346,15 +346,15 @@ public final class ConfigUtil
         }
         catch( final ClassNotFoundException e )
         {
-            throw new ValidationException( "Invalid configuration bean specification: %s".formatted( specification.getName() ), e );
+            throw new IllegalArgumentException( "Invalid configuration bean specification: %s".formatted( specification.getName() ), e );
         }
         catch( final InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e )
         {
-            throw new ValidationException( "Unable to instantiate configuration bean  for specification: %s".formatted( specification.getName() ), e );
+            throw new IllegalArgumentException( "Unable to instantiate configuration bean  for specification: %s".formatted( specification.getName() ), e );
         }
         catch( final Exception e )
         {
-            throw new ValidationException( "Problems to instantiate configuration bean for specification: %s".formatted( specification.getName() ), e );
+            throw new IllegalArgumentException( "Problems to instantiate configuration bean for specification: %s".formatted( specification.getName() ), e );
         }
 
         //---* Done *----------------------------------------------------------
